@@ -1,4 +1,3 @@
-from typing import Dict
 import os
 from langchain_openai import ChatOpenAI
 from langchain_core.messages import HumanMessage
@@ -10,6 +9,9 @@ from langchain_openai import OpenAIEmbeddings
 from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_core.runnables import RunnablePassthrough
+
+from helper_functions.helpers_llm import parse_retriever_input
+
 
 # Load API key
 dotenv.load_dotenv(dotenv_path="config/.env")
@@ -32,9 +34,6 @@ vectorstore = Chroma.from_documents(documents=all_splits, embedding=OpenAIEmbedd
 
 # Retrieve k chunks from vectorstore as context for answer
 retriever = vectorstore.as_retriever(k=4)
-
-# Get chunks that serve as context for question
-docs = retriever.invoke("Can LangSmith help test my LLM applications?")
 
 # Set system prompt and context for answers
 SYSTEM_TEMPLATE = """
@@ -60,24 +59,20 @@ question_answering_prompt = ChatPromptTemplate.from_messages(
 # Provide LLM with context and chat history
 document_chain = create_stuff_documents_chain(chat, question_answering_prompt)
 
-# Ask question with context -> LLM knows answer
-response_with_context = document_chain.invoke(
-    {
-        "context": docs,
-        "messages": [
-            HumanMessage(content="Can LangSmith help test my LLM applications?")
-        ],
-    }
+# Fill document chain with retrieved info
+retrieval_chain = RunnablePassthrough.assign(
+    context=parse_retriever_input | retriever,
+).assign(
+    answer=document_chain,
 )
-print(f"Response with context: {response_with_context}")
 
-# Ask question without context -> LLM doesn't know answer
-response_without_context = document_chain.invoke(
+# Ask question with context
+response = retrieval_chain.invoke(
     {
-        "context": [],
         "messages": [
             HumanMessage(content="Can LangSmith help test my LLM applications?")
         ],
     }
 )
-print(f"Response without context: {response_without_context}")
+
+print(response)
