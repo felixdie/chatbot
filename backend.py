@@ -58,13 +58,11 @@ def preprocess_data() -> Chroma:
         chunk_overlap=config["backend"]["chunk_overlap"],
         add_start_index=True,
     )
-    all_splits = text_splitter.split_documents(data)
-
-    # print(len(all_splits))
+    all_chunks = text_splitter.split_documents(data)
 
     # Embed and store chunks in vector store
     vectorstore = Chroma.from_documents(
-        documents=all_splits, embedding=OpenAIEmbeddings()
+        documents=all_chunks, embedding=OpenAIEmbeddings()
     )
 
     return vectorstore
@@ -94,12 +92,12 @@ def initialise_RAG(
 
     # Retrieve k chunks from vectorstore as context for answer
     retrieved_docs = retriever.invoke(query)
-    print(f"Chunk 1: {retrieved_docs[0].page_content}\n")
-    print(f"Chunk 2: {retrieved_docs[1].page_content}\n")
+    # print(f"Chunk 1: {retrieved_docs[0].page_content}\n")
+    # print(f"Chunk 2: {retrieved_docs[1].page_content}\n")
     # print(f"Chunk 3: {retrieved_docs[2].page_content}\n")
     # print(f"Chunk 4: {retrieved_docs[3].page_content}\n")
     # print(f"Chunk 5: {retrieved_docs[4].page_content}\n")
-    print(f"Chunk 6: {retrieved_docs[5].page_content}\n")
+    # print(f"Chunk 6: {retrieved_docs[5].page_content}\n")
 
     # Consider chat history when retrieving chunks
     query_transform_prompt = ChatPromptTemplate.from_messages(
