@@ -90,8 +90,13 @@ def initialise_RAG(vectorstore: Chroma, llm: ChatOpenAI) -> RunnablePassthrough:
     )
 
     # Check context e.g. first chunk
-    # retrieved_docs = retriever.invoke("Summarise the study")
-    # print(retrieved_docs[0].page_content)
+    retrieved_docs = retriever.invoke("Summarise the study")
+    print(f"Chunk 1: {retrieved_docs[0].page_content}\n")
+    print(f"Chunk 2: {retrieved_docs[1].page_content}\n")
+    print(f"Chunk 3: {retrieved_docs[2].page_content}\n")
+    print(f"Chunk 4: {retrieved_docs[3].page_content}\n")
+    print(f"Chunk 5: {retrieved_docs[4].page_content}\n")
+    print(f"Chunk 6: {retrieved_docs[5].page_content}\n")
 
     # Consider chat history when retrieving chunks
     query_transform_prompt = ChatPromptTemplate.from_messages(
