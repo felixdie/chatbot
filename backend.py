@@ -12,8 +12,6 @@ from langchain_core.runnables import RunnablePassthrough
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnableBranch
 
-# get query, return answer
-
 
 def initialise_llm() -> RunnablePassthrough:
     """
@@ -36,15 +34,14 @@ def initialise_llm() -> RunnablePassthrough:
     return llm
 
 
-def initialise_rag(llm: ChatOpenAI) -> RunnablePassthrough:
+def preprocess_data() -> Chroma:
     """
     Initialise the RAG model with the necessary configurations.
 
     Parameters:
         None
     Returns:
-        conversational_retrieval_chain (RunnablePassthrough): The chain that retrieves
-            the answer to the user's question.
+        vectorstore (Chroma): The vector store containing the document chunks.
     """
     # Initialise document loader to pull text from web
     loader = WebBaseLoader(
@@ -66,6 +63,22 @@ def initialise_rag(llm: ChatOpenAI) -> RunnablePassthrough:
         documents=all_splits, embedding=OpenAIEmbeddings()
     )
 
+    return vectorstore
+
+
+def initialise_RAG(vectorstore: Chroma, llm: ChatOpenAI) -> RunnablePassthrough:
+    """
+    Initialise the RAG model based on the provided papers.
+
+    Parameters:
+        vectorstore (Chroma): The vector store containing the document chunks.
+        llm (ChatOpenAI): The LLM model.
+
+    Returns:
+        query_transforming_retriever_chain (RunnablePassthrough): The chain that transforms
+            the user's query and retrieves the answer.
+
+    """
     # Retrieve k chunks from vectorstore as context for answer
     retriever = vectorstore.as_retriever(
         search_type="similarity", search_kwargs={"k": 6}
@@ -97,11 +110,26 @@ def initialise_rag(llm: ChatOpenAI) -> RunnablePassthrough:
         query_transform_prompt | llm | StrOutputParser() | retriever,
     ).with_config(run_name="chat_retriever_chain")
 
+    return query_transforming_retriever_chain
+
+
+def create_retrevial_chain(
+    llm: ChatOpenAI, query_transformer: RunnablePassthrough
+) -> RunnablePassthrough:
+    """
+    Create the chain that retrieves the answer to the user's question.
+
+    Parameters:
+        llm (ChatOpenAI): The LLM model.
+
+    Returns:
+        conversational_retrieval_chain (RunnablePassthrough): The chain that retrieves
+            the answer to the user's question
+    """
     # Set system prompt and context for answers
     SYSTEM_TEMPLATE = """
     You are an assistant for question-answering tasks. Answer the user's questions based on the below context.
     If the context doesn't contain any relevant information to the question, don't make something up and just say "I don't know".
-    Keep the answer as concise as possible.
 
     <context>
     {context}
@@ -124,7 +152,7 @@ def initialise_rag(llm: ChatOpenAI) -> RunnablePassthrough:
 
     # Pass chat history to retriever to generate query that retrieves context for answer
     conversational_retrieval_chain = RunnablePassthrough.assign(
-        context=query_transforming_retriever_chain,
+        context=query_transformer,
     ).assign(
         answer=document_chain,
     )
@@ -134,7 +162,7 @@ def initialise_rag(llm: ChatOpenAI) -> RunnablePassthrough:
 
 def get_answer(query: str, query_chain: RunnablePassthrough) -> str:
     """
-    Get the answer to the user's question.
+    Get the answer to the user's question based on the query_chain.
 
     Parameters:
         query (str): The user's question.
@@ -157,17 +185,3 @@ def get_answer(query: str, query_chain: RunnablePassthrough) -> str:
     # for chunk in response_1["context"]:
     #     print(document)
     #     print()
-
-    # # Follow up question
-    # # response_2 = conversational_retrieval_chain.invoke(
-    # #     {
-    # #         "messages": [
-    # #             HumanMessage(content="Can LangSmith help test my LLM applications?"),
-    # #             AIMessage(
-    # #                 content="Yes, LangSmith can help test and evaluate your LLM applications. It allows you to quickly edit examples and add them to datasets to expand the surface area of your evaluation sets or to fine-tune a model for improved quality or reduced costs. Additionally, LangSmith can be used to monitor your application, log all traces, visualize latency and token usage statistics, and troubleshoot specific issues as they arise."
-    # #             ),
-    # #             HumanMessage(content="Tell me more!"),
-    # #         ],
-    # #     }
-    # # )
-    # # print(f"Response 2: {response_2["answer"]}")
