@@ -59,11 +59,21 @@ def preprocess_data() -> Chroma:
         add_start_index=True,
     )
     all_chunks = text_splitter.split_documents(data)
+    print(f"Extracted Chunks: {len(all_chunks)}")
 
+    # When this hits a limit, add chunks in batches
     # Embed and store chunks in vector store
     vectorstore = Chroma.from_documents(
         documents=all_chunks, embedding=OpenAIEmbeddings()
     )
+
+    # Status logging for vectorstore
+    if len(all_chunks) > vectorstore._collection.count():
+        print("Vectorstore storage exceeded: Not all chunks uploaded to vectorstore")
+    elif len(all_chunks) == vectorstore._collection.count():
+        print("Status OK: All chunks uploaded to vectorstore")
+    elif len(all_chunks) < vectorstore._collection.count():
+        print("Clear vectorstore: Old chunks are in vectorstore, click Reset")
 
     return vectorstore
 

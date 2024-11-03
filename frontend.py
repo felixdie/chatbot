@@ -23,10 +23,6 @@ llm = initialise_llm()
 # Initialise vectorstore only once
 if st.session_state["vectorstore_initialised"] == False:
     st.session_state["vectorstore"] = preprocess_data()
-
-    # Must be > 0
-    print("count vectorstore", st.session_state["vectorstore"]._collection.count())
-
     st.session_state["vectorstore_initialised"] = True
 
 # Create frontend
