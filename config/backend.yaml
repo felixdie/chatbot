@@ -1,7 +1,7 @@
 # data preprocessing
 data_to_retrieve: "https://raw.githubusercontent.com/felixdie/chatbot/refs/heads/main/data/data.txt"
 chunk_size: 1000
-chunk_overlap: 200
+chunk_overlap: 100
 number_chunks: 6
 
 # llm settings

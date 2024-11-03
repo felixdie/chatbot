@@ -70,11 +70,14 @@ def preprocess_data() -> Chroma:
     return vectorstore
 
 
-def initialise_RAG(vectorstore: Chroma, llm: ChatOpenAI) -> RunnablePassthrough:
+def initialise_RAG(
+    query: str, vectorstore: Chroma, llm: ChatOpenAI
+) -> RunnablePassthrough:
     """
     Initialise the RAG model based on the provided papers.
 
     Parameters:
+        query (str): The user's question.
         vectorstore (Chroma): The vector store containing the document chunks.
         llm (ChatOpenAI): The LLM model.
 
@@ -83,19 +86,19 @@ def initialise_RAG(vectorstore: Chroma, llm: ChatOpenAI) -> RunnablePassthrough:
             the user's query and retrieves the answer.
 
     """
-    # Retrieve k chunks from vectorstore as context for answer
+    # Initialise retriever with k chunks from vectorstore
     retriever = vectorstore.as_retriever(
         search_type="similarity",
         search_kwargs={"k": config["backend"]["number_chunks"]},
     )
 
-    # Check context e.g. first chunk
-    retrieved_docs = retriever.invoke("Summarise the study")
+    # Retrieve k chunks from vectorstore as context for answer
+    retrieved_docs = retriever.invoke(query)
     print(f"Chunk 1: {retrieved_docs[0].page_content}\n")
     print(f"Chunk 2: {retrieved_docs[1].page_content}\n")
-    print(f"Chunk 3: {retrieved_docs[2].page_content}\n")
-    print(f"Chunk 4: {retrieved_docs[3].page_content}\n")
-    print(f"Chunk 5: {retrieved_docs[4].page_content}\n")
+    # print(f"Chunk 3: {retrieved_docs[2].page_content}\n")
+    # print(f"Chunk 4: {retrieved_docs[3].page_content}\n")
+    # print(f"Chunk 5: {retrieved_docs[4].page_content}\n")
     print(f"Chunk 6: {retrieved_docs[5].page_content}\n")
 
     # Consider chat history when retrieving chunks
