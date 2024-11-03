@@ -2,7 +2,7 @@ from backend import (
     initialise_llm,
     preprocess_data,
     initialise_RAG,
-    create_retrevial_chain,
+    create_retrival_chain,
     get_answer,
 )
 import streamlit as st
@@ -11,7 +11,7 @@ import streamlit as st
 llm = initialise_llm()
 vectorstore = preprocess_data()
 query_transformer = initialise_RAG(vectorstore=vectorstore, llm=llm)
-retrival_chain = create_retrevial_chain(llm=llm, query_transformer=query_transformer)
+retrival_chain = create_retrival_chain(llm=llm, query_transformer=query_transformer)
 
 # Create frontend
 st.title("🔗 Pre Screening App")

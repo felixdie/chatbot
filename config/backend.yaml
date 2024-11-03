@@ -1,0 +1,17 @@
+# data preprocessing
+data_to_retrieve: "https://raw.githubusercontent.com/felixdie/chatbot/refs/heads/main/data/data.txt"
+chunk_size: 1000
+chunk_overlap: 200
+number_chunks: 6
+
+# llm settings
+llm_model: "gpt-4o-mini"
+llm_temparature: 0.2
+max_retries: 3
+system_prompt: |
+  You are an assistant for question-answering tasks. Answer the user's questions based on the below context.
+  If the context doesn't contain any relevant information to the question, don't make something up and just say "I don't know".
+
+  <context>
+  {context}
+  </context>

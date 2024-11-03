@@ -1,3 +1,4 @@
+from config.ingest_config import config
 import os
 from langchain_openai import ChatOpenAI
 from langchain_core.messages import HumanMessage, AIMessage
@@ -23,12 +24,15 @@ def initialise_llm() -> RunnablePassthrough:
         llm (ChatOpenAI): The configured LLM model.
     """
     # Load API key
-    dotenv.load_dotenv(dotenv_path="config/.env")
+    dotenv.load_dotenv(dotenv_path="api_key/.env")
     api_key = os.getenv("OPENAI_API_KEY")
 
     # Configure model
     llm = ChatOpenAI(
-        model="gpt-4o-mini", temperature=0.2, api_key=api_key, max_retries=3
+        model=config["backend"]["llm_model"],
+        temperature=config["backend"]["llm_temparature"],
+        api_key=api_key,
+        max_retries=config["backend"]["max_retries"],
     )
 
     return llm
@@ -44,15 +48,15 @@ def preprocess_data() -> Chroma:
         vectorstore (Chroma): The vector store containing the document chunks.
     """
     # Initialise document loader to pull text from web
-    loader = WebBaseLoader(
-        "https://raw.githubusercontent.com/felixdie/chatbot/refs/heads/main/data/data.txt"
-    )
+    loader = WebBaseLoader(config["backend"]["data_to_retrieve"])
 
     data = loader.load()
 
     # Split pulled text into chunks
     text_splitter = RecursiveCharacterTextSplitter(
-        chunk_size=1000, chunk_overlap=200, add_start_index=True
+        chunk_size=config["backend"]["chunk_size"],
+        chunk_overlap=config["backend"]["chunk_overlap"],
+        add_start_index=True,
     )
     all_splits = text_splitter.split_documents(data)
 
@@ -81,7 +85,8 @@ def initialise_RAG(vectorstore: Chroma, llm: ChatOpenAI) -> RunnablePassthrough:
     """
     # Retrieve k chunks from vectorstore as context for answer
     retriever = vectorstore.as_retriever(
-        search_type="similarity", search_kwargs={"k": 6}
+        search_type="similarity",
+        search_kwargs={"k": config["backend"]["number_chunks"]},
     )
 
     # Check context e.g. first chunk
@@ -113,7 +118,7 @@ def initialise_RAG(vectorstore: Chroma, llm: ChatOpenAI) -> RunnablePassthrough:
     return query_transforming_retriever_chain
 
 
-def create_retrevial_chain(
+def create_retrival_chain(
     llm: ChatOpenAI, query_transformer: RunnablePassthrough
 ) -> RunnablePassthrough:
     """
@@ -127,14 +132,7 @@ def create_retrevial_chain(
             the answer to the user's question
     """
     # Set system prompt and context for answers
-    SYSTEM_TEMPLATE = """
-    You are an assistant for question-answering tasks. Answer the user's questions based on the below context.
-    If the context doesn't contain any relevant information to the question, don't make something up and just say "I don't know".
-
-    <context>
-    {context}
-    </context>
-    """
+    SYSTEM_TEMPLATE = config["backend"]["system_prompt"]
 
     # Consider context when answering questions
     question_answering_prompt = ChatPromptTemplate.from_messages(
