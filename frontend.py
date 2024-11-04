@@ -53,8 +53,8 @@ with st.form("my_form"):
 
     elif task_1_1:
         user_input = st.text_area(
-            "Enter your question:",
-            placeholder="Summarise the methods used in the papers in your backend",
+            "Enter references to count their methods:",
+            placeholder="Voice‐based AI in call center customer service: A natural field experiment.\nEliciting human judgment for prediction algorithms.\n...",
         )
 
     # Submit button
@@ -74,7 +74,12 @@ with st.form("my_form"):
             st.session_state["vectorstore_initialised"] = True
 
         query_transformer = initialise_RAG(
-            vectorstore=st.session_state["vectorstore"], llm=llm, query=user_input
+            vectorstore=st.session_state["vectorstore"],
+            llm=llm,
+            query=user_input,
+            task_1=task_1,
+            task_1_1=task_1_1,
+            task_2=task_2,
         )
         retrival_chain = create_retrival_chain(
             llm=llm,

@@ -54,39 +54,58 @@ def preprocess_data(task_1: bool, task_1_1: bool, task_2: bool) -> Chroma:
         loader = WebBaseLoader(config["backend"]["data_task_1"])
     elif task_1_1:
         loader = WebBaseLoader(config["backend"]["data_task_1_1"])
-    elif task_2:
-        loader = WebBaseLoader(config["backend"]["data_task_2"])
 
     data = loader.load()
 
     # Split pulled text into chunks
-    text_splitter = RecursiveCharacterTextSplitter(
-        chunk_size=config["backend"]["chunk_size"],
-        chunk_overlap=config["backend"]["chunk_overlap"],
-        add_start_index=True,
-    )
+    if task_1:
+        text_splitter = RecursiveCharacterTextSplitter(
+            chunk_size=config["backend"]["chunk_size_task_1"],
+            chunk_overlap=config["backend"]["chunk_overlap_task_1"],
+            add_start_index=True,
+        )
+    elif task_1_1:
+        text_splitter = RecursiveCharacterTextSplitter(
+            chunk_size=config["backend"]["chunk_size_task_1_1"],
+            chunk_overlap=config["backend"]["chunk_overlap_task_1_1"],
+            add_start_index=True,
+        )
+
     all_chunks = text_splitter.split_documents(data)
     print(f"Extracted Chunks: {len(all_chunks)}")
 
     # When this hits a limit, add chunks in batches
-    # Embed and store chunks in vector store
-    vectorstore = Chroma.from_documents(
-        documents=all_chunks, embedding=OpenAIEmbeddings()
-    )
+    # If tasks are switched, clear vectorstore with data from Task 1 (stored by default)
+    try:
+        if vectorstore._collection.count() > 0:
+            vectorstore.delete_collection()
 
-    # Status logging for vectorstore
-    if len(all_chunks) > vectorstore._collection.count():
-        print("Vectorstore storage exceeded: Not all chunks uploaded to vectorstore")
-    elif len(all_chunks) == vectorstore._collection.count():
-        print("Status OK: All chunks uploaded to vectorstore")
-    elif len(all_chunks) < vectorstore._collection.count():
-        print("Clear vectorstore: Old chunks are in vectorstore, click Reset")
+    except:
+        # Embed and store chunks in vector store
+        vectorstore = Chroma.from_documents(
+            documents=all_chunks, embedding=OpenAIEmbeddings()
+        )
 
-    return vectorstore
+        # Status logging for vectorstore
+        if len(all_chunks) > vectorstore._collection.count():
+            print(
+                "Vectorstore storage exceeded: Not all chunks uploaded to vectorstore"
+            )
+        elif len(all_chunks) == vectorstore._collection.count():
+            print("Status OK: All chunks uploaded to vectorstore")
+        elif len(all_chunks) < vectorstore._collection.count():
+            print("Clear vectorstore: Old chunks are in vectorstore, click Reset")
+
+        return vectorstore
 
 
 def initialise_RAG(
-    query: str, vectorstore: Chroma, llm: ChatOpenAI
+    query: str,
+    vectorstore: Chroma,
+    llm: ChatOpenAI,
+    task_1: bool,
+    task_1_1: bool,
+    task_2: bool,
 ) -> RunnablePassthrough:
     """
     Initialise the RAG model based on the provided papers.
@@ -102,19 +121,25 @@ def initialise_RAG(
 
     """
     # Initialise retriever with k chunks from vectorstore
-    retriever = vectorstore.as_retriever(
-        search_type="similarity",
-        search_kwargs={"k": config["backend"]["number_chunks"]},
-    )
+    if task_1:
+        retriever = vectorstore.as_retriever(
+            search_type="similarity",
+            search_kwargs={"k": config["backend"]["number_chunks_task_1"]},
+        )
+    elif task_1_1:
+        retriever = vectorstore.as_retriever(
+            search_type="similarity",
+            search_kwargs={"k": config["backend"]["number_chunks_task_1_1"]},
+        )
 
     # Retrieve k chunks from vectorstore as context for answer
     retrieved_docs = retriever.invoke(query)
-    print(f"Chunk 1: {retrieved_docs[0].page_content}\n")
-    print(f"Chunk 2: {retrieved_docs[1].page_content}\n")
-    print(f"Chunk 3: {retrieved_docs[2].page_content}\n")
-    print(f"Chunk 4: {retrieved_docs[3].page_content}\n")
-    print(f"Chunk 5: {retrieved_docs[4].page_content}\n")
-    print(f"Chunk 6: {retrieved_docs[5].page_content}\n")
+    # print(f"Chunk 1: {retrieved_docs[0].page_content}\n")
+    # print(f"Chunk 2: {retrieved_docs[1].page_content}\n")
+    # print(f"Chunk 3: {retrieved_docs[2].page_content}\n")
+    # print(f"Chunk 4: {retrieved_docs[3].page_content}\n")
+    # print(f"Chunk 5: {retrieved_docs[4].page_content}\n")
+    # print(f"Chunk 6: {retrieved_docs[5].page_content}\n")
 
     # Consider chat history when retrieving chunks
     query_transform_prompt = ChatPromptTemplate.from_messages(

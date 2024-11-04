@@ -1,12 +1,18 @@
-# data preprocessing
+# data loading
 data_task_1: "https://raw.githubusercontent.com/felixdie/chatbot/refs/heads/main/data/task_1.txt"
 data_task_1_1: "https://raw.githubusercontent.com/felixdie/chatbot/refs/heads/main/data/task_1_1.txt"
-data_task_2: ""
-chunk_size: 1000
-chunk_overlap: 100
-number_chunks: 14
 
-# llm settings
+# Preprocessing task 1
+chunk_size_task_1: 1000
+chunk_overlap_task_1: 100
+number_chunks_task_1: 6
+
+# Preprocessing task 2
+chunk_size_task_1_1: 14000
+chunk_overlap_task_1_1: 0
+number_chunks_task_1_1: 1
+
+# LLM settings
 llm_model: "gpt-4o-mini"
 llm_temparature: 0.2
 max_retries: 3
