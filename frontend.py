@@ -38,13 +38,13 @@ if reset:
 # Input form
 with st.form("my_form"):
     user_input = st.text_area(
-        "Enter your question:",
-        "...",
+        "Enter a reference:",
+        placeholder="Yalcin, G., Lim, S., Puntoni, S., & van Osselaer, S. M. J. (2022). Thumbs Up or Down: Consumer Reactions to Decisions by Algorithms Versus Humans",
     )
 
     # Submit button
     submitted = st.form_submit_button("Submit")
-    if submitted & ((user_input == "...") or (user_input == "")):
+    if submitted & (user_input == ""):
         st.warning("Please enter a question", icon="⚠")
         st.stop()
 
