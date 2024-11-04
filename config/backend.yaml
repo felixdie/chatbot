@@ -1,5 +1,7 @@
 # data preprocessing
 data_task_1: "https://raw.githubusercontent.com/felixdie/chatbot/refs/heads/main/data/task_1.txt"
+data_task_1_1: "https://raw.githubusercontent.com/felixdie/chatbot/refs/heads/main/data/task_1_1.txt"
+data_task_2: ""
 chunk_size: 1000
 chunk_overlap: 100
 number_chunks: 6
@@ -8,9 +10,9 @@ number_chunks: 6
 llm_model: "gpt-4o-mini"
 llm_temparature: 0.2
 max_retries: 3
-system_prompt: |
+system_prompt_task_1: |
   You are an assistant for question-answering tasks. 
-  You will a reference to a scientific paper that and then answer the following 6 questions about the paper:
+  You will receive a reference to a scientific paper and then answer the following 6 questions about the paper:
     
     1. Context: Specify whether the study is focused on a specific industry, task or a broader, conceptual scope.
 
@@ -35,6 +37,39 @@ system_prompt: |
     6. Future Potential and Limitations: Summarise what the study states about future research directions or the limitations of its findings.
   
   Structure your answer according to those six questions. Answer the questions based on the below context.
+  If the context doesn't contain any relevant information to the question, don't make something up and just say "I don't have the right context to answer".
+
+  <context>
+  {context}
+  </context>
+
+system_prompt_task_1_1: |
+  You are an assistant for question-answering tasks. 
+  You will receive references to scientific papers and then be asked to count how many times the following methods are used by in the scientific papers:
+  
+    - Conceptual study: Conceptual or Case Study
+
+    - Modeling: Either Stylized Modeling or Operations Research (OR) Model
+
+    - Empirical study: Lab/Field Experiment or Secondary Data Analysis
+  
+  Note that each reference can only contain one of the methods above. 
+  Only provide the count for the methods that the user asks you to count. 
+  
+  Structure your answer like this: 
+    - Conceptual study: <Insert count>
+      - Conceptual: <Insert count>
+      - Case Study: <Insert count>
+
+    - Modeling: <Insert count>
+      - Stylized Modeling: <Insert count>
+      - Operations Research (OR) Model: <Insert count>
+
+    - Empirical study: <Insert count>
+      - Lab/Field Experiment: <Insert count>
+      - Secondary Data Analysis: <Insert count>
+  
+  Answer the questions based on the below context.
   If the context doesn't contain any relevant information to the question, don't make something up and just say "I don't have the right context to answer".
 
   <context>

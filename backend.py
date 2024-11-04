@@ -38,17 +38,24 @@ def initialise_llm() -> RunnablePassthrough:
     return llm
 
 
-def preprocess_data() -> Chroma:
+def preprocess_data(task_1: bool, task_1_1: bool, task_2: bool) -> Chroma:
     """
     Initialise the RAG model with the necessary configurations.
 
     Parameters:
-        None
+        task_1 (bool): Whether the user ticked task 1.
+        task_1_1 (bool): Whether the user ticked task 1.1.
+        task_2 (bool): Whether the user ticked task 2.
     Returns:
         vectorstore (Chroma): The vector store containing the document chunks.
     """
     # Initialise document loader to pull text from web
-    loader = WebBaseLoader(config["backend"]["data_task_1"])
+    if task_1:
+        loader = WebBaseLoader(config["backend"]["data_task_1"])
+    elif task_1_1:
+        loader = WebBaseLoader(config["backend"]["data_task_1_1"])
+    elif task_2:
+        loader = WebBaseLoader(config["backend"]["data_task_2"])
 
     data = loader.load()
 
@@ -102,12 +109,12 @@ def initialise_RAG(
 
     # Retrieve k chunks from vectorstore as context for answer
     retrieved_docs = retriever.invoke(query)
-    # print(f"Chunk 1: {retrieved_docs[0].page_content}\n")
-    # print(f"Chunk 2: {retrieved_docs[1].page_content}\n")
-    # print(f"Chunk 3: {retrieved_docs[2].page_content}\n")
-    # print(f"Chunk 4: {retrieved_docs[3].page_content}\n")
-    # print(f"Chunk 5: {retrieved_docs[4].page_content}\n")
-    # print(f"Chunk 6: {retrieved_docs[5].page_content}\n")
+    print(f"Chunk 1: {retrieved_docs[0].page_content}\n")
+    print(f"Chunk 2: {retrieved_docs[1].page_content}\n")
+    print(f"Chunk 3: {retrieved_docs[2].page_content}\n")
+    print(f"Chunk 4: {retrieved_docs[3].page_content}\n")
+    print(f"Chunk 5: {retrieved_docs[4].page_content}\n")
+    print(f"Chunk 6: {retrieved_docs[5].page_content}\n")
 
     # Consider chat history when retrieving chunks
     query_transform_prompt = ChatPromptTemplate.from_messages(
@@ -135,7 +142,11 @@ def initialise_RAG(
 
 
 def create_retrival_chain(
-    llm: ChatOpenAI, query_transformer: RunnablePassthrough
+    llm: ChatOpenAI,
+    query_transformer: RunnablePassthrough,
+    task_1: bool,
+    task_1_1: bool,
+    task_2: bool,
 ) -> RunnablePassthrough:
     """
     Create the chain that retrieves the answer to the user's question.
@@ -148,7 +159,10 @@ def create_retrival_chain(
             the answer to the user's question
     """
     # Set system prompt and context for answers
-    SYSTEM_TEMPLATE = config["backend"]["system_prompt"]
+    if task_1:
+        SYSTEM_TEMPLATE = config["backend"]["system_prompt_task_1"]
+    elif task_1_1:
+        SYSTEM_TEMPLATE = config["backend"]["system_prompt_task_1_1"]
 
     # Consider context when answering questions
     question_answering_prompt = ChatPromptTemplate.from_messages(
