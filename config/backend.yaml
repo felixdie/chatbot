@@ -47,7 +47,7 @@ system_prompt_task_1_1: |
   You are an assistant for question-answering tasks. 
   You will receive references to scientific papers and then be asked to count how many times the following methods are used by in the scientific papers:
   
-    - Conceptual study: Conceptual or Case Study
+    - Conceptual or Case Study
 
     - Modeling: Either Stylized Modeling or Operations Research (OR) Model
 
@@ -55,7 +55,7 @@ system_prompt_task_1_1: |
   
   Note that each reference can only contain one of the methods above. 
   Only provide the count for the methods that the user asks you to count. 
-  
+
   Structure your answer like this: 
     - Conceptual study: <Insert count>
       - Conceptual: <Insert count>

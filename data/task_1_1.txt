@@ -9,7 +9,11 @@ Management, 32(4), 1002-1018.
 - Method: The study method is classified as a Natural Field Experiment.
 - Contribution: The primary contribution of the study is theoretical, as it provides empirical evidence on the effects of voice-based AI systems in customer service settings, contributing to the understanding of AI's role in customer interactions.
 - Future Potential and Limitations: The study suggests future research directions to explore the implications of voice-based AI systems among different user populations or in other service settings. It also notes limitations regarding the generalizability of findings due to potential cultural variations and differences in technology adoption across countries.
+
+
 ---
+
+
 Lu, T., & Zhang, Y. (2024). 1+ 1> 2? information, humans, and machines. Information
 Systems Research.
 - Context: The study focuses on the microloan industry and examines human-machine collaboration in decision-making tasks.
@@ -20,7 +24,11 @@ Systems Research.
 - Method: The study employs an empirical method, specifically a two-stage field experiment, to quantify the performance outcomes of human-machine collaboration under different conditions.
 - Contribution: The primary contribution of the study is methodological, as it provides a framework for understanding the conditions under which human-machine collaboration can exceed the performance of either humans or machines alone.
 - Future Potential and Limitations: The study suggests future research directions could explore the impact of task complexity on human-machine collaboration further. Limitations include potential resistance from humans to adopt machine recommendations, which may hinder the effectiveness of collaboration.
+
+
 ---
+
+
 Ibrahim, Rouba, et al. “Eliciting human judgment for prediction algorithms.” Management
 Science, https://doi.org/10.1287/mnsc.2020.3856.
 - Context: The study focuses on the integration of human judgment with forecasting algorithms, which suggests a broader, conceptual scope rather than being confined to a specific industry or task.
@@ -31,7 +39,11 @@ Science, https://doi.org/10.1287/mnsc.2020.3856.
 - Method: The study can be classified as a Conceptual or Case Study, as it discusses theoretical implications and contributions to the understanding of human judgment in forecasting systems.
 - Contribution: The primary contribution of the study is theoretical, as it advances the understanding of how human random error affects forecasting performance and the implications for system design in operations management.
 - Future Potential and Limitations: The study suggests future research directions in exploring various elicitation methods and their impacts on forecasting accuracy. However, it also acknowledges limitations related to the variability of human judgment and the contexts in which these findings may apply.
+
+
 ---
+
+
 Yalcin, G., Lim, S., Puntoni, S., & van Osselaer, S. M. J. (2022). Thumbs Up or Down:
 Consumer Reactions to Decisions by Algorithms Versus Humans. Journal of Marketing
 Research, 59(4), 696-717. https://doi.org/10.1177/00222437211070016
