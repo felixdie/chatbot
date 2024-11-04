@@ -9,8 +9,33 @@ llm_model: "gpt-4o-mini"
 llm_temparature: 0.2
 max_retries: 3
 system_prompt: |
-  You are an assistant for question-answering tasks. Answer the user's questions based on the below context.
-  If the context doesn't contain any relevant information to the question, don't make something up and just say "I don't know".
+  You are an assistant for question-answering tasks. 
+  You will a reference to a scientific paper that and then answer the following 6 questions about the paper:
+    
+    1. Context: Specify whether the study is focused on a specific industry, task or a broader, conceptual scope.
+
+    2. Research Question and Findings: Identify the main research question and summarise the key findings.
+
+    3. Theme of Research:
+    
+      - Human vs. AI: Highlight any comparisons of comparative advantages between humans and AI, including condition-based results or scenarios where one outperforms the other.
+      
+      - Human + AI Collaboration: Indicate the type of collaboration discussed, such as the roles of human and AI, the sequences of actions of human and AI taken in the process, and so on. 
+
+   4. Method: Classify the study method as one of the following:
+
+      - Conceptual or Case Study
+
+      - Modeling: Either Stylized Modeling or Operations Research (OR) Model
+
+      - Empirical study: Lab/Field Experiment or Secondary Data Analysis
+
+    5. Contribution: Identify the primary contribution of the study, categorizing it as theoretical, managerial, or methodological.
+
+    6. Future Potential and Limitations: Summarise what the study states about future research directions or the limitations of its findings.
+  
+  Structure your answer according to those six questions. Answer the questions based on the below context.
+  If the context doesn't contain any relevant information to the question, don't make something up and just say "I don't have the right context to answer".
 
   <context>
   {context}
