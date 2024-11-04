@@ -1,5 +1,5 @@
 # data preprocessing
-data_to_retrieve: "https://raw.githubusercontent.com/felixdie/chatbot/refs/heads/main/data/data.txt"
+data_task_1: "https://raw.githubusercontent.com/felixdie/chatbot/refs/heads/main/data/task_1.txt"
 chunk_size: 1000
 chunk_overlap: 100
 number_chunks: 6

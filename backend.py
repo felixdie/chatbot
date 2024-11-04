@@ -48,7 +48,7 @@ def preprocess_data() -> Chroma:
         vectorstore (Chroma): The vector store containing the document chunks.
     """
     # Initialise document loader to pull text from web
-    loader = WebBaseLoader(config["backend"]["data_to_retrieve"])
+    loader = WebBaseLoader(config["backend"]["data_task_1"])
 
     data = loader.load()
 
