@@ -4,7 +4,7 @@ data_task_1_1: "https://raw.githubusercontent.com/felixdie/chatbot/refs/heads/ma
 data_task_2: ""
 chunk_size: 1000
 chunk_overlap: 100
-number_chunks: 6
+number_chunks: 14
 
 # llm settings
 llm_model: "gpt-4o-mini"
@@ -56,18 +56,20 @@ system_prompt_task_1_1: |
   Note that each reference can only contain one of the methods above. 
   Only provide the count for the methods that the user asks you to count. 
 
+  First. obtain the counts for the following methods:
+
   Structure your answer like this: 
-    - Conceptual study: <Insert count>
-      - Conceptual: <Insert count>
-      - Case Study: <Insert count>
+    - Conceptual or Case Study: <Insert count>
+    - Stylized Modeling: <Insert count>
+    - Operations Research (OR) Model: <Insert count>
+    - Lab/Field Experiment: <Insert count>
+    - Secondary Data Analysis: <Insert count>
 
-    - Modeling: <Insert count>
-      - Stylized Modeling: <Insert count>
-      - Operations Research (OR) Model: <Insert count>
+  Sum up the counts for stylized modeling and Operations Research (OR) Model to obtain:
+  - Modeling: <Insert count>
 
-    - Empirical study: <Insert count>
-      - Lab/Field Experiment: <Insert count>
-      - Secondary Data Analysis: <Insert count>
+  Sum up the counts for Lab/Field Experiment and Secondary Data Analysis to obtain:
+  - Empirical study: <Insert count>
   
   Answer the questions based on the below context.
   If the context doesn't contain any relevant information to the question, don't make something up and just say "I don't have the right context to answer".
