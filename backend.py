@@ -13,6 +13,36 @@ from langchain_core.runnables import RunnablePassthrough
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnableBranch
 import streamlit as st
+import logging
+
+##################################### logger ####################################################
+
+
+def get_logger() -> logging.Logger:
+    """
+    Creates a logger to debug in console.
+
+    Parameters:
+        None.
+
+    Returns:
+        logger: (logging.Logger): Configured logger instance that outputs messages to the console.
+    """
+    # Set up logger
+    logger = logging.getLogger(__name__)
+    if not logger.hasHandlers():
+        logger.setLevel(logging.DEBUG)
+        handler = logging.StreamHandler()
+        formatter = logging.Formatter("[%(levelname)s] %(message)s")
+        handler.setFormatter(formatter)
+        logger.addHandler(handler)
+
+    return logger
+
+
+logger = get_logger()
+
+##################################### modules ####################################################
 
 
 def initialise_llm() -> RunnablePassthrough:
@@ -59,8 +89,6 @@ def preprocess_data(
     # Initialise document loader to pull text from web
     if task_1:
 
-        ####################################################### WIP ###########################################################
-
         # Initialise preprocessing Agent for task 1
         prompt = """
         You are a helpful assistant. Your task is to extract the title of the scientific paper from the reference provided by the user and convert it to a valid filename.
@@ -90,14 +118,15 @@ def preprocess_data(
             + paper_title
             + ".txt"
         )
+        logger.info(f"Constructed link: {data_task_1}")
 
         ####################################################### WIP ###########################################################
         try:
             loader = WebBaseLoader(data_task_1)
-            print(f"Link: {data_task_1}")
-            st.stop()
+            logger.info(f"Data fetched successfully")
 
         except:
+            logger.info(f"ERROR: Data not fetched")
             st.warning("ERROR: Wrong link constructed")
             st.stop()
 
@@ -107,6 +136,8 @@ def preprocess_data(
         loader = WebBaseLoader(config["backend"]["data_task_2"])
 
     data = loader.load()
+    logger.info("Data loaded successfully")
+    st.stop()
 
     # Split pulled text into chunks
     if task_1:
@@ -154,6 +185,48 @@ def preprocess_data(
             print("Clear vectorstore: Old chunks are in vectorstore, click Reset")
 
         return vectorstore
+
+
+###################################### wip ####################################################################
+class Agent:
+    pass
+
+    def get_filepath(self, user_input: str, llm: RunnablePassthrough) -> str:
+        # Initialise preprocessing Agent for task 1
+        prompt = """
+        You are a helpful assistant. Your task is to extract the title of the scientific paper from the reference provided by the user and convert it to a valid filename.
+        To process the title, convert the title to lowercase letters, remove characters that would result in an invalid filename, and replace blanks with underscores.
+        Only return the resulting filename.
+        """
+
+        question = user_input
+
+        messages = [
+            {"role": "system", "content": prompt},
+            {"role": "user", "content": question},
+        ]
+
+        # Pass user input to LLM
+        messages = [
+            SystemMessage(content=prompt),
+            HumanMessage(content=question),
+        ]
+
+        # LLM returns title from user_input as str
+        response = llm(messages)
+        paper_title = response.content
+
+        # Construct link to data
+        filepath = (
+            "https://raw.githubusercontent.com/felixdie/chatbot/refs/heads/main/data/"
+            + paper_title
+            + ".txt"
+        )
+
+        return self.filepath
+
+
+#######################################################################################################
 
 
 def initialise_RAG(

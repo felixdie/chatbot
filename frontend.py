@@ -4,9 +4,13 @@ from backend import (
     initialise_RAG,
     create_retrival_chain,
     get_answer,
+    get_logger,
 )
 import streamlit as st
 from config.ingest_config import config
+
+# Initialise logger
+logger = get_logger()
 
 
 # Initialise session states
