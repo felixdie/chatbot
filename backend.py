@@ -15,7 +15,7 @@ from langchain_core.runnables import RunnableBranch
 import streamlit as st
 import logging
 
-##################################### logger ####################################################
+##################################### Logger ####################################################
 
 
 def get_logger() -> logging.Logger:
@@ -42,7 +42,8 @@ def get_logger() -> logging.Logger:
 
 logger = get_logger()
 
-##################################### modules ####################################################
+
+##################################### Modules ####################################################
 
 
 def initialise_llm() -> RunnablePassthrough:
@@ -86,72 +87,56 @@ def preprocess_data(
     Returns:
         vectorstore (Chroma): The vector store containing the document chunks.
     """
-    # Initialise document loader to pull text from web
+    # Initialise Preprocessing Agent
+    agent = Preprocessing_Agent()
+
     if task_1:
 
-        # Initialise preprocessing Agent for task 1
-        prompt = """
-        You are a helpful assistant. Your task is to extract the title of the scientific paper from the reference provided by the user and convert it to a valid filename.
-        To process the title, convert the title to lowercase letters, remove characters that would result in an invalid filename, and replace blanks with underscores.
-        Only return the resulting filename.
-        """
-        question = user_input
+        # Let Preprocessing Agent construct link to data
+        filepath = agent.get_filepath(user_input=user_input, llm=llm)
+        logger.info(f"SUCCESS: Link constructed {filepath}")
 
-        messages = [
-            {"role": "system", "content": prompt},
-            {"role": "user", "content": question},
-        ]
+        # st.stop()
 
-        # Pass user input to LLM
-        messages = [
-            SystemMessage(content=prompt),
-            HumanMessage(content=question),
-        ]
-
-        # LLM returns title from user_input as str
-        response = llm(messages)
-        paper_title = response.content
-
-        # Construct link to data
-        data_task_1 = (
-            "https://raw.githubusercontent.com/felixdie/chatbot/refs/heads/main/data/"
-            + paper_title
-            + ".txt"
-        )
-        logger.info(f"Constructed link: {data_task_1}")
-
-        ####################################################### WIP ###########################################################
+        # Initialise document loader to pull text from web
         try:
-            loader = WebBaseLoader(data_task_1)
-            logger.info(f"Data fetched successfully")
+            loader = WebBaseLoader(filepath)
+            logger.info(f"SUCCESS: Data fetched")
 
         except:
             logger.info(f"ERROR: Data not fetched")
-            st.warning("ERROR: Wrong link constructed")
+            st.warning(
+                "Paper could not be retrieved from backend. Please try another reference."
+            )
             st.stop()
 
     elif task_1_1:
         loader = WebBaseLoader(config["backend"]["data_task_1_1"])
+
     elif task_2:
         loader = WebBaseLoader(config["backend"]["data_task_2"])
 
+    # Load data
     data = loader.load()
     logger.info("Data loaded successfully")
-    st.stop()
 
-    # Split pulled text into chunks
+    ##################################### End of Tested Code ####################################################
+
+    # Initialise text splitter
     if task_1:
         text_splitter = RecursiveCharacterTextSplitter(
             chunk_size=config["backend"]["chunk_size_task_1"],
             chunk_overlap=config["backend"]["chunk_overlap_task_1"],
             add_start_index=True,
         )
+
     elif task_1_1:
         text_splitter = RecursiveCharacterTextSplitter(
             chunk_size=config["backend"]["chunk_size_task_1_1"],
             chunk_overlap=config["backend"]["chunk_overlap_task_1_1"],
             add_start_index=True,
         )
+
     elif task_2:
         text_splitter = RecursiveCharacterTextSplitter(
             chunk_size=config["backend"]["chunk_size_task_2"],
@@ -159,10 +144,10 @@ def preprocess_data(
             add_start_index=True,
         )
 
+    # Split data into chunks
     all_chunks = text_splitter.split_documents(data)
-    print(f"Extracted Chunks: {len(all_chunks)}")
+    logger.info(f"SUCCESS: {len(all_chunks)} chunks extracted")
 
-    # When this hits a limit, add chunks in batches
     # If tasks are switched, clear vectorstore with data from Task 1 (stored by default)
     try:
         if vectorstore._collection.count() > 0:
@@ -176,20 +161,29 @@ def preprocess_data(
 
         # Status logging for vectorstore
         if len(all_chunks) > vectorstore._collection.count():
-            print(
-                "Vectorstore storage exceeded: Not all chunks uploaded to vectorstore"
+            logger.info(
+                "ERROR: Vectorstore storage exceeded. Not all chunks uploaded to vectorstore"
             )
+
         elif len(all_chunks) == vectorstore._collection.count():
-            print("Status OK: All chunks uploaded to vectorstore")
+            logger.info("SUCCESS: All chunks uploaded to vectorstore")
+
         elif len(all_chunks) < vectorstore._collection.count():
-            print("Clear vectorstore: Old chunks are in vectorstore, click Reset")
+            logger.info("ERROR: Old chunks in vectorstore, clear by clicking Reset")
 
         return vectorstore
 
 
-###################################### wip ####################################################################
-class Agent:
-    pass
+class Preprocessing_Agent:
+    """
+    A class representing an Agent that preprocesses data for the RAG model.
+
+    Methods:
+        get_filepath: Constructs a link to the paper based on the name that the user provides.
+    """
+
+    def __init__(self):
+        pass
 
     def get_filepath(self, user_input: str, llm: RunnablePassthrough) -> str:
         # Initialise preprocessing Agent for task 1
@@ -223,10 +217,7 @@ class Agent:
             + ".txt"
         )
 
-        return self.filepath
-
-
-#######################################################################################################
+        return filepath
 
 
 def initialise_RAG(
