@@ -1,7 +1,7 @@
 from config.ingest_config import config
 import os
 from langchain_openai import ChatOpenAI
-from langchain_core.messages import HumanMessage, AIMessage
+from langchain.schema import HumanMessage, SystemMessage
 import dotenv
 from langchain_community.document_loaders import WebBaseLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
@@ -12,6 +12,7 @@ from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_core.runnables import RunnablePassthrough
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnableBranch
+import streamlit as st
 
 
 def initialise_llm() -> RunnablePassthrough:
@@ -38,7 +39,13 @@ def initialise_llm() -> RunnablePassthrough:
     return llm
 
 
-def preprocess_data(task_1: bool, task_1_1: bool, task_2: bool) -> Chroma:
+def preprocess_data(
+    task_1: bool,
+    task_1_1: bool,
+    task_2: bool,
+    user_input: str,
+    llm: RunnablePassthrough,
+) -> Chroma:
     """
     Initialise the RAG model with the necessary configurations.
 
@@ -51,7 +58,49 @@ def preprocess_data(task_1: bool, task_1_1: bool, task_2: bool) -> Chroma:
     """
     # Initialise document loader to pull text from web
     if task_1:
-        loader = WebBaseLoader(config["backend"]["data_task_1"])
+
+        ####################################################### WIP ###########################################################
+
+        # Initialise preprocessing Agent for task 1
+        prompt = """
+        You are a helpful assistant. Your task is to extract the title of the scientific paper from the reference provided by the user and convert it to a valid filename.
+        To process the title, convert the title to lowercase letters, remove characters that would result in an invalid filename, and replace blanks with underscores.
+        Only return the resulting filename.
+        """
+        question = user_input
+
+        messages = [
+            {"role": "system", "content": prompt},
+            {"role": "user", "content": question},
+        ]
+
+        # Pass user input to LLM
+        messages = [
+            SystemMessage(content=prompt),
+            HumanMessage(content=question),
+        ]
+
+        # LLM returns title from user_input as str
+        response = llm(messages)
+        paper_title = response.content
+
+        # Construct link to data
+        data_task_1 = (
+            "https://raw.githubusercontent.com/felixdie/chatbot/refs/heads/main/data/"
+            + paper_title
+            + ".txt"
+        )
+
+        ####################################################### WIP ###########################################################
+        try:
+            loader = WebBaseLoader(data_task_1)
+            print(f"Link: {data_task_1}")
+            st.stop()
+
+        except:
+            st.warning("ERROR: Wrong link constructed")
+            st.stop()
+
     elif task_1_1:
         loader = WebBaseLoader(config["backend"]["data_task_1_1"])
     elif task_2:

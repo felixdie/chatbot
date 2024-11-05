@@ -6,6 +6,8 @@ from backend import (
     get_answer,
 )
 import streamlit as st
+from config.ingest_config import config
+
 
 # Initialise session states
 session_states = {
@@ -75,7 +77,11 @@ with st.form("my_form"):
         # Initialise vectorstore only once
         if st.session_state["vectorstore_initialised"] == False:
             st.session_state["vectorstore"] = preprocess_data(
-                task_1=task_1, task_1_1=task_1_1, task_2=task_2
+                task_1=task_1,
+                task_1_1=task_1_1,
+                task_2=task_2,
+                user_input=user_input,
+                llm=llm,
             )
             st.session_state["vectorstore_initialised"] = True
 
