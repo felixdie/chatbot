@@ -1,21 +1,29 @@
-# data loading
+# Data loading
 data_task_1: "https://raw.githubusercontent.com/felixdie/chatbot/refs/heads/main/data/task_1.txt"
 data_task_1_1: "https://raw.githubusercontent.com/felixdie/chatbot/refs/heads/main/data/task_1_1.txt"
+data_task_2: "https://raw.githubusercontent.com/felixdie/chatbot/refs/heads/main/data/task_1_1.txt"
 
 # Preprocessing task 1
 chunk_size_task_1: 1000
 chunk_overlap_task_1: 100
 number_chunks_task_1: 6
 
-# Preprocessing task 2
+# Preprocessing task 1_1
 chunk_size_task_1_1: 14000
 chunk_overlap_task_1_1: 0
 number_chunks_task_1_1: 1
+
+# Preprocessing task 2
+chunk_size_task_2: 14000
+chunk_overlap_task_2: 0
+number_chunks_task_2: 1
 
 # LLM settings
 llm_model: "gpt-4o-mini"
 llm_temparature: 0.2
 max_retries: 3
+
+# Sytem prompts
 system_prompt_task_1: |
   You are an assistant for question-answering tasks. 
   You will receive a reference to a scientific paper and then answer the following 6 questions about the paper:
@@ -66,6 +74,23 @@ system_prompt_task_1_1: |
   - Empirical study: <Insert count>
 
   Then provide all the methods along with their counts.
+
+  Answer the questions based on the below context.
+  If the context doesn't contain any relevant information to the question, don't make something up and just say "I don't have the right context to answer".
+
+  <context>
+  {context}
+  </context>
+
+system_prompt_task_2: |
+  You are an assistant for question-answering tasks. 
+  You will be asked to conduct a literature review on the scientific papers that are provided to you in the context.
+  Only take into consideration the papers that are relevant to the user's request. The user's request will specify the criteria for relevance.
+  Once you extracted the criteria for relevance, you will need to follow these steps:
+  
+    - Step 1: Retrieve the summaries to all relevant papers from the context provided to you.
+    - Step 2: Compile the summaries into coherent paragraphs that discuss how the research in these areas is connected, identifying common themes, trends, and potential future directions.
+    - Step 3: Provide a reference list for all retrieved articles, formatted according to standard academic citation styles.
 
   Answer the questions based on the below context.
   If the context doesn't contain any relevant information to the question, don't make something up and just say "I don't have the right context to answer".

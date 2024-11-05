@@ -54,6 +54,8 @@ def preprocess_data(task_1: bool, task_1_1: bool, task_2: bool) -> Chroma:
         loader = WebBaseLoader(config["backend"]["data_task_1"])
     elif task_1_1:
         loader = WebBaseLoader(config["backend"]["data_task_1_1"])
+    elif task_2:
+        loader = WebBaseLoader(config["backend"]["data_task_2"])
 
     data = loader.load()
 
@@ -68,6 +70,12 @@ def preprocess_data(task_1: bool, task_1_1: bool, task_2: bool) -> Chroma:
         text_splitter = RecursiveCharacterTextSplitter(
             chunk_size=config["backend"]["chunk_size_task_1_1"],
             chunk_overlap=config["backend"]["chunk_overlap_task_1_1"],
+            add_start_index=True,
+        )
+    elif task_2:
+        text_splitter = RecursiveCharacterTextSplitter(
+            chunk_size=config["backend"]["chunk_size_task_2"],
+            chunk_overlap=config["backend"]["chunk_overlap_task_2"],
             add_start_index=True,
         )
 
@@ -131,6 +139,11 @@ def initialise_RAG(
             search_type="similarity",
             search_kwargs={"k": config["backend"]["number_chunks_task_1_1"]},
         )
+    elif task_2:
+        retriever = vectorstore.as_retriever(
+            search_type="similarity",
+            search_kwargs={"k": config["backend"]["number_chunks_task_2"]},
+        )
 
     # Retrieve k chunks from vectorstore as context for answer
     retrieved_docs = retriever.invoke(query)
@@ -188,6 +201,8 @@ def create_retrival_chain(
         SYSTEM_TEMPLATE = config["backend"]["system_prompt_task_1"]
     elif task_1_1:
         SYSTEM_TEMPLATE = config["backend"]["system_prompt_task_1_1"]
+    elif task_2:
+        SYSTEM_TEMPLATE = config["backend"]["system_prompt_task_2"]
 
     # Consider context when answering questions
     question_answering_prompt = ChatPromptTemplate.from_messages(

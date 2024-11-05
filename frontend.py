@@ -57,6 +57,12 @@ with st.form("my_form"):
             placeholder="Voice‐based AI in call center customer service: A natural field experiment.\nEliciting human judgment for prediction algorithms.\n...",
         )
 
+    elif task_2:
+        user_input = st.text_area(
+            "Enter your question:",
+            placeholder="Do a literature review",
+        )
+
     # Submit button
     submitted = st.form_submit_button("Submit")
     if submitted & (user_input == ""):
