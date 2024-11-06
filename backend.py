@@ -14,6 +14,7 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnableBranch
 import streamlit as st
 import logging
+import re
 
 ##################################### Logger ####################################################
 
@@ -93,7 +94,7 @@ def preprocess_data(
     if task_1:
 
         # Let Preprocessing Agent construct link to data
-        filepath = agent.get_filepath(user_input=user_input, llm=llm)
+        filepath = agent.get_title(user_input=user_input, llm=llm)
         logger.info(f"SUCCESS: Link constructed {filepath}")
 
         # st.stop()
@@ -179,18 +180,16 @@ class Preprocessing_Agent:
     A class representing an Agent that preprocesses data for the RAG model.
 
     Methods:
-        get_filepath: Constructs a link to the paper based on the name that the user provides.
+        get_title: Constructs a link to the paper based on the name that the user provides.
     """
 
     def __init__(self):
         pass
 
-    def get_filepath(self, user_input: str, llm: RunnablePassthrough) -> str:
+    def get_title(self, user_input: str, llm: RunnablePassthrough) -> str:
         # Initialise preprocessing Agent for task 1
         prompt = """
-        You are a helpful assistant. Your task is to extract the title of the scientific paper from the reference provided by the user and convert it to a valid filename.
-        To process the title, convert the title to lowercase letters, remove characters that would result in an invalid filename, and replace blanks with underscores.
-        Only return the resulting filename.
+        You are a helpful assistant. Your task is to extract the title of the scientific paper from the reference provided by the user. Only return the title of the paper.
         """
 
         question = user_input
@@ -206,9 +205,16 @@ class Preprocessing_Agent:
             HumanMessage(content=question),
         ]
 
-        # LLM returns title from user_input as str
+        # LLM returns title from user input
         response = llm(messages)
         paper_title = response.content
+        logger.info(f"SUCCESS: Paper title extracted {paper_title}")
+
+        # Convert paper title to lowercase letters and replace blanks with underscores
+        paper_title = paper_title.lower().replace(" ", "_")
+
+        # Replace characters resulting in invalid filenames with underscores
+        paper_title = re.sub(r'[,<>=:"/\\|?*+.%#&{}@`´\']', "", paper_title)
 
         # Construct link to data
         filepath = (
