@@ -94,7 +94,7 @@ def preprocess_data(
     if task_1:
 
         # Let Preprocessing Agent construct link to data
-        filepath = agent.get_title(user_input=user_input, llm=llm)
+        filepath = agent.get_filepath(user_input=user_input, llm=llm)
         logger.info(f"SUCCESS: Link constructed {filepath}")
 
         # st.stop()
@@ -180,13 +180,24 @@ class Preprocessing_Agent:
     A class representing an Agent that preprocesses data for the RAG model.
 
     Methods:
-        get_title: Constructs a link to the paper based on the name that the user provides.
+        get_filepath: Constructs a link to the paper based on the name that the user provides.
     """
 
     def __init__(self):
         pass
 
-    def get_title(self, user_input: str, llm: RunnablePassthrough) -> str:
+    def get_filepath(self, user_input: str, llm: RunnablePassthrough) -> str:
+        """
+        Constructs a link to the paper based on the name that the user provides.
+
+        Parameters:
+            user_input (str): The user's input.
+            llm (RunnablePassthrough): The LLM model.
+
+        Returns:
+            filepath (str): The link to the paper.
+
+        """
         # Initialise preprocessing Agent for task 1
         prompt = """
         You are a helpful assistant. Your task is to extract the title of the scientific paper from the reference provided by the user. Only return the title of the paper.
@@ -206,7 +217,7 @@ class Preprocessing_Agent:
         ]
 
         # LLM returns title from user input
-        response = llm(messages)
+        response = llm.invoke(messages)
         paper_title = response.content
         logger.info(f"SUCCESS: Paper title extracted {paper_title}")
 
