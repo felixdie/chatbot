@@ -1,0 +1,1766 @@
+Wang, W., Gao, G., & Agarwal, R. (2023). Friend or foe? teaming between artificial
+intelligence and workers with variation in experience. Management Science.
+
+Abstract. 
+
+As artificial intelligence (AI) applications become more pervasive, it is critical to 
+understand how knowledge workers with different levels and types of experience can 
+team with AI for productivity gains. We focus on the influence of two major types of 
+human work experience (narrow experience based on the specific task volume and broad 
+experience based on seniority) on the human-AI team dynamics. We developed an AI solution 
+for medical chart coding in a publicly traded company and conducted a field study 
+among the knowledge workers. Based on a detailed analysis performed at the medical 
+chart level, we find evidence that AI benefits workers with greater task-based experience, 
+but senior workers gain less from AI than their junior colleagues. Further investigation 
+reveals that the relatively lower productivity lift from AI is not a result of seniority per se 
+but lower trust in AI, likely triggered by the senior workers’ broader job responsibilities. 
+This study provides new empirical insights into the differential roles of worker experience 
+in the collaborative dynamics between AI and knowledge workers, which have important 
+societal and business implications.
+
+History:Accepted by Kartik Hosanagar, information systems. 
+Funding:This work was supported by Inovalon [Sponsor of the Health Insights AI Laboratory]. 
+Supplemental Material:The data files and online appendix are available at https://doi.org/10.1287/mnsc. 
+2021.00588. 
+
+Keywords:artificial intelligence•human-AI teaming•worker experience•productivity•healthcare•medical coding
+
+1.Introduction
+
+In recent years, the resurgence of artificial intelligence 
+(AI) is capturing substantial attention in the business 
+world (Manyika et al. 2017, PwC 2017). Unlike past generations 
+of AI that required humans to translate knowledge 
+into rules, a distinctive feature of contemporary AI 
+is its ability to learn from data (Brynjolfsson et al. 2018a, 
+Hosanagar 2019). Driven by machine learning (ML)- 
+based approaches, contemporary AI has redefined the 
+power of machines and represents a dramatic paradigm 
+shift compared with previous generations of the technology 
+(Taddy 2018).
+
+Riding on this new power, AI that uses modern developments 
+in machine learning (and its subfield of deep 
+learning) is rapidly encroaching on the domain of high- 
+level cognitive tasks that used to be reserved for humans 
+(He et al. 2015, Mnih et al. 2015). As noted by Korinek 
+and Stiglitz (2017, p. 2), “it is clear that [AI] has the potential 
+to disrupt labor markets in a major way, even in the 
+short and medium run, affecting workers across many 
+professions and skill levels.” A recent paper (Brynjolfsson 
+2022) suggests that, rather than focusing on how 
+machines might replace humans, it is critical to direct 
+research attention to how AI can augment humans.
+
+Unsurprisingly, in the foreseeable future, the question 
+of how human workers can best team with AI presents a 
+significant challenge. An emerging stream of literature 
+has begun to examine teaming intelligence (i.e., how 
+humans and AI can work together) (Johnson and Vera 
+2019, Bogert et al. 2021). Although most studies focus on 
+how AI can be optimally designed to better team with 
+human workers (Chakraborti et al. 2017, Clement et al. 
+2020, Zhang et al. 2020, Ahn et al. 2021, Lebovitz et al. 
+2021, Siu et al. 2021), limited research seeks to understand 
+the influence of factors on the human side, a notable 
+gap that we aim to address.
+
+Our study focuses on a critical aspect of human 
+capital—worker experience. Evidence suggests that workers’ 
+experience could profoundly affect their relationship 
+with AI, especially in knowledge-intensive jobs that are 
+the focus of heated debate about how AI is affecting the 
+value of human workers’ experience (Swap and Leonard 
+2014, Henry-Nickie 2017). To illustrate, AI can help detect 
+tumors in medical images with high accuracy (McKinney 
+
+
+et al. 2020), suggesting that it could potentially make a 
+radiologist’s experience less valuable. Alternatively, there 
+are reasons to believe that AI can complement human 
+workers’ experience. If AI largely automates a subset of 
+well-defined tasks, workers with rich experience would 
+be more productive in leveraging it, as it would free up 
+cognitive resources to focus on the tacit and complex 
+aspects of their work (Pakdemirli 2019, Raisch and Krakowski 
+2021).
+
+In light of these controversies, recent empirical work 
+has started focusing on how work experience affects 
+human-AI teaming. We contribute to this emerging discourse 
+by examining the interplay of contemporary AI 
+with workers of different experience types and levels. 
+Our empirical analysis is conducted at the level of a specific 
+task, allowing us to shed light on individual worker 
+factors that affect the benefits of AI in knowledge work. 
+Findings from this study have important implications to 
+help executives and policy makers build a more productive 
+relationship between the two forms of intelligence.
+
+For this investigation, we implement a machine 
+learning- based AI in a knowledge work setting in a publicly 
+traded U.S. company in the healthcare sector. Our 
+AI is built for medical coding and identifies patient conditions 
+in medical charts, a critical task in medical reimbursement. 
+This use of AI for a medical coding task 
+offers an ideal setting for studying the role of experience 
+in human-AI work teaming for several reasons. First, the 
+specific medical coding task is an archetypal complex 
+and cognitively nonroutine task. Thus, findings from 
+this study may be generalizable to similar knowledge- 
+intensive jobs. Second, the AI in this study is an exemplar 
+of a typical machine learning-based AI that is being 
+adopted in business. Given that most machine learning 
+models focus on well-defined tasks, the mainstream use 
+of AI in business is to augment rather than replace 
+humans as previously discussed. Consistent with current 
+industry practice, the AI in this study is designed to augment 
+human intelligence. Third, medical coding has 
+well-defined output with strict quality controls, thereby 
+offering appropriate metrics for a detailed empirical 
+analysis of productivity gains. Finally, our study setting 
+is such that we can rule out resistance to learning new 
+technologies, a common confounding factor with experience. 
+As such, our study offers nuanced insights on how 
+experienced workers team up with AI differently than 
+those with less experience.
+
+Using detailed data from the coding of 1,120,831 
+patient charts over a one-year period, we measure the 
+differential impact of AI on productivity conditional on 
+workers’ experience levels. We further conduct a series 
+of qualitative analyses and a laboratory experiment to 
+gain a deeper understanding of the nuances and underlying 
+dynamics of AI’s impact. We examine two critical 
+facets of knowledge worker experience. In the human 
+capital literature, amount and time are widely recognized 
+as the two most widely used quantitative measures of experience 
+(Quinones et al. 1995, Tesluk and Jacobs 1998). 
+Based on that, we employ the two dimensions of experience: 
+the volume of a worker’s tasks (McDaniel et al. 
+1988, Ford et al. 1991) and the worker’s tenure on the job 
+(Lance et al. 1989, Vance et al. 1989). Volume-based experience 
+or task experience indicates practice in the specific 
+task (volume of medical charts in our context). This measure 
+is well aligned with AI’s expertise. It allows us to 
+examine whether the knowledge of AI and humans is 
+complementary or substitutable.
+
+The second measure of experience, tenure on the job, 
+examines how a worker’s organizational experience interacts 
+with AI. Recently, scholars have suggested that 
+successful teaming with AI requires effective collaboration 
+at the organizational level (Agrawal et al. 2021, Bresnahan 
+2021). This time-based experience or seniority 
+experience incorporates understanding of not only the 
+specific task but the entire job. Senior workers accumulate 
+organizational experiences over time, which may 
+influence their beliefs, attitudes, and behaviors in the 
+context of the human-AI interaction (Wagner et al. 1987, 
+Judge 1994). This measure, therefore, captures factors 
+beyond task-specific knowledge.
+
+Our empirical analysis yields several novel findings. 
+First, we identify an interesting pattern in the human-AI 
+teaming dynamic; AI boosts productivity for all workers 
+but more so for workers with greater task-based experience 
+and less so for workers with greater time-based 
+experience. A follow-up qualitative analysis and a laboratory 
+experiment unveil the reason why senior workers 
+did not benefit from AI as much as their junior colleagues; 
+their wider scope of work and greater concern for 
+the welfare of the organization induce a higher degree of 
+sensitivity to AI’s imperfections, which in turn, erodes 
+trust and causes pushback.
+
+This study makes significant contributions to AI research 
+examining field implementations of AI at its current 
+technological stage. We add to a nascent stream of 
+literature that examines the teaming of humans and AI, 
+shedding light on the complexity of this relationship from 
+the perspective of variation in workers’ experience. Our 
+study advances understanding of interactions between 
+human experience and AI by extending human experience 
+to a multidimensional measure, where task experience 
+enhances human-AI teaming, whereas seniority 
+experience creates resistance. To the degree that AI is predicted 
+to transform work and society, our study offers 
+practical guidance on how to amplify AI’s potential. We 
+establish how AI performs with different levels of human 
+capital, and although our research setting is healthcare, 
+the findings are generalizable to knowledge-intensive 
+work in other domains. As such, they yield important 
+managerial implications for the wider utilization of AI in 
+business and help to show how human and machine 
+intelligence can work together.
+
+
+2.Theory and Background
+
+2.1.Contemporary AI
+
+Artificial intelligence is shaping our lives dramatically 
+and is now broadly heralded as a potential stimulus for 
+an economic revolution (Brynjolfsson et al. 2018a, Hosanagar 
+2019). Industry projections estimate that AI’s contribution 
+to the U.S. economy will be $15.7 trillion by 
+2030, constituting a boost of up to 26% in gross domestic 
+product (GDP) (PwC 2017). AI has evolved over the past 
+few decades, transforming from early rule-based systems 
+to ML algorithms that have the ability to learn. 
+Rule-based systems require explicit acquisition and codification 
+of human knowledge, whereas ML-based AI learns 
+directly from data. Given its lack of reliance on explicit 
+human knowledge, contemporary AI using recent developments 
+in ML is fundamentally different1from previous 
+generations of AI (Brynjolfsson et al. 2019); it exhibits both 
+unique advantages and shortcomings.
+
+One advantage is that ML algorithms enable AI to learn 
+with high efficiency. Equivalent knowledge that human 
+workers may have spent years accumulating can be rapidly 
+extracted from data in hours. Moreover, domain 
+experts no longer need to explicitly code their knowledge 
+into rules for AI, eliminating what used to be an effort- 
+intensive and expensive task of knowledge acquisition 
+(Hayes-Roth et al. 1983). Rather, machine learning algorithms 
+detect patterns from data by iteratively and recursively 
+exploring complex connections between inputs 
+and outputs to establish the “relationship” (Jordan and 
+Mitchell 2015). The derived “relationship” is able to reflect 
+complex connections, supporting more accurate predictions 
+than previous generations of AI.
+
+Despite the advantages, contemporary AI’s learning 
+ability also has some shortcomings. First, current artificial 
+narrow intelligence, characterized by its limited 
+focus (Jajal 2018, Fjelland 2020, Zysman and Nitzberg 
+2020), learns from data with a clearly defined objective 
+function to optimize. As a result, it is highly concentrated 
+on this goal, paying little attention to other aspects. 
+Because AI is completely reliant on the training data and 
+predefined learning mechanisms (Lum 2017, McCradden 
+et al. 2020), its performance will be confined to the 
+training data set. Any contextual or environmental information 
+is invisible to the AI if it is not already present in 
+the preselected data or in the case of reinforcement learning, 
+the preselected environment.
+
+Second, the complex relationships discovered by ML 
+are significantly harder to interpret than explicit rules 
+used by previous generations of AI. Often, this opacity 
+creates uneasiness in accepting AI’s decisions (Burt 2019), 
+thus negatively affecting the human-AI team relationship. 
+This is similar to a human learner; it is hard to 
+accept a person’s judgment if the person does not explain 
+the rationale underlying the decision. The lack of interpretability 
+often results in high-performing AI not being 
+implemented (Siu et al. 2021). For example, in the finance 
+industry, analysts are often required to use traditional AI 
+models instead of contemporary ones because the business 
+must explain how decisions are made (Sarkar 2018). 
+The inability to fully interpret the reasoning process of AI 
+at its current stage (Knight 2017) frequently degrades 
+users’ trust and willingness to team with AI. This is also 
+the driving force behind the emerging efforts in explainable 
+AI development (Ribeiro et al. 2016).
+
+Finally, the absence of common sense in the AI’s 
+model is a major limitation (McCarthy 2007, Zysman 
+and Nitzberg 2020) to effective human-AI teaming. 
+Humans accumulate a rich and wide-ranging set of 
+experiences in life, spanning a gamut from basic math, 
+understanding emotion, the concept of holidays, social 
+structures and family relationships, etc. AI is not 
+equipped with such common sense because of the specificity 
+of its training, and current AI can be easily confused 
+by subtle distinctions that are effortlessly resolved 
+by humans and especially so for linguistic tasks (Davis 
+and Marcus 2015, Tandon et al. 2018, Huang et al. 2019). 
+For example, the lack of a sense of temporal progression 
+(a patient cannot progress from age 40 to age 30) and 
+social structure (a patient can only have one biological 
+father but more than one sibling) can reduce a medical 
+AI’s performance when it uses related information (age 
+and family history) to predict the patient’s condition.
+
+Because of the distinctive nature of contemporary AI, 
+findings from previous generations of expert decisions 
+support systems (many of which are rule based) might 
+not be readily generalizable to this new generation of 
+technology. ML-based AI’s unique features call for new 
+studies to shed light on its interactions with human 
+work experience.
+
+2.2.Human-AI Teaming
+
+Human-AI teaming has become an important emerging 
+topic in various research fields to accelerate the applications 
+of AI into organizational practice. One active 
+research area focuses on how to train AI for better teaming. 
+In this stream, Nikolaidis and Shah (2013) propose 
+the “human-robot cross-training” framework to allow 
+AI and human workers to learn iteratively. Other work 
+includes that by Carroll et al. (2019), who develop an 
+adaptive AI agent to accommodate human behaviors, 
+and Sadigh et al. (2018), who allow the AI underlying 
+autonomous cars to incorporate other human drivers’ 
+potential responses for optimized coordination. Methodologies 
+are also being developed for continual training or 
+updating of existing AI for better teaming with humans 
+(Bansal et al. 2019) and for helping AI better understand 
+human agents’ goals (Puig et al. 2020).
+
+Similarly, in the information systems field, various 
+aspects of AI system design are being examined, including 
+the role of transparency and interpretability of algorithms 
+(Clement et al. 2020, Ahn et al. 2021, Siu et al. 
+
+
+2021), types of tasks that should be delegated to AI 
+(F¨ugener et al. 2022, Dai and Singh 2023), and how to evaluate 
+AI performance (Lebovitz et al. 2021). Given that a 
+key feature of contemporary AI is its learning ability, studies 
+are also exploring the role of human knowledge in 
+complementing AI (F¨ugener et al. 2021) and how AI 
+affects organizational learning systems (Sturm et al. 2021).
+
+We note that limited attention has been focused on heterogeneity 
+among users as a potential determinant of the 
+human-AI teaming efficacy. From a reputation perspective, 
+Dai and Singh (2020) provide one of the first theoretical 
+models of the level of physician expertise in AI 
+adoption. Among the few empirical studies that address 
+variation across individuals, experience has been identified 
+as an important factor affecting the outcomes of human-AI 
+teaming (Ge et al. 2021). In a study conducted in a simulated 
+laboratory setting using a general framework based 
+on metacognition, Jussupow et al. (2021) show that experienced 
+physicians are more likely to reject AI’s input. In a 
+study with a similar, albeit more limited focus than ours, 
+Allen and Choudhury (2022) conjecture that human workers 
+with more domain experience can better leverage AI, 
+but they also tend to exhibit greater algorithm aversion.
+
+Building on and extending prior research, in this study 
+we theoretically and empirically distinguish task-specific 
+domain experience from broad domain experience and 
+examine their differential roles in the human-AI teaming 
+relationship.
+
+2.3.Worker Experience
+
+How does worker experience moderate the effects of 
+human-AI teaming on productivity? Studies from the 
+history of technological innovation give cause for concern 
+that AI may disproportionately advantage certain 
+types of human workers (David 2015, Decker et al. 2017, 
+Wu and Kane 2021). Such heterogeneity in human collaboration 
+with new technologies manifests through the 
+pathway of technology-skill complementarity (Goldin 
+and Katz 1998). In recent decades, the changes in information 
+technology (IT) have been argued to be an especially 
+powerful instance of skill-biased technology 
+change (SBTC) (Krusell et al. 2000). Using data from the 
+1990s, Bresnahan et al. (2002) find a strong tendency for 
+IT to favor skilled labor. If AI continues the trend of 
+SBTC, we expect that AI would favor workers with 
+greater experience.
+
+Measures for worker experience have been developed 
+in different domains and with different levels of specificity 
+(Ostroff and Ford 1989, Klein et al. 1994, Tesluk and 
+Jacobs 1998). The most widely used experience measures 
+are (1) the length of time in a specific position (Borman 
+et al. 1993) or a job (McDaniel et al. 1988, McEnrue 1988) 
+and (2) the volume of a task (Lance et al. 1989, Vance et al. 
+1989). Quinones et al. (1995, pp. 891–892) divide the 
+experience measure into three dimensions: amount, time, 
+and type. Amount measures “refer to numerical counts 
+such as the number of times a task was performed or the 
+number of different jobs held in an organization,” 
+whereas time measures reflect tenure, such as months or 
+years in the job. Although the amount dimension might 
+appear to overlap with the time measure, Ford et al. 
+(1991) show dramatic differences in the challenge and 
+complexity of task assignments for individuals with 
+equivalent jobs or organizational tenure.2The difference 
+between time and amount dimensions is also reinforced 
+by other research (Tesluk and Jacobs 1998, Ng and Feldman 
+2010). The type measure is usually context specific 
+and hard to objectively measure; therefore, it is categorized 
+as a qualitative indicator (Tesluk and Jacobs 1998).
+
+In their studies of AI adoption, Agrawal et al. (2021) 
+and Bresnahan (2021) emphasize that the factors influencing 
+AI adoption exist at the organizational level 
+and are not limited to the individual task. Therefore, we 
+study human-AI teaming by examining workers’ experience 
+for both the individual task (task experience) and 
+related to the organization (seniority experience). We 
+define amount-based experience, or task experience, as 
+the volume of the specific task. Learning from repeated 
+task execution, workers update their knowledge through 
+each interaction. The updated knowledge can further 
+improve the worker’s ability to predict the effectiveness 
+of different strategies in subsequent steps (Dunlosky and 
+Hertzog 2000). Therefore, increased familiarity with the 
+task is expected to promote task performance of individual 
+workers (Schmidt et al. 1986, Goodman and Leyden 
+1991), and studies find that greater task experience is associated 
+with higher performance (Maruthappu et al. 2015).
+
+In contrast, time-based experience, or seniority experience, 
+is a “broad” measure of work experience based on 
+years in the job and reflects the influences a worker is 
+subject to with the passage of time. In our context, this 
+time-based experience is measured using the number of 
+years in the job (i.e., organizational tenure) (Ng and Feldman 
+2010). With a greater length of time in the job, workers 
+not only absorb more knowledge regarding the focal 
+tasks and surrounding workflows, but they are also 
+exposed to organizational influences to a greater extent. 
+As documented in the literature, person-organization fit 
+and goal alignment can be increased by high seniority 
+experience (Wagner et al. 1987, Judge 1994). Workers 
+with longer standing within the organization are more 
+likely to be concerned with responsibility, power, and 
+authority. Influences from the social environment and 
+the organization can further affect attitudes and behaviors, 
+including loyalty to the company, job security, 
+esteem, and risk preferences (Mortimer and Lorence 
+1979, Veiga 1981, Kohn and Schooler 1982, Slocum et al. 
+1985, McCauley et al. 1994).
+
+Multidimensional measures of work experience are 
+critical for advancing understanding of human-AI interactions. 
+Human work experience is traditionally considered 
+homogeneous in the AI literature (Mnih et al. 2015, 
+
+
+Dong et al. 2016). Allen and Choudhury (2022) explained 
+their findings by proposing the existence of two countervailing 
+forces underlying human work experience: ability 
+and aversion. However, both forces were associated with 
+a unidimensional work experience measure because of 
+data limitations in their study. Given the complexity of 
+human work experience, the origins of knowledge workers’ 
+ability and aversion are better disentangled using 
+distinct experience measures.
+
+2.4.Interplay Between AI and Human Workers
+
+2.4.1.AI and Task-Based Experience. 
+
+As noted, contemporary 
+AI is characterized by its narrow focus (Fjelland 
+2020). If an AI is successfully trained on a task-specific 
+data set, AI can substitute for a worker’s task experience. 
+Because human task experience is accumulated through 
+task completion, which is recorded in the training data, 
+plausibly, a human worker’s task experience is substitutable 
+by AI. To illustrate, in medicine, AI outperformed 
+typical medical staff in making diagnoses based on medical 
+images (Gulshan et al. 2016). This means that a radiologist’s 
+experience in reading images is less valuable. In this 
+case, workers with less experience could benefit more 
+from AI. In addition, AI can reduce well-documented 
+errors in human judgment (De Martino et al. 2006, Danziger 
+et al. 2011), such as anchoring (Tversky and Kahneman 
+1974) and recency effects (Tzeng 1973). Given the significance 
+of human judgment in the economy (Kahneman 
+and Tversky 1979, Kahneman 2011), AI can further help 
+less experienced workers by addressing potential bias in 
+human cognition and assuring quality output.3
+
+On the other hand, the substantial difference in the 
+learning mechanisms of humans and of AI might make 
+the human experience less substitutable. The training 
+process of contemporary AI that focuses on the objective 
+function can lead to the acquisition of unique, idiosyncratic 
+knowledge as compared with human workers. AI 
+may observe subtle patterns in the training data and take 
+shortcuts to achieve high performance (LeCun et al. 
+2015). For example, models often resort to shortcuts by 
+picking up unexpected patterns from data to make accurate 
+predictions. A clinical study (Jabbour et al. 2020) discovered 
+that the high level of performance observed 
+from image reading AI models was a result of the AI 
+inferring a disproportionately high connection between 
+having a pacemaker and congestive heart failure. Although 
+AI’s learning incorporates the identification of 
+more subtle correlations, as the authors demonstrated, 
+they are not universally applicable, which leads to an immediate 
+failure if tested on a different group of instances. 
+Indeed, such failures in learning are part of why contemporary 
+AI is labeled as “narrow” (Fjelland 2020).
+
+By contrast, rather than accumulating experience 
+through back propagation, human knowledge workers 
+update their “decision function,” not only driven by the 
+final outcome but through a broad range of intermediate 
+knowledge (Rudin 2017). Human learning also involves 
+explicit long-term memories that are lacking in current 
+AI (Welleck et al. 2018, Dinan et al. 2020), rendering the 
+human learning curve substantially different from AI’s 
+learning process. These differences in learning create an 
+opportunity for human workers to complement AI using 
+their breadth of experience. Indeed, a popular use case of 
+contemporary AI is to assist humans making decisions 
+and providing intermediate input rather than final decisions. 
+In order to assess the quality and veracity of AI 
+outputs, the human user needs to possess a breadth of 
+knowledge, such as knowledge of practice, data-related 
+knowledge, and exposure to the data. Interpretation of 
+AI’s output involves understanding its real meaning and 
+comprehending the reasoning of AI. This logic suggests 
+that workers with in-depth knowledge and proficiency 
+around their work might be able to make fuller use of AI.
+
+Furthermore, as noted, the lack of common sense is a 
+major limitation of contemporary AI (McCarthy 2007, 
+Zysman and Nitzberg 2020). Human decision makers, 
+however, are equipped with common sense, increasing 
+the divergence between human task experience and AI. 
+To the extent that the task knowledge of the human 
+worker is different from that of the AI, the two sets of 
+knowledge should complement each other. Therefore, 
+we hypothesize that given the same specific task, human 
+workers with greater task experience benefit more from 
+AI than those with less task experience.
+
+2.4.2.AI and Seniority Experience. 
+
+In contrast to task 
+experience, seniority experience reflects a greater breadth 
+of knowledge, facilitating a deeper comprehension of the 
+task at hand and affording senior workers more advantages. 
+Because current AI is so focused on a narrow task 
+and is blind to all other experiences, such as the upstream 
+and downstream activities of the specific task, senior workers’ 
+broader experience can enhance AI’s performance by 
+incorporating more unseen but related knowledge. Moreover, 
+seniority experience reflects an understanding of 
+the entire organization. To the extent that the implementation 
+of AI is more of an organization-wide change instead 
+of being restricted to the individual task level (Agrawal 
+et al. 2021, Bresnahan 2021), seniority experience plays a 
+critical role for workers’ teaming with AI.
+
+However, from an alternative perspective, it is plausible 
+that senior workers could be disadvantaged in teaming 
+with AI because of organizational and social factors. 
+As knowledge workers stay longer in an organization, 
+they cognitively adjust their perceptions. These factors 
+might be critical to a human worker’s attitude toward 
+new technologies and may, therefore, affect how the 
+worker interacts with the AI. Existing studies have also 
+documented the possible negative impact of work experience 
+on the utilization of new technologies (Tan and 
+Netessine 2020). In an AI implementation among sales 
+agents, Luo et al. (2021) also identified the lower benefit 
+
+
+for the top-ranked workers than their middle-ranked colleagues. 
+AI, as a highly intelligent but early-stage technology, 
+is likely to be more vulnerable to the negative 
+factors.
+
+Trust has been identified as a critical factor that explains 
+human resistance to technology (Li et al. 2008, McKnight 
+et al. 2011). Research has examined trust through three 
+dimensions: ability, integrity, and benevolence (Mayer 
+et al. 1995, McKnight et al. 2002). Prior studies are predominantly 
+focused on technologies related to communication 
+and information processing that serve as facilitators 
+to provide necessary information to users, with high-level 
+decision making remaining vested in the human. Compared 
+with previously studied technologies, several unique 
+characteristics of contemporary AI have amplified the 
+critical role of trust (Rossi 2018, AI HLEG 2019).
+
+First, AI’s abilities may be challenged more by senior 
+workers than their junior colleagues. It is well known 
+that experts are more likely to display a resistance to 
+judgments that are not their own (Liu et al. 2017). The 
+self-confidence engendered by virtue of their experience 
+could lead them to discount the recommendations of 
+another (Bradley 1981). This is especially the case with 
+the contemporary AI that does not offer perfect performance 
+(Dietvorst et al. 2015). Studies have documented 
+users’ resistance to AI because of its neglect of “uniqueness,” 
+which in this case, means that AI may fail to 
+capture a patient’s idiosyncratic characteristics or circumstances 
+(Longoni et al. 2019). Compared with novice 
+users, senior workers are more likely to spot imperfections 
+in AI, triggering stronger doubt in its intelligence (Bansal 
+et al. 2019) and lower trust in the AI’s output. Because 
+senior workers have greater responsibility for overall 
+organizational performance, their attention may be disproportionately 
+attracted to the few errors made by AI.
+
+Second, senior workers may experience discomfort 
+when AI’s integrity cannot be determined because of its 
+opacity, and as a result, they may resist accepting it. The 
+integrity of any entity that is inherently difficult to 
+understand can be challenging to ascertain. Senior workers’ 
+concern about losing control may be exacerbated by 
+the fact that many algorithms employed by advanced AI 
+are notorious for their lack of interpretability (Pasquale 
+2015, Bhatt et al. 2020, Baniecki et al. 2021). By virtue of 
+the length of their experience, senior workers develop 
+well-defined reasoning for executing tasks. Because AI’s 
+reasoning is not visible, the lack of transparency can 
+degrade the perception of AI’s integrity and therefore, 
+may decrease senior workers’ trust in AI. It is interesting 
+to note that in a recent study, Ahn et al. (2021) show an 
+innovative way to increase user trust in AI by providing 
+performance feedback, suggesting subtle dynamics between 
+ability and integrity.
+
+Third, senior workers may be more concerned with 
+the benevolence of AI because of their high-level perspectives. 
+Following the stream of organizational studies, 
+employees with long organizational tenure increase 
+the alignment between their personal goals and the 
+organizational goals (Wagner et al. 1987, Judge 1994). 
+Whenever AI makes moves that senior workers cannot 
+comprehend, they may worry that it could potentially 
+jeopardize their careers or adversely affect the organization. 
+In our setting, medical coding requires a high level 
+of accuracy, as the Centers for Medicare & Medicaid Services 
+(CMS) have strict rules on false positives, which 
+can result in severe financial penalties. At the same time, 
+clients are sensitive to false negatives, which lead to loss 
+of reimbursement. Senior workers tend to be more concerned 
+with the potential damage caused by AI.
+
+This reasoning suggests that compared with junior 
+workers, the senior workers would exhibit a tendency to 
+scrutinize AI closely and rely more on their own decisions 
+rather than those of the AI for task completion. 
+Therefore, we expect that human workers with more 
+seniority experience are more likely to resist AI output 
+and benefit less from it than workers with less seniority 
+experience.
+
+3.Research Context
+
+3.1.Background and Task
+
+Healthcare is one of the leading domains for AI applications 
+today (Jha and Topol 2016). Fueled by the adoption 
+of new technologies and widespread digitization of 
+health-related data, the landscape of healthcare has changed 
+rapidly in the past two decades. All major players in 
+the healthcare ecosystem, including government agencies 
+(Talley et al. 2011), healthcare providers (Krittanawong 
+et al. 2017), insurance companies (Kose et al. 2015), 
+and pharmaceutical manufacturers (Ekins 2016), express 
+enthusiasm about the potential benefits of AI. Given the 
+size (about one fifth of GDP) and nature (extensive 
+knowledge work) of the healthcare industry, the potential 
+of AI in this setting is substantial.
+
+Our research context is the medical coding industry. 
+In the U.S. healthcare system (and in many other countries 
+as well), patient conditions and treatments need to 
+be transformed into standardized codes in the billing 
+process. Accurate medical coding is necessary both for 
+timely and correct payment and for efficient clinical decision 
+making. Historically, medical coding is a labor- 
+intensive job that involves manual code evaluation. It is 
+of considerable economic significance; the market size of 
+the medical coding industry was $10.6 billion worldwide 
+in 2016 and is increasing 10% per year (Grand View 
+Research 2018).
+
+In our study, we focus on one of the most complex 
+tasks in medical coding—risk adjustment coding from 
+medical charts, which requires human workers to review 
+the complete chart, especially the unstructured 
+physician notes, and make judgments about whether 
+the patient has certain medical conditions, such as 
+
+
+diabetes or cardiac disease. The health conditions identified 
+are designated as risks and used to adjust reimbursements 
+(i.e., for the same clinical procedure, reimbursement 
+for treatments received by patients with higher risks will 
+be higher). The industry has widely adopted the Hierarchical 
+Condition Categories (HCC) coding system created 
+by the CMS (Li et al. 2010). The economic value of the coding 
+activity is substantial; an average HCC code has a 
+reimbursement value of several thousand dollars (Pope 
+et al. 2004). Our collaborator is a leading public healthcare 
+analytics company that provides medical chart coding services 
+to multiple insurance companies, with hundreds of 
+coders who have collectively coded over 36 million medical 
+charts in the past decade.
+
+HCC coding is a complex task. Unlike other well- 
+known traditional medical coding tasks, such as International 
+Classification of Diseases (ICD) coding where 
+there is clearly dedicated documentation for diagnoses, 
+the input in HCC coding is the entire medical chart, 
+which is not designed for HCC coding. Moreover, coders 
+do not know ex ante if there is an HCC code extractable 
+from the text in the patient chart. Therefore, the decision 
+space is much larger for HCC coders than for ICD 
+coders. Finally, HCC coding needs to exclude known 
+diagnoses and focus rather on unknown chronic conditions; 
+this is an important difference from traditional 
+medical coding that makes HCC coding a complicated 
+and cognitively nonroutine task.
+
+The coding activity proceeds as follows; every time a 
+coder requests a new chart to code, a medical chart is 
+randomly assigned. The medical chart is displayed on 
+the coder’s desktop screen and is now ready to be coded. 
+There are three steps for the coder to complete the task. 
+In the first step, the coder will browse the patient chart 
+quickly to form an “image” or a rough understanding of 
+the patient. This will provide a basis for the likelihood of 
+certain conditions (for example, patients who are over 
+60years old and overweight tend to have a higher 
+chance of diabetes). In the second step, the coder scans 
+each page of the chart and identifies possible sentences 
+that reflect a condition, similar to a keyword search (for 
+instance, coders may scan for “diabetes” or “HbA1C”). 
+In the third step, complex judgment is needed to decide 
+whether the description confirms the existence of an 
+HCC (e.g., whether a mention of diabetes refers to the 
+specific patient or to family history). Sometimes, the 
+information is subtle. For example, if the patient receives 
+regular insulin injections, the patient has a high likelihood 
+of having diabetes, even though the doctor did not 
+explicitly note the diagnosis.
+
+Based on discussion with experts and the company’s 
+management team, we identified the time spent reviewing 
+a medical chart as the measure of a coder’s productivity. 
+Although one might think that the HCC codes are 
+the ultimate output, the number of HCC codes that can 
+be detected is not purely driven by coder efforts but is 
+also determined by the nature of information in the 
+chart. In addition, to ensure quality, for every possible 
+code identified, a coder expends almost as much effort to 
+determine if the code is a false positive. Each coder is 
+subject to postreviews of randomly selected coded charts 
+to minimize coding errors and to ensure quality. According 
+to the company’s policy, all coders must maintain 
+over 90% accuracy in their reported HCC findings. Otherwise, 
+the coder will be asked to complete a training 
+program (usually lasting several days) and will not be 
+assigned work for the duration of training. Given that 
+the charts are randomly assigned and the coding quality 
+is well maintained across coders, the average time taken 
+to code a chart reflects a natural measure of productivity.
+
+We note that the practice of medical chart coding is 
+representative of the activities that typical knowledge 
+workers do in other industries. The job is a nonroutine 
+task because HCC codes are not directly included in the 
+medical charts, so coders need to read, understand, and 
+interpret the information in order to decide which HCC 
+codes should be reported. Moreover, every medical chart 
+includes large amounts of patient-specific information, 
+requiring a coder to exercise comprehensive reasoning, 
+judgment, and decision making for every medical chart 
+(Dimick 2010). In contrast, routine coding tasks (such 
+as ICD coding) can be easily performed using technologies 
+like natural language processing. Unsurprisingly, 
+computer-assisted coding technology for ICD coding has 
+become a “must have” in the industry, potentially eliminating 
+human coders’ jobs (Crawford 2013).
+
+3.2.Development of the AI
+
+We developed a machine learning-based AI to facilitate 
+the labor-intensive process of risk-adjusted medical chart 
+coding. Specifically, the task that this AI accomplishes is 
+to highlight sentences with potential HCC codes. To do 
+this, the AI first processes all sentences in the chart 
+through a filter. This filter relies on a dictionary developed 
+and maintained by experts in the company to capture all 
+possible keywords that could indicate HCC-related health 
+conditions. However, keyword matching yields too many 
+false positives. In the second step, a machine learning 
+model is deployed to evaluate the probability that the 
+focal sentence contains valid HCC codes and then, to 
+highlight that sentence for the coder to review. This process 
+is illustrated in Figure 1. Among the three steps in 
+HCC coding described in Section 3.1, our AI mainly facilitates 
+step 2 in that it automatically highlights text that has 
+a high chance of containing HCC codes.
+
+For model development, we used 26,000 labeled medical 
+charts, of which 24,000 were randomly selected as 
+training data. After training, the model was tested on the 
+remaining 2,000 charts. We developed several versions 
+of the AI using different approaches, including support 
+vector machine (SVM), convolutional neural networks, 
+and recurrent neural networks. Our implementation is 
+
+
+based on the SVM version because of its superior computing 
+efficiency.4Our SVM model outputs a probability, 
+which allows us to customize the threshold to 
+control the recall (the portion of the HCC codes captured 
+by the AI). The company set the threshold as 0.90 (recall 
+as roughly 95%) for the best outcome.
+
+Given its superior performance, this AI has substantially 
+increased the level of machine intelligence in the 
+industry. Before the introduction of ML-based AI, both 
+academia and industry had expended significant effort in 
+entity recognition from clinical notes using rule-based 
+models. One of the most famous tools is clinical Text 
+Analysis and Knowledge Extraction System (cTAKES) 
+(Savova et al. 2010). During our model development, we 
+benchmarked our AI models with the performance of 
+cTAKES on our data. Given a level of recall (approximately 
+90%) similar to that required of our SVM model, 
+the precision of cTAKES is only 6.5%. With such a high 
+false-positive rate, it is not feasible for coders to use rule- 
+based models in real coding work. Our AI achieves a precision 
+of about 30% while maintaining a recall of roughly 
+95%. With its exclusive ability to handle the cognitively 
+complex task of HCC coding, it is making a substantial 
+difference in coder performance. Putting the performance 
+in context, the improvement of precision from 6.5% to 
+30% is significant. A precision of 6.5% means coders 
+must verify 15 findings (detected by the system) to isolate 
+one HCC code. When coders use our machine learning 
+system, this number is reduced to about three findings. 
+This is a significant distinction in practice, and the company 
+finds the resulting improvement striking. The company 
+has implemented it in daily practice, and executives 
+attribute significant revenue generation to its use.
+
+We note that this AI system is representative of current 
+state-of-the-art applications of AI in knowledge work; 
+the AI assists the human who makes the final decisions. 
+For example, one of the most successful use cases of AI 
+in medicine is diagnoses from imaging, where AI suggests 
+the diagnosis and human doctors make the final 
+determination (Hainc et al. 2017, Hosny et al. 2018). Similarly, 
+the AI developed for this study highlights sentences 
+where a code might be identified and suggests the 
+Figure 1. (Color online) Example of AI Findings in a Medical Chart 
+
+Notes. The highlighting in panel (a) is done by AI, and it is magnified in panel (b). (a) Two example pages. (b) AI findings from two example 
+pages.
+
+
+HCC code that may apply, but it still requires human 
+coders to review its findings. As noted by industry 
+experts (Williams 2015), the singularity of AI is still 
+decades away, and the majority of current AI applications 
+are similar to our use case, in which AI’s reasoning 
+facilitates rather than completely replaces human decision 
+making. Therefore, findings from this study are pertinent 
+to the current practice of AI use in business.
+
+One point worth noting is that our study setting is less 
+confounded with resistance to learning new technologies, 
+which is a common confounding factor with human 
+capital. First, there was no substantive change in the 
+workflow. Before implementation of our AI, the coders 
+in our study context were all using a computer interface 
+to review medical charts and report coding results. The 
+AI only provides highlights on coders’ screens when 
+they review the medical chart. The entire system stayed 
+the same for coders, and all of the AI’s reasoning occurs 
+in the background without any interference with coders’ 
+workflow. Given that coders were already fluent with 
+the computer system, there may be no cause for concern 
+regarding adoption.
+
+The AI system at the center of our study went online 
+in July 2018. With help from management, 80 coders, 
+selected to represent the full spectrum of coding seniority 
+levels,5received the AI. The remaining 468 coders who 
+did not have access to the AI constitute our control 
+group. To help understand the impact on productivity, 
+we collected data for a year before the AI was used. This 
+pretreatment period runs from July 16, 2017 to April 30, 
+2018 (May and June 2018 were excluded because of the 
+adjustment for transition). We also collected coder performance 
+data from July 1, 2018 to October 31, 2018, 
+which is defined as the posttreatment period.6During 
+our study period, no major changes were made to the 
+work procedures aside from the implementation of AI. 
+The 80 coders in the treatment group reviewed and 
+coded 195,732 charts. The control group (468 coders) 
+coded 925,099 medical charts in the same period for a 
+total of 1,120,831 medical charts in the study sample.7
+
+3.3.AI’s Impact on HCC Coding
+
+We now contextualize our theoretical arguments for the 
+interplay between AI and worker experience in the specific 
+task of HCC coding (task experience). Because the 
+aim of HCC coding is to find certain chronic conditions 
+that were not reported in the structured data, only a very 
+small number of HCC codes can be found in each medical 
+chart, and a large portion of medical charts contain 
+zero HCC codes. Therefore, human coders expend the 
+most time and effort confirming the negative labels of 
+certain sentences. Over years of practice, coders gain 
+experience and learn how to separate the wheat from the 
+chaff. AI has many strengths that could facilitate coders’ 
+work, and there are reasons to believe that AI could 
+potentially substitute for a coder’s valuable experience.
+
+First, the AI was trained on 24,000 charts and learned 
+how sentences containing HCC conditions are systematically 
+different from irrelevant ones. It can further conservatively 
+rule out negative cases. With AI’s help, coders 
+could spend less time on irrelevant information collection 
+and conduct fewer examinations of negative cases, 
+which is especially beneficial to workers with less experience. 
+Second, human coders tend to skip sections they 
+deem irrelevant, and this may lead to important clues 
+being overlooked. The AI is indefatigable and can tirelessly 
+check each sentence. Therefore, the highlighting 
+provided by the AI helps prevent reviewers from making 
+faulty determinations of irrelevance because of negligence. 
+This is naturally more helpful to workers with 
+less experience because of their higher tendency to recklessly 
+skip uncommon but suspicious sections. Third, the 
+AI’s knowledge comes from the training data, which it utilizes 
+objectively to make decisions, in contrast to human 
+coders who may be prone to many subjective biases, such 
+as anchoring (Tversky and Kahneman 1974) and recency 
+effects (Tzeng 1973). Although more experienced coders 
+who learned from feedback are less prone to such biases, 
+AI again assists less experienced coders more, with its 
+objectivity correcting for coders’ biases. All these mechanisms 
+make experience less valuable in the presence of AI.
+
+On the other hand, experience can complement AI in 
+medical coding, as theorized in Section 2.4.1. In the initial 
+step of the process, human coders can quickly read 
+through the medical chart to develop familiarity with 
+and an overall understanding of the patient’s situation 
+(e.g., “the patient is overweight and lacks exercise and 
+therefore has a high risk of being diabetic”). Based on 
+this comprehensive overview of the patient, a human 
+coder then zooms in to search for evidence of suspicious 
+descriptions of possible chronic conditions. Here, AI is at 
+a serious disadvantage as it lacks the tacit knowledge or 
+“common sense” to form a comprehensive understanding 
+of the patient. This is, again, typical of the current 
+state-of-the-art AI in knowledge work. The AI simply 
+mechanically analyzes each sentence and computes the 
+probability that an HCC is included. Therefore, the AI 
+tends to produce more false positives than a human. 
+Given this, although all coders will benefit from the help 
+of AI, it is likely that coders with rich task experience can 
+critically evaluate AI’s output and rule out the false positives 
+more effectively than less experienced coders. The 
+sharper experience related to how and when to use commonsense 
+knowledge (and the stronger commonsense 
+medical knowledge accumulated through task experience) 
+can further help more experienced coders outperform 
+their peers in leveraging AI. This reasoning is 
+consistent with the trend of IT as an SBTC in the past 
+(Krusell et al. 2000, Bresnahan et al. 2002). Therefore, 
+although both substitution and complementarities might 
+theoretically exist, we expect the latter to dominate given 
+
+
+that HCC coding is a nonroutine and cognitively complex 
+task.
+
+The role of seniority (time-based) experience in human- 
+AI teaming and its interaction with human workers are 
+more complicated, as other organizational and psychological 
+factors also come into play. Although senior workers 
+are possibly better able to complement AI (following the 
+logic of SBTC), a countervailing force is that more senior 
+workers may have less trust in AI because they doubt its 
+competence. First, because of AI’s limited common sense 
+and less than perfect performance, human coders, similar 
+to a supervisor, have to intervene and correct the errors 
+made by the AI. Senior coders are more likely to detect 
+and observe the shortcomings of AI, which can erode their 
+trust in the technology. Second, the black-box characteristic 
+of AI remains a significant barrier to human-AI collaboration. 
+In the HCC coding context, the false-positive 
+highlights from AI likely create more confusion for more 
+experienced coders who because of the AI’s opaque reasoning 
+process, find it harder to understand its underlying 
+logic, further raising concerns about integrity and reducing 
+trust. Finally, senior coders’ careers are more closely 
+tied to the overall performance of the medical coding 
+activity. Higher sensitivity to the shortcomings of AI coupled 
+with the opaqueness behind its reasoning likely 
+increase their concerns about AI’s potential damage to the 
+organization, further dampening trust.
+
+The trust deficit among senior coders means that they 
+are more likely to doubt AI, spend more time checking 
+the AI’s recommendations, discard HCC codes found by 
+the AI, or to be extra cautious, check the portions of the 
+charts that are marked as negative by AI. In doing so, 
+senior workers may forgo the advantages offered by AI: 
+reading less, coding less, and reallocating their regained 
+time to focus on sentences where human intervention 
+and judgment are required.
+
+4.Results: Impact of AI on Productivity
+
+4.1.Overall Impact of AI on Productivity
+
+We use all the medical charts coded by coders in the two 
+study groups to show the model free evidence. There are 
+1,120,831 medical charts in the full study sample, with 
+195,732 medical charts in the treatment group and 925,099 
+medical charts in the control group. Pooling both groups 
+together, the average time to code one medical chart is 
+13.62minutes with a standard deviation of 28.35; the average 
+number of pages is 35.31 with a standard deviation of 
+50.12. Focusing only on treated medical charts, the average 
+time spent on one medical chart is 14.37minutes with 
+a standard deviation of 27.01; the average number of 
+pages is 34.81 with a standard deviation of 50.91.
+
+Figure 2plots the average time (in minutes) that it 
+took coders in both the treatment and control groups to 
+code one medical chart. As shown in the figure, the control 
+group and treatment group show similar fluctuation 
+in trends in the preperiod (July 2017 to April 2018). During 
+this period, coders in the treatment group spent 1.27 
+more minutes on each medical chart than coders in the 
+control group.8Leveraging this average difference between 
+the two groups in the pretreatment period, we can 
+calculate the reduction of coding time because of AI 
+implementation. The dotted line in Figure 2shows the 
+time that the treatment group would have spent on an 
+average medical chart if that 1.27-minute difference had 
+remained consistent throughout the study. Comparing 
+this dotted-line projection with the observed trend, we 
+see that AI reduced the coding time for an average medical 
+chart by 1.16minutes (7.84%) in August, 1.59minutes 
+(9.77%) in September, and 2.24minutes (13.59%) in October. 
+We conclude that across the three months in the 
+postperiod, coding time was reduced by 1.28minutes 
+(9.17%) per medical chart after AI implementation.
+
+Figure 2. (Color online) Trends in Medical Chart Coding Time 
+
+
+The treatment group and the control group follow a 
+parallel trend but do not exactly overlap in the pre-AI 
+period (Figure 2). Although the parallel trend is a valid 
+basis for inferring causality (Card and Krueger 1993), 
+concerns may be raised about the difference between the 
+treatment and control coders. Therefore, we further conduct 
+exact matching at the medical chart level by selecting 
+medical charts that have similar values on all control 
+variables, including number of pages per chart, time of 
+day of chart coding, code type, and coders’ seniority. 
+Collectively, these variables are related to both the volume 
+of work and work patterns, which helps ensure 
+equivalence by eliminating the variance attributable to 
+them. Our matching procedure balances the number of 
+medical charts completed by the two groups (treatment 
+and control) and in the two study periods (pre and post). 
+To ensure the matched group represents equivalent 
+coders, we also remove coders who have started the coding 
+work in the postperiod (zero medical charts completed 
+in the preperiod) or who stopped coding before 
+the postperiod (zero medical charts completed in the 
+postperiod). The matched sample has 64,280 charts with 
+a balanced number of charts across the pre- and postperiods, 
+as well as control and treatment groups.
+
+The balance check and summary statistics of the 
+matched data are reported in Table 1. After matching, 
+key variables, including number of pages, coding time of 
+the day, type of coding, and the two types of experience, 
+show no statistically significant differences in both the 
+pre- and postperiods. As a robustness check, we also 
+report analyses using the full sample in the online appendix. 
+All the results are consistent.
+
+Equation (1) depicts our formal empirical specification. 
+To eliminate potential confounders, we conduct 
+coder-level fixed effects analysis. In our model, the 
+dependent variable (Yi) is the time (in minutes) spent on 
+a medical chart. Post is a dummy variable that takes the 
+value of zero for the pre-AI period and one for the post- 
+AI period. AI (omitted in the fixed effects model) is one 
+for the treatment group (i.e., those 80 coders who were 
+assigned to use the AI) and zero for the remaining coders 
+who did not use AI. The interaction term Post×AI captures 
+the effect of AI on review time:
+Yi�β0+β1Post×AI+β2Xi+FEcoder+FEmonth+εi:(1) 
+
+We also include a set of medical chart-level characteristics 
+as control variables. We control for the time of day 
+coding is performed by including three dummy variables: 
+morning, afternoon, and night. The length of medical 
+charts is controlled for using the number of pages 
+(NumPage). Finally, the type of coding (i.e., different versions 
+of HCC codes from the CMS and the U.S. Department 
+of Health and Human Services (HHS)), the round 
+of coding (some charts are randomly chosen by the company 
+for a second round of coding for quality control), 
+and month when coding was performed are also incorporated 
+into our model. Individual coder characteristics 
+are controlled for using fixed effects.
+
+The estimation of AI’s impact on productivity is reported 
+in Table 2. We use an ordinary least squares 
+(OLS) model with chart-level controls and coder fixed 
+effects with chart-level controls (column (1)). As reported 
+in column (1), the coefficient of Post×AI is �1.17, which 
+is statistically significant (p<0.01). On average, AI reduces 
+coding time by 1.17minutes (11.29% in the pretreatment 
+period) per medical chart.
+
+Concerns might be raised about whether the productivity 
+increase was because of a reviewer’s rush to 
+
+complete the job, thereby lowering output in terms of the 
+number of codes extracted. We, therefore, further control 
+for the number of HCC codes found in the medical chart 
+and estimate the model again. The coefficient of Post×AI 
+is again negative and significant (�1.14, see column (2)), 
+further affirming the result.
+
+We demonstrate a significant improvement in medical 
+chart coding productivity because of the use of AI. As 
+previously mentioned, one might be concerned that the 
+increased productivity comes at the cost of a decrease in 
+output; that is, coders might speed up their work but 
+identify fewer HCC codes. To uncover the impact of the 
+AI on output quality, we modify Equation (1) by using 
+the number of detected HCC codes as the dependent 
+variable. This result is reported in column (3) of Table 2. 
+Post×AI has an insignificant coefficient, which means 
+that AI does not lead to a deterioration in quality. We 
+estimate a Poisson specification as a robustness check 
+because the dependent variable is the count of found 
+HCC codes. As reported in column (4), the result is consistent. 
+Moreover, coding practice in the field also confirmed 
+a stable quality of the reported HCC codes. First, 
+several institutional factors ensure the stability of the service 
+quality in terms of type 1 and type 2 errors. Given 
+the high economic value of each HCC code, the clients of 
+our collaborator often give the same batch of charts to its 
+competitors and compare the outcome. If the AI misses 
+valid HCC codes (type 2 error), that will cause concerns 
+from the clients. This has forced the company to have a 
+robust process to ensure the consistency of quality. The 
+CMS will further evaluate the reported HCC codes to 
+decide whether they are valid. If yes, reimbursement will 
+be made to the providers by the CMS. If not, they will 
+not be reimbursed, and the entire claim will be returned. 
+The CMS is especially sensitive to up-coding cases where 
+HCC codes were falsely identified (type 1 error), which 
+could lead to the disqualification and even penalty. 
+Given this robust evidence, we can rule out the possibility 
+that the AI affects the quality of work by a meaningful 
+magnitude.
+
+In summary, we find evidence of a positive overall 
+effect of AI on productivity. Next, we examine how these 
+effects are heterogeneously distributed across different 
+types of experience.
+
+4.2.Task Experience and the Impact of AI
+
+We focus first on task experience, which as argued theoretically 
+and confirmed in our data, is not significantly 
+positively correlated with seniority experience (the correlation 
+coefficient is 0.11). In other words, senior coders 
+may have been in their positions longer but may also 
+have completed fewer medical charts in total. This is 
+mainly because of the increased possibility of being 
+assigned to other responsibilities as their organizational 
+tenure grows. The divergence provides a perfect context 
+for the separation of two types of experience. As described 
+in Section 2, we define coders’ task experience as 
+the number of medical charts they have completed in 
+their entire job history. We use the average number of 
+medical charts completed across all coders as the threshold 
+(which is 12,020) to label high and low task experience 
+coders. In the treatment group, 27 coders are 
+classified as high task experience, whereas the remaining 
+48 coders are classified as low task experience. In the 
+same period, for the control group, 135 coders are classified 
+as high task experience, whereas the remaining 151 
+coders are classified as low task experience. We create a 
+dummy variable for each task experience level and then 
+interact the two level dummies with the treatment effect 
+Post×AI. To formally test the interaction between the AI 
+Table 2. AI Impact on Medical Chart Coding Time(1)(2)(3)(4)
+Main result (OLS)Main result (OLS)Main result (OLS)Main result (Poisson)
+Dependent variableReview TimeReview TimeNumHCCNumHCCPost ×AI�1.17***�1.14***�0.01�0.11(0.23)(0.24)(0.02)(0.07)
+NumHCC4.39***
+(0.15)
+Constant7.31**2.651.06***
+(3.08)(1.95)(0.37)
+
+
+The results are reported in Table 3. We find that the moderating 
+effect of high task experience is negative and statistically 
+significant (p<0.01, column (1)), implying that 
+AI helps coders with high task experience shorten chart 
+review time and improve productivity. Although coders 
+with high task experience can benefit significantly more 
+from AI, the coefficient of low task experience’s moderating 
+effect is positive, although insignificant, suggestive 
+of a complementarity. This is further confirmed in subgroup 
+analyses, where the treatment effect is significant 
+for high task experience coders (p<0.01, column (2)) but 
+not for low task experience coders (p>0.1, column (3)). 
+This finding supports the conjecture of complementarity 
+between AI and task experience.
+
+In the analyses, we used the average number of medical 
+charts reviewed by all coders as the threshold to 
+define high and low task experience. To validate the 
+robustness of our finding, we use the continuous measure 
+(mean centered) of task experience and then conduct 
+the same moderating analyses. As reported in 
+column (4), Post×AI×NumChartEver is consistently significant 
+(p<0.01).
+
+In any form of collaboration, the team typically performs 
+better than individual members because of the different 
+and unique contributions made by each member. 
+In a team consisting of members who all make zero contribution 
+or each makes the full contribution, there is no 
+complementarity. In the intermediate case, the more 
+unique contributions each member makes, the more 
+complementarities are created. For a cognitively complex 
+task like HCC coding, neither human coders nor contemporary 
+AI are either useless or perfect. In this case, two 
+observations about our finding of the complementarity 
+between AI and task experience are noteworthy. First, 
+we confirm the different and unique advantages possessed 
+by both human workers and AI in this teaming. 
+The finding is consistent with recent human-AI teaming 
+literature, where AI recognized to be advantageous at 
+computational skills and humans makes unique contributions 
+based on their broad knowledge (experience) 
+(F¨ugener et al. 2021, Luo et al. 2021). Second, a positive 
+coefficient of high task experience supports the value of 
+human experience in teaming with AI. In other words, 
+the accumulation of task experience brings in unique 
+contributions that cannot be covered by AI. This is 
+logically plausible given that the AI literature clearly 
+specifies different learning mechanisms in AI from 
+human learning (LeCun et al. 2015). As a result, more 
+Table 3. AI Benefit to Workers at Different Task Experience Levels (with Coder Fixed Effects)
+
+
+
+task experience leads to more human learning that is 
+beyond AI’s learning ability, which could further complement 
+AI in task execution.
+
+4.3.Seniority Experience and the Impact of AI
+
+If AI and experience are complementary, one would 
+expect senior workers to benefit more from AI than their 
+less experienced colleagues, a conjecture supported by 
+the task experience analysis. However, alternatively, as 
+discussed in Sections 2.3and 3.3, organizational and psychological 
+factors might prevent senior coders from 
+teaming with AI. We now report analyses to test these 
+competing conjectures. We measure workers’ seniority 
+experience based on their tenure (number of years in the 
+coding job) and classify coders into senior (10 or more 
+years of experience) and junior (less than 10years of 
+experience) categories.9In the treatment group, there are 
+26 senior coders and 49 junior coders. Correspondingly, 
+in the control group, there are 47 senior coders and 239 
+junior coders. We create a dummy variable for each 
+seniority level and then interact the two seniority-level 
+dummies with the treatment effect Post×AI.
+
+We replace high task experience and low task experience 
+in Equation (2) with senior and junior measures to 
+conduct the moderating analyses:
+Yi�β0+β1Post×Senior+β2Post×Junior+β3Post×AI×Senior+β4Post×AI×Junior+β5Xi+FEcoder+FEmonth+εi:(3) 
+
+Results are reported in Table 4. As shown in column (1), 
+we find the moderating effect for junior coders to be negative 
+and significant (p<0.01), which suggests that AI helps 
+junior workers to shorten chart review time and improve 
+productivity. The moderating effect of senior coders is also 
+negative but smaller in magnitude, and it is not statistically 
+significant. This finding suggests that AI helps junior 
+coders more in improving productivity. We also confirm 
+this result in the subgroup analysis for senior coders and 
+junior coders. As shown in columns (2) and (3), the treatment 
+effect is significant for junior coders (p<0.01, column 
+(3)) but not for senior coders (p>0.1, column (2)).
+
+Although the company’s managers suggested 10years 
+of experience as the threshold for senior coders, we conduct 
+further analysis to reinforce the generalizability of 
+the findings about seniority. We use a continuous measure 
+in number of years (mean centered), and we estimate 
+the same regression model as before to examine 
+how seniority level influences the AI’s effects. The results 
+Table 4. AI Benefit to Workers at Different Seniority Levels (with Coder Fixed Effects)
+
+
+
+are reported in column (4) of Table 4. The coefficient of 
+Post×AI×NumYears is significant (p<0.05).
+
+It is natural to assume that high seniority experience 
+leads to higher task experience. However, the correlation 
+coefficient between task volume and organizational 
+tenure is only 0.11 among all coders in this study. The 
+divergence of the two experience measures could be 
+explained by organizational factors as summarized by 
+Tesluk and Jacobs (1998) and Ng and Feldman (2010). 
+Although some coders focus on working on the same 
+task over the years, other coders might be assigned diverse 
+tasks, such as training juniors, auditing quality, 
+management, and meeting with clients. To statistically 
+examine if our findings are affected by any potential correlations 
+between the two experience measures, we further 
+combined the two experience measures in one 
+model to test their moderating effects simultaneously. 
+As reported in column (5) of Table 4, task experience 
+complements AI significantly positive in increasing the 
+productivity. Meanwhile, seniority experience remains 
+significant and negative in enhancing the benefits of AI.
+
+5.Mechanisms Underlying Differences in 
+Teaming with AI
+
+5.1.Resistance to AI
+
+Our finding that AI is more helpful for high task experience 
+workers supports the theoretical conjecture that AI 
+complements, rather than substitutes for, human worker 
+experience. However, if AI and human capital are truly 
+complementary, it is puzzling why senior workers with 
+diverse responsibilities tend to benefit less from AI. In 
+this section, we report additional qualitative analyses 
+conducted to further uncover the mechanism of AI’s 
+impact on senior coders.
+
+We first collect qualitative feedback from senior coders 
+through focus groups and a formal survey after the AI 
+was implemented. We learned that senior coders do not 
+trust AI to perform as well as humans and tend to focus 
+on the errors made by the AI. Senior coders also complained 
+more about errors than junior coders did. Indeed, 
+one senior coder commented that
+I don’t fully trust the tool to identify codes. I haven’t 
+been told if it is supposed to highlight knowns or not 
+so when I see a known not highlighted. I question if 
+the tool is working correctly.
+
+
+
+Also, given that the senior coders have greater breadth 
+of experience, they are more likely to detect imperfections 
+in the AI output, which further deteriorates their 
+trust in the AI.
+Many areas of the record are highlighted that are not 
+appropriate for coding. Once one area of the record, 
+whether or not appropriately, is highlighted, I need 
+to review the entire record. I have not found this to 
+be helpful.
+
+
+
+Recent studies report similar insights: that managers 
+see AI differently (Lebovitz et al. 2021). In explaining the 
+errors made by AI in the field, managers implicate AI’s 
+learning mechanism. Managers believe that AI learns 
+from labels to capture know-what knowledge. However, 
+AI cannot achieve the same level of intelligence as experts 
+who have rich know-how knowledge in practice. In our 
+specific context, the company has a wide spectrum of 
+tasks related to medical coding. Senior coders can be 
+assigned to management and training activities to optimize 
+the overall performance of the entire production 
+line. The management, audit, training, and other related 
+work could limit senior coders’ time allocation to individual 
+medical chart coding. With the company’s long history 
+of practicing in this industry, coders can also be 
+promoted to managers; as coders accumulate organizational 
+tenure, they have more opportunities to be involved 
+in management and build greater loyalty, thereby becoming 
+more sensitive and alert to mistakes in AI output.
+
+To further verify this explanation, we obtained the job 
+titles of coders in our study from the company and classified 
+these coders as manager or nonmanager.10We also 
+use manager as a proxy of seniority experience to conduct 
+the same analysis. As reported in Table 5, consistent 
+with our main seniority experience measure, managers 
+show no significant complementarity with AI (p>0.1, 
+columns (1) and (2)), whereas nonmanagers are able to 
+effectively leverage AI and experience a significant boost 
+in productivity (p<0.01, columns (1) and (3)). This evidence 
+further supports the argument that the employee’s 
+position in the organization reflects a core element of the 
+seniority measure.
+
+The comments from the qualitative study suggest that 
+because of their low trust in AI, these senior coders opt 
+to review all the information in the charts rather than 
+solely focusing on the areas highlighted by AI. Their 
+resistance is also supported by an additional small-scale 
+laboratory study we conducted in the company’s work 
+setting. The nine coders in this laboratory study were 
+typical coders recruited from the coding team, and they 
+had no prior exposure to the AI. They were asked to 
+independently code 100 preselected charts (randomly 
+selected from the medical chart pool). The coders were 
+randomly assigned into three groups (three coders per 
+group) that used different coding methods. Group 1 was 
+the control group without AI, which involved reading 
+through the whole medical chart to find HCC codes, replicating 
+the standard coding practice before AI implementation. 
+The instructions for Group 2 (resistance) 
+were designed to mimic the case of coders resisting AI; 
+although AI findings were provided to them, these 
+coders were told to not rely on the AI results but to still 
+review all the information in the chart. Group 3 was 
+designed to replicate the scenario in which coders have 
+trust and work cooperatively (i.e., coders team with AI). 
+
+
+Coders in Group 3 were instructed to only validate the 
+AI findings, and the validated HCC codes constituted 
+their final coding result.
+
+Results are reported in Table 6. Group 3 coders, whose 
+instructions required them to trust the AI output, achieved 
+much higher productivity ((21.78�8.45)/21.78�
+61.2% less coding time) than Group 2 (resistance) coders. 
+Group 3 also demonstrated 45.0% ((15.37�8.45)/15.37) 
+more productivity than the control group. This result confirms 
+that AI can significantly improve productivity if 
+coder trust in it is high. It is also noteworthy that the average 
+medical chart coding time of Group 2 is much higher 
+(41.7%) than the control group. This demonstrates one 
+critical point; AI is not necessarily beneficial. In fact, resistance 
+to AI could lead to a negative impact on productivity. 
+The findings from this laboratory study underscore 
+what is widely known in relation to other types of technologies; 
+user acceptance is crucial to leveraging AI for 
+high productivity.
+
+Lastly, we note that in this laboratory study, we 
+sought to create contexts with sharp differences; that is, 
+coders were instructed to fully cooperate with or fully 
+resist the AI. In reality, coders’ resistance to AI more 
+likely exists on a continuum between full cooperation 
+and full resistance. The variation in level of resistance 
+might explain why some senior coders in our main study 
+still benefit from AI but less so than junior coders.
+
+Overall, evidence from the qualitative feedback, our 
+additional regressions, and the laboratory study collectively 
+indicates that resistance to AI plays an important 
+role in workers’ inability to realize productivity gains 
+from its use. Because senior coders tend to believe that 
+they have more expertise than the AI and possess greater 
+confidence in their own judgment, they exhibit high resistance. 
+Their concerns about the negatives of AI because 
+of the undue emphasis on its shortcomings and opaqueness 
+also reduce their ability to effectively team with AI.
+
+6.Falsification Check
+
+To further confirm that our results are driven by AI 
+rather than by common environmental factors that might 
+Table 5. AI Benefit and Manager Status(1)(2)(3)
+
+
+
+affect coding in general (such as new organizational policies, 
+changes in management, etc.), we conduct a falsification 
+test. In addition to HCC coding, the company also 
+works on other chart coding tasks, such as Clinical Risk 
+Group, Healthcare Effectiveness Data and Information 
+Set, and Chronic Illness and Disability Payment System 
+coding. Because our AI was developed to improve HCC 
+coding, these non-HCC coding tasks should not be 
+affected by the AI. Therefore, they serve as good candidates 
+for the falsification.
+
+During our study period, 246,852 of these non-HCC 
+medical charts were coded by all coders (52,208 by the 
+treatment group and 194,644 by the control group). We 
+use the same regression model (Equation 1) for these 
+non-AI coding tasks; results are in Table 7. In column (1), 
+the coefficient of Post×AI is insignificant, indicating that 
+worker productivity in non-AI coding tasks did not 
+increase in the same period. Also, the moderating effects 
+of experience levels are not significant (columns (2) and 
+(3)), further confirming the insignificant influence of AI 
+implementation on non-AI coding tasks. Therefore, our 
+main finding is likely not because of factors unrelated to 
+the AI.
+
+7.Discussion and Conclusion
+
+AI is one of the most significant technological advances 
+in history, with profound implications for economies 
+and societies. As a result of the learning capabilities of 
+contemporary AI, there have been substantial concerns 
+about AI’s implications for human capital and the labor 
+market. What is the role of human experience in human-AI 
+teaming? In this empirical study in a knowledge-intensive 
+work setting, we build upon and extend the existing literature 
+to examine two types of experience, revealing that 
+they play distinct roles. Highly task-experienced coders 
+enjoy greater improvements in productivity. However, 
+when we turn to a different experience measure using 
+seniority, we surprisingly find that junior coders experience 
+greater gains in teaming with AI than senior coders. 
+We attribute this to senior workers’ greater sensitivity to AI 
+imperfections, which results in their resistance to AI use 
+and therefore, lower benefits for them. Interestingly, this 
+effect does not show in greater task experience.
+
+Our findings provide theoretical and empirical foundations 
+for human-AI teaming by generating new insights 
+into the interplay between AI and human experience. 
+First, contrary to the common understanding that AI will 
+make human experience less valuable or even obsolete, 
+our findings regarding task experience support AI’s role 
+as a complement to rather than a substitute for human 
+experience. In this regard, our work suggests that AI, at 
+its current stage, remains an instance of SBTC. Second, 
+our study signifies the complexity in human-AI interactions 
+in the teaming relationship, which critically depends 
+on the type of experience; greater task experience 
+Table 7. Falsification Checks (with Coder Fixed Effects)
+
+). Although Luo et al. (
+does not necessarily lead to algorithm aversion, but 
+greater seniority experience could hamper the effective 
+use of AI. In this way, we advance our understanding of 
+the role of experience in human-AI teaming (Allen and 
+Choudhury 2022) and contribute to this emerging stream 
+of literature (Clement et al. 2020, Guo et al. 2020, Bai et al. 
+20222021) and Allen and Choudhury 
+(2022) mainly focus on the experience of workers, 
+this study advances understanding of the interaction 
+between AI and different types of human experience. 
+We show that experience is multidimensional and that 
+different dimensions have distinct interactions with AI 
+and play unique roles in human-AI teaming. Allen and 
+Choudhury (2022) theoretically argue that in human-AI 
+collaboration, human experience is associated with two 
+driving forces: ability and aversion. We are able to delineate 
+the mechanism by showing that different types of 
+experience have opposite effects on human-AI collaboration. 
+Our task-based experience reflects the concept of 
+ability, and our seniority-based experience is related to 
+the aversion effect. The separation of different types of 
+human experience in this study thus provides a deeper 
+explanation and potentially reconciles previous findings. 
+Additionally, our work contributes to research at the 
+nexus of healthcare and IT. Information systems researchers 
+have studied the impact of IT in healthcare (Ganju 
+et al. 2016, Appari et al. 2018), and the human ability to 
+utilize technology is a core focus of this literature (Atasoy 
+et al. 2017, Karahanna et al. 2019). Our study highlights 
+the need to better understand the potential of AI in the 
+healthcare field.
+
+These findings offer practical implications for the successful 
+use of AI in organizational settings. First, our 
+research provides empirical evidence of the positive effect 
+of human-AI teaming on knowledge worker productivity 
+(Brynjolfsson et al. 2018b, Lou and Wu 2021). Despite the 
+optimism surrounding AI, empirical evidence for its positive 
+effects on economic productivity remains scant for 
+cognitively nonroutine tasks (Case and Deaton 2017, 
+Syverson 2017). This disappointing reality has been 
+dubbed “the AI productivity paradox” (Brynjolfsson et al. 
+2018b). Unlike recent studies on the impact of algorithms 
+in online platforms and customer decision making (He 
+et al. 2015, Brynjolfsson et al. 2018a, Sun et al. 2021, Bundorf 
+et al. 2022), our setting is a typical knowledge- 
+intensive job with clear measures of productivity. Our 
+finding that AI leads to productivity gain should encourage 
+business leaders and policy makers who are skeptical 
+about its potential to consider investing in AI.
+
+Second, our results may help ease concerns about 
+potential job losses for knowledge workers predicted by 
+forecasters (Cellan-Jones 2014, Davenport and Ronanki 
+2018). In 2020, the knowledge worker population exceeded 
+1 billion globally (Ricard 2020). The effect of the 
+coming wave of AI on these jobs thus carries substantial 
+economic and societal significance. Our finding that AI 
+complements knowledge workers’ task experience may 
+be welcome news to those who are concerned about the 
+negative impact of AI on human capital, which has 
+important policy implications.
+
+Third, from a technological perspective, we demonstrate 
+the effectiveness of contemporary ML-based AI in 
+augmenting the work of human workers (Raisch and 
+Krakowski 2021). Our AI algorithm is trained solely on 
+past work records without human intervention, a defining 
+feature of contemporary AI. Our findings should 
+help facilitate the wider adoption and usage of this form 
+of AI. In recent years, companies have accumulated large 
+amounts of data through rapid digitization of transactions 
+and can, therefore, potentially realize value through 
+adopting such AI algorithms.
+
+Fourth, this study provides important lessons for successful 
+implementation of AI. A growing number of 
+studies show the potential of AI in complementing 
+human expertise (F¨ugener et al. 2021, Teodorescu et al. 
+2021). For instance, van den Broek et al. (2021) depict a 
+hybrid practice that combines AI and human expertise, 
+whereas Sturm et al. (2021) document that AI can collaborate 
+with human learning and reduce a human’s explorative 
+learning for new ideas. A common finding in 
+the literature is that AI is generally less trusted than 
+human experts (Dietvorst et al. 2015); Bogert et al. (2021) 
+find that humans disregard inaccurate advice from AI 
+more strongly than similar advice when it comes from 
+human peers. Most current designs of AI do not incorporate 
+variations among human users (Chakraborti et al. 
+2017, Carroll et al. 2019, Johnson and Vera 2019, Zhang 
+et al. 2020), which is likely to be a critical issue in real 
+business practice. As Lebovitz (2019) shows, AI could 
+increase ambiguity, so human workers would need to 
+pay an extra cost to collaborate. We show that although 
+senior workers’ experience puts them in a better position 
+to enjoy higher benefits from teaming with AI than their 
+junior colleagues, low trust stymies the realization of significant 
+benefits from the AI.
+
+Finally, our findings indicate certain necessary cautions 
+for managers when implementing AI in work settings. 
+Different worker experience levels should be considered 
+when evaluating job performance in roles that require 
+teaming with AI. New workers with less task experience 
+may be naturally disadvantaged in leveraging AI for 
+high productivity. This leads to the question of how to 
+adjust performance evaluation systems after AI is adopted. 
+Failure to consider the experience difference in 
+evaluating workers’ productivity with AI use may result 
+in unintended discrimination against new workers.
+
+We acknowledge several limitations of this study. The 
+sample is drawn from one company, which may raise 
+concerns about the generalizability of our findings. However, 
+the coding task performed by this company’s 
+employees is typical of knowledge work tasks. In addition, 
+the AI created for this study is representative of AI 
+
+
+at the present developmental stage. Therefore, the conclusions 
+we derive from this study can inform a broader 
+spectrum of contexts in which AI is used. Furthermore, 
+the coding industry is characterized by a high turnover 
+rate. To ensure the continuity of productivity before and 
+after AI adoption, coders in the treatment group were 
+not randomly selected but drawn from the company’s 
+more stable workers. We conducted matching and extensive 
+checks (including the falsification test, the placebo 
+test, and verification of a parallel trend) to strengthen the 
+robustness of our findings. One interesting avenue for 
+future research would be to examine the effect of AI in 
+a randomized field experiment. Third, the format of 
+human-AI collaboration can vary significantly across 
+different contexts regarding different tasks and different 
+AI implementations. We examined the format where 
+human knowledge workers are downstream of AI’s outputs. 
+We believe this is the dominant form of human-AI 
+collaboration given that AI can quickly perform large 
+volumes of work at a lower cost and the relatively higher 
+acceptance of decisions where human workers are at the 
+final confirmation step.
+
+We note that readers should use caution when generalizing 
+our findings to an AI at a different performance 
+level. With the rapidly evolving technological landscape 
+of machine learning, the theoretical arguments and empirical 
+results must be interpreted in light of the current 
+AI frontier and our setting. This study examines AI as a 
+form of augmented intelligence in assisting human experts 
+to make decisions. Our contribution is applicable to 
+similar implementations of AI for human-AI teaming 
+rather than settings where AI is allowed to operate independently. 
+The defining assumptions of this frontier are 
+that AI is not more intelligent or insightful than human 
+experts for the focal knowledge task. It acts as an aid and 
+is purely functional with no self-awareness, and it does 
+not reshape the role of human experts in the organization. 
+If any of the assumptions are challenged by advances in 
+AI, additional factors would need to be considered as the 
+nature of human-AI teaming is reconstructed.
+
+For future research in AI implementation, our work 
+points to several promising opportunities that warrant 
+further examination. There are unanswered questions 
+within the broad issue that we address in this study: a 
+human worker’s ability to work with AI. Contemporary 
+AI achieves its unprecedented performance because of 
+its unique learning ability. However, as its application 
+expands, more research is needed on the mechanisms that 
+can enhance user trust in AI. In this regard, potential solutions 
+include provision of evidence for AI’s benevolence 
+and education to senior workers. To enable wide-ranging 
+adoption of AI in knowledge work, organizations will 
+need to proactively devise mechanisms to address the 
+trust deficit among senior workers. Although our study is 
+not directly focused on this challenge, our findings suggest 
+that senior workers need to better understand how AI 
+performs and be more tolerant of its mistakes. It may be 
+the case that building greater transparency and explainability 
+into the AI can partially address the low trust. Communicating 
+data and sharing data about the performance 
+benefits of working with AI are other ways in which senior 
+workers’ concerns about negative impacts on the organization 
+could be assuaged. We also expect that the roles of 
+trust-related factors might change over time as AI keeps 
+improving its performance (Ahn et al. 2021) and becomes 
+more human like (Seymour et al. 2021). More field studies 
+as well as laboratory experiments are required to shed 
+light on this critical challenge.
+
+Furthermore, the dynamic interactions between AI 
+and human workers need further exploration. An interesting 
+question that merits further investigation is related 
+to how AI may transform the meaningfulness of work 
+and whether there is variation in this perception across 
+workers with different levels and types of experience. 
+Does AI enrich knowledge work or diminish its significance 
+because of the different nature of human input 
+required and the extent to which AI may guide the decision 
+process? Qualitative studies may help shed light on 
+this question. Furthermore, the framework in this study 
+also offers valuable opportunities for richer understanding 
+of the mechanisms of human-AI complementarities. 
+What unique advantage does human task experience 
+bring to the human-AI teaming synergy? A deeper investigation 
+on the distinct learning mechanisms of human 
+and AI is required for different stages ranging from training 
+to production use and continuous learning/updating. 
+Finally, our findings also point to the necessity of understanding 
+how to design workflows when human workers 
+and AI are both present. In this study, we let human 
+workers be the “supervisors” of AI. However, more collaboration 
+formats can be designed based on the nature 
+of tasks and on the distribution of human resources. 
+Research is needed to uncover the best strategies for 
+embedding AI into human organizational structures.

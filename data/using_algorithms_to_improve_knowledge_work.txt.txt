@@ -1,0 +1,1858 @@
+Amaya, J., & Holweg, M. (2024). Using algorithms to improve knowledge work. Journal of
+Operations Management, 1–32. https://doi.org/10.1002/joom.1296
+
+Abstract
+We explore how organizations leverage algorithms to improve knowledge work
+in contexts where the tasks require skilled work, as distinct from routine tasks
+that have traditionally been the focus of academic enquiry. Drawing on a
+multiple-case study of four business areas in a multinational energy firm
+undergoing a digital transformation, we find that contrary to what the literature
+predicts, tasks that require skilled work can also benefit from the adoption
+of algorithmic solutions. To benefit, business areas engaged in two distinct
+pathways for transforming knowledge work. The first focuses on automating a
+specific task, replacing human activity with algorithms in a single task. The
+second involves re-engineering an entire process, whereby sequences of steps
+adjacent to the task at hand are redesigned on integration of an algorithm. We
+find that these pathways have different effects on the ability to improve knowledge
+work, suggesting that alignment between the task and the pathway chosen
+is crucial to realizing any improvement. We also find that the ability to
+sustain any improvement depends on the adjustment of the knowledge
+regime—the practices and structures that sanction knowledge. Building on
+these findings, we propose a general process model for the adoption of algorithmic
+solutions in knowledge work. In the wider context of the future of work
+debate, our findings challenge the prevailing notion that a task's skill requirements
+determine the extent to which knowledge work can be improved by
+algorithmic solutions.
+KEYWORDS
+future of work, knowledge work, machine learning, process improvement, robotic process
+automation
+HIGHLIGHTS
+• When using algorithms to improve knowledge work, there are two choices:
+to automate a given task or to re-engineer the entire process.
+• Re-engineering the process tends to yield greater operational improvements.
+Socializing and validating the algorithm's outputs tend to increase their
+acceptance.
+
+1 | INTRODUCTION
+The digital transformation of organizations is reshaping
+the nature of knowledge work—a type of work that
+requires human expertise to make meaningful decisions
+that add value for organizations (Bechky, 2006;
+Davenport, 2015; Staats et al., 2011; Starbuck, 1992). Key
+to this transformation is adopting “modern algorithmic
+solutions” (Angelopoulos et al., 2023), formally defined
+as systems that autonomously learn from data and mimic
+human decision-making (Angelopoulos et al., 2023;
+Bailey et al., 2019; Bailey & Barley, 2020). Examples
+include machine learning (ML) for predictive modeling,
+as well as generative artificial intelligence (AI) systems
+like Claude and ChatGPT. Hereafter we will refer to
+these solutions simply as “algorithms.” Across sectors
+that include law, healthcare, and manufacturing, organizations
+have widely adopted algorithms to transform
+knowledge work, and in turn, create a competitive
+advantage by reducing costs, enhancing quality, speeding
+up delivery, and/or improving the safety of knowledge
+work performed in organizations (Sako et al., 2022;
+Sampson & dos Santos, 2023; Senoner et al., 2022; Spring
+et al., 2022).
+However, the effectiveness of algorithms in realizing
+these benefits is still widely debated (Brynjolfsson
+et al., 2019). Prevailing economic studies suggest that
+algorithms can boost productivity in routine work, but
+they may not have the same effect in knowledge work
+(e.g., Autor et al., 2003; Autor & Salomons, 2018; Frey &
+Osborne, 2017). The argument is that human skills crucial
+for knowledge work, such as creativity, social intelligence,
+and dexterity, may withstand automation. Hence,
+emerging sociological and learning studies on the practical
+use of algorithms under the labels of “learning algorithms”
+(Faraj et al., 2018), “modern epistemic
+technologies” (Anthony, 2018), “intelligent technologies”
+(Bailey & Barley, 2020), and “artificial intelligence”
+(Lebovitz et al., 2021), tend to focus on the implications
+(and perils) of algorithms for how experts build their
+understanding of a topic to make decisions
+(Anthony, 2018; Lebovitz et al., 2021; Waardenburg
+et al., 2021). One of their concerns is that replacing
+human expertise with algorithmic solutions may hinder
+learning and performance in the long run
+(Balasubramanian et al., 2022). The question that
+remains, and that is the focus of our investigation, is how
+an organization can adopt algorithmic solutions to create
+and sustain improvements in knowledge-intensive tasks
+that require skilled work.
+In response, we conducted a multiple-case study
+focused on the adoption of algorithmic solutions in a
+multinational energy firm, hereafter referred to as ACME.
+Our study encompassed four distinct business areas
+within ACME, representing Davenport's (2015) segments
+of knowledge work: business services (as “transactional
+work”), internal audit (as “collaborative work”), maintenance
+(as “integrative work”) and drilling engineering
+(as “expert work”). Each area was a case study designed
+to explore how variation in actual skills, tasks, and knowing
+practices influence technological change—a variation
+otherwise obscured in occupational databases (Bailey &
+Barley, 2020). Within each case, we identified one or two
+significant projects involving ML and robotic process
+automation (RPA) algorithms. These projects served as
+focal points to examine the subsequent transformation of
+knowledge work and its impact on operational performance.
+To build our cases, we conducted 55 semistructured
+interviews over 2 years with staff and managers
+of these business areas. Additionally, we supplemented
+our data through detailed notes from participant
+observations and analysis of internal performance
+reports.
+Our research contributes to the wider debate on the
+digital transformation of work, giving scholars and practitioners
+a better understanding of how organizations create
+and sustain operational improvements with
+algorithms in knowledge work involving skilled decisionmaking
+(Angelopoulos et al., 2023). Specifically, we make
+three key contributions. First, we challenge the perception
+that task skill requirements dictate the extent of
+algorithmic improvement in knowledge work. Instead,
+we argue that any improvement depends on how organizations
+transform the work in which tasks are embedded.
+This expands on the notion that technologies intertwine
+with organizational norms, rules, and practices (Faraj &
+Pachidi, 2021; Orlikowski & Barley, 2001), with benefits
+depending on transformations being seen in context. Second,
+we advance a novel perspective on technological
+change by identifying a model of algorithm adoption with
+two pathways: (1) “automating the task” by substituting
+human activity within a specific task, and (2) “reengineering
+the process” by redesigning adjacent step
+sequences. We found that these pathways produce
+AMAYA and HOLWEG 483
+18731317, 2024, 3, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/joom.1296, Wiley Online Library on [03/11/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+different outcomes for creating and sustaining operational
+improvements: While the reengineering pathway
+generally leads to greater operational improvements,
+there is evidence that the task automation pathway is
+often preferred as it matches institutional inertia and
+is simpler to implement. Finally, we connect process
+improvement and knowing-in-practice literature to
+explain how improvements are created and sustained
+depending on the transformation pathway that organizations
+follow. We conclude by discussing how our findings
+can inform managers on how to deliver the best outcomes
+promised by algorithmic use.
+2 | THEORETICAL BACKGROUND
+2.1 | The role of algorithmic solutions in
+improving knowledge work
+Since the second half of the 20th century, knowledge
+work and technology have become central themes in
+organizations (Barley & Kunda, 2001). Unlike
+manufacturing labor, knowledge work involves primarily
+mental rather than physical effort (Bechky, 2006), manipulating
+knowledge and information to create value for
+the firm (Davenport, 2015; Starbuck, 1992). Formally
+defined, knowledge work requires the “ability to draw
+distinctions, within a collective domain of action, based
+on an appreciation of context or theory or both”
+(Tsoukas, 2005, p. 123). This work1 plays a pivotal role in
+various occupations, including healthcare professionals
+(Harvey, 2016), software developers (Staats et al., 2011),
+and financial analysts (Cetina, 2010). In these contexts,
+knowledge is “(…) the critical input in production and
+primary source of value” (Grant, 1996, p. 112). Integral to
+knowledge work is technology, which shapes the practices
+through which workers construct, refine, and disseminate
+knowledge (Anthony, 2018; Bailey et al., 2010;
+Cetina, 1999). Commonly cited examples include drug
+discovery (Dougherty & Dunne, 2012); strategy-making
+(Kaplan, 2011), and product development (Kellogg
+et al., 2006).
+With the rise of novel algorithmic solutions, especially
+those built on artificial intelligence, organizations
+are increasingly exploring how best to use these tools to
+enhance knowledge production, aiming for greater efficiency
+and competitive advantages (Armour &
+Sako, 2020; McAfee & Brynjolfsson, 2012). Algorithmic
+solutions are computer-programmed procedures designed
+to emulate decision-making (Kellogg et al., 2020) and differ
+fundamentally from traditional technologies (Bailey
+et al., 2019; Bailey & Barley, 2020; Benbya et al., 2021):
+they learn to make predictions from existing patterns in
+data (Agrawal et al., 2018), which minimizes the need of
+codifying tacit organizational knowledge into explicit
+rules. Prominent examples include ML and RPA algorithms.
+The ability to learn and, potentially, act, autonomously
+expands the spectrum of roles that algorithmic
+solutions play in organizations (Angelopoulos
+et al., 2023), offering a wider range of possibilities to
+improve knowledge work.
+These possibilities can be understood from three distinct
+perspectives. The first perspective is economic, viewing
+algorithms as replacements for workers in tasks or, in
+some cases, jobs (Arntz et al., 2016; Dellot et al., 2019;
+Manyika et al., 2017; Muro et al., 2019). Algorithmic solutions
+are posited as a cornucopia of automation opportunities
+that bring about uniform effects in the labor
+market, resulting in similar organizational structures and
+work patterns across various organizations. For instance,
+Frey and Osborne (2017) argue that algorithmic solutions
+expose 47% of current employment to a high risk of computerization.
+From this perspective, the improvement of
+knowledge work involves reducing labor input or
+enabling labor arbitrage, such as automating back-office
+tasks (Lacity et al., 2016; Lawrence et al., 2016) and professional
+duties (Spring et al., 2022; Susskind &
+Susskind, 2016).
+The second perspective is sociological, considering
+algorithms as interconnected with organizing (Faraj
+et al., 2018; Faraj & Pachidi, 2021; Huysman, 2020).
+Drawing on contingency theory (Thompson, 1967;
+Woodward, 1965) and technology studies (Barley, 1986;
+Orlikowski, 1992), scholars argue that algorithms are
+entwined with organizational norms, rules, and actors
+(Faraj & Pachidi, 2021); this can result in two organizations
+encountering the same solution realigning roles and
+structures in different ways (Barley, 1990). From this
+point of view, organizations improve work when they use
+technology to align structure and function (Hayes &
+Wheelwright, 1979a, 1979b). For example, organizations
+may strategically restructure work, enhancing certain
+tasks while simplifying, automating, or centralizing
+others (Sampson, 2021).
+The third perspective is informed by a learning lens
+that regards algorithms as possible blocks to learning and
+performance when used injudiciously in knowledge work
+(Balasubramanian et al., 2022; Choudhury et al., 2020).
+This viewpoint stresses that people often mistakenly treat
+algorithmic outputs as objective truths, disregarding that
+algorithms are trained on expert judgments that contain
+uncertainty and flaws (Lebovitz et al., 2021). Furthermore,
+it highlights the challenges people face in validating
+the quality of algorithmic outputs, as opaque
+calculations and assumptions underlie them
+(Anthony, 2018). For instance, radiologists using AI
+484 AMAYA and HOLWEG
+18731317, 2024, 3, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/joom.1296, Wiley Online Library on [03/11/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+solutions experienced greater diagnostic uncertainty
+when AI recommendations diverged from their judgment
+without explanation (Lebovitz et al., 2022). While
+organizations may create roles to interpret and translate
+the outputs of algorithms, unintended consequences
+can emerge, like substituting personal views
+for algorithm explanations (Waardenburg et al., 2021).
+Such issues further limit the usefulness of algorithms
+in knowledge work.
+2.2 | A “knowing-in-practice” view of
+improving knowledge work
+While economic, sociological, and learning perspectives
+have been instrumental in understanding the digital
+transformation of knowledge work, they fall short in
+explaining when organizations succeed or fail to harness
+algorithmic solutions to improve knowledge work. To
+bridge this theoretical divide, we borrow a theory from
+organizational studies known as “knowing-in-practice.”
+This theory views knowledge (or “knowing”) as an ongoing
+accomplishment located in social practices
+(Nicolini, 2011; Orlikowski, 2002; Tsoukas, 2005). Rather
+than considering knowledge as a static capability or an
+individual trait, it is seen as an ongoing achievement that
+continually evolves as people engage in normatively
+structured practices (Hadjimichael & Tsoukas, 2019;
+Orlikowski, 2002; Østerlund & Carlile, 2005). We consider
+this perspective as particularly relevant for examining
+the operational performance implications of utilizing
+algorithms due to its focus on practical and empirical
+observation.
+We focus on two specific aspects of knowing-in-practice:
+first, knowing-in-practice encompasses the recognition
+that intelligently performing work hinges on both
+the individual's factual knowledge (the so-called “knowthat”)
+and the individual's accumulated expertise (the socalled
+“know-how”) rooted in social and tacit practices
+(Lebovitz et al., 2021; Ryle, 1949). For instance, project
+managers “know that” following risk identification procedures
+is essential for a successful project delivery. At
+the same time, project managers also need to “know
+how” to assess and communicate potential risks, grasp
+contextual uncertainties, and navigate the intricate
+dynamics with the project team. This process goes
+beyond mere rule-following and involves integrating subsidiary
+elements (e.g., effective communication) and focal
+awareness (e.g., project risks) (Polanyi, 1967;
+Tsoukas, 2012). The interplay between “knowing that”
+and “knowing how” plays a pivotal role in harnessing the
+potential benefits of using algorithmic solutions in
+knowledge work. This points us to the challenges that
+organizations may face when codifying situated knowledge
+into algorithms, often resulting in the development
+of algorithmic solutions that overlook critical contextual
+aspects and ultimately fail to yield the desired performance
+improvements (Choudhury et al., 2020).
+Second, adopting a knowing-in-practice perspective
+involves acknowledging that knowing how to perform a
+task is embodied in individuals' skills (Dreyfus, 2014;
+Hadjimichael & Tsoukas, 2019; Sandberg &
+Tsoukas, 2011). Through continuous practice (repetition),
+people develop skills as they train their bodies “to relate
+in certain ways to the world” (Tsoukas, 1996, p. 17).
+These skills are honed by participating in occupational
+communities, where individuals internalize legitimate
+forms of action and norms that define how to work
+(Hutchins, 1995; Lave & Wenger, 1991). This includes
+assimilating a shared purpose, vocabulary, and a set of
+values that guide and legitimize their actions (Kellogg
+et al., 2006; Wenger, 1999). A knowing-in-practice perspective
+recognizes that skills represent people's collective,
+shared taken-for-granted ways of doing things,
+which are difficult to capture in algorithmic solutions.
+Previous studies have suggested that certain skills
+such as creativity, social intelligence, and manual dexterity
+are difficult to codify into algorithms (Frey &
+Osborne, 2017). Creativity, the ability to generate novel
+and valuable ideas (Amabile, 1983), is important in
+knowledge work to understand and explore problems
+with variable inputs, processes, or outputs
+(Schmenner, 1986). Designing customized services or
+dealing with uncertainty requires creativity (Kellogg &
+Nie, 1995; March, 1991; Staats et al., 2011), especially in
+contexts involving risk-bearing decisions (Harvey, 2016;
+Schmenner, 1986). Social intelligence, involving navigating
+social situations by recognizing cues, understanding
+emotions and intentions, and responding appropriately,
+is critical for knowledge work that requires high customer
+engagement (Brandon-Jones et al., 2016; Lewis &
+Brown, 2012). It enables customer problems to be diagnosed
+and solutions to be suggested (Abbott, 1988;
+Schmenner, 1986; Silvestro et al., 1992). The quality of
+the solution depends heavily on the service provider's
+ability to interact and gather the necessary information
+to identify and understand the client's specific problem.
+Finally, manual dexterity, coordinating movements of
+fingers or hands to manipulate and assemble objects is
+essential for building skill and obtaining legitimacy at
+work (Beane, 2019; Sergeeva et al., 2020). Thus, in practice,
+creativity, social intelligence, and dexterity remain
+skills that are highly valuable but challenging to codify
+into algorithms (Sampson, 2021).
+AMAYA and HOLWEG 485
+18731317, 2024, 3, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/joom.1296, Wiley Online Library on [03/11/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+2.3 | Synthesis
+The literature highlights the potential for organizations
+to adopt algorithms to improve knowledge work, while
+also raising concerns about undermining organizational
+learning and the creation of value (Anthony, 2021;
+Balasubramanian et al., 2022; Lebovitz et al., 2021). We
+explore this tension by incorporating insights from distinct
+perspectives discussed above. From economic studies,
+we recognize that algorithms affect tasks rather than
+entire occupations, as some tasks are more amenable to
+automation (Acemoglu & Autor, 2011; Autor et al., 2003).
+From sociology studies, we acknowledge that these tasks
+are situated in organizational contexts, with similar algorithmic
+solutions transforming work in different ways,
+and with different consequences for operational performance
+(Bailey et al., 2019; Bailey & Barley, 2020; Faraj &
+Pachidi, 2021). From learning studies, we recognize that
+any transformation in the way organizations produce
+knowledge may affect learning and performance
+(Lebovitz et al., 2021).
+Incorporating these insights into a “knowing-inpractice”
+perspective, we empirically explore whether,
+and how, knowledge-intensive tasks can benefit from
+algorithmic solutions. This involves recognizing a key
+challenge that has traditionally been theorized as
+impeding the use of algorithms in knowledge work.
+That is, performing a task requires a combination of factual
+knowledge (“knowing that”), practical expertise
+deeply rooted in social practices (“knowing how”)
+(Lebovitz et al., 2021, 2022), and embodied skills
+(Sergeeva et al., 2020). Given the exploratory nature of
+our study, we kept a broad research question: how can
+an organization adopt algorithmic solutions to create
+and sustain improvements in knowledge-intensive
+tasks? Considering the digital transformation underway
+in an energy company, we identified different ways to
+adopt algorithms, their success (or failure) in improving
+the productivity and quality of knowledge work, and
+residual effects on experts learning. Our analysis
+enabled us to develop a theory for managers to navigate
+the digital transformation effectively.
+3 | METHOD
+3.1 | Research context and design
+This research draws on a 2-year comparative multiplecase
+study within ACME, a multinational energy firm.
+ACME represents an ideal research context due to its reliance
+on professionals and experts engaged in knowledge
+work. Here, engineers, accountants, and petrophysicists
+work together in business areas to produce, trade, and
+deliver energy products, including hydrocarbons, lubricants,
+and low-carbon energy. Moreover, the context is
+appropriate because ACME was undergoing a digital
+transformation, with algorithmic solutions emerging as a
+strategic priority. The leadership team allocated US$1bn
+per year to capture, incubate, and scale projects that used
+these solutions. As such, this context provided ample
+opportunities to gather data and elicit cases on how various
+business areas used algorithms to transform their
+knowledge work, and the consequences of this transformation
+for operational performance.
+The case sampling logic we settled on was theoretical
+(Miles & Huberman, 1994), and drew inspiration from
+Davenport's (2015) categorization of knowledge work
+into four segments. We worked with our main contact at
+ACME's R&D, who oversees the digital transformation
+across the organization. With his guidance, we selected
+four business areas that represented each segment of
+Davenport's taxonomy: business services (transactional),
+maintenance operations (integrative), internal audit (collaborative),
+and drilling operations (expert). Our contact
+had over 15 years of experience collaborating with
+diverse ACME business areas on innovation projects. His
+deep understanding of work in different areas was key
+for selecting cases that exemplified Davenport's segments.
+Studying these embedded cases within the same company
+allowed us to control for contextual factors affecting
+technological adaptation, including strategic orientation,
+aspirations, recruiting, governance, and technology policies
+(c.f. Eggers & Kaplan, 2009; Tripsas & Gavetti, 2000).
+Since ACME leadership expected all areas to engage with
+the digital transformation and adopt new algorithms, we
+could exploit similarities to isolate the effect of our variable
+of interest (Bechky & O'Mahony, 2015).
+The four business areas selected were well suited to
+this study for several reasons. To begin with, knowledge
+plays a critical role in fashioning services across these
+areas. Staff rely on mastering technical and professional
+expertise to deliver key services like constructing deepwater
+platforms and auditing anti-bribery programs. Second,
+business areas provide a good opportunity to generalize
+findings to a broader population, as they in effect operate
+like most medium-sized private service organizations.
+Work is organized into tasks and conducted by groups of
+specialists who serve a wide range of customers. Finally,
+the business areas exhibit salient tensions in digital transformation.
+These include balancing pressures to adopt
+algorithms against staff resistance. Thus, we argue that
+business areas offer a rich setting to study the adoption of
+algorithms in knowledge work. Here, we briefly present
+the context of the four sampled business areas, laying the
+groundwork for this study.
+486 AMAYA and HOLWEG
+18731317, 2024, 3, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/joom.1296, Wiley Online Library on [03/11/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+3.1.1 | Case 1: Business services
+The first case was built based on the business services
+area, which provided ACME with credit management,
+customer service, and human resources services. Because
+of the nature of services offered, staff working in business
+services have diverse backgrounds, typically, in finance,
+engineering, management, and economics. Some staff are
+also hired based on equivalent experience rather than
+education. Business services staff usually conduct standard
+work in the front and back offices. They work in
+large business process outsourcing centers, and operate
+according to documented instructions compiled in standard
+operating procedures. For instance, in credit management
+services, they perform activities to assess the
+borrowers' ability to repay a loan according to
+the instructions in the accounts receivable standard operating
+procedure. While staff in this area must be able to
+communicate effectively, their work does not depend on
+collaborating with others. Because work, in this case, was
+routine and primarily governed by standard operating
+procedures, we argue that business services fit the characteristics
+of Davenport's transactional knowledge work
+segment.
+3.1.2 | Case 2: Maintenance operations
+The second case was built based on the maintenance
+operations area, which provides asset management services
+to ACME, including assessing the condition of
+machinery, developing maintenance procedures, and
+troubleshooting equipment issues. Staff in this area,
+known as “maintenance workers,” are typically junior
+and mid-level specialists, technicians, schedulers, planners,
+and coordinators. They are responsible for both
+planned and emergent work. Planned work involves regular
+maintenance activities to prevent unexpected asset
+breakdowns, while emergent work focuses on addressing
+initial faults to minimize downtime. Although maintenance
+workers have some discretion, they must also
+adhere to vendor recommendations and maintenance
+standards (e.g., ISO 55,000 and 13,374) to ensure compliance
+with legal, technical, and safety requirements.
+Social intelligence skills play a crucial role in maintenance
+work. When a fault occurs, maintenance workers
+communicate with plant operators to gather information
+and diagnose the cause and location of the issue. This
+includes identifying potential exposure to corrosive, toxic,
+flammable, or other hazardous substances, as well as
+determining if the repair work needs to be conducted at
+heights, underwater, or in confined spaces. Collaboration
+and effective communication remain crucial during the
+actual repair work. Once a team of three to four
+maintenance workers is assigned to fix the fault, they
+communicate with the control room and other stakeholders
+to prevent the unintended restart of machinery
+around the affected area while maintenance workers are
+still working on it. Good understanding of social cues
+and trust among the team are vital to coordinate repair
+work and understand the emergent risk. Given the
+importance of standardized practices and collaboration in
+maintenance work, this case aligns with Davenport's
+integrational segment of work.
+3.1.3 | Case 3: Internal audit
+The third case was built based on the internal audit area,
+which provides independent financial and technical
+assurance services to ACME, including verifying the
+appropriate operation of accounting processes, governance
+mechanisms, and internal controls. Because internal
+audit offers both financial and technical assurance,
+members of this area (hereafter referred to as “internal
+auditors”) had different backgrounds, such as accounting
+and chemical engineering. The common denominator is
+that to become internal auditors, aspirants must master
+high levels of expertise; they must be skilled and seasoned
+professionals with a demonstrated command of
+regulations (e.g., the Sarbanes-Oxley Act), standards
+(e.g., the Generally Accepted Auditing Standards), and
+codes (e.g., the code of ethics). Such financial or technical
+prowess allows internal auditors to examine, verify, and
+judge if the organization is operating in line with mandatory
+legal guidelines and technical standards.
+In addition to being subject matter experts, internal
+auditors rely on social intelligence skills to do their job.
+Each year, internal auditors perform circa 200 audits
+spread over eight auditing rounds. In each round, a team
+of internal auditors (three to nine people) work together
+to write an audit's terms of reference and internal controls
+testing plans. They then collaborate with members
+of the auditee function (e.g., human resources) to execute
+such plans and produce reports of findings that outline
+risk areas and recommendations to improve the auditee's
+operations. Communicating effectively allows internal
+auditors to build trust with auditees and ensure the right
+evidence is collected and analyzed, thus helping them
+ensure that the audit findings capture the auditee's operations
+in the best way. Whenever irregularities or risks to
+the organization's growth or reputation are identified,
+internal auditors liaise with the chief auditor who conveys
+them to the board of directors. For these characteristics,
+we considered this case as an exemplar of
+Davenport's collaborative segment of knowledge work.
+AMAYA and HOLWEG 487
+18731317, 2024, 3, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/joom.1296, Wiley Online Library on [03/11/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+3.1.4 | Case 4: Drilling operations
+The fourth case was built on the drilling operations area,
+which provides global drilling support services to the
+organization, including defining the scope and activity of
+wells, overseeing the operation of wells, and designing
+fracturing and stimulation treatments. Staff in this area
+(hereafter referred to as “drilling engineers”) are predominantly
+mid- and senior-level mechanical engineers,
+chemical engineers and petrophysicists who have an indepth
+knowledge of drilling and completion operations.
+Before joining this area, candidates must demonstrate
+seasoned experience in dealing with a variety of practices
+and assets for drilling onshore and offshore wells; they
+must have at least 5 years' drilling experience, prove command
+of practices for drilling in subsea reservoirs, and
+understand managed pressure drilling equipment—
+specialized arrangements of rotating control devices,
+choke manifolds, and other apparatuses that control the
+pressure in the wellbore. Their extensive experience
+grants drilling engineers a high level of discretion. Some
+expert senior drilling engineers, for example, are responsible
+for designing tailored fracturing and stimulation
+treatments for oil and gas wells with unconventional
+environmental conditions around the globe. These
+designs depend on acumen, as drilling engineers draw on
+past experience with similar wells to analyze technical
+and regulatory dimensions that may impact the safety
+and cost-effective operations of the present well. For
+these characteristics, we matched this case with Davenport's
+expert segment of work.
+ACME's bid for digital transformation led these four
+areas to adopt algorithms, making them meaningful cases
+for understanding how organizations used algorithmic
+solutions to improve knowledge work. We gained access
+to study these areas and collected data, including interviews,
+observations, and archival records, to understand
+how algorithms affected their operational performance.
+The data collection and analysis strategies are presented
+below.
+3.2 | Data collection
+3.2.1 | Interviews
+Between November 2019 and October 2021, we conducted
+55 semi-structured interviews with staff in the
+business service (n = 18), maintenance operations
+(n = 11), internal audit (n = 15), and drilling
+operations (n = 11) areas. These interviews, lasting an
+average of 75 minutes each, were conducted either in
+private rooms or via Zoom. We interviewed staff in both
+leadership and non-leadership roles, representing diverse
+backgrounds including engineering, accounting, and data
+science. Interviews served two purposes. In the first
+round, we aimed to characterize knowledge work within
+each business area. Interviewees were asked to provide
+detailed descriptions of their work, quantifying the level of
+skilled performance required for various tasks on a
+10-point Likert scale. For example, we enquired about the
+degree of creativity, social intelligence, and dexterity to
+accomplish these tasks. We further asked them to qualify
+their skilled work and the perceived fit for using algorithmic
+solutions in the given task (see Appendix B). In the
+second round of interviews, our focus shifted to understanding
+how algorithms were employed within each area,
+and their implications for improving knowledge work.
+Interviewees were asked to elaborate on specific projects
+involving algorithmic solutions, identifying the tasks in
+knowledge work that were affected, and examining the
+resulting consequences for operational performance (see
+Table C1 in Appendix C). We conducted interviews until
+we achieved theoretical saturation, increasing the validity
+of our findings (Glaser & Strauss, 2017).
+3.2.2 | Observations
+To complement our interviews, we drew on participant
+observations. We visited each business area multiple
+times between November 2019 and March 2020. These
+visits took the format of one-week participant observations,
+apart from one COVID-related exception. The first
+author was given a desk, training on the field, and permission
+to contact anyone in the organization. We participated
+in day-to-day knowledge work activities, such as
+maintenance planning meetings, in which engineers discussed
+short- and long-term asset management projects
+to ensure complex plants run on time; or internal audits,
+where auditors interviewed corporate employees in, for
+example, human resources, to identify potential risks and
+recommend how to address them. These observations were
+designed to complement our interviews by capturing
+aspects that participants may have struggled to articulate
+during interviews (Barley & Kunda, 2001). Thus, we used
+them to create “thick” descriptions of how participants
+draw on tacit knowledge to carry out their work
+(Bechky, 2006; Orr, 1996). The focus of observations was
+twofold: to capture how the areas adapted knowledge work
+around algorithmic solutions, and to build a more comprehensive
+picture of how professionals and experts create and
+share knowledge before and after infusing algorithms at
+work. We made our research overt, and maintained a
+488 AMAYA and HOLWEG
+18731317, 2024, 3, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/joom.1296, Wiley Online Library on [03/11/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+journal with notes about the business area's practice, keeping
+a separate journal for recording experiences, anxieties,
+and reflections from fieldwork to minimize contaminating
+data with biases (De Rond & Lok, 2016). By visiting each
+area multiple times, we built a rapport with participants
+and minimized the risk of reactivity.
+3.2.3 | Archival data
+After the national lockdown was instigated in March
+2020, we paused the observations and began collecting
+archival data as ACME operated a work-from-home policy.
+This included operating procedures that governed the
+practices in each of the four business areas, and internal
+reports that captured the impact of automation projects
+on the company's performance. These documents helped
+us understand the effects of algorithms in the four segments
+of knowledge work. Table 1 summarizes the data
+collection across the different business areas.
+3.3 | Data analysis
+Our analysis was inductive, iterative, and comparative.
+The aim was to elaborate theory on the adoption of algorithmic
+solutions and transformation of knowledge work
+by detecting patterns in and across cases. As the foundation
+for this analytic strategy, we used the constant comparative
+method (Glaser & Strauss, 2017). Over various
+iterations, we read and coded the interview transcripts
+and observational notes, looking out for similarities and
+differences in the adoption of algorithms across the four
+business areas. These iterations took place over three
+main stages of analysis: understanding current knowledge
+work, identifying the knowledge work transformation
+process triggered by algorithmic solutions, and
+explaining differences in outcomes in the adoption of
+algorithmic solutions. These stages are detailed below.
+3.3.1 | Stage 1: Characterizing current
+knowledge work
+First, we analyzed interview transcripts and field notes to
+construct narratives that portrayed how knowledge work
+was done in the four areas before algorithmic solutions
+were introduced. Using these narratives, we compiled a
+list of tasks performed by staff in each business area, considering
+a task as a discrete activity contributing to the
+production of goods or services (Acemoglu &
+Autor, 2011). This task list included “planning the terms
+of reference of an audit,” “processing clients' purchasing
+orders,” and “investigating issues on fracturing and stimulation.”
+At this point, it became apparent that some narratives
+describing ostensibly identical tasks actually
+varied based on the specific context in which they were
+enacted. To capture these variations (Bailey &
+Barley, 2020), we coded tasks by contextualizing them
+within the job where they were performed. For instance,
+narratives related to “planning an audit's terms of reference”
+were categorized into two distinct tasks, recognizing
+the differing activities and skill requirements for
+compliance-based versus risk-based audits.
+Next, we focused on analyzing tasks as skilled work.
+We coded each task in our list using five dimensions: the
+degree of creativity, social intelligence, manual dexterity,
+repetition, and perceived suitability for automation with
+algorithms. The purpose here was not to provide a quantitative
+assessment but to observe any meaningful patterns
+between these dimensions and the applicability of
+algorithms. We used this to deepen our analysis of the
+knowledge work in each business area, as an intermediate
+step toward building our case studies. At this point,
+we sent a case write-up to the business areas' senior
+directors to validate and refine the cases. Directors had
+10 or more years of experience and had a high level of
+understanding of the work in their respective areas. We
+asked them to confirm that their respective area accurately
+exemplified the Davenport knowledge work segment
+we had matched them to. Additionally, directors
+provided feedback enriching the task analysis of the work
+performed in their area. These cases formed the foundation
+for our subsequent analysis of how the adoption of
+algorithmic solutions transformed the nature of work
+across these business areas.
+3.3.2 | Stage 2: Identifying knowledge work
+transformation
+In the second stage of the data analysis, we examined a
+subset of successful and unsuccessful projects that
+involved algorithms to understand the process of transforming
+knowledge work. We identified seven projects
+across the four business areas that included the application
+of ML, RPA, and logic-based algorithms, which are
+summarized in Table 2. For each of these projects, we
+then interviewed the professionals and experts involved,
+the developers who built the algorithm project, and the
+managers who sponsored and oversaw it. To build up
+descriptive abstractions from interview notes and field
+observations on algorithm projects, we used NVivo and
+applied the constant comparative method, following the
+guidelines suggested by Gioia et al. (2013). Because we
+assumed that informants were “knowledgeable agents”
+who could describe the implementation of algorithmic
+projects as well as explain resulting changes in their
+work, we allowed first-order codes to emerge from
+quotations and observational notes. This initial coding
+followed a line-by-line approach (Charmaz, 2006). Then,
+applying axial coding (Corbin & Strauss, 2008), we built
+up descriptive theoretical categories that captured similarities
+and relations in first-order codes. Finally, we distilled
+and mapped the relationship between these themes
+to develop stages that explained the transformation of
+knowledge work. The result of this second analysis stage
+was a grounded theory model of the adoption of algorithmic
+solutions in knowledge work. The resulting data
+structure that served as the basis for our findings is presented
+in Table C1 in Appendix C.
+3.3.3 | Stage 3: Explaining differences in
+outcomes in the adoption of algorithmic
+solutions
+In the final data analysis stage, we explored the variance
+among different mini cases when it came to using algorithms
+in knowledge work tasks. Our focus was on
+understanding how the transformation of work affected
+the ability to improve operational performance. We
+started by looking at how different pathways of transforming
+work made it possible to use algorithms effectively
+in tasks requiring skilled work. Then, we compared
+whether these pathways of transformation also led to
+changes in how knowledge was validated, shared, and
+sanctioned. Although it would also have been interesting
+to examine the role of organizational actors in the transformation
+of knowledge work, such an analysis lay
+beyond the scope of this study.
+4 | FINDINGS
+4.1 | Barriers to using algorithmic
+solutions when improving
+knowledge work
+At ACME, staff in the four business areas engaged deeply
+in knowledge work. They performed tasks that required
+them to draw meaningful distinctions by understanding
+the nuances of their practice and ACME's unique context
+to create and maintain energy-related products and services
+most effectively and efficiently. To do this work,
+staff spent several years accumulating experience (knowhow),
+mastering codified procedures specific to their
+areas (know-that), and developing improvisational and
+embodied skills.
+This process involved learning in communities
+(Brown & Duguid, 1991), whereby staff embraced the
+business area's distinctive language (Schön, 1983) and
+adhered to its legitimate ways of working (Lave &
+Wenger, 1991). For instance, junior internal auditors
+invested time in learning ACME's unique acronyms, like
+“CoW,” which denotes “Control of Work.” They also
+spent time practicing alongside expert auditors, learning
+that actively listening to, rather than accusing, auditees
+was crucial for successfully executing tasks like “testing
+and design of controls.” Moreover, as junior auditors continued
+to practice, they gained organizational knowledge,
+comprehending the rules governing ACME's operations
+and the authorities responsible for sanctioning these
+rules. Mastering the community language, embodying
+valid ways of working, and internalizing ACME's procedures,
+led internal auditors to a deeper appreciation of
+the system of ideas that underpinned auditing functioning.
+This gave them a solid foundation to use categories
+and make appropriate distinctions to engage in
+knowledge work.
+As ACME's leadership embraced the new digital
+transformation strategy, it inevitably placed mounting
+pressure on the business areas to follow suit. While the
+staff in these areas were eager to demonstrate their support
+for the strategy, they could not help but be concerned
+about the potential implications of algorithms on
+their roles. They feared that their hard-earned skills
+might become redundant or lose their significance within
+the organization. Moreover, skepticism prevailed regarding
+the accuracy and reliability of algorithms, particularly
+in tasks that demanded nuanced decision-making and
+contextual understanding—tasks in which staff took
+great pride in their ability to navigate complex situations,
+relying on their intuition, experience, and creativity.
+While acknowledging that algorithms offered cost savings
+for certain tasks, they argued that implementing them in
+certain areas would prove to be time-consuming, financially
+inefficient, and ineffective. Because of our interest
+in knowing in practice, we focused on understanding
+how skilled work affected the business areas' ability to
+use algorithms to improve knowledge work.
+4.2 | Effect of skilled work on the ability
+to use algorithmic solutions
+Tasks relying on skilled work hindered taking full
+advantage of the productivity benefits offered by algorithms.
+Staff reported that highly creative, socially
+intelligent, or manually dexterous tasks were associated
+with lower effectiveness when applying algorithms,
+as shown in Figure 1. Most staff agreed that
+using algorithms in creative tasks was less challenging
+than in tasks requiring social intelligence. The results
+were less clear for manual dexterity, since most knowledge
+work tasks studied required no manual dexterity
+beyond typing. However, in the few cases where manual
+dexterity was needed, organizations struggled to
+effectively incorporate algorithms.
+A central factor contributing to the limited applicability
+of algorithms to tasks requiring social intelligence is
+their integral role in the process of “sensemaking” within
+knowledge work (Weick, 1995). These tasks involve making
+collective sense of situations that are confusing, illdefined,
+ambiguous, or unexpected (Maitlis &
+Christianson, 2014). Examples include understanding
+emergent risks in deepwater drilling, the impact of new
+data protection regulations, or potential failures of previously
+unmaintained assets. In such scenarios, explicit
+documentation of operational procedures is often inadequate,
+inaccurate, or irrelevant. Consequently, individuals
+rely heavily on their social intelligence skills to
+manage these intricate tasks proficiently.
+The results shown in Figure 1 challenge the
+conventional thinking that specific skills impede the
+computerization of tasks (c.f. Arntz et al., 2016; Frey &
+Osborne, 2017). Instead, it shows pronounced heterogeneity
+in the ability to use algorithms in tasks requiring
+skilled work. Even highly creative and socially intelligent
+tasks can benefit from algorithms, the figure shows. By
+studying seven projects where ML and RPA were applied
+in different business areas, we reveal a set of transformational
+practices. These practices helped improve highly
+skilled, knowledge-intensive tasks across the studied
+business areas.
+492 AMAYA and HOLWEG
+18731317, 2024, 3, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/joom.1296, Wiley Online Library on [03/11/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+4.3 | Transforming knowledge work to
+use algorithms
+Our examination of the cases highlighted two distinct
+pathways business areas followed to transform work
+using algorithms. In some instances, they chose the
+“automating a specific task” pathway, which involved
+substituting humans with algorithms on a single-task
+basis. Conversely, other cases followed a pathway of “reengineering
+the entire process,” entailing the redesign of
+sequential steps surrounding the task to incorporate
+algorithms.
+4.3.1 | Task automation pathway
+The first pathway of knowledge work transformation
+revolved around the automation of specific tasks. This
+pathway was found in four projects and occurred mainly
+in internal audit and maintenance operation areas. In
+each case, efforts to reshape the practice were channeled
+toward discrete units of work, focusing on factors like
+task repeatability and standardization. For instance, staff
+in these areas often undertook task categorization into
+well-defined and ill-defined cases, standardizing activities
+that demanded creative expertise, and separating work
+into cognitive and physical labor (hand and brain) components.
+We discuss these practices below (Table 3).
+Standardizing tasks
+Business areas that transformed knowledge work by
+automating a specific task tackled the demand for skilled
+work by standardizing tasks. This practice served to confine
+the level of creativity required to execute the task,
+achieved by encapsulating the practical know-how within
+standardized operating procedures. This subgroup demonstrated
+active engagement in ACME's organizational
+learning initiatives, participating in workshops involving
+internal and external stakeholders to glean industry best
+practices. For instance, in the case of internal auditors,
+they embraced a continuous improvement mindset, capturing
+valuable insights and streamlining their testing
+methodology. Collaborating with ACF, an external auditing
+firm, they standardized ACME's auditing practice to
+align with industry norms. Standardizing their approach
+to auditing allowed them to “… have consistency for testing”
+(Senior Auditor 1); “…ensure that we test everybody
+in the same way so that we've got benchmarks that we
+can review” (Audit Manager).
+By assimilating external and internal knowledge into
+their operational framework, these auditors paved the
+way to integrate algorithms into their practice. This shift
+involved substituting the need for creative design in audit
+test plans with standardized alternatives, enabling the
+deployment of algorithms for tasks such as document
+automation. This approach resonated through statements
+like “We're not doing everything differently every time”
+(Senior Auditor 2), and “We might make some tweaks
+and modifications to it, depending on the nature of the
+area we're looking at or what the focus is… But at
+the core of it, it's a standardised testing approach”
+(Operational Auditor 4).
+Separating “hand and brain”
+Another practice that business areas used to modify specific
+tasks was “separating hand and brain” (Drilling
+Engineer 2). In response to challenges in automating
+tasks requiring both physical and cognitive skills, drilling
+engineers separated work into manual (“hand”) and cognitive
+(“brain”) components. Unlike traditional divisions
+of labor, this separation sought to facilitate automating
+the task's cognitive component. For example, a division
+was established between fracturing experts handling
+mental tasks (designing fracturing treatments) and those
+performing physical tasks (well completion). Sensors,
+algorithms, protocols, and satellite communication
+enabled real-time data transmission, connecting well
+completion teams at well sites with fracturing specialists
+in remote control rooms. This led to further specialization,
+disconnecting fracturing specialists from the physical
+work. In turn, this paved the way for using
+algorithms for some of the fracturing specialists' tasks.
+The new real-time data streams flowing into the communication
+rooms were used to feed ML models that imitated
+decisions previously made by specialists.
+Categorizing tasks into “well-defined” and “ill-defined”
+One final practice embraced by those transforming
+knowledge work through task automation involved task
+categorization. This practice entails classifying tasks, formally
+or informally, based on whether they involve familiar
+or less common scenarios. For instance, in business
+services, tasks were differentiated between those that
+demanded social intelligence for collecting data from
+established sources, structures, and systems, and those
+requiring the untangling of “ill-defined and emergent situations”
+(Data Scientist 3). Although both cases relied on
+trust and effective communication, participants agreed
+that the former involved familiar and relatively consistent
+scenarios, requiring minimal true intelligence. A prime
+illustration was collecting information from clients and
+colleagues to populate fields in customer relationship
+management software like Salesforce.
+Categorizing tasks into well-defined and ill-defined
+groups was useful for pinpointing areas where algorithms
+could potentially enhance efficiency. It identified
+instances where tasks were well-defined but being carried
+out in what participants termed a “quite old school way”
+(Data Scientist 1), and still relied heavily on human intervention.
+By categorizing tasks, organizations could identify
+opportunities for using algorithms to streamline
+information flow across diverse systems, facilitating collation,
+manipulation, and validation of information, ultimately
+enabling more efficient knowledge work.
+4.3.2 | Process re-engineering pathway
+The second pathway of transformation focused on reengineering
+the process. This pathway emerged in four
+out of seven projects, primarily within the fields of business
+services and drilling engineering. In these instances,
+the emphasis shifted toward processes—clusters of activities
+that convert inputs into desired outcomes. Put simply,
+organizations that pursued this pathway directed
+their efforts toward overhauling the entire process so that
+they could use algorithms in embedded tasks. Staff in
+these areas were concerned less with the question of
+skills and more about reconfiguring the way the
+organization transformed resources into services. Some
+practices deployed by those following this pathway
+included controlling for process variation, adding steps
+for assuring algorithmic outputs, and eliminating nonvalue-
+adding activities. Below, we describe these
+practices.
+Identifying and controlling process variation
+Business areas re-engineering their processes to use algorithms
+engaged in a practice for identifying and controlling
+the process variation. Process variations happen
+when the conditions and features of a process change,
+making the process less consistent. These variations matter
+because they can disrupt the effectiveness of algorithms
+in the workflow. A data scientist in the business
+services sector mentioned in an interview that processes
+that “(…) have a lot of different rules to go through and
+variations make the logic more complicated, and that's
+where you could struggle with the success rate of technology”
+(Senior Developer 2). To mitigate this problem,
+data scientists took the initiative to work with users
+beforehand to understand variations in inputs (like interacting
+with clients through different channels), conversion
+processes (such as different decision-making
+approaches among experts), and output (for instance,
+customizing products or services for specific clients). By
+pinpointing the sources of variation, they identified ways
+to manage and control it before incorporating algorithmic
+solutions.
+A good example of this practice involves a project in
+the business services area to incorporate algorithmic
+solutions in locking and unlocking credit cards based on
+customers' transactions, payments, and credit information
+across platforms. At first glance, the task seemed like
+simple automation of data collection. But soon, the business
+services area realized that the activity had many
+potential variations and interdependences that risked the
+project's success. Specifically, the algorithm logic became
+complicated as credit card payments came from different
+intermediary banks, which used different data formats
+and processing times. Variation further increased as
+developers added non-payment-related transactional data
+and rules to minimize defaulting risk. One senior
+data scientist noted, “[Locking and unlocking credit
+cards] has been very tricky. It has a lot of dependencies
+on all sorts of different [payment] processes… it was quite
+complicated in terms of looking at all aspects before you
+make a decision to lock a customer.” To deal with the
+inherent variation in locking or unlocking customers'
+credit cards, data scientists interviewed and conducted
+workshops with owners of the credit card process to map
+tasks, inputs, and dependencies involved in locking and
+unlocking credit cards. The results of these workshops
+496 AMAYA and HOLWEG
+18731317, 2024, 3, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/joom.1296, Wiley Online Library on [03/11/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+included entity relationships and process maps that
+ironed out potential variables and variations in activities
+that might influence the decision of locking or unlocking
+a customer. This, in turn, allowed business services to
+create more complex algorithm solutions that bridge
+identified process variations, reducing service times to
+lock and unlock credit cards in real time.
+Eliminating non-value-added activities and artifacts
+Re-engineering the process sometimes involved eliminating
+activities and artifacts that were not adding value to
+the product or service offered. Organizations realized that
+some activities and artifacts in their processes limited
+their ability to reap benefits from algorithms—even if
+these were once deemed necessary. This practice involved
+questioning outdated assumptions and long-established
+rules that were bottlenecks in the process.
+Consider the project for using algorithms on credit
+card onboarding in the business service area. The team
+decided to automate parts of this process using a combination
+of RPA and computer vision. Credit card onboarding
+was a multistep process involving tasks such as credit
+checking, rating, and issuing physical credit cards. When
+they began thinking about using algorithms to redesign
+the credit onboarding process, staff in business services
+began questioning the need for using physical credit
+cards. While physical cards had for decades traditionally
+been deemed necessary for the process—as a token of
+identification and security for customer transactions—it
+also increased the lead time of the card onboarding process,
+making them “lose business”—as some staff put
+it. The business services area decided that a physical card
+was the main bottleneck in the process, and so decided to
+allow users to load a digital card via their phones. Eliminating
+the need for physical cards and automating the
+due diligence checking process enabled business services
+to onboard new customers almost within a day (rather
+than a month).
+Adding steps for algorithms' output assurance
+Another practice involved in re-engineering the process
+that revolves around building a capability to assure output
+quality. As the name indicates, this practice entailed
+redesigning work by adding extra steps to the process to
+assure the quality of knowledge created by algorithms.
+Consider, for example, the project to use reinforcement
+learning to automate the calibration of mini fracs in offshore
+wells—a task considered to require high levels of
+creative thinking that involved characterizing a well by
+causing a short fracture in the formation before the main
+fracturing treatment (see Table 4 for more context). In
+this project, drilling engineers sought to use a reinforcement
+learning algorithm to explore different types of
+calibration and select the solution that best matched the
+well's characteristics in the shortest possible time.
+The algorithm imitates the mental processes of the expert
+who designs the fracturing treatments; it runs multiple
+scenarios until it finds a combination of parameters that
+match the well's pressure system. If the mini frac is
+poorly executed, it can cost ACME several millions;
+therefore, the process was redesigned so an expert could
+review the calibration, approving or adjusting it according
+to their expertise. In this case, the algorithm did not
+completely replace the need for creative thinking. The
+team remained responsible for discovering the problem
+and defining goals and appropriateness criteria to measure
+the quality of the algorithmic solution.
+4.4 | Adjusting the knowledge regime
+In addition to transforming the work, some business
+areas adjusted their knowledge regimes. We based our
+construct of a knowledge regime on the works of Pachidi
+et al. (2021) and Howard-Grenville and Carlile (2006),
+and define it as the combination of social, material, and
+discursive arrangements that govern the specific practices
+that actors use to learn and perform their work; the structural
+arrangements that inform which actors have
+authority over how knowledge is produced; and the valuation
+schemes that sanction how experts shall understand
+new information. Below we provide a few
+examples.
+4.4.1 | Shifting structure and authority
+arrangements
+When staff focused on redesigning the process through
+which the knowledge was transmitted, they ended up
+reorganizing the area's structure and authority arrangements.
+In some cases, this reorganization stemmed from
+employing new staff skilled in process mapping, data
+analysis, or software development. This led to new structures
+like parallel organizations focused on scaling algorithmic
+solutions. For example, IO was created parallel to
+the business services function to provide “automation-asa-
+service” to staff in business services. IO was composed
+of developers offering three core services: advisory and
+consulting, end-to-end DevOps, and federated automation
+solutions. The workflow at IO was organized in
+scrum sprints, during which developers partnered with
+staff in business services who had ideas on redesigning
+their work around algorithmic solutions. As a result,
+business services morphed into a biparty rectangular
+organization within ACME—which differed from
+AMAYA and HOLWEG 497
+18731317, 2024, 3, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/joom.1296, Wiley Online Library on [03/11/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+traditional matrix and heterarchical structures. This also
+changed authority arrangements within the business services
+area. Staff lost jurisdiction to developers and
+reported not only to their functional head, but also to the
+scrum masters. Decisions on where and how to use algorithmic
+solutions were distributed across both business
+services and IO.
+Other cases also experienced shifts in structure and
+authority arrangements after transforming their work to
+use algorithms. Auditors automating data collection and
+analysis for auditing tests found themselves needing to
+create an internal data analytics team, with associated
+new roles to support auditors on an on-demand basis.
+Similarly, drilling engineers described that transforming
+work to use algorithms led to new organizational interfaces,
+which altered who needed to be consulted for a
+project as well as who was involved in making drillingrelated
+decisions.
+(…) prior [to the adoption of algorithms], in
+my particular case, I was in drilling… and
+knew the community quite well. We knew
+who the key stakeholders were and whom
+we had to engage with. There were not too
+many interfaces. Whereas now, a lot of us
+are having to find, okay, who are the new
+interfaces? Now we kind of engage with [the
+cybersecurity team], so, key architects and
+additional security people are involved in my
+work.
+(Drilling Engineer 1)
+4.4.2 | Altering schemes for evaluating new
+knowledge
+New ways of working with algorithmic solutions also
+affected the mechanisms for learning and valuing knowledge.
+Before the implementation of algorithms, if a specialist
+gave a judgment, the quality of that judgment was
+rarely questioned; they were experts whose credentials
+and past experiences granted them the legitimacy to
+make decisions. When algorithmic projects were
+launched, however, this norm changed. Those developing
+algorithmic solutions put significant efforts toward quantifying
+the quality of the algorithmic outputs. One senior
+engineer working on projects Alpha 1 and Alpha 2 shared
+that such quantification emerged because staff using
+algorithmic solutions needed metrics to decide how and
+when to trust the algorithmic recommendations to avoid
+damaging the quality of the service offered. “On the first
+half of the year, we are doing some hardware in loop
+testing—potentially testing on rigs—making sure we
+have some extensive tests ahead of our first deployment”
+(Senior Engineer 2). The testing emphasized translating
+the quality of knowledge into metrics, such as the accuracy
+and the coefficient of determination of the algorithmic
+recommendations. While at the beginning this
+quantification was only applied to the recommendations
+produced by algorithms, eventually experts started thinking
+about their own recommendations, in the same way,
+extending the quantification of the quality of knowledge
+from algorithms to engineers and petrophysicists too.
+In addition to this shift to quantification of the quality
+of constructed knowledge, knowledge workers also
+altered their learning practices to accept intractable algorithmic
+recommendations. At the beginning of Alpha
+1, for example, engineers were concerned about the
+effects of being unable to explain calibration recommendations
+made by the reinforcement learning algorithm.
+As time progressed, however, they focused less on understanding
+intractable algorithmic recommendations, and
+more on embedding boundary conditions in the algorithm
+to ensure that recommendations were safe:
+Working with a black box algorithm may be
+challenging for some and may be easy for
+others. And that will depend on the project…
+On Alpha 1, we will connect to the rig control
+system. So, it's going to be good. But you
+also got to have some faith in it that it does
+the right thing. We've got sort of safety
+parameters around it. So, it would never go
+badly wrong, but you will never know why
+it's recommended a certain set of parameters
+over other certain parameters.
+(Senior Engineer 3)
+Accepting unexplainable algorithm recommendations
+prompted engineers to alter how they evaluate knowledge.
+They compensated for the lack of explanation by
+monitoring whether the recommendations looked adequate.
+For example, drilling engineers focused on developing
+tools to display the algorithmic recommendations
+and allow experts to compare them to expected results.
+Now if we have the reinforcement learning
+algorithm that comes up with a solution
+that's calibrated, and you can see the two
+curves, an expert can say with one look,
+“That's a good or that's a bad calibration”,
+right? It doesn't matter what the parameters
+are. Again, there's an end to that, which they
+can be within. The expert says “I can do better
+than that, or actually, this is good
+enough”… So, in that scenario, the fact that
+it's a black box it's actually less important
+because you can see the output.
+(Drilling Engineer 2)
+Because of the intractable recommendations, engineers
+lost their ability to learn from doing the job. In the
+case of Alpha 2, they could no longer build causal links
+between parameters and pressure outputs. To overcome
+this problem, they dislocated learning in time and place.
+That is, they created simulated environments whereby
+engineers could train and play with different parameters
+of calibration to see the effects on the fracture pressure.
+That enables you to prepare your mind. Just
+like how I go to bed and think about how
+the job looks like that particular well we did
+five months ago and, so expect this pressure
+to climb at this rate… Right. So [the simulator]
+can enable us to look for those patterns
+ahead of time. And you have a lot more confidence
+in that pressure match because we
+have automated that calibration piece.
+(Drilling Engineer 2)
+4.4.3 | Updating the skill requirements
+Finally, organizations that adjusted the knowledge
+regime, engaged in practices to update the skill requirements
+to do the work. For example, engineers in the drilling
+case argued that Alpha 2 empowered less
+experienced engineers to carry out fracturing treatments,
+thereby minimizing service variability and improving
+process resilience and endurance. Before using algorithms,
+only a limited pool of experts felt comfortable
+with designing hydraulic treatments. One senior advisor
+commented that many junior engineers “(…) are afraid to
+stick their neck out into the unknown,” which negatively
+affected the number of recruits for drilling roles, and so,
+the endurance of drilling operations. By implementing
+Alpha 2, the drilling organization empowered junior
+engineers to do the fracturing treatments, as the following
+statements illustrate:
+The automation, really psychologically, is a
+crutch that [junior engineers] can hang on
+while they're still making the key decisions
+(Drilling Engineer 2); and
+(…) it's an aid to them in the proper decisionmaking
+(Drilling Engineer 3); and
+(…) it's basically enabling [junior engineers]
+to make the right decisions and not end up
+in a space where the well is messed
+up (Drilling Engineer 1).
+Some business areas went beyond adjusting internal
+job skill requirements—they influenced skill development
+in their entire fields. The drilling engineering
+department, which maintained strong ties with universities
+for research and recruitment purposes, motivated
+professors to update the curriculum of their engineering
+schools so graduates had data science skills straight out
+of university. “When [students] finish their engineering
+degree to come to industry, they should have some
+knowledge of data science, machine learning techniques,
+artificial intelligence, and coding” (Drilling Engineer 2).
+By updating curricula to align with the abilities needed
+for algorithmic solutions, these departments hoped to
+ensure incoming engineers could contribute to successful
+projects from day one.
+4.5 | Operational consequences of the
+transformation pathway choice
+Participation in these transformation pathways resulted
+in three significant outcomes for the operational performance
+of knowledge work. First, it enabled organizations
+to employ algorithms for tasks that were previously reliant
+on specialized expertise and embodied skills. Second,
+it influenced long-term performance by shaping the
+learning opportunities inherent to algorithmic integration.
+Third, it impacted the performance of subsequent
+algorithmic projects by steering business areas onto pathdependent
+trajectories.
+4.5.1 | Consequences for enabling
+algorithms in skilled knowledge work
+Our case studies revealed the active roles played by the
+two transformation pathways in facilitating the use of
+algorithms within business areas, even for tasks that previously
+demanded skilled work. The nature of knowledge
+work across these business areas was intricate, contextdependent,
+temporal, and situated (Brown &
+Duguid, 1991; Lave, 1988). Thus, the effectiveness of this
+work hinged on individuals' embodied skills, their accumulated
+experience (know-how), and their mastery of
+organizational protocols (know-that). By engaging in
+either of the transformation pathways, business areas
+employed practices to address the challenges posed by
+knowledge work. For example, they decreased the need
+for embodied skills and specialized expertise by standardizing
+how tasks were executed. This approach subsequently
+paved the way for identifying and refining data,
+enabling algorithms to effectively recognize work patterns
+and imitate expert judgment. This is not to say that
+the know-how of a practice can be captured into knowthat,
+as these two aspects are mutually co-constitutive
+(Tsoukas, 2012). But through these practices, business
+areas translated certain simplified components of practitioners'
+expertise into new procedures that empowered
+algorithms to undertake work relying on skilled work.
+Beyond making it easier for organizations to use algorithms
+in tasks that require skilled work, we found that
+the two transformation pathways had different effects on
+the resulting operational performance, as shown in
+Table 5. Business areas that introduced algorithms
+in knowledge work by automating a specific task were
+less likely to see the benefits compared with those that
+re-engineered the entire process. At first, automating a
+specific task might seem like a reasonable way to change
+work. It can help reduce the risks of new technology and
+make algorithms feel less intimidating to staff, compared
+with more radical changes (Truelove & Kellogg, 2016).
+However, there are risks involved in this approach. This
+pathway did not work well when the task not only
+demanded skilled work but was also tightly coupled or
+involved a lot of variations in inputs and outputs. In such
+situations, just changing a task is not enough, and a
+broader approach to changing the entire process is
+necessary.
+4.5.2 | Consequences for learning and longterm
+performance
+We observed that, when adopted, not all the algorithmic
+solutions triggered a readjustment of the knowledge
+regime, which had consequences for the individuals' ability
+to learn. A discernible contrast emerged between the
+two transformation pathways, as shown in Table 6. Business
+areas that overhauled knowledge work through process
+re-engineering consistently adjusted the knowledge
+regime. This level of transformation was too substantial,
+necessitating a reconfiguration of learning approaches
+and knowledge validation practices. Conversely, areas
+that modified knowledge work by changing specific tasks
+only adjusted the knowledge regime in one case. As this
+approach involved a direct substitution of human labor
+with algorithms in a single task, individuals underestimated
+the potential impact of not enacting this action on
+their learning. The presumption was that since algorithms
+were handling the task, there was no need for staff
+to engage with their outputs or operational methods.
+Neglecting to adjust the knowledge regime was particularly
+problematic because it risked the long-term operational
+performance of the business area, impeding
+knowledge transfer, and even causing its destruction. For
+example, relying on algorithms to replace humans in
+generating weekly maintenance schedules progressively
+limited opportunities for maintenance workers to learn
+through experience. They found themselves acknowledging
+a lack of understanding about creating these schedules
+without the assistance of computers. Some even
+expressed concerns about being clueless if the person
+overseeing the algorithmic scheduler were to leave the
+organization, given that she was the only one experienced
+in handling it. Thus, introducing algorithms without
+adjusting the learning practices led to a process of
+knowledge self-alienation, wherein workers saw their
+knowledge as unfamiliar or alien. Furthermore, it posed
+challenges to knowledge transfer. Maintenance workers
+no longer possessed the necessary information and skills
+to address emerging issues tied to these schedules, and
+conveying these insights effectively to other staff beyond
+their organization became problematic.
+4.5.3 | Consequences for using algorithms in
+subsequent projects
+Our cases showed that algorithm projects create path
+dependency, steering business areas toward consistently
+employing a specific combination of transformation pathways
+and algorithmic solutions over time. This had
+important effects on how well future algorithmic projects
+improve business area operations. Path dependency
+resulted from existing investments in specific technologies
+and cognitive frames that favor established interpretations
+of technology use. This posed both positive and
+negative implications for operational performance. In
+some cases, path dependency allowed organizations to
+enjoy the cost advantages of creating economies of scale,
+as the cost of reusing algorithms in other knowledge
+work was significantly lower. Consider, for example, the
+case of the business services area. After initial success using
+RPA, they used their current infrastructure as a scaffold to
+create and deploy circa 240 more RPA solutions across the
+area. In other cases, path dependency had negative implications;
+it prevented organizations from realizing the need for
+a different algorithmic technology or pathway for automating
+other knowledge work.
+One example that illustrates the negative consequences
+of path dependency involves a project within the
+internal audit area tasked with creating risk reports for
+directors using natural language processing algorithms.
+This project failed, as internal auditors adhered to their
+familiar approach of automating a specific task instead of
+restructuring the entire process. At the project's inception,
+the internal auditors opted to employ algorithms to
+automate a specific task: the creation of audit report summaries.
+Their choice was influenced by their prior focus
+on adjusting particular tasks in past projects, but implementing
+it led to unsatisfactory outcomes. An analysis of
+the reports created by the natural language processing
+algorithm used revealed its confusion when encountering
+variations in terminology, including multiple acronyms
+employed by ACME, ultimately decontextualizing the
+audit's findings. Words such as “cow,” which could refer
+either to the animal or in ACME's lexicon, “Control of
+Work,” were not differentiated. This lack of contextual
+understanding resulted in convoluted risk findings. Further
+variations that confused the algorithm stemmed from the
+differences in language used by engineers, who run operational
+audits, and accountants, who run financial audits.
+After several iterations, the audit team asked ACF to
+separate operational and nonoperational audits to control
+some language variations between these two contexts. This
+adjustment improved the performance of the algorithms,
+indicating that a comprehensive process redesign for constructing
+audit reports, segregated by audit type, could have
+yielded more robust knowledge production.
+5 | DISCUSSION
+5.1 | A qualification on the role of skills
+A key question guiding this paper was how organizations
+harness algorithms to improve knowledge work, particularly
+skilled tasks. Our research at ACME provided key
+insights: we found that skills are not the main determinant
+of whether knowledge work tasks benefit from algorithms.
+Instead, improvement depends on how
+established work practices are transformed. This finding
+contrasts with prevailing research that suggests skilled
+tasks resist productivity gains from new technologies like
+algorithms (c.f. Acemoglu & Autor, 2011; Arntz
+et al., 2016; Autor, 2015; Frey & Osborne, 2017;
+Sampson, 2021). While skills like creativity, social intelligence,
+and dexterity presented complexities when accommodating
+algorithms, our investigation shows that they
+did not stop business areas from gaining benefits. For
+example, drilling engineers used reinforcement learning
+algorithms to successfully calibrate customized fracturing
+and stimulation treatments, previously needing creative
+judgment. Similarly, workers in business services successfully
+used RPA algorithms for credit card onboarding,
+which needed social intelligence. The requisite skillsets
+initially posed barriers to algorithmic integration, yet
+through transformation practices, these barriers were surmounted
+or circumvented. Thus, an important insight is
+TABLE 6 Consequences for operational performance based on the transformation pathway.
+Pathway Project
+Adjustment of the knowledge regime
+Yes No
+Re-engineering the entire process Business services: Credit card onboarding x
+Business services: Credit card locking x
+Drilling operations: Drilling optimization (Phase
+B)
+x
+Drilling operations: Mini frac calibration x
+Automating a specific task Internal audit: Anomalies in financial transaction x
+Maintenance operations: Maintenance scheduler x
+Internal audit: Risk reports for directors x
+Drilling operations: Drilling optimization (Phase
+A)
+x
+AMAYA and HOLWEG 503
+18731317, 2024, 3, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/joom.1296, Wiley Online Library on [03/11/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+that to understand technology change, we need to look at
+the organizations' capability to transform knowledge
+work processes. As novel algorithms like generative or
+multi-modal AI will enable automating more complex
+tasks and processes, this point will only increase in
+importance (Alavi & Westerman, 2023).
+Our theoretical contributions demonstrate how organizations
+achieve operational improvements by implementing
+algorithms within skilled knowledge work
+through transformative processes. To do so, we establish
+a connection between the literature on process improvement
+and knowing-in-practice. In the remainder of this
+section, we abstract from our empirical observations of
+business areas to offer a general model of how organizations
+adopt algorithms, and with what consequences for
+operational performance. We then explore how this
+model contributes to existing research and theorize the
+circumstances under which algorithms drive and sustain
+knowledge work improvement. We conclude by presenting
+the limitations of our study and opportunities for
+future research.
+5.2 | A process model of algorithmic
+adoption
+In this section, we draw on our findings to present a model
+of algorithmic adoption, depicted in Figure 2. Unfolding
+from left to right, our model begins with overcoming the
+inertia of established working practices, where workers
+repeatedly evaluate algorithms to negotiate on adoption,
+motivated by occupational values, personal ambitions, and
+fears, as well as institutional pressures (though this stage
+was out of scope, see Bechky (2020) for related discussion).
+Once an organization has agreed to adopt algorithms, the
+model progresses into the actual work transformation, following
+two pathways that we have called “automating the
+task” by substituting human labor with algorithms and “reengineering
+the process” by redesigning sequences of steps
+upon integration of an algorithm. The model concludes
+with the “adjustment of the knowledge regime,” a stage that
+involves modifying the structures that sanction knowledge,
+and the legitimate ways of learning. Importantly, not all
+transformations reached this stage, which impacted the
+extent of algorithmic improvement. In the following, our
+discussion focuses on elaborating on the in-scope stages of
+transforming work and adjusting the knowledge regime to
+understand how organizations can realize performance
+gains from algorithms in knowledge work.
+Our findings reveal two pathways for accommodating
+algorithms that yield varying outcomes for task performance:
+“automating the task” and “re-engineering the
+process.” The first pathway focuses on substituting a
+specific human task with an algorithm, as maintenance
+workers did in creating an algorithmic scheduler. This
+automation pathway can deliver performance benefits by
+standardizing and constraining the task, reducing the
+need for accumulated experience. However, this pathway
+faces two inherent challenges. First, it only succeeds
+when the task is loosely coupled and less variable. Second,
+the subtle substitution of one task overlooks the
+necessity of adjusting knowledge regimes to ensure learning
+from algorithmic outputs. These twin challenges
+hamper the instantiation of operational improvements.
+And even when organizations realize improvements, the
+pathway poses long-term performance risks by limiting
+ongoing learning and adaptation.
+In contrast, the second pathway focuses on
+re-engineering the entire process to accommodate algorithms,
+as engineers did in developing personalized fracturing
+treatments. The process re-engineering pathway
+can deliver performance improvements by addressing
+potential variations in inputs and removing nonvalue-
+adding steps. Although this transformation pathway
+demands stronger stakeholder buy-in and appears
+more daunting initially, it not only enables operational
+improvements to be created but also sustains them.
+Given the larger scope of transformation following
+the re-engineering, it triggers an adjustment of the
+knowledge regime that enables human learning from
+algorithmic outputs. For instance, adjustments to drilling
+regimes, empowered engineers to enhance frac pack efficiency
+while maintaining control over knowledge quality
+and learning.
+Importantly, the choice of pathway is also influenced by
+path dependency. Business areas that first implement algorithms
+through task automation tend to stick to that
+approach for subsequent projects, even when it proves challenging.
+Transitioning to process re-engineering instead was
+difficult despite greater long-term benefits. We argue that
+this is because past adoption of algorithms creates opportunities
+for people to align new technologies to existing practices,
+shaping change through self-reinforcing patterns over
+time (Ciborra, 2006; Leonardi, 2011; Pentland et al., 2022;
+Taylor, 2001). Thus, while multiple transformation pathways
+may exist in theory, in practice operational requirements
+and historical patterns constrain business areas to
+follow just two dominant routes.
+5.3 | Improving the outcome of adopting
+algorithmic solutions
+Our study raises important questions about how to
+instantiate the improvement of knowledge work with
+algorithms. A key finding from our study is that
+algorithms do not inherently deliver operational benefits;
+instead, these benefits materialize when they are seamlessly
+integrated into established work practices. Projects
+that chose the process re-engineering pathway proved
+more successful in generating operational improvements.
+The success of process re-engineering can be attributed to
+the fact that these business areas were better able to grasp
+how individuals actually carried out their work. They
+comprehended people's underlying assumptions, the
+norms guiding how knowledge was created, validated,
+and shared, the significance of specific acronyms, the
+potential variations in job tasks, and how people adapted
+to these variations. In essence, process re-engineering
+allowed business areas to capture not only explicit
+knowledge but also the valuable tacit know-how that
+might otherwise have remained hidden. By capturing
+this tacit knowledge, business areas acquired the
+insights necessary to redesign their work practices in
+a way that considers or transforms these hidden
+understandings, ultimately ensuring the quality of the
+algorithmic outputs. In the task automation pathway,
+this outcome was less likely to occur. Business areas
+on this route were more prone to overlooking these
+nuanced and tacit understandings, which in some
+cases resulted in work transformations that were
+flawed or incompatible with established knowing
+practices. In turn, the projects proved to be less successful.
+Thus, we propose:
+Proposition 1. When incorporating algorithmic
+solutions, redesigning entire business processes
+leads to greater improvements in
+operational performance, compared with only
+automating a specific task within a process.
+We argue that to enhance the likelihood of successful
+algorithm adoption in knowledge work, organizations
+can benefit from what we term “work triaging”—
+conducting a preliminary assessment of the work where
+the algorithm will be deployed, to determine the most
+suitable transformation pathway. This could involve evaluating
+work tasks in terms of their degree of coupling,
+extent of variation, and frequency of repetition. This
+approach may be facilitated by mapping the knowledge
+work process, identifying resources, dependencies, and
+subsequent steps. Additionally, the triage process can
+explore the modality of its input variations, such as how
+information in knowledge work is acquired to form
+meaningful decisions. By triaging work, organizations
+can decide whether a straightforward substitution of
+humans with algorithms for a task is feasible, or if further
+adjustments to the process or inputs are needed before
+implementing algorithms. Thus, our findings support
+what Sampson and dos Santos (2023) proposed
+analytically.
+This proposition also raises important questions about
+how organizations may overcome the path dependency
+created by previous algorithmic projects. We have established
+that the transformation pathways organizations
+choose for integrating algorithms into knowledge work
+play a key role in achieving operational improvements.
+However, as highlighted earlier, successful endeavors can
+lead to path dependency. When transformation pathways
+misalign with the specific task's requirements, failure can
+follow. For instance, internal auditors' historic reliance
+on practices tailored to automating single and discrete
+tasks proved inadequate for incorporating NLP algorithms
+into the creation of audit reports. These practices
+prevented internal auditors from realizing that such a
+task demanded re-engineering the entire process to handle
+high levels of variation in the inputs and outputs. It is
+conceivable, if not likely, that the opposite scenario could
+occur as well: organizations accustomed to reengineering
+entire processes might struggle to seize quick
+wins through algorithmic substitution in tasks that
+merely require the direct substitution of humans for algorithms.
+Thus, alignment between tasks' requirements and
+transformation pathways are crucial for creating operational
+benefits from algorithms.
+5.4 | Enhancing the acceptance of
+algorithmic solutions
+Our findings also raised questions about the acceptance
+of performance improvements derived from algorithms.
+Key to that is the need to alter how organizations evaluate
+knowledge as they adopt algorithms. Knowledge and
+action are intertwined (Orlikowski, 2002); thus, incorporating
+algorithms into established practices transforms
+“knowing how” to operate, needing organizations to
+evolve how they assess the quality of insights, recommendations,
+and decisions from human-algorithm work, to
+ensure the legitimacy and appropriateness of the knowledge
+produced. Altering the schemes for evaluating
+knowledge can be intricate as experts seek to protect the
+jurisdiction of work by keeping their expertise tacit
+(e.g., Abbott, 1988), preventing formalizations of their
+ways of working, and making judgments. Yet failing to
+adapt to the reality of new practices involving
+human-algorithm collaboration can negatively impact
+operational performance, both short term and long term.
+Consider auditors building NLP algorithms to streamline
+risk area identification. They failed to create appropriate
+ways to assess if the risk areas identified by the NLP algorithm
+were the right ones, resulting in misleading reports
+on resource prioritization for risk mitigation. They could
+have prevented this situation if new schemes for evaluating
+knowledge grounded in the new contextual practice
+had been in place. These schemes could have helped
+them understand that evaluating the contextual relevance
+of NLP risk areas was more important than NLP
+accuracy.
+In addition to validating the algorithmic outputs
+against appropriate schemes, effective human-algorithm
+collaboration requires organizations to socialize
+506 AMAYA and HOLWEG
+18731317, 2024, 3, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/joom.1296, Wiley Online Library on [03/11/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+algorithmic outputs (e.g., decisions, suggestions, summaries)
+and lessons learned. Unfortunately, knowledge sharing
+in many organizations has been subsumed into
+sharing memos or knowledge bases. This is ineffective for
+validating algorithm outputs. For one, algorithmic black
+boxing is as much a technical problem as it is social
+(Anthony, 2021); workers may accept algorithmic outputs
+unquestioningly, enabling diffusion of misinformation or
+inappropriate decisions. This becomes amplified by
+remote working that promotes individualistic learning,
+which can lead to imbalances in the expertise needed to
+critically evaluate algorithmic outputs. Mitigating these
+risks requires a more active form of knowledge sharing
+where algorithm outputs and lessons learned are validated
+in participative groups. This can take the form of
+sharing stories and anecdotes of failures and successes
+with algorithmic outputs. These stories help workers
+engage in collective sensemaking and facilitate human
+learning by acting as a live “repository of accumulated
+wisdom” (Brown & Duguid, 1991). For example, a discussion
+among auditors of the NLP algorithm's flawed risk
+analysis could uncover the need for separating audits into
+their contexts (e.g., finance and engineering) to improve
+risk area identification. Thus, we suggest increasing
+acceptance of algorithm recommendations requires
+evolved evaluation schemes and socializing outputs—
+both lessons learned and decisions taken—to promote
+continuous learning. Therefore, we propose:
+Proposition 2. When incorporating an algorithmic
+solution, socializing and validating the
+algorithm's outputs leads to greater acceptance
+of its recommendations.
+Broadly, the need to validate and socialize algorithm
+outputs highlight an important insight: considering the
+knowledge regime when engaging in process improvement
+is vital. Thus far, research on process improvement
+has focused on cycles like Plan-Do-Check-Act
+(Deming, 1982), which tend to focus on objectifying work
+into sequences of tasks to identify opportunities for
+improvement, implement changes, and measure their
+impact. However, our study underscores the need to
+simultaneously consider work processes and learning
+practices. That is, learning considerations should not be
+limited to the check/study stage of this cycle, but must
+also consider the knowledge that occurs during process
+execution (the practice). In our cases, organizations
+unable to adapt learning practices, evaluation
+approaches, or authority structures—the knowledge
+regime—could not benefit from algorithms. Some managed
+temporary improvements but struggled to sustain
+them, rendering algorithms ineffective.
+5.5 | Sustaining the improvements
+derived from algorithmic solutions
+The ability to sustain the improvements is the ultimate metric
+of success in process improvement. Key to understanding
+how to sustain improvements is to acknowledge that
+tasks not only constitute work but also shape and reshape
+learning (Orlikowski, 2002). Our analysis shows projects
+that adjust their knowledge practices are more likely to realize
+operational benefits when implementing algorithmic
+solutions. This is because implementing algorithms requires
+reshaping work practices, which inherently modifies how
+people acquire knowledge and skills. Reshaping work practices
+determines which skills become relevant, which practices
+support learning, and how knowledge quality is
+evaluated. If it is not managed thoughtfully, organizations
+run the risk of having employees whose expertise and skills
+are no longer aligned with the evolving practices, rendering
+them, no matter how intelligent and experienced they may
+be, unable to contribute effectively to the process. Adjusting
+the knowledge regime mitigates this risk. It prompts organizations
+to assess whether their methods for validating
+knowledge outputs (e.g., reports, presentations, analysis)
+remain valid and, if not, to identify suitable alternatives. It
+also ensures the establishment of new structures for recognizing
+and promoting new skills. This helps the company
+to sustain operational performance improvements realized
+through integrating algorithmic solutions. Hence, we
+propose:
+Proposition 3. When incorporating algorithmic
+solutions, adjusting the knowledge regime
+increases the organisation's ability to sustain
+improvements in operational performance.
+In this context, integrating process improvement and
+knowing-in-practice offers a new lens for studying algorithmic
+adoption in skilled work. This lens suggests that the
+challenges like opaque algorithmic recommendations
+(Lebovitz et al., 2022;Waardenburg et al., 2021), hidden epistemic
+assumptions within algorithms (Anthony, 2018;
+Lebovitz et al., 2021), stem from failures to understand people's
+work and how it shapes knowledge. This insight is key
+as organizations increasingly adopt algorithms to automate
+decision-making amidst continuous digital transformation
+(Angelopoulos et al., 2023).
+6 | LIMITATIONS AND FURTHER
+RESEARCH
+As with all case-based research, the generalizability of
+our findings is a prominent concern. Our cases aimed for
+AMAYA and HOLWEG 507
+18731317, 2024, 3, Downloaded from https://onlinelibrary.wiley.com/doi/10.1002/joom.1296, Wiley Online Library on [03/11/2024]. See the Terms and Conditions (https://onlinelibrary.wiley.com/terms-and-conditions) on Wiley Online Library for rules of use; OA articles are governed by the applicable Creative Commons License
+naturalistic generalizability (Pratt et al., 2006) rather than
+statistical generalizability, drawing insights from unique
+cases rather than common ones. Care must thus be taken
+when transferring these findings. For example, our findings
+may not apply to contexts involving artistic creativity,
+as it differs from the cognitive and deliberate
+creativity observed in the business areas studied here.
+Importantly, the two pathways we identify may not represent
+the full range of transformations possible across all
+contexts. Further research could uncover additional pathways,
+practices, and outcomes associated with algorithm
+adoption in diverse contexts like professional services,
+open-source software, R&D labs, and more.
+A key limitation stems from budget and time constraints
+that led us to focus only on knowledge practices
+and skill requirements of knowledge and the changes
+made to transform knowledge work. We did not examine
+other potentially influential factors like status, experience,
+unionization, and organization type that may
+impact algorithm adoption. It may well be that professionals
+in service firms may strategically construct narratives
+to protect their agency and knowledge work; or
+expert aversion to algorithms may hinder long-term benefits.
+Two open questions remain: how do experts with
+different characteristics construct, resist, and react to
+organizational algorithmic work redesigns? And how do
+these social processes moderate algorithmic performance
+gains? We pose these for future research.
+In the wider context of the digitalization of operations,
+the use of algorithmic solutions in knowledge work
+will likely become more prevalent as technology
+advances further. Recent advances in multi-modal and
+generative AI systems are likely to spark further adoptions
+of algorithmic solutions to contexts that are so far
+deemed not to be automatable, and so further challenge
+our present assumptions about their impact. As the wellcited
+work of technologist Roy Amara tells us, at the
+point of technological innovation we are very likely to
+underestimate the effects that new technologies will have
+in the long term (Boucher & Amara, 1977). Developing a
+deeper understanding of how organizations can effectively
+create collaborations between humans and algorithms
+will thus be critical for the field of Operations
+Management.
+
+
+
+
+
+

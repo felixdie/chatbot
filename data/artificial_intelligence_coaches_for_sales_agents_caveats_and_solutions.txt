@@ -1,0 +1,2651 @@
+Luo, X., Qin, M. S., Fang, Z., & Qu, Z. (2021). Artificial intelligence coaches for sales agents:
+Caveats and solutions. Journal of Marketing, 85(2), 14-32.
+
+
+Abstract 
+
+
+Firms 
+are 
+exploiting 
+artificial 
+intelligence 
+(AI) 
+coaches 
+to 
+provide 
+training 
+to 
+sales 
+agents 
+and 
+improve 
+their 
+job 
+skills. 
+The 
+authors 
+present 
+several 
+caveats 
+associated 
+with 
+such 
+practices 
+based 
+on 
+a 
+series 
+of 
+randomized 
+field 
+experiments. 
+Experiment 
+1 
+shows 
+that 
+the 
+incremental 
+benefit 
+of 
+the 
+AI 
+coach 
+over 
+human 
+managers 
+is 
+heterogeneous 
+across 
+agents 
+in 
+an 
+inverted-U 
+shape: 
+whereas 
+middle-ranked 
+agents 
+improve 
+their 
+performance 
+by 
+the 
+largest 
+amount, 
+both 
+bottom-and 
+top-ranked 
+agents 
+show 
+limited 
+incremental 
+gains. 
+This 
+pattern 
+is 
+driven 
+by 
+a 
+learning-based 
+mechanism 
+in 
+which 
+bottom-ranked 
+agents 
+encounter 
+the 
+most 
+severe 
+information 
+overload 
+problem 
+with 
+the 
+AI 
+versus 
+human 
+coach, 
+while 
+top-ranked 
+agents 
+hold 
+the 
+strongest 
+aversion 
+to 
+the 
+AI 
+relative 
+to 
+a 
+human 
+coach. 
+To 
+alleviate 
+the 
+challenge 
+faced 
+by 
+bottom-ranked 
+agents, 
+Experiment 
+2 
+redesigns 
+the 
+AI 
+coach 
+by 
+restricting 
+the 
+training 
+feedback 
+level 
+and 
+shows 
+a 
+significant 
+improvement 
+in 
+agent 
+performance. 
+Experiment 
+3 
+reveals 
+that 
+the 
+AI–human 
+coach 
+assemblage 
+outperforms 
+either 
+the 
+AI 
+or 
+human 
+coach 
+alone. 
+This 
+assemblage 
+can 
+harness 
+the 
+hard 
+data 
+skills 
+of 
+the 
+AI 
+coach 
+and 
+soft 
+interpersonal 
+skills 
+of 
+human 
+managers, 
+solving 
+both 
+problems 
+faced 
+by 
+bottom-and 
+top-ranked 
+agents. 
+These 
+findings 
+offer 
+novel 
+insights 
+into 
+AI 
+coaches 
+for 
+researchers 
+and 
+managers 
+alike. 
+
+
+Keywords 
+
+
+AI 
+coach, 
+artificial 
+intelligence, 
+aversion, 
+information 
+overload, 
+new 
+technology, 
+sales 
+training, 
+sales 
+force 
+management 
+Online 
+supplement: 
+https://doi.org/10.1177/0022242920956676 
+
+
+As the data-driven capability of artificial intelligence (AI) 
+improves (Brynjolfsson and Mitchell 2017), firms are exploiting 
+AI coaches to train sales agents. AI coaches are computer 
+software programs that leverage deep learning algorithms and 
+cognitive speech analytics to analyze sales agents’ conversations 
+with customers and provide training feedback to improve 
+their job skills. Due to their high computation power, scalability, 
+and cost efficiencies, AI coaches are more capable of generating 
+data-driven training feedback to agents than human 
+managers. Indeed, MetLife, an insurance giant, adopted an 
+AI coach named Cogito to offer training feedback to its call 
+center frontline employees to improve customer service skills 
+(Council 2019). Similarly, Zoom used its AI coach, Chorus, to 
+offer on-the-job training to its sales force (Matheny 2019). 
+
+However, are there caveats in leveraging AI coaches for 
+sales training? Precisely because of the big data analytics 
+power of AI coaches, one concern is that feedback generated 
+by the technology may be too comprehensive for agents to 
+assimilate and learn, especially for bottom-ranked agents. Further, 
+despite their superior “hard” data computation skills, AI 
+coaches lack the “soft” interpersonal skills in communicating 
+
+advantage of human managers (e.g., Daniels 2003; Jackson 
+1988). The lack of soft skills may result in an aversion to the 
+AI coach (Dietvorst, Simmons, and Massey 2015, 2018; 
+Srivastava 2019), which hampers salespeople’s learning and 
+performance improvement. Indeed, the design of AI coaches 
+often focuses more on information generation but less on learning 
+by agents who may differ in learning abilities (Roose 2019). 
+Thus, it would be naı¨ve to expect a simple, linear impact of AI 
+coaches, relative to human managers, across heterogeneous 
+sales agents. 
+
+Against this background, we address several research questions: 
+(1) Which types of sales agents—bottom-, middle-, or 
+top-ranked—benefit the most and the least from AI vis-`a-vis 
+human coaches? Is the incremental impact of AI coaches on 
+
+Xueming 
+Luo 
+is 
+Charles 
+Gilliland 
+Distinguished 
+Chair 
+Professor 
+of 
+Marketing, 
+Fox 
+School 
+of 
+Business, 
+Temple 
+University 
+(email: 
+xueming.luo@temple.edu). 
+Marco 
+Shaojun 
+Qin 
+is 
+Assistant 
+Professor 
+of 
+Marketing, 
+Fox 
+School 
+of 
+Business, 
+Temple 
+University 
+(email: 
+shaojun.qin@temple.edu). 
+Zheng 
+Fang 
+is 
+Professor 
+of 
+Marketing, 
+Business 
+School, 
+Sichuan 
+University 
+(email: 
+149281891@qq 
+.com). 
+Zhe 
+Qu 
+is 
+Associate 
+Professor 
+of 
+Management 
+and 
+Information 
+
+
+the feedback to agents (Shellenberger 2019), which is a key Systems, 
+School 
+of 
+Management, 
+Fudan 
+University 
+(email: 
+quz@fudan.edu.cn). 
+
+
+
+Luo 
+et 
+al. 
+15 
+
+
+agent performance nonlinearly heterogeneous? (2) What is the 
+underlying mechanism? Does learning from the training feedback 
+account for the impact of AI coaches? And (3) can an 
+assemblage of AI and human coach qualities circumvent the 
+caveats and improve the sales performance of distinct types of 
+agents? 
+
+To answer these questions, we conducted a series of randomized 
+field experiments with two fintech companies. In 
+Experiment 1, a total of 429 agents were randomly assigned 
+to undergo on-the-job sales training with an AI or human 
+coach. Results show that the incremental impact of the AI 
+coach over human coach is heterogeneous in an inverted-U 
+shape: whereas middle-ranked agents improve their performance 
+by the largest amount, both bottom-and top-ranked 
+agents show limited incremental gains. The findings suggest 
+that this pattern is driven by a learning-based underlying 
+mechanism: bottom-ranked agents encounter the most severe 
+information overload problem with the AI coach, which leads 
+to less learning from the coaching feedback and thus limited 
+gains. By contrast, top-ranked agents display the strongest AI 
+aversion problem, which obstructs their incremental learning 
+and performance. 
+
+The slim improvement in bottom-ranked agents is an obstacle 
+for the AI coach adoption because they have the largest 
+room and most acute needs to sharpen their job skills. Thus, 
+we re-designed the AI coach by restricting the amount of feedback 
+provided to bottom-ranked agents. Using a separate sample 
+of 100 bottom-ranked agents, Experiment 2 affirmed a 
+substantial improvement in agent performance when the AI 
+coach is restricted. Furthermore, Experiment 3 addresses the 
+limitations of either AI or human coaches alone by examining 
+an AI–human coach assemblage, wherein human managers 
+communicate the feedback generated by the AI coach to the 
+agents. A new sample of 451 bottom-and top-ranked agents 
+was randomly assigned to the AI coach, human coach, and AI– 
+human coach assemblage conditions. The results suggest that 
+both bottom-and top-ranked agents in the AI–human coach 
+assemblage condition enjoy higher performance than their 
+counterparts in the AI coach alone or the human coach alone 
+condition. In addition, bottom-ranked agents gain more performance 
+improvement than top-ranked agents with the hybrid of 
+AI and human coaching. Thus, this assemblage harnessing the 
+soft communication skills of human managers and hard data 
+analytics power of AI coaches can effectively solve both problems 
+faced by bottom-and top-ranked agents. 
+
+Our research makes three key contributions to the literature. 
+First, it is among the first to uncover the nuanced value of AI 
+for sales force management: the AI coach can be deployed to 
+assist agents to learn and improve performance, rather than 
+displace them. Our work extends prior literature on the negative 
+impact of AI (Acemoglu and Restrepo 2017; Bessen et al. 
+2019; Frey and Osborne 2017) and customers’ aversion to AI 
+automation and algorithm (Dietvorst, Simmons, and Massey 
+2015; Luo et al. 2019; Mende et al. 2019). Second, our results 
+on the heterogeneous inverted U-shaped effects of the AI coach 
+and the learning mechanism are important because they 
+
+identify the distinct challenges faced by bottom-and 
+top-ranked agents when trained by AI vis-`a-vis human managers. 
+These results refute a linear view of the effectiveness of 
+deploying AI coaches in salesforce management. Third, we 
+highlight a novel AI–human coach assemblage that outperforms 
+either the AI or human coach alone condition. Adopting 
+AI for agent training should also avoid the single-minded view 
+of relying on AI coaches solely or replacing human coaches 
+with the autonomous data-driven machines completely. Rather, 
+designing an assemblage in which smart machines assist 
+human managers proves to be most effective in training salespeople 
+for optimal performance. 
+
+Managerially speaking, our research empowers companies 
+to tackle the challenges they may encounter when investing in 
+AI coaches to train distinct types of agents. We show that, 
+instead of simply applying the AI coach to the workforce, 
+managers ought to prudently design it for targeted agents. 
+Moreover, companies should be aware that AI and human coaches 
+are not dichotomous choices. Instead, an assemblage 
+between AI and human coaches engenders higher workforce 
+productivity, thus galvanizing companies to reap substantially 
+more value from their AI investments. 
+
+AI 
+Versus 
+Human 
+Coaches 
+
+
+A core advantage of AI technologies is their hard data computation 
+skills. AI’s distinctive strength lies in processing big data 
+and learning the latent patterns hidden in the structured and 
+unstructured data (Davenport and Ronanki 2018; Luo et al. 
+2019; Puntoni et al. 2020). The backbone AI technologies consist 
+of deep learning-based technologies such as Natural Language 
+Understanding, Automatic Speech Recognition, 
+Text-to-Speech Synthesis, Voice-Operated Switch, and Media 
+Resource Control Protocol. Researchers recognize AI as most 
+suitable for tasks that require heavy processing of text, speech, 
+image, and video data (Brynjolfsson and Mitchell 2017; Sundblad 
+2018). As AI technologies become increasingly sophisticated, 
+they are able to perform many tasks conventionally 
+carried out by humans, complement humans’ tasks, and even 
+outperform humans (McKinsey Global Institute 2018). For 
+example, in the context of outbound sales calls, AI can understand 
+customers’ queries and serve them in natural language 
+conversations more competently than inexperienced workers 
+do (Luo et al. 2019). Further, in e-commerce settings, AI can 
+effectively handle data-intensive tasks such as machine translation 
+and product recommendations (Brynjolfsson, Hui, and 
+Liu 2019; Sun et al. 2019). 
+
+In the context of on-the-job sales training, a coach’s task 
+is to review agents’ past conversations with customers and 
+then provide feedback that enables them to learn sales skills 
+and improve future performance (Rom´an, Ruiz, and Munuera 
+2002; Weitz, Sujan, and Sujan 1986). This task can be highly 
+data intensive because coaches need to (1) listen to the 
+speech data to identify mistakes in agents’ conversations in 
+serving customers and (2) provide specific solutions to rectify 
+each of the mistakes. Because AI coaches can process 
+
+
+
+85(2) 
+
+
+extensive amounts of speech data more effectively, they can 
+detect a broader range of mistakes in conversations than 
+human managers. Further, AI coaches are trained with a vast 
+amount of past call data tagged as best and worst practices to 
+persuade customers, so they can provide more solutions for 
+each mistake identified in speech data processing. Overall, AI 
+coaches’ hard data computation skills suggest their relative 
+advantages over human managers in generating feedback for 
+sales agents. 
+
+In contrast, human managers’ distinctive strength lies in 
+their soft interpersonal communication skills. Specifically, 
+interpersonal communication skills (e.g., interpersonal empathy, 
+encouragement, adaptivity, acknowledgment) are at the 
+heart of human advantage over machines and are where AI 
+falls short (Brynjolfsson and Mitchell 2017; Davenport and 
+Ronanki 2018; Deloitte 2017; Deming 2017). Effectively conveying 
+feedback to agents is pivotal for them to learn from the 
+coaching information to improve job performance (Rom´an, 
+Ruiz, and Munuera 2002; Sujan, Weitz, and Kumar 1994). 
+Successful communications often hinge on the degree to which 
+coaches can adapt feedback to agents’ learning capability and 
+offer interpersonal support such as empathy, acknowledgment, 
+and encouragement (Simon 1955; Tversky and Kahneman 
+1974). Such interpersonal skills of human coaches can reduce 
+agents’ resistance to coaching feedback (as agents gain more 
+trust in the coaches) and overcome their learning barriers (Atefi 
+et al. 2018; Rom´an, Ruiz, and Munuera 2002). In summary, 
+human coaches’ distinctive interpersonal skills constitute a 
+relative advantage over AI coaches in communicating feedback 
+to agents. 
+
+The 
+Inverted 
+U-Shaped 
+Effects 
+of 
+AI 
+Coaches 
+on 
+Sales 
+Agents 
+
+
+We posit that the incremental impact of AI coaches over human 
+coaches is heterogeneous across agents in an inverted-U shape: 
+while middle-ranked agents learn and improve their performance 
+by the largest amount, both bottom-and top-ranked 
+agents show limited incremental gains. 
+
+First, bottom-ranked agents may encounter the most 
+severe information overload problem associated with AI coaches 
+(vs. human coaches). Information processing literature 
+has long viewed employees as information processors with 
+limited capability (e.g., Fiske and Taylor 1991; Newell and 
+Simon 1972; Simon 1955; Tversky and Kahneman 1974). 
+There is also mounting evidence that too much information 
+may introduce an information overload problem, which 
+results in poor learning and performance (Jacoby 1974; 
+Scammon 1977). In this sense, because an AI coach has 
+advantages in data analytics and computational power compared 
+with a human coach, its more comprehensive feedback 
+may convey too much information for agents to digest. However, 
+we expect this information overload problem to be most 
+severe among bottom-ranked agents because, as the least 
+inexperienced and skillful agents, they tend to make many 
+mistakes when serving customers. The data-driven AI 
+
+coaches designed to spot mistakes and provide solutions are 
+therefore likely to generate larger amounts of feedback (in 
+terms of both breadth and depth) for bottom-ranked agents 
+relative to human coaches. Moreover, because of their lack of 
+experience and skills, bottom-ranked agents are most likely 
+to be overwhelmed by the comprehensive feedback from AI 
+coaches and have the hardest time digesting such feedback, 
+which then hampers their learning from coaching feedback 
+and subsequent performance improvement. 
+
+Further, we expect that top-ranked agents will display the 
+strongest aversion to AI versus human coaches. According to 
+information processing theory, the lack of soft interpersonal 
+communication skills is a major roadblock to individual learning 
+and performance improvement (Newell and Simon 1972; 
+Sujan, Weitz, and Kumar 1994). Compared with human managers, 
+the AI coach lacks interpersonal skills, which may 
+result in more aversion to its coaching feedback (Dietvorst, 
+Simmons, and Massey 2018; Srivastava 2019). People tend to 
+trust humans and resist AI, even if the former do not perform 
+as well as the latter, because machines are perceived to be 
+cold and less empathetic and lack interpersonal communication 
+skills (Eastwood, Snook, and Luther 2012; O¨ nkal et al 
+2009; Puntoni et al. 2020). This AI aversion has negative 
+effects in domains such as consumer experience, hiring, learning, 
+prediction, and medical diagnoses (Chaiken 1980; 
+Edmondson, Kramer, and Cook 2004; Puntoni et al. 2020; 
+Ratneshwar and Chaiken 1991). According to this literature, 
+the aversion to the AI versus human coach among agents may 
+adversely impact their learning and performance. However, 
+we expect such aversion to be the strongest for top-ranked 
+agents because they are skillful already and have their own 
+views of the best practices for sales tasks. In this vein, Dietvorst, 
+Simmons, and Massey (2015) point out that competent 
+workers will have a stronger aversion to AI algorithms, and 
+Logg, Minson, and Moore (2019) find that experts trust advice 
+from machines less than humans. Moreover, it has been found 
+that experienced employees have more desire for autonomy 
+and control (Denton and Kleiman 2011), which induces more 
+aversion to machines (Burton, Stein, and Jensen 2020). Thus, 
+top-ranked agents should have the strongest aversion to AI 
+relative to human coaches, which obstructs their learning and 
+performance gains. 
+
+In summary, we expect bottom-ranked agents to encounter 
+the most severe information overload problem with AI relative 
+to human coaches, and top-ranked agents to display the strongest 
+problem of aversion to AI versus human coaches, although 
+all agents may suffer from these two problems to some degree. 
+In contrast, middle-ranked agents are more experienced than 
+bottom-ranked agents in assimilating the training information 
+from AI coaches and thus have a less severe information overload 
+problem, and they are not too skillful to resist the useful 
+personalized training feedback from AI coaches (i.e., they have 
+a less severe AI aversion problem). Hence, we expect that the 
+incremental learning from the AI coach and subsequent performance 
+improvement to be the strongest for middle-ranked 
+
+
+Luo 
+et 
+al. 
+17 
+
+
+First 
+Field 
+Experiment 
+Learning 
+H1 H2 
+AI Coach 
+Restricted 
+H3ab 
+AI–Human 
+Coach 
+Assemblage 
+H4abc 
+Incremental Impact 
+of AI vs. Human 
+Coaches 
+Bottom Middle Top 
+Aversion 
+to Coach 
+Sales Agent 
+Performance 
+Sales Agent 
+Performance 
+Sales Agent 
+Performance 
+Second 
+Field 
+Experiment 
+Third 
+Field 
+Experiment 
+Information 
+Overload 
+Figure 
+1. 
+An 
+overview 
+of 
+the 
+three 
+field 
+experiments. 
+
+
+agents compared with bottom-and top-ranked agents, in an 
+inverted-U shape. 
+
+H1: 
+The incremental impact of the AI coach over human 
+coaches is in an inverted-U shape: middle-ranked agents 
+improve their sales performance by the largest amount, and 
+both bottom-and top-ranked agents show limited gains. 
+H2: 
+Agents’ learning from coaching feedback mediates the 
+inverted U-shaped relationship in H1. 
+
+Figure 1 provides an overview of our three field experiments to 
+test these and other predictions. The first experiment tests H1 
+and H2, which highlight the heterogeneous inverted U-shaped 
+effects of AI coaches on agent performance, the learning-based 
+underlying mechanism, and the problems faced by bottom-and 
+top-ranked agents. 
+
+Field 
+Experiment 
+1 
+
+
+Empirical 
+Setting 
+
+
+To test our hypotheses, we conducted a randomized field 
+experiment with a large fintech company in Asia. The company 
+specializes in providing financial services to individual customers. 
+It has approximately 3,500 employees, over 19 million 
+customers, and an annual sales revenue of over $3 billion. The 
+company has a mobile app–based platform, which offers personal 
+loans to individual customers, who are aged between 
+22 and 55 years. Each customer may select a loan amount that 
+ranges from $200 to $8,000 and choose the number of months 
+to pay back the loan (between 6 and 24 months). To apply for a 
+loan, customers must upload their ID, together with documents 
+describing their financial information such as income, assets, 
+existing loans, and credit score. Once the loan is approved, the 
+
+customer can receive the money on the same day. The monthly 
+interest rate ranges from 1% 
+to 3%, depending on the loan 
+amount, length of time to pay back the loan, and the risk factor 
+of the applicant calculated by the firm. The loans are often used 
+to buy new smartphones, TVs, and computers. 
+
+The company hires sales agents to make promotional calls to 
+its existing customers. The targeted customers usually have a 
+credible repayment history of their current loan, so the company 
+wants to offer them a special deal for renewing the loan under 
+similar terms (e.g., loan amount, interest rate, installments). Each 
+customer receives at most one call from the company every three 
+months. The tasks of sales agents include explaining the details of 
+the promotion to the customer, answering customer questions 
+about the financial product, and helping the customer prepare for 
+the loan application. Every day, each agent is required to make 
+about 50 effective sales calls to customers.1 To ensure fairness, 
+the firm randomly assigns the customer calling lists to the sales 
+agents. The company records the number of successful loan applications 
+and compensates agents accordingly. 
+
+Successful sales promotion requires on-the-job training; 
+therefore, the company hired managers to provide continuous 
+sales training with call scripts and voice control techniques to 
+sales agents before this experiment. Owing to the shortage of 
+human managers and high marginal costs hiring them, the 
+company adopted an AI coach. The prototype of the AI coach 
+came from a high-tech platform with big data analytics skills 
+and deep–learning–based technologies such as Natural Language 
+Understanding, Automatic Speech Recognition, 
+Text-to-Speech Synthesis, Voice-Operated Switch, and Media 
+Resource Control Protocol. This AI coach relies on a 
+
+1 
+
+An effective sales call is one in which the customer answers and does not 
+hang up immediately. 
+
+
+
+85(2) 
+
+
+comprehensive best-practice knowledge bank to analyze 
+agents’ customer calls (unstructured audio data) and provide 
+training feedback. The knowledge bank was created from a 
+large volume of training data, namely, the company’s historical 
+audio recordings (in tens of terabytes) of sales calls. 
+
+The AI coach follows four steps to create and maintain the 
+knowledge bank. First, it uses natural language processing techniques 
+to convert the audio recordings into text scripts. The 
+algorithm then conducts semantic parsing to convert the scripts 
+into machine-understandable representations. In the third step, 
+the AI coach applies deep learning models to identify 
+context-dependent answers, not only those that maximize the 
+predicted probability of the customers taking the promotion and 
+renewing the loan (i.e., good answer bank), but also those that 
+are either ineffective or even reduce the loan renewal probability 
+(i.e., bad answer bank). Further, the AI coach is engaged in 
+dynamic learning such that it repeats the previous steps with 
+new training data. Once trained, the AI coach can automatically 
+identify mistakes in the sales conversations (e.g., ambiguous 
+words, unprofessional responses, overpromising) and generate 
+comprehensive and personalized feedback (suggestions to remedy 
+each mistake) to each sales agent to improve her job skills to 
+persuade customers. While the development of the prototype of 
+the AI coach takes years, it can be applied to specific company 
+settings relatively quickly (about one to two weeks). The AI 
+coach is also cheaper to maintain. Specifically, the average cost 
+of a human coach was about 15,000–20,000 local currency 
+(US$2,100–$2,820) per month, including the insurance, social 
+security, and retirement benefits required by the law. By contrast, 
+the total cost of maintaining the AI coach system is around 
+10,000 local currency (US$1,410) per month—only half of the 
+cost of hiring a human manager. 
+
+Experiment 
+Design 
+
+
+In the field experiment, the company randomly assigned 429 
+sales agents to receive on-the-job training feedback from either 
+the AI or human coaches. Within each type, there were three 
+kinds of sales agents: bottom-, middle-, and top-ranked agents 
+based on their previous performance before the experiment. 
+Thus, our experiment design had a total of six conditions. The 
+bottom-ranked agents had a previous performance in the bottom 
+20th percentile (usually interns and new hires), the 
+top-ranked agents were in the top 20th percentile, and the rest 
+were the middle-ranked agents. To assure a balanced sample, 
+the company randomly selected approximately 70 sales agents 
+for each of the six experiment conditions. 
+
+For each agent, the sales coach (human or AI) listened to the 
+sales call audios and provided training feedback that would 
+improve the sales agents’ skills to handle future calls to persuade 
+customers. Although the AI coach can scale up to scan 
+thousands of sales calls simultaneously, to assure a fair comparison, 
+the AI and human coaches across the six experiment 
+conditions listened to the same number of randomly sampled 
+calls for each agent. In the human coach condition, ten human 
+managers were randomly assigned to train the three types of 
+
+sales agents to control for manager-specific effects (e.g., popularity 
+among agents). According to the company, all human 
+managers were seasoned experts in the fintech industry with 
+extensive sales training experience. Each human manager was 
+in charge of 20–25 sales agents and required to listen to 5 
+randomly selected sales calls for each of her assigned agents 
+every day. Thus, each manager listened to about 100–125 calls 
+every day and spent three to four minutes on each sales call 
+(which typically lasted for one to three minutes), a normal 
+workload for sales coaches in the industry. The compensation 
+plan of human managers was designed such that about 
+70%–80% 
+of their income was linked to the performance of 
+the sales agents assigned to them to ensure that the human 
+managers had financial incentives to provide high-quality 
+training feedback to the sales agents (thus, our results on the 
+incremental impact of AI coaches are more conservative). 
+
+Further, to rule out alternative explanations, both AI and 
+human coaches provided feedback with the same frequency, 
+timing, and format. Specifically, agents received daily training 
+feedback via email at 9 A.M. the next working day. Both AI and 
+human coaches’ feedback included the text excerpted from the 
+agent’s sales conversation, sales mistakes the agent made during 
+the conversation, and suggested solutions to each mistake. 
+Web Appendix 1 provides examples of the training feedback 
+from the two types of coaches. Although all coaches could 
+identify mistakes in the sales conversation and provide effective 
+suggestions, the AI coach was able to detect more mistakes 
+and summarize more solutions. This finding also supports the 
+face validity of our study: as the training task here is data 
+driven (i.e., analyzing the unstructured data on sales call conversations 
+between the agent and customers), the AI coach 
+should generate more comprehensive training feedback by 
+identifying more mistakes and generating more solutions to 
+remedy each mistake compared with human coaches. Because 
+the AI coach is a cutting-edge technology newly adopted by the 
+company, no agents had any prior AI coach experience before 
+our experiment. In our experiment, all agents underwent the 
+same amount of time in training (one month) for both the AI 
+and human coach groups. 
+
+Data 
+
+
+We collected data on sales agents’ performance, demographics, 
+and voice characteristics for all their sales calls during the 
+experiment month. We also surveyed the sales agents to understand 
+their perceptions of the training feedback they received 
+from the AI or human coaches right after the experiment. Table 
+1 presents the definitions of these variables and summary 
+statistics. 
+
+We measured sales agent performance by the average purchase 
+rate (in %), or the daily ratio of the sales calls successfully 
+converted into loan renewal to the total sales calls averaged over 
+the experiment month. The average purchase rate of the sales 
+agents in the experiment month was around 14%, with a slightly 
+higher rate in the second half of the month. Also, performance 
+averaged 12% 
+in the month prior to the experiment. 
+
+
+Luo 
+et 
+al. 
+19 
+
+
+Table 
+1. 
+Variable 
+Definitions 
+and 
+Summary 
+Statistics 
+(Experiment 
+1). 
+
+
+Variable 
+Definition 
+Mean 
+SD 
+Min 
+Max 
+Purchase 
+Rate 
+(%) 
+The 
+daily 
+ratio 
+of 
+the 
+sales 
+calls 
+converted 
+into 
+loan 
+renewal 
+to 
+the 
+total 
+sales 
+calls 
+14.41 
+6.75 
+2.23 
+25.95 
+(averaged 
+over 
+the 
+experiment 
+month) 
+Purchase 
+Rate_Half1 
+(%) 
+The 
+purchase 
+rate 
+for 
+the 
+first 
+half 
+of 
+the 
+experiment 
+(daily 
+ratio 
+averaged 
+over 
+the 
+13.97 
+6.67 
+2.27 
+25.75 
+first 
+15 
+days 
+in 
+the 
+experiment 
+month) 
+Purchase 
+Rate_Half2 
+(%) 
+The 
+purchase 
+rate 
+for 
+the 
+second 
+half 
+of 
+the 
+experiment 
+(daily 
+ratio 
+averaged 
+over 
+14.86 
+6.91 
+2.18 
+26.15 
+days 
+16 
+to 
+31 
+in 
+the 
+experiment 
+month) 
+Purchase 
+Rate_Previous 
+(%) 
+The 
+purchase 
+rate 
+for 
+the 
+month 
+prior 
+to 
+the 
+experiment 
+12.17 
+6.95 
+1.67 
+25.44 
+Bottom 
+Dummy 
+variable 
+for 
+bottom-ranked 
+agents 
+whose 
+performance 
+was 
+in 
+the 
+bottom 
+.34 
+.48 
+0 
+1 
+20th 
+percentile 
+in 
+the 
+month 
+prior 
+to 
+the 
+experiment 
+Middle 
+Dummy 
+variable 
+for 
+middle-ranked 
+agents 
+whose 
+performance 
+was 
+between 
+20th 
+.33 
+.47 
+0 
+1 
+and 
+80th 
+percentiles 
+in 
+the 
+month 
+prior 
+to 
+the 
+experiment 
+Top 
+Dummy 
+variable 
+for 
+top-ranked 
+agents 
+whose 
+performance 
+was 
+in 
+the 
+top 
+20th 
+.33 
+.47 
+0 
+1 
+percentile 
+in 
+the 
+month 
+prior 
+to 
+the 
+experiment 
+Calling 
+Time 
+The 
+daily 
+active 
+calling 
+minutes 
+averaged 
+over 
+the 
+experiment 
+month 
+143.81 
+27.16 
+105 
+188 
+Number 
+of 
+Calls 
+The 
+daily 
+attempted 
+calls 
+averaged 
+over 
+the 
+experiment 
+month 
+290.61 
+114.94 
+109 
+465 
+Mistakes 
+(%) 
+The 
+percentage 
+of 
+sales 
+calls 
+an 
+agent 
+made 
+during 
+the 
+experiment 
+that 
+had 
+at 
+least 
+6.16 
+2.92 
+1 
+15.11 
+one 
+mistake 
+identified 
+Agent 
+Positive 
+(%) 
+The 
+percentage 
+of 
+sales 
+calls 
+an 
+agent 
+made 
+during 
+the 
+experiment 
+that 
+had 
+an 
+94.26 
+2.77 
+87 
+100 
+overall 
+positive 
+sentiment 
+of 
+the 
+agent 
+Customer 
+Positive 
+(%) 
+The 
+percentage 
+of 
+sales 
+calls 
+an 
+agent 
+made 
+during 
+the 
+experiment 
+that 
+had 
+an 
+43.17 
+8.21 
+28 
+57 
+overall 
+positive 
+sentiment 
+of 
+the 
+customer 
+Customer 
+Refuse 
+(%) 
+The 
+percentage 
+of 
+the 
+customer’s 
+words 
+of 
+objection 
+(e.g., 
+“no,” 
+“don’t,” 
+“won’t”) 
+20.5 
+4.59 
+11.9 
+30.1 
+in 
+the 
+sales 
+call 
+Age 
+Age 
+of 
+the 
+sales 
+agent 
+(in 
+years) 
+21.99 
+2.27 
+18 
+26 
+Male 
+Dummy 
+variable 
+for 
+male 
+agents 
+.33 
+.47 
+0 
+1 
+High 
+School 
+Dummy 
+variable 
+for 
+agents 
+who 
+had 
+high 
+school 
+as 
+the 
+highest 
+degree 
+.41 
+.49 
+0 
+1 
+College 
+Dummy 
+variable 
+for 
+agents 
+who 
+had 
+college 
+as 
+the 
+highest 
+degree 
+.59 
+.49 
+0 
+1 
+Tenure 
+3 
+months 
+Dummy 
+variable 
+for 
+agents 
+whose 
+tenure 
+at 
+the 
+company 
+was 
+less 
+than 
+or 
+equal 
+to 
+.78 
+.41 
+0 
+1 
+three 
+months 
+at 
+the 
+beginning 
+of 
+the 
+experiment 
+Tenure 
+4–6 
+months 
+Dummy 
+variable 
+for 
+agents 
+whose 
+tenure 
+at 
+the 
+company 
+was 
+four 
+to 
+six 
+months 
+at 
+.1 
+.31 
+0 
+1 
+the 
+beginning 
+of 
+the 
+experiment 
+Tenure 
+> 
+6 
+months 
+Dummy 
+variable 
+for 
+agents 
+whose 
+tenure 
+at 
+the 
+company 
+was 
+more 
+than 
+six 
+.11 
+.32 
+0 
+1 
+months 
+at 
+the 
+beginning 
+of 
+the 
+experiment 
+AI 
+Experience 
+Dummy 
+variable 
+for 
+sales 
+agents 
+who 
+had 
+the 
+experience 
+of 
+using 
+AI-powered 
+.05 
+.22 
+0 
+1 
+personal 
+assistants 
+(e.g., 
+Genie 
+offered 
+by 
+Tmall.com, 
+Xiao 
+AI 
+offered 
+by 
+the 
+company 
+Xiaomi), 
+not 
+the 
+AI 
+coach, 
+at 
+the 
+beginning 
+of 
+the 
+experiment 
+Feedback 
+Breadth 
+The 
+coach 
+has 
+comprehensively 
+identified 
+my 
+sales 
+mistakes 
+in 
+the 
+training 
+feedback 
+5.98 
+2.73 
+1 
+10 
+(survey 
+question 
+with 
+a 
+ten-point 
+Likert 
+scale) 
+Feedback 
+Depth 
+The 
+coach 
+has 
+provided 
+extensive 
+suggestions 
+for 
+each 
+mistake 
+identified 
+in 
+the 
+6.79 
+1.82 
+4 
+10 
+training 
+feedback 
+(survey 
+question 
+with 
+a 
+ten-point 
+Likert 
+scale) 
+Feedback 
+Overload 
+The 
+amount 
+of 
+information 
+in 
+the 
+training 
+feedback 
+from 
+the 
+coach 
+was 
+too 
+much 
+5.36 
+2.11 
+1 
+9 
+for 
+me 
+to 
+digest 
+(survey 
+question 
+with 
+a 
+ten-point 
+Likert 
+scale) 
+Aversion 
+to 
+Coach 
+I 
+was 
+generally 
+resistant 
+to 
+the 
+training 
+feedback 
+from 
+the 
+coach 
+(survey 
+question 
+4.84 
+2.28 
+2 
+10 
+with 
+a 
+ten-point 
+Likert 
+scale) 
+
+
+In our study, the sales agents were young, with an average 
+age of 22 years. About one-third of the agents were male. They 
+were relatively well educated, with about 60% 
+holding a college 
+degree. The industry had a high churn rate, as the majority 
+of the sales agents in the sample had a tenure of less than three 
+months. The general awareness of AI was low: only 5% 
+of the 
+agents had prior experience using AI-powered personal assistants 
+(e.g., Tmall Genie offered by Tmall.com, Xiao AI offered 
+by the company Xiaomi) before the experiment. 
+
+We obtained the data on the voice metrics from the AI 
+algorithm. It is important to note that although the agents from 
+the human coach group did not receive feedback from the AI 
+
+coach, their sales conversations were still monitored by the AI 
+algorithm to provide consistent voice metrics across the groups. 
+The agents were relatively professional in their sales conversations: 
+mistakes were identified in only around 6% 
+of their sales 
+calls, and about 94% 
+of their calls had an overall positive 
+emotion. In addition, customers displayed a positive emotion 
+in 43% 
+of the calls and used objection/refuse words in 20% 
+of 
+the times in the conversations. 
+
+Further, we conducted a randomization check on the 
+pre-experiment performance and demographic characteristics 
+of the sales agents. Results in Web Appendix 2 suggest no 
+statistically significant difference between the AI coach and 
+
+
+
+85(2) 
+
+
+0 
+.1 
+.2 
+.3 
+Density 
+2 4 6 8 10 12 
+Purchase Rate % 
+Bottom 
+0 
+.1 
+.2 
+.3 
+Density 
+5 10 15 20 25 
+Purchase Rate % 
+Middle 
+0 
+.1 
+.2 
+.3 
+Density 
+16 18 20 22 24 26 
+Purchase Rate % 
+Top 
+Human Coach 
+AI Coach 
+Figure 
+2. 
+Model-free 
+evidence 
+of 
+sales 
+performance 
+(Experiment 
+1). 
+Notes: 
+The 
+width 
+of 
+the 
+bins 
+for 
+all 
+histograms 
+is 
+set 
+to 
+.5 
+percentage 
+point. 
+
+
+human coach conditions across all the bottom-, middle-, and 
+top-ranked agent levels, thus satisfying the randomization 
+check. 
+
+Results 
+
+
+Model-free 
+evidence. 
+We compared the performance of the sales 
+agents in the AI versus human coach conditions to assess the 
+incremental impact of the AI coach across the bottom-, 
+middle-, and top-ranked agents. Figure 2 presents the 
+model-free evidence. The results in the histograms suggest an 
+inverted U-shaped impact of the AI relative to human coach: 
+middle-ranked agents improved their performance by the largest 
+amount (because the distribution of the performance of 
+agents in the AI coach condition is on the right, and there is 
+no overlap with that of agents under the human coaches). In 
+addition, bottom-ranked agents showed somewhat limited performance 
+gains (because there is some overlap between the two 
+distributions), and top-ranked agents showed even less gain 
+(because the two distributions are highly overlapped). 
+
+Further, the Panel A bar graph of Figure 3 shows that all 
+agents attain higher performance under the AI relative to 
+human coach (p 
+< 
+.01). In addition, the Panel B line graph 
+of the same figure clearly supports that the incremental impact 
+of the AI over human coach is in an inverted-U shape. 
+
+Regression 
+analyses 
+results. 
+To further control for the agents’ 
+individual characteristics and to quantify the relative impact 
+of the AI versus human coaches across different agent types, 
+we conducted a regression analysis: 
+
+Purchase Ratei ¼ a0 þa1 AICoachi þa2 AICoachi 
+
+Bottomi þa3 AICoachi Topi 
+
+þa4 Bottomi þa5 Topi þa6 Agei 
+
+þa7Malei þa8 Collegei 
+
+þa9 Tenure2i þa10 Tenure3i 
+
+þa11 AIExperiencei þEi; 
+
+
+ð1Þ 
+
+where Purchase Ratei is the sales performance of the i th sales 
+agent, measured by the daily ratio of the sales calls successfully 
+converted into loan renewal to the total sales calls (in % 
+and 
+averaged over the experiment month). AICoachi is the indicator 
+variable for the random assignment of the AI coach (¼1, 
+and 0 for the human coach). Bottomi is the indicator variable 
+for the bottom-ranked agents whose previous performance was 
+in the bottom 20th percentile (usually interns and new hires) 
+before the experiment. Topi is the indicator variable for 
+top-ranked agents whose previous performance was in the top 
+20th percentile. The rest of the agents were middle-ranked 
+agents. In this model, the performance of middle-ranked agents 
+from the human coach group is the baseline. We further interacted 
+AICoachi with Bottomi and Topi to allow for the heterogeneous 
+incremental 
+effect of the AI coach. Therefore, these 
+two interaction terms capture the extent to which the causal 
+incremental effect of the AI over human coaches for bottom-
+and top-ranked agents was different from that for their 
+middle-ranked peers. Agei represents the age of the agent. 
+Malei captures the fixed effect of male sales agents. Collegei 
+
+
+Figure 
+3. 
+Heterogeneous 
+effects 
+of 
+the 
+AI 
+versus 
+human 
+coach 
+(Experiment 
+1). 
+
+
+Notes: 
+Error 
+bars 
+¼+ 
+1 
+SEs. 
+**p 
+< 
+.05. 
+***p 
+< 
+.01. 
+
+
+denotes a college education. Tenure2 and Tenure3 correspond 
+to a tenure of four to six months and more than six months, 
+respectively (tenure less than three months is the baseline). 
+AIExperiencei equals 1 if the agent had prior experience using 
+AI-powered personal assistants, not the AI coach, before the 
+experiment. Ei is the error term. 
+
+Table 2 reports the results across the sales performance 
+from different time periods (the entire month, the first half, 
+and the second half of the experiment month). The coefficient 
+of AICoachi is consistently positive and significant, 
+indicating a positive incremental effect of the AI over 
+human coaches on middle-ranked agents. This finding is 
+reasonable because relative to human managers, AI coaches 
+have advantages in hard data computation skills and thus 
+generate more comprehensive training feedback to benefit 
+sales agents. The coefficient of AICoachi Bottomi is negative 
+and significant, suggesting that bottom-ranked agents 
+gain less from the AI coach than middle-ranked agents. 
+Interestingly, the coefficient of AICoachi Topi is more 
+negative than that of AICoachi Bottomi (p 
+< 
+.01), suggesting 
+that the top-ranked agents gain the least from the 
+AI coach.2 Thus, these results confirm Figure 3’s model-free 
+
+As a robustness check, we also estimated differences-in-difference models by 
+utilizing the time-series variation in sales agents’ performance in the months 
+before and during the experiment. The results are consistent (see Web 
+
+evidence for the inverted U-shaped impact of the AI over 
+human coach and strongly support H1: while middle-ranked 
+agents improve their performance by the largest amount, 
+both bottom-and top-ranked agents show limited gains.3 
+
+Learning 
+mechanism. 
+To measure learning from coaching feedback 
+with objective behavior data, we used the AI algorithm to 
+analyze the sales conversation audio data on all agents (from 
+both treatment and control groups) during the experiment and 
+created a variable named Mistakesi. This variable captures an 
+agent’s average proportion of sales calls with mistakes identified 
+by the AI coach during the experiment month (a value of 
+10% 
+means that 10% 
+of the agents’ sales calls during the 
+experiment had sales mistakes as identified by the AI algorithm). 
+This variable is a proxy for agents’ learning from the 
+training feedback during the experiment period: the more 
+agents learned from coaching feedback, the fewer mistakes 
+they would make in their sales calls. To directly test the significance 
+of the moderated mediation effects, we leverage the 
+PROCESS Model 8 with 5,000 bootstrap replications (Hayes 
+2013). As summarized in Figure 4, the results suggest that 
+under the AI versus human coach, both bottom-and 
+top-ranked agents made significantly more sales mistakes than 
+middle-ranked agents did (p 
+< 
+.01). Also, sales mistakes have a 
+
+3 
+
+We observed insignificant moderating effects of other variables (see Web 
+
+Appendix 3). Appendix 4). 
+
+
+
+85(2) 
+
+
+Table 
+2. 
+Heterogeneous 
+Impact 
+of 
+the 
+AI 
+Coach 
+(Experiment 
+1). 
+
+
+Notes: 
+The 
+dependent 
+variable 
+in 
+column 
+1 
+is 
+the 
+sales 
+agent’s 
+purchase 
+rate 
+during 
+the 
+experiment 
+month, 
+while 
+the 
+dependent 
+variables 
+in 
+columns 
+2 
+and 
+3 
+are 
+the 
+sales 
+agent’s 
+purchase 
+rate 
+for 
+the 
+first 
+and 
+second 
+halves 
+of 
+the 
+experiment 
+month, 
+respectively. 
+Standard 
+errors 
+in 
+parentheses. 
+*p 
+< 
+.1. 
+**p 
+< 
+.05. 
+***p 
+< 
+.01. 
+
+
+negative and significant relationship with purchase rates, as 
+expected. Thus, the moderated effect of the AI versus human 
+coach on the performance of the agents of different types is 
+significantly mediated by the learning proxy of sales mistakes.4 
+Together, these results strongly support H2. 
+
+We further explore the time-series variation in agent performance 
+to offer evidence for the learning mechanism. Specifically, 
+if the learning mechanism in H2 is true, then we should 
+observe different learning curves to reflect the performance 
+gains throughout the course of the experiment. That is, the 
+performance impact of the AI coach on agents should happen 
+not immediately, but rather gradually in a learning curve, and 
+each type of agent may have different shaped curves. As shown 
+
+4 The indirect effects of AI Coach are 3.20, 6.10, and .60 for bottom-, middle-, 
+and top-ranked agents, respectively. Using middle-ranked agents as the 
+baseline, the effect sizes of moderated mediation are 2.91 and 5.51 for 
+bottom-and top-ranked agents, respectively. All estimates are significant at 
+the .05 level. Web Appendix 5 provides more details of the moderated 
+mediation analysis. 
+
+in Figure 5, across all agent types, we observe an incremental 
+improvement under the AI relative to human coach (all the 
+learning curves go upward over time). This improvement was 
+slightly larger in the first half of the month than that in the 
+second half, which is in line with a typical learning curve. More 
+importantly, we observe the greatest learning progress and performance 
+gains among the middle-ranked agents (dashed line), 
+followed by bottom-and top-ranked agents (solid and dotted 
+lines, respectively). Thus, these learning curve results corroborate 
+H1 and H2. 
+
+AI 
+coach 
+effects 
+on 
+customer 
+satisfaction. 
+We also checked the 
+effects of the sales coach on customer satisfaction as proxied 
+by customer sentiment (the percentage of the overall positive 
+customer sentiment as detected by the AI algorithm) and customer 
+objections (the percentage of the customer’s words of 
+objection such as “no,” “don’t,” “won’t,” etc.). Columns 3–5 in 
+Table 3 show that the AI coach helped improve the sentiment in 
+the sales conversation for customers. Further, we observe a 
+similar inverted U-shaped effect: the AI coach promoted positive 
+customer sentiments and reduced customer objections the 
+most for middle-ranked agents, rather than the bottom-and 
+top-ranked agents, thus adding more evidence in support of 
+H1 and H2.5 
+
+Ruling 
+out 
+the 
+alternative 
+explanation 
+of 
+working 
+hard. 
+Prior literature 
+(Weitz, Sujan, and Sujan 1986) suggests that salespeople 
+can improve their performance by either working smarter 
+(enabled by learning) or working harder (simply by making 
+more sales calls). Thus, we checked the working hard behavior 
+with two outcomes: CallingTimei (an agent’s average daily 
+active sales calling minutes) and NumberofCallsi (the average 
+daily attempted sales calls). As shown in columns 1 and 2 of 
+Table 3, the coefficients of AI Coach and the interaction terms 
+are insignificant (p 
+> 
+.10), thus ruling out the alternative explanation 
+of working hard.6 
+
+Evidence 
+for 
+the 
+problems 
+of 
+information 
+overload 
+and 
+aversion 
+to 
+the 
+AI 
+coach. 
+To directly show evidence for the problems of 
+information overload and aversion to the AI coach, we leveraged 
+survey data on the agents’ perceptions of the feedback 
+from the AI vis-`a-vis human coaches. Results in columns 6 and 
+7 in Table 3 (see also the top two charts in Figure 6) confirm 
+that on average, the agents perceived the feedback from the AI 
+coach to be more comprehensive than that from human coaches 
+in terms of both breadth (i.e., number of mistakes identified) 
+and depth (i.e., the number of suggested solutions to remedy 
+each mistake) (p 
+< 
+.01). That said, the more comprehensive 
+feedback generated by the AI versus human coach does not 
+mean that all agents learn from coaching feedback and increase 
+
+5 We also tested agent performance conditional on the matched feedback 
+volume and found consistent results (see Web Appendix 6). 
+6 We also considered the alternative explanations of the Hawthorne effect and 
+the “water cooler” effect. As shown in Web Appendix 7, these effects are 
+unlikely to threaten our results. 
+
+Figure5.AItraininglearningcurves(Experiment1).
+Notes:Eachlinerepresentstheagents’incrementalimprovementwiththeAIvis-`a-vishumancoachesoverdifferenttimeperiods.Errorbars¼+1SEs.
+their performance equally. As shown in column 9 in Table 3 
+(see also the bottom right chart in Figure 6), bottom-ranked 
+agents felt most overloaded by the comprehensive feedback 
+from the AI versus human coach. In other words, 
+bottom-ranked agents indeed faced the most severe information 
+overload problem to learn and benefit from the more comprehensive 
+feedback by the AI versus human coach 
+(accounting for the left side of the inverted U in H1). By contrast, 
+as shown in column 8 in Table 3 (see also the bottom left 
+chart in Figure 6), top-ranked agents felt the highest aversion to 
+the AI versus human coach and thus had limited performance 
+gains (accounting for the right side of the inverted U in H1). 
+Indeed, middle-ranked agents may learn and improve the most 
+from the comprehensive feedback by the AI versus human 
+coach, as they suffered less from both the information overload 
+problem (relative to bottom-ranked agents) and the problem of 
+aversion to the AI versus human coach (relative to top-ranked 
+agents). Thus, these findings provide more empirical support 
+for H1 and H2. 
+
+Discussion 
+
+
+Experiment 1 shows that whereas middle-ranked agents experienced 
+the greatest improvement in their performance, both 
+bottom-and top-ranked agents attained limited gains from the 
+AI versus human coach. This inverted-U pattern was driven by 
+a learning-based mechanism: bottom-ranked agents encountered 
+the most severe information overload problem with the 
+AI versus human coach, while top-ranked agents had the strongest 
+aversion to the AI relative to human coach. To solve these 
+problems, we redesigned the AI coach by restricting it in 
+Experiment 2 and by proposing an AI–human coach assemblage 
+in Experiment 3. 
+
+Field 
+Experiment 
+2: 
+Restricting 
+AI 
+Coach 
+Feedback 
+
+
+The limited performance gain for bottom-ranked agents is 
+clearly an obstacle for adopting the AI coach, considering these 
+agents have the largest room to improve their sales skills and 
+the most acute need for on-the-job training. The survey data in 
+Experiment 1 also support that the information overload problem 
+with the AI versus human coach was indeed a key challenge 
+that hampered the learning and performance of 
+bottom-ranked agents. If it was the information overload problem 
+of the AI versus human coach that obstructed 
+bottom-ranked agents’ learning and performance (Slater and 
+Narver 1995; Sujan, Weitz, and Kumar 1994; Weitz, Sujan, 
+and Sujan 1986), then we can address this problem by restricting 
+the amount of feedback from the AI coach to 
+bottom-ranked agents. That is, the information overload problem 
+faced by bottom-ranked agents motivates us redesign AI 
+coaches by restricting the amount of feedback. We expect that 
+relative to its unrestricted counterparts, the restricted feedback 
+will reduce the information overload problem and, through the 
+reduction in information overload, have a positive impact on 
+bottom-ranked agents’ sales performance. This discussion 
+leads to the following hypotheses: 
+
+H3a: 
+An AI coach that offers less (vs. more) feedback has a and reported the one predicted to have the largest impact on 
+positive impact on bottom-ranked agents’ sales purchase rates. Experiment 2 lasted for another month, and all 
+performance. the data were collected similar to in Experiment 1. 
+H3b: 
+The reduction in information overload mediates the 
+relationship in H3a. 
+
+Data 
+and 
+Empirical 
+Results 
+
+
+The summary statistics of the data are reported in Web 
+Experiment 
+Design 
+Appendix 8. In this appendix, we carried out another randomization 
+check and found the characteristics of the sales agents
+
+In this experiment, we selected a new sample of 100 
+
+from the treatment group (AI coach with restricted feedback) 
+
+bottom-ranked sales agents from the same company. These 
+
+and the control group (AI coach with unrestricted feedback) 
+
+agents did not participate in Experiment 1 before and were una
+
+
+were not statistically different. 
+
+ware of this follow-up field experiment until it began. We ran-
+
+Next, we ran regression models to test the impact of reduc
+
+
+domly assigned half of the selected sales agents into the control 
+
+ing the amount of feedback from the AI coach. The empirical
+
+group, in which they received feedback from the AI coach sim-
+
+specification is as follows: 
+
+ilar to that in Experiment 1 (unrestricted feedback from the AI 
+coach). The other half of the agents were assigned to the treat-Purchase Ratei ¼a0 þa1 AICoachðRestrictedÞi þa2 Agei 
+ment group, in which they received less feedback from the AI 
+
+þa3Malei þa4 Collegei 
+
+coach each day (restricted feedback from the AI coach). Specif
+
+
+þa5 AI Experiencei þEi;
+
+ically, for each sales mistake identified, the AI algorithm ranked 
+ð2Þ
+
+all the potential feedback solutions according to its importance 
+
+where AICoachðRestrictedÞi is an indicator variable that takes 
+the value of 1 if the sales agent belongs to the AI coach group 
+with restricted feedback group and 0 otherwise. As shown in 
+Table 4, the coefficient of AICoachðRestrictedÞ is positive and 
+
+i 
+
+significant (p 
+< 
+.001). Thus, for the bottom-ranked agents, 
+receiving the restricted, rather than all, feedback from the AI 
+coach was more effective for improving their job performance. 
+On average, with the restricted AI coach, the purchase rate 
+increased by approximately 4.6 percentage points, a 50% 
+improvement in performance. Thus, these results provide causal 
+evidence for H3a. 
+
+In addition, we tested the mediational role of the reduction 
+in information overload via the PROCESS Model 4 with 5,000 
+bootstrap replications (Hayes 2013). Results suggest that the AI 
+coach with less (vs. more) feedback indeed helps reduce the 
+information overload bottom-ranked agents perceive (p 
+< 
+.01). 
+Also, information overload negatively affects agent performance 
+(p 
+¼.06), as expected. The mediational effect of information 
+overload is statistically significant at 10% 
+level, thus 
+
+7
+
+marginally supporting H3b. 
+
+
+These findings with causal evidence also support the 
+assumption of H1: bottom-ranked agents indeed suffered from 
+an information overload problem with the AI coach, which 
+
+7 
+
+Web Appendix 9 resents details of the mediation analysis. The marginal 
+significance may arise due to the small sample size (n ¼100) used here. 
+
+
+
+85(2) 
+
+
+limited their sales performance gains. Redesigning AI 
+coaches by restricting the amount of feedback can effectively 
+solve the information overload problem faced by 
+bottom-ranked agents and improve their sales performance. 
+However, this experiment did not address top-ranked agents’ 
+strong aversion to the AI versus human coach, for which 
+Experiment 3 investigates. 
+
+Field 
+Experiment 
+3: 
+The 
+AI–Human 
+Coach 
+Assemblage 
+
+
+In Field Experiments 1 and 2, either the AI or human coach was 
+deployed, but using either coach alone has its own inherent 
+disadvantages, as discussed previously. Therefore, for Experiment 
+3, we designed an assemblage to harness the advantages 
+of both AI and human coaches. Specifically, we propose an 
+assemblage wherein human managers communicate the feedback 
+generated by the AI coach to sales agents. That is, the AI 
+coach analyzes the speech data on sales conversations and 
+generates the data-driven feedback, while the human manager 
+communicates the feedback to agents. This assemblage can 
+leverage the advantages of both types of coaches: the hard data 
+skills of the AI coach (Brynjolfsson and Mitchell 2017; Luo 
+et al. 2019; Wilson and Daugherty 2018) and soft interpersonal 
+skills of human managers (Kannan and Bernoff 2019; Newell 
+and Simon 1972; Sujan, Weitz, and Kumar 1994). 
+
+This AI–human coach assemblage helps solve multiple 
+problems. On the one hand, because human managers are 
+proficient in explaining the comprehensive feedback generated 
+by AI with interpersonal communication skills (e.g., 
+encouragement, empathy, adaptivity), bottom-ranked agents 
+will be less likely to face the information overload problem 
+and thus can learn and improve more (Jacoby 1974; Weitz, 
+Sujan, and Sujan 1986). In addition, because human managers 
+can converse the feedback generated by AI with interpersonal 
+communication skills (e.g., acknowledgment, empathy, adaptivity), 
+top-ranked agents should also display less resistance to 
+coaching feedback and hence enjoy greater performance gains 
+(Dietvorst, Simmons, and Massey 2015, 2018; Luo et al. 
+2019; Srivastava 2019). This discussion suggests that relative 
+to either the AI or human coach alone condition, an AI– 
+human coach assemblage has a positive impact on bottom-
+and top-ranked agents’ performance. Further, we expect 
+bottom-ranked agents to benefit more from this assemblage 
+than top-ranked agents, because bottom-ranked agents are the 
+least skillful and have more room to learn and improve under 
+the AI–human coach assemblage; by contrast, top-ranked 
+agents can also improve but to a lesser degree because they 
+are skillful already (e.g., near the top limit). As a result, we 
+offer the following hypotheses: 
+
+H4a: 
+Relative to either the AI or human coach alone, an 
+AI–human coach assemblage has a positive impact on 
+bottom-ranked agents’ sales performance. 
+
+H4b: 
+Relative to either the AI or human coach alone, an 
+AI–human coach assemblage has a positive impact on 
+top-ranked agents’ sales performance. 
+H4c: 
+The incremental positive performance impact of the AI– 
+human coach assemblage is amplified for bottom-ranked 
+agents relative to top-ranked agents. 
+
+Experiment 
+Design 
+
+
+We conducted this field experiment in a different company. 
+The company operates in the same fintech industry and specializes 
+in peer-to-peer (P2P) loan collection. In this company, 
+sales agents call delinquent individual borrowers to collect 
+overdue loan payments. The personal loans range from $200 
+to $8,000. Because this company is also from the fintech industry, 
+the background information of the sales agents, AI coaches, 
+and experiment procedures in Experiment 3 were similar to 
+those in Experiments 1 and 2. 
+
+However, the AI coach in this experiment performs a 
+different training task: coaching sales agents to improve their 
+loan collection skills. This different setting improves the generalizability 
+of our findings. Moreover, to extend Experiment 
+1, in which human managers provided feedback to the sales 
+agents via emails in one-way communications, we allowed 
+human managers to communicate interpersonally in two-way 
+communications in Experiment 3. In this way, human coaches 
+could leverage their soft interpersonal communications 
+skills (thereby making it more difficult for the AI coach to 
+outperform human coaches in this setting). More specifically, 
+while the AI coach still communicated with the sales agents 
+via emailed feedback, human coaches in Experiment 3 held a 
+one-on-one face-to-face meeting with each of the assigned 
+agents.8 This format allows for the managers and agents to 
+interact with each other in the job training. In the AI–human 
+coach assemblage, the AI coach assisted the human managers 
+by listening to the agents’ sales conversations and generating 
+the training feedback (similar to the AI coach alone group), 
+and the human managers held a one-on-one face-to-face 
+meeting with each of the assigned agents (similar to the 
+human coach alone group). In this way, the assemblage group 
+had not only the hard data analytical advantages of AI coaching, 
+but also the soft interpersonal communication skills of 
+human coaching. 
+
+Sale agents (n ¼451) were randomized to undergo loan 
+collection training in three conditions: the human coach 
+alone group, the AI coach alone group, and the AI–human 
+coach assemblage group. In this monthlong field experiment, 
+224 of them were randomly selected from 
+bottom-ranked agents, and the rest were randomly selected 
+
+8 In Experiment 3, the feedback from the AI coach was the total amount given 
+and not the truncated level. Also, depending on the volume and the content of 
+the feedback, such a one-on-one face-to-face meeting may last for up to ten 
+minutes. However, most of the meetings lasted for about two to five minutes in 
+our study. 
+
+
+Luo 
+et 
+al. 
+27 
+
+
+from the top-ranked agents.9 We further randomly assigned 
+these agents to the three conditions. Thus, we had six 
+experiment conditions, and each condition had a roughly 
+balanced sample in the data. 
+
+Data 
+and 
+Empirical 
+Results 
+
+
+We summarize the variables in Web Appendix 10. This appendix 
+also reports the results for the randomization check. 
+Conditional on the pretreatment performance level, agents 
+from the three treatment groups were not significantly different 
+from each other in any of the pretreatment characteristics. The 
+data therefore pass the randomization check. 
+
+To examine the relative impact of the AI–human coach 
+assemblage, we estimated a regression analysis with the 
+following specification: 
+
+DailyCollectionAmounti ¼ a0 þa1 AICoachAlonei 
+þa2AIHumanCoachAssemblagei 
+þa3 AICoachAlonei Topi 
+þa4AIHumanCoachAssemblageei 
+Topi þa5Topi þa6Agei 
+þa7CommunityCollegei 
+þa8 Collegei þa9 Tenure2i 
+þa10 Tenure3i þa11 Tenure4i 
+þa12 AIExperiencei þEi; 
+ð3Þ 
+
+where DailyCollectionAmounti measures the sales agent’s 
+average daily collection of customers’ loan repayment (averaged 
+over the experiment month). AICoachAlonei and 
+AIHumanCoachAssemblagei are indicator variables for agents 
+from the respective groups (compared with the human coach 
+alone group). We further interacted these two variables with 
+Topi to allow for these two treatment effects to differ among 
+top-and bottom-ranked agents. Thus, the performance of 
+bottom-ranked agents in the human coach alone group is the 
+baseline. 
+
+Table 5 reports the regression results. Columns 1, 2, and 3 
+suggest that the coefficients of AIHumanCoachAssemblagei 
+are positive and significant, and are statistically larger than the 
+coefficients of the AICoachAlonei across the whole data sample, 
+bottom-ranked agents, and top-ranked agents, respectively 
+(p 
+< 
+.01). These results suggest that, for both top-and 
+bottom-ranked agents, the assemblage of the AI and human 
+coaches is more effective than either coach alone. This pattern 
+is shown in Figure 7 on the incremental impact of the AI– 
+human coach assemblage and the AI coach alone (over the 
+
+9 This company did not agree to include middle-ranked agents in Experiment 3 
+because, based on the first experiment, such agents benefited the most from the 
+AI coach already and did not suffer seriously from the two problems faced by 
+bottom-and top-ranked agents. 
+
+baseline of the human coach alone). Thus, the data support 
+both H4a and H4b.10 
+
+Further, results in column 4 show a negative and significant 
+coefficient of IHumanCoachAssemblagei Topi.Thus, 
+although they did improve, top-ranked agents’ performance 
+improvement was significantly smaller than bottom-ranked 
+agents when coached by the AI–human coach assemblage 
+(also pictorially shown in Figure 7). Thus, our data strongly 
+support H4c. 
+
+Discussion 
+
+
+Despite growing interest among firms, effectively leveraging 
+AI coaches in sales training remains poorly understood. We 
+conducted three randomized field experiments in two fintech 
+companies to quantify the heterogeneous effects of AI coaches 
+on agents’ performance and redesigned AI coaches to solve the 
+challenges faced by bottom-and top-ranked agents. Experiment 
+1 found that while middle-ranked agents experienced 
+the greatest improvement in their performance, both bottom-
+and top-ranked agents gained little from the AI versus human 
+coach. This inverted-U pattern was driven by a learning-based 
+mechanism whereby bottom-ranked agents encountered the 
+most severe information overload problem with the AI versus 
+human coach and top-ranked agents had the strongest aversion 
+to the AI relative to human coach. To alleviate the information 
+overload experienced by the bottom-ranked agents, Experiment 
+2 redesigned the AI coach by restricting the feedback amount to 
+these agents and revealed a substantial improvement in their 
+sales performance. Further, Experiment 3 moved beyond either 
+the AI or human coach alone to combining them into the 
+AI–human coach assemblage. This hybrid outperformed either 
+coach alone in terms of training effectiveness for both bottom-
+and top-ranked agents. These findings provide broad implications 
+for research and practice. 
+
+Contributions 
+to 
+Research 
+
+
+Our research proffers several contributions to the literature. 
+This study is among the first to examine the effectiveness of 
+AI coaches in sales training and uncover evidence that AI 
+can be designed to complement, rather than substitute, 
+employees in customer services. This is critical because it 
+changes our knowledge on how AI may reshape the business 
+landscape of serving customers in the real world. 
+Recent studies have noted customers’ AI aversion in lab 
+experiments, showing that humanoid robots and AI 
+
+10 For bottom-ranked agents, the positive and significant coefficient of 
+AICoachAlonei in column 2 suggests that the AI coach alone still 
+outperforms the human coach alone, thus extending Experiment 1 to a new 
+setting of loan collection training. Further, for top-ranked agents, the negative 
+and significant coefficients of AICoachAlonei in column 3 and AICoachAlonei 
+
+Topi in column 4 are reasonable because top-ranked agents may hold an even 
+stronger aversion to the AI coach relative to human managers providing 
+two-way communications feedback in Experiment 3 (vs. managers providing 
+one-way communications feedback in Experiment 1). 
+automation threaten customers’ own identity (Mende et al. 
+2019), personal consumption experience (Castelo, Bos, and 
+Lehmann 2019; Leung, Paolacci, and Paolacci 2018), and 
+perceived uniqueness (Longoni, Bonezzi, and Morewedge 
+2019). Incidentally, on the employee side, lab studies have 
+also noted the negative views among workers toward computer 
+algorithms (Dietvorst, Simmons, and Massey 2015, 
+2018; Li, Liu, and Liu 2016). Warning against the “dark 
+side” of AI, Acemoglu and Restrepo (2017) and Frey and 
+Osborne (2017) point out the concerns of AI displacing 
+human jobs. Advancing this literature, we address the timely 
+and important topic of AI coaches. On the basis of multiple 
+field experiments in real-word contexts, we uncover causal 
+evidence for the positive effects of AI in coaching salespeople 
+to better serve customers. When AI is designed to 
+complement employees on their tasks, the negative consequences 
+of job loss and workers’ resistance to AI are mitigated. 
+Indeed, AI technology can scale up and assist a large 
+number of sales agents simultaneously to improve their job 
+
+performance, especially when there is a shortage of human 
+managers for sales training and coaching jobs. 
+
+Further, we extend the literature by uncovering the heterogeneous 
+inverted U-shaped effects of the AI coach across various 
+types of sales agents. AI coaches benefit middle-ranked 
+agents the most; however, they face distinct challenges in training 
+bottom-and top-ranked agents. We show that 
+bottom-ranked agents encounter the most severe information 
+overload problem, whereas top-ranked agents have the strongest 
+aversion to the AI coach. These findings are nontrivial 
+because they rebut the naı¨ve, linear view of the impact of AI 
+in salesforce management. They also provide new insights into 
+assessing the effectiveness of sales training by AI coaches 
+vis-`a-vis human managers. Earlier studies have focused on the 
+average linear effect of sales training programs by human coaches 
+(Atefi et al. 2018; Rom´an, Ruiz, and Munuera 2002). 
+Examining the heterogeneous effects of sales training by AI 
+helps pinpoint the employee-specific challenges and then craft 
+effective solutions. Researchers should not neglect the different 
+
+
+Luo 
+et 
+al. 
+29 
+
+
+Incremental Improvement(Difference in Collection Amount) 
+
+2,000 
+
+1,000 
+
+0 
+
+−1,000 
+
+−634.77 
+609.18 
+372.84 
+1517.7 
+*** 
+*** 
+Bottom Top 
+
+
+AI Coach Alone 
+AI–Human Coach Assemblage 
+
+Figure 
+7. 
+Relative 
+effectiveness 
+of 
+the 
+AI–human 
+coach 
+assemblage 
+(Experiment 
+3). 
+Notes: 
+The 
+human 
+coach 
+group 
+is 
+the 
+baseline. 
+Error 
+bars 
+¼+ 
+1 
+SEs. 
+**p 
+< 
+.05. 
+***p 
+< 
+.01. 
+
+
+training needs among sales agents and ought to pay close attention 
+to the limitations of AI coaches. While bottom-ranked 
+agents have the highest need for sales training, data-driven and 
+computationally powerful AI coaches that provide too much 
+information may not suit them. The more powerful the big data 
+analytics skills of AI and the more comprehensive the feedback 
+from AI, the more dysfunctional it might be for bottom-ranked 
+agents. The data-driven advantage of AI might thus turn into a 
+disadvantage when using AI to coach bottom-ranked agents 
+(i.e., the good intention of adopting new AI technologies may 
+end up with a bad outcome). 
+
+In addition, we contribute to the literature by revealing the 
+learning-based mechanism for the performance impact of AI 
+coaches. Prior research has noted the importance of individual 
+learning (i.e., working smarter; Sujan, Weitz, and Kumar 1994; 
+Slater and Narver 1995; Weitz, Sujan, and Sujan1986) for sales 
+performance. We add to this literature by supporting the mediating 
+role of agent learning in the heterogeneous impact of AI 
+coaches on sales agent performance. Such findings are crucial 
+because they show that the AI coach offering comprehensive 
+training information does not automatically improve agent performance, 
+unless it can foster their learning as an intermediary 
+outcome. Indeed, because bottom-ranked agents face barriers 
+to assimilate the comprehensive feedback, they may learn more 
+from the AI coach with restricted information provision (which 
+eases the information overload problem) and thus boost their 
+performance more robustly. 
+
+Moreover, we advance the literature by conceptualizing the 
+AI–human coach assemblage and by revealing its superior 
+impact relative to either the AI or human coach alone. Prior 
+research notes the economic value of AI alone (i.e., fully autonomous 
+without human involvement) in machine translation, 
+conversational commence, and outbound sales calls (e.g., 
+Brynjolfsson, Hui, and Liu 2019; Luo et al. 2019; Sun et al. 
+2019). Extending this literature, we put forth the novel idea of 
+the AI–human assemblage. We show that an assemblage in 
+
+which human managers communicate the feedback generated 
+by the AI coach can not only solve the information overload 
+problem for bottom-ranked agents, but also turn AI aversion 
+into appreciation for top-ranked agents. Thus, adopting AI 
+should also avoid the single-minded view of relying on AI 
+coaches solely (i.e., replacing human managers with the 
+data-driven machines). Rather, an assemblage of both, in which 
+the smart machines assist rather than displace human managers, 
+is the most effective tool for training salespeople for optimal 
+performance. It would be fruitful to explore new 
+opportunities of the AI–human coach assemblage, as the AI 
+and human coach each have distinct strengths and weaknesses. 
+Combining them can tether the benefits of AI’s hard data analytical 
+abilities and human managers’ soft interpersonal communications 
+skills. The economic value of AI coaches is 
+substantially greater if the same AI technology is designed to 
+assist human managers in the assemblage. 
+
+Managerial 
+Implications 
+
+
+Our findings provide several useful insights to managers. First, 
+sales training has long been regarded as an essential yet costly 
+and challenging task for human managers (Chung, Park, and 
+Kim 2019). Each year, companies lose over $75 billion in 
+revenues because of poor customer services (Teich 2019). 
+More than $1 trillion dollars have been invested in companies’ 
+call centers to handle over 265 billion customer calls annually 
+and train agents to improve the quality of customer services. In 
+2016, the average spending on training per salesperson reached 
+$1,459, almost 20% 
+more than that for other workers. Paradoxically, 
+such high investment in sales training does not 
+always translate into performance. About 80%–90% 
+of the 
+investment is either ineffective or difficult to quantify (Schultz 
+2011). Human managers typically handle such training 
+(Christiansen et al. 1996; Dubinsky 1996; Martin and Collins 
+1991; Rom´an, Ruiz, and Munuera 2002). Fortunately, with the 
+rise of AI, companies can leverage AI coaches to train agents 
+and improve their sales skills and performance more effectively 
+and efficiently. Unlike human managers, who may suffer from 
+physical fatigue and emotional fluctuations, the AI coach will 
+not have bad days or toxic emotions in the repetitive sales job 
+training, so it can handle the training tasks in a more consistent, 
+predictable, and accurate manner. In addition, AI coaches can 
+solve another thorny problem in the industry: the limited supply 
+of human managers to train inexperienced frontline 
+employees. For the data-driven and recurring tasks of 
+on-the-job sales training, AI can scale up quickly to train thousands 
+of agents simultaneously with minimal marginal costs. 
+
+However, AI coaches are not a magic bullet; they still have 
+limitations. While they can provide comprehensive feedback to 
+individual agents, they do not automatically account for the 
+different challenges sales agents face (e.g., information overload, 
+AI aversion). Bottom-ranked agents have the most acute 
+needs for job skill training, yet they may not learn from the 
+information generated by AI coaches because of information 
+overload. In contrast, top-ranked agents may have a strong 
+
+
+
+85(2) 
+
+
+aversion to AI coaches, which can also limit their learning and 
+performance gains. Hence, instead of simply applying AI coaches 
+to the workforce and waiting for the software to get smarter, 
+firms should be aware of the limitations of AI coaches in 
+meeting the distinct training needs of these heterogeneous 
+agents. Firms can address these limitations and provide effective 
+solutions to different types of agents by deploying targeted 
+AI coaches for sales agents. For example, for bottom-ranked 
+agents, firms can restrict information provisioning to deal with 
+the information overload problem. For both bottom-and 
+top-ranked agents, firms can combine AI coaches and human 
+managers to train their sales forces more effectively. 
+
+Optimally, our results suggest that companies should adopt 
+the assemblage of AI coaches and human managers. AI and 
+human coaches are not substitutes, but rather complements to 
+each other. In this assemblage, managers can focus on communications 
+that are interpersonal, nuanced, and difficult to automate, 
+while AI provides hard data computation skills and 
+personalized feedback at a scale that can improve managers’ 
+communications with their subordinates. Put differently, in this 
+modern era of AI, the classical interpersonal competencies of 
+human managers remain crucially important. Overall, the 
+AI–human coach assemblage allows firms to achieve a 
+three-win scenario, in which (1) sales agents can attain greater 
+learning and income; (2) managers can be freed from mundane 
+and repetitive training tasks and spend more resources on tasks 
+that require creativity, judgment, and leadership; and (3) companies 
+can enjoy higher sales revenues. 
+
+Limitations 
+and 
+Future 
+Research 
+
+
+We acknowledge several limitations in this study that suggest 
+opportunities for future research. First, our empirical evidence 
+on AI coaches is based on two tasks (loan promotion and collection) 
+in a specific industry (fintech). It would be interesting 
+to examine whether AI coaches will have similar effects in 
+other settings. For example, do our findings still hold if sales 
+agents promote other products such as durable goods in 
+business-to-business settings? Can the AI–human coach assemblage 
+be more or less productive in training sales agents to 
+persuade business clients and key corporate accounts? Would 
+AI coaches be as effective as human managers if agents conducted 
+in-person businesses instead of phone sales calls? 
+Future research is called for to explore the generalizability and 
+boundary conditions of our findings. Further, the effectiveness 
+of AI sales coaches in other training formats is worth studying. 
+For example, will the AI coach be more or less effective due to 
+social influence and public exposure if its feedback to an agent 
+is also observable to her colleagues? This practice may facilitate 
+cross-learning among the employees with different personalities, 
+but at the same time could increase the public 
+exposure of their personal failures, which could have both 
+positive and negative ramifications. Furthermore, because our 
+experiments lasted for just one month, our findings largely 
+explain the short-run effects of the AI coach, and it is thus 
+important to explore the long-run effects. For example, with 
+
+the help of AI coaches, how quickly can bottom-ranked agents 
+become the top performers? In addition, as the dispersion in 
+sales agents’ performance shrinks with the adoption of AI coaches, 
+how would managers adjust their salesforce recruitment 
+and promotion strategies in the long run? 
+
+In conclusion, our research is an initial step in examining the 
+caveats and solutions in the context of leveraging AI coaches 
+for sales training effectiveness. We hope it can stimulate more 
+work on this pivotal interface between AI technologies and 
+sales agent performance. 
