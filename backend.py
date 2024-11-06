@@ -97,8 +97,6 @@ def preprocess_data(
         filepath = agent.get_filepath(user_input=user_input, llm=llm)
         logger.info(f"SUCCESS: Link constructed {filepath}")
 
-        # st.stop()
-
         # Initialise document loader to pull text from web
         try:
             loader = WebBaseLoader(filepath)
