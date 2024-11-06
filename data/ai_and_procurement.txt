@@ -1,0 +1,890 @@
+Cui, R., Li, M., & Zhang, S. (2022). AI and procurement. Manufacturing & Service
+Operations Management, 24(2), 691-706.
+
+Abstract
+In a world advancing toward Articial Intelligence (AI), we explore how AI creates and delivers value
+in procurement. AI has two unique abilities: automation and smartness, which are associated with phys-
+ical machines or software that enable us to operate more eciently and eectively. In this research, we
+study how buyers' usage of AI aects suppliers' price quoting strategies. Specically, we study the impact
+of automation|i.e., the buyer uses a chatbot to automatically inquire about prices instead of asking in
+person|and the impact of smartness|i.e., the buyer signals the usage of a smart AI algorithm in selecting
+the supplier. We collaborate with a trading company to run a eld experiment on an online platform in
+which we compare suppliers' wholesale price quotes across female, male, and chatbot buyer types under AI
+and no recommendation conditions. We nd that, when not equipped with a smart control, there is price
+discrimination against chatbot buyers who receive a higher wholesale price quote than human buyers. In fact,
+without smartness, automation alone receives the highest quoted wholesale price. However, signaling the
+use of a smart recommendation system can eectively reduce suppliers' price quote for chatbot buyers. We
+also show that AI delivers the most value when buyers adopt automation and smartness simultaneously in
+procurement. Our results imply that automation is not very valuable when implemented without smartness,
+which in turn suggests that building smartness is necessary before considering high levels of autonomy. Our
+study unlocks the optimal steps that buyers could adopt to develop AI in procurement processes.
+
+Keywords: articial intelligence, procurement, wholesale pricing, automation, smartness
+
+1. Introduction
+Articial intelligence (AI) is related to making machines or software mimic human behavior and
+intelligence, and eventually supersede or augment human work. AI is becoming the new operational
+foundation of business, and has transformed the very nature of companies|how they
+operate and how they compete (Iansiti and Lakhani, 2020). AI has two unique capabilities: automa-
+tion and smartness, which are associated with physical machines or software that replace manual
+work through automated processes or augment human work through smart decisions (Boute and
+1
+
+2
+Van Mieghem, 2020). AI can automate simple, tedious, and repetitive tasks to perform them faster
+and cheaper. AI can also facilitate smarter control rules by continuously learning, reasoning, deciding,
+and acting to drive a business outcome. As AI enables companies to reach unprecedented levels
+of scale, scope, and learning speed, organizations around the world are eager to participate in this
+AI transformation. However, the rise of AI is posing new challenges for organizations to understand
+how it works, when it is the most powerful, and how to optimize their AI strategies.
+AI has created new business opportunities and delivered value to organizations in numerous ways.
+For example, a chatbot is an AI application that can automate basic, repeatable, standardized
+interactions between customers and sellers. Specically, chatbots such as IKEA's Anna use voice
+or texts to automate communications and create personalized customer experiences. The chatbot
+market size is predicted to expand from $250 million in 2017 to $1.34 billion in 2024 (Pise, 2018),
+and the adoption of chatbot feature is predicted to save businesses $11 billion annually by 2023
+(Hampshire, 2018).
+AI has also been applied to automate procurement tasks and assist strategic sourcing in businessto-
+business (B2B) markets, which is referred to as cognitive procurement (Loo and Santhiram,
+2018). Surveys reveal that 60% of companies use AI to automate the request-for-quotation process
+and 50% of companies use AI to recommend new suppliers (Tata Consultancy Services, 2016).
+There are two ways in which AI can be used for smarter sourcing in procurement. The rst is
+the automation [...] For example, AI-powered [...] bots [...] The second|and more important|
+use relates to AI-powered tools helping to rapidly collect, present and even analyse commodity,
+market, and supply intelligence to inform market strategies.
+|Nicholas Walden, Senior Director at The Hackett Group (HICX Solutions, 2018).
+On one hand, chatbots have been used to automate the request-for-quotation process in procurement
+by mimicking human interactions, thereby relieving workers from tedious and repeatable
+tasks. For example, SAP Ariba|an information technology services company in the US|utilizes
+a procurement AI assistant to request price quotations and draft contracts. Chatbots have been
+shown to reduce labor costs by 39% for a global energy company by automating procurement
+processes (Papa et al., 2019). On the other hand, procurement managers can also utilize AI to
+identify potential suppliers, which is referred to as AI recommendation. Traditionally, procurement
+companies often identify potential suppliers based on their colleagues' recommendation, which
+is referred to as human recommendation. AI adds the component of smartness to procurement
+manager's supplier selection decisions by using its extraordinary capability to collect and analyze
+market information. To summarize, in the procurement context, automation helps buyers automatically
+inquire about prices instead of asking in person, and smartness aids buyers by using an
+AI algorithm to recommend suppliers.
+
+3
+Given that procurement is the core decision in B2B businesses, it is critical to study how AI
+creates and delivers value along its automation and smartness capabilities. We investigate how
+buyers' AI strategies aect suppliers' wholesale pricing decisions. Specically, we study the eect
+of automation|that is, whether the buyer inquires about prices using an autonomous chatbot or
+in person. We also study the eect of smartness|that is, whether the buyer signals the use of AI
+recommendations in selecting suppliers.
+In this study, we run a eld experiment by collaborating with a trading company that operates
+on Alibaba's trading platform 1688 (1688.com), which is the largest domestic trading platform
+in China. It serves millions of buyers and suppliers who use an integrated chat program called
+Aliwangwang to communicate with each other. The trading company's procurement managers
+are required to quote prices from suppliers on 1688. We design a 3  3 eld experiment. The
+procurement representatives are (1) a female human, (2) a male human, or (3) a chatbot, where the
+chatbot automatically sends inquiry messages without human involvement. The quoting messages
+indicate that the supplier is (1) not informed of any recommendation, (2) recommended by a
+peer, or (3) recommended by an AI algorithm. We test the eect of automation and smartness in
+procurement by comparing suppliers' wholesale price quotes across the aforementioned three buyer
+types and three recommendation conditions.
+We nd that when automation is not equipped with a smart control, it negatively aects the
+quoted wholesale price. Specically, chatbot buyers receive a higher price quote than human buyers.
+This is because a supplier might believe that a chatbot buyer lacks the expertise in product specics,
+and in turn, has a higher reservation price and a higher willingness to pay than human buyers.
+Moreover, a supplier does not have to lower his wholesale price in order to develop a professional
+relationship with a chatbot buyer. Consequently, the supplier prices discriminate against chatbot
+buyers. In addition, as a side nding, our results reveal that the wholesale prices quoted to male
+and female buyers are not signicantly dierent.
+We nd that signaling the use of AI algorithms in selecting the supplier reduces the wholesale
+price for chatbot buyers, but it cannot reduce the price for human buyers. This is because, for chatbot
+buyers, suppliers believe in AI's capability to collect and learn from market information and in
+AI's complete in
+uence on chatbot buyers' decisions, thereby changing their perception of chatbot
+buyers' reservation price and willingness to pay. However, human buyers are not machines. They
+are susceptible to their own judgment and heuristics, thereby making them reluctant to strictly follow
+algorithm-suggested decisions (Cui et al., 2015; Dietvorst et al., 2018; Ibanez et al., 2018; Sun
+et al., 2020; Tan and Staats, 2020). Due to such decision deviations, suppliers may perceive that
+human buyers do not follow AI's recommendations, thereby ignoring these buyers' use of AI and
+
+4
+not altering the wholesale price accordingly. In contrast, we nd that the traditional recommendation
+without smart controls|that is, human recommendation|cannot reduce the price quotes for
+either chatbot buyers or human buyers. This allows us to tease out the eect of recommendation
+and attribute the overall eect of AI recommendation to the eect of smartness.
+In summary, in the absence of smart controls, the buyer suers from automation by receiving
+a higher wholesale price, whereas having smart controls leads to a lower wholesale price for these
+autonomous buyers. This implies that when automation is implemented without smart controls, it
+is not very valuable, which suggests that building smartness is necessary before implementing high
+levels of autonomy.
+Last, we study the combined value of automation and smartness. We nd that chatbot buyers
+aided by a smart recommendation system receive the lowest price quote among all conditions. In
+other words, AI delivers the most value when buyers use both automation and recommendation
+in price inquiry. This nding highlights the value of using autonomous agents aided by a smart
+recommendation system in procurement.
+2. Literature Review
+AI Automation and Recommendation. Prior research indicates that automation creates value
+in inventory replenishment (Van Donselaar et al., 2010) and nancial services (Acimovic et al.,
+2020; Kohler et al., 2011; Luo et al., 2019). An application of automation is a chatbot, which helps
+human workers automate communications with consumers. Extant literature reveals that consumers
+often dislike communicating with a chatbot, despite the fact that automation can improve
+agents' productivity. We complement this literature by investigating suppliers' reactions to the
+procurement managers' usage of chatbot.
+Prior research has also shown that AI's recommendations add value in various contexts, such as
+disease diagnosis (Leachman and Merlino, 2017), wholesale pricing (Karlinsky-Shichor and Netzer,
+2019), and product recommendations (Haubl and Trifts, 2000). For example, Karlinsky-Shichor
+and Netzer (2019) create an AI version of B2B salespersons' pricing decisions that mimics their past
+pricing behavior, which improves prots by 10%. However, human decision-makers often choose to
+rely on their own judgment, making them reluctant to strictly follow algorithm-instructed decisions.
+Such decision deviation behavior has been widely documented in the literature. For example,
+managers tend to use their own demand forecasts rather than forecasts provided by machines (Cui
+et al., 2015; Dietvorst et al., 2018); doctors prioritize tasks in a manner that deviates from system
+recommendations (Ibanez et al., 2018); workers pack orders in boxes larger than the size suggested
+by the system (Sun et al., 2020); and restaurant managers deviate from the routing rules that they
+are instructed to follow (Tan and Staats, 2020). We add to this literature by studying suppliers'
+reactions when B2B buyers tell them that they (the suppliers) are recommended by AI algorithms.
+
+5
+Our paper is closely related to Boute and Van Mieghem (2020). The authors propose a framework
+that synthesizes automation and smartness for companies who transform operations digitally.
+They argue that having a smart control is necessary before high levels of autonomy are considered.
+Our paper follows this framework to study the value and synergies between automation and
+smartness in procurement processes. Our ndings echo Boute and Van Mieghem's insights in that
+we empirically show that automation, when implemented without smart controls, does not bring
+value and can even backre, whereas smartness is valuable. Specically, we nd that automation
+causes suppliers to increase their wholesale prices, but AI recommendations can eectively lower
+the price quotes. Consequently, AI delivers the most value when automation and smartness are
+adopted in combination with each other.
+Procurement and Wholesale Pricing. Procurement is a critical business decision. The literature
+has studied various mechanisms, such as inventory investment (Jain et al., 2014), information
+provision (Engelbrecht-Wiggans and Katok, 2008), timing of auctions (Bimpikis et al., 2020), and
+trust (Fugger et al., 2019) to improve procurement eectiveness. We follow suit to study the integration
+of AI as a market mechanism to aect request-for-quotation outcomes.
+The procurement outcome that we measure is the wholesale price charged by sellers. Wholesale
+pricing is one of the central topics of supply chain management (Cachon, 2003; Cachon and Netessine,
+2006). In supply chains, the wholesale price that suppliers charge for downstream buyers is
+an important determinant of suppliers' prot margins and buyers' prices, which in turn aects
+protability. A supplier may charge dierent wholesale prices to retailers based on, for example,
+buyer intermediation (Tunca and Zhu, 2018), supplier{buyer relationships (Zhang et al., 2014), or
+buyers' race (Cui et al., 2020). We contribute to the literature by studying whether suppliers price
+against or in favor of chatbot buyers and, if so, which features of AI allow it to deliver the most
+value.
+3. Research Hypotheses
+We study how suppliers vary their wholesale prices to buyers with and without the use of AI on
+an online B2B platform. Before purchasing a product, buyers research its market price by asking
+for price quotes from suppliers. Suppliers then provide a price quote to buyers based on buyers'
+characteristics and the inquiry message. In this section, we develop a framework that predicts the
+eect of automation and smartness in procurement. We discuss whether suppliers price against
+or in favor of (1) buyers' autonomous characteristic|whether the buyer is a chatbot or human,
+(2) buyers' smartness characteristic|whether the buyer signals the use of AI recommendations in
+selecting suppliers, and (3) buyers' autonomous and smartness characteristics|whether the buyer
+is a chatbot with a smart control or a human without a smart control.
+
+6
+3.1. Eect of Automation
+When deciding on a wholesale price to charge buyers in a B2B setting, a supplier's most pivotal
+consideration is the buyer's best alternative to a negotiated agreement (BATNA). BATNA refers
+to the most advantageous alternative action that the buyer can take if the negotiation reaches an
+impasse (Fisher and Ury, 1981; Fisher et al., 2011; Pinkley et al., 1994). Consequently, the buyers'
+BATNA determines the suppliers' pricing strategy: buyers with a stronger BATNA have better
+outside options, and in turn, they have a lower reservation price and a lower willingness to pay
+(Korobkin, 2014), which results in a lower wholesale price charged by suppliers.
+We consider the scenario that the chatbot or human buyer asks for prices without providing
+any recommendation information to the supplier, i.e., automation without smartness. Autonomous
+chatbots are an eective tool to automate repeated inquiries and preprogrammed responses. In
+our research context, a chatbot is used to automatically send inquiry messages to a group of suppliers,
+saving buyers' time spent in sending messages to each supplier personally. However, these
+traditional chatbots, when their main objective is to repeat tasks without smart controls, are not
+equipped to address the complex requirements of B2B suppliers, who expect in-depth communications
+and negotiations with buyers (Swanson, 2015). We interviewed several highly experienced
+trading managers who conrm that procurement requires a signicant level of professional knowledge
+in product specics, such as product materials, size, functionality, and after-sales service,
+which preprogrammed chatbots might be less knowledgeable in.1 Consequently, suppliers may
+believe that chatbots lack expertise in product specics and, in turn, have a worse BATNA and
+thus a higher reservation price than human buyers.
+Further, because chatbots lack personal feelings and empathy, suppliers do not need to lower
+the wholesale price in order to develop a serious relationship with chatbot buyers (Dietvorst et al.,
+2018; Luo et al., 2019). Therefore, we expect that without smart controls, chatbot buyers will be
+price discriminated against and receive a higher price quote than human buyers.
+Hypothesis 1 (Automation). Without smart controls, chatbot buyers receive a higher whole-
+sale price quote than human buyers.
+3.2. Eect of Smartness
+In this section, we study the eect of having smartness in the process of wholesale price inquiries.
+Smartness means that the buyer uses AI recommendations to select suppliers. Without claiming
+the use of AI recommendations, suppliers would not be able to know and react to this. Therefore,
+in our research context, smartness is signaled to the suppliers. Specically, when asking for a price
+quote, the buyer tells the supplier that the company was recommended to the buyer by AI's market
+1We discuss our interviews in detail in Section 5.1.
+
+7
+search and data analysis. The supplier can use this information to update beliefs about the buyer
+and alter the oered wholesale price accordingly.
+The information on the use of AI recommendations can be a key determinant for suppliers,
+because AI has an extraordinary capability to collect and learn from market information (Haubl
+and Trifts, 2000). Knowing that the buyer has comprehensive knowledge of the market aided by AI,
+the supplier would believe that the buyer has a stronger BATNA|i.e., a better walk-away option|
+and in turn would consider lowering the price. In addition to the capability of AI, suppliers would
+also evaluate whether the AI recommendations have a complete in
+uence on buyers' decisions. If
+a buyer does not follow AI-generated recommendations, then the buyer's decisions will not heavily
+rely on AI, which suggests that the supplier could ignore the buyer's AI usage.
+We rst consider the scenario where the procurement manager uses autonomous chatbots to
+ask for prices and signal that the supplier was selected by AI's market search. Because chatbots
+are machines programmed to follow the AI's recommendations, the supplier would believe in the
+thorough knowledge of the market gained by AI and the in
+uence that AI has on the buyer.
+Therefore, we expect that chatbot buyers' use of AI recommendations will improve the supplier's
+perception of their BATNA, thereby reducing the supplier's wholesale price.
+Next, we consider the scenario where the human buyer asks for prices in person and informs the
+supplier that the company was recommended by AI. Humans are not machines. They are susceptible
+to their own judgment and heuristics, thereby making them reluctant to strictly follow algorithms
+and rules. This is known as decision deviation (Cui et al., 2015; Dietvorst et al., 2018; Ibanez et al.,
+2018; Sun et al., 2020; Tan and Staats, 2020). Such deviation behavior from algorithm-instructed
+decisions has been widely documented in the literature. For example, managers are shown to use
+human forecasts rather than algorithmic forecasts (Cui et al., 2015; Deloitte, 2018); doctors are
+shown to prioritize tasks in a manner that deviates from system recommendations (Ibanez et al.,
+2018); workers are shown to pack orders in boxes larger than the system-recommended size (Sun
+et al., 2020); and restaurant managers are shown to deviate from the routing rules that machines
+instruct them to follow (Tan and Staats, 2020). Given this widespread recognition that humans
+often deviate from algorithmic recommendations, we expect that suppliers would anticipate human
+buyers to not strictly follow AI recommendations.
+To further conrm that decision deviations exist in procurement, we interviewed nine professional
+B2B suppliers with an average of 12 years' trading experience. In the interviews, we asked them to
+share whether they believe in AI recommendations' in
+uence on a human buyer or a chatbot buyer.
+We summarize their quotes in Table 8 in the appendix. Most suppliers indicate that they believe
+that such an AI recommendation can help chatbot buyers learn about market knowledge and can
+dictate their sourcing choices. However, eight out of nine suppliers do not believe that a human
+
+8
+buyer will follow AI recommendations because they think that human buyers would make their
+own judgment about the market and are likely to deviate from algorithms. Therefore, we expect
+that suppliers would assume that human buyers do not follow the AI's recommendations, thereby
+ignoring buyers' usage of AI and not altering their perception on the human buyers' BATNA. In
+other words, the use of AI becomes ineective in reducing the wholesale price quote for human
+buyers.
+Hypothesis 2 (Smartness). (a) Chatbot buyers, when informing suppliers that they are
+selected by smart AI algorithms, receive a lower wholesale price quote than chatbot buyers without
+AI recommendations. (b) Human buyers, when informing suppliers that they are selected by smart
+AI algorithms, receive a similar wholesale price quote as human buyers without AI recommenda-
+tions.
+3.3. Automation and Smartness
+In this section, we study the eect of having both automation and smartness. We rst discuss the
+eect of automation under smart controls. That is, we compare the dierence between chatbot
+buyers with AI recommendations and human buyers with AI recommendations. When both human
+and chatbots are equipped with AI recommendations, the eect boils down to who would follow
+the AI's recommendations. According to Hypothesis 2(a), chatbots are programmed to follow the
+AI's recommendations. And according to Hypothesis 2(b), human buyers may not fully follow the
+AI's recommendations due to their tendency to deviate from AI-instructed decisions. Therefore,
+suppliers will react to chatbot buyers' and ignore human buyers' usage of AI recommendations.
+Taken together, when equipped with a smart control, suppliers would perceive that chatbot buyers
+have more comprehensive market knowledge, thereby a stronger BATNA with a lower reservation
+price than human buyers. We hypothesize this relation in Hypothesis 3(a).
+Next, we study the dierence between chatbot buyers with AI recommendations and human
+buyers without any recommendation. According to the above theories, AI enables buyers to have
+comprehensive knowledge about the market and exerts a full in
+uence on chatbot buyers. As a
+result, suppliers would perceive chatbot buyers with smartness to have a stronger BATNA and
+thus would oer them a lower wholesale price than human buyers without smartness. Therefore,
+we expect that the eect of AI is the strongest when both automation and smartness are in place.
+Hypothesis 3 (Automation and Smartness). (a) When informing suppliers that they are
+selected by smart AI algorithms, chatbot buyers receive a lower wholesale price quote than human
+buyers. (b) Chatbot buyers, when informing suppliers that they are selected by smart AI algorithms,
+receive a lower wholesale price quote than human buyers without AI recommendations.
+
+
+Figure 1: Framework of Automation and Smartness in Procurement
+Human Buyer
+Automated
+Smart
++
+=
+H2 (b)
+H1
+H2 (a)
+Automated
+Smart
+Smart
+Automated
+_
+_
+H3 (b)
+_ H3 (a)
+Notes. +, 􀀀, and = represent higher, lower, and similar price quotes, respectively. H1{H3 represent Hypotheses 1{3,
+respectively.
+We summarize the eect of automation and smartness on suppliers' price decisions in Figure 1.
+We follow Boute and Van Mieghem's (2020) framework to classify buyers' AI strategies into four
+groups: human buyer without the help of AI, automation enabled by chatbot buyers, smart control
+enabled by AI recommendations, and the joint application of automation and smartness. In this
+framework, Hypothesis 1 describes the pure eect of automation when we move from the \Human
+Buyer" zone to the \Automated" zone; Hypothesis 2 describes the eect of smartness on human
+buyers and chatbot buyers separately when we move from the \Human Buyer" zone to the \Smart"
+zone, and from the \Automated" zone to the \Automated+Smart" zone, respectively; Hypothesis 3
+describes the eect of automation under smartness when we move from the \Smart" zone to the
+\Automated+Smart" zone and the joint eect of automation and smartness when we move from
+the \Human Buyer" zone to the \Automated+Smart" zone.
+4. Research Context
+Alibaba Group launched 1688 in 1999, which is the largest domestic online B2B platform in China
+(Alibaba, 2020a). This platform connects 30 million enterprise buyers and suppliers (China Daily,
+2019); the suppliers provide products in 49 major categories, including apparel, general merchandise,
+electronics, and car accessories (CNXtrans, 2020). The 1688 platform has a built-in instant
+chat program called Aliwangwang that enables buyers to contact suppliers for product specics and
+prices. Buying companies are permitted to embed autonomous chatbot features in Aliwangwang
+in order to automate communications.
+On 1688, a supplier introduces company information on a prole page and lists product information
+on a product page. Figure 4 in the appendix illustrates an example of a supplier's prole and
+product pages. The supplier's prole page displays basic company information (e.g., name, location,
+membership status, and credibility) and trading performance on the platform (e.g., number of
+
+peat purchase rate, and refund rate). Suppliers can pay to have
+an elite membership in order to obtain advantages in product promotion and exposure. A supplier's
+credibility has ve levels. The product page displays product characteristics|for example,
+description, picture, price, and options|and transaction details|for example, number of reviews,
+review rating, and transaction volume in the past 30 days.
+A buyer also has a personal prole that includes the buyer's name, gender, date of birth, location,
+photo, phone number, and email address. Buyers can search for a specic product and choose one
+from a list of suppliers displayed by the platform. The buyer can then view the supplier's prole
+and product details, as depicted in Figure 4. The buyer sends a price quote to the supplier on
+Aliwangwang either through a personal message or using autonomous chatbots to automate the
+inquiry process. After receiving an inquiry from a buyer, the supplier chooses whether to follow
+up and how much to quote. After transaction details are settled, the buyer makes a payment, the
+supplier ships the order, and the transaction is completed.
+5. Identication Design
+We aim to study the eect of the buyer's usage of automation and smartness on the suppliers'
+price quoting strategy. We collaborate with a trading company that operates on 1688 to conduct
+a eld experiment.
+5.1. Study Design
+In order to study the eect of automation, we design the sender who asks for the price quote to be a
+female human, a male human, or an autonomous chatbot. We identify the value of pure automation
+by comparing the price quote received by a chatbot buyer and a human buyer. In order to study the
+eect of smartness, we design the sender to signal that the supplier is recommended by AI or human
+peers, or to not signal any recommendation at all. We identify the value of AI recommendations by
+comparing the price quote received with AI recommendations and without any recommendation.
+We also introduce a treatment with human recommendations, in which the buyer signals that
+the supplier was recommended by a (human) peer, in order to disentangle the pure impact of
+having recommendations and the pure impact of having smart controls. If the eect of human
+recommendations is weak, we can attribute the overall eect of AI recommendations to smartness.
+Consequently, we employ a 33 experiment design by considering three types of buyers (female
+buyer, male buyer, and chatbot buyer) and three recommendation conditions (no recommendation,
+human recommendation, and AI recommendation). We outline how our experiment design matches
+our AI framework in Figure 6 in the appendix.
+The company has multiple procurement representatives whose routine job is to keep track of
+market dynamics by collecting wholesale price information. The company also uses chatbots to
+
+
+ suppliers. The trading company asks for price quotes via three
+buying representatives: a female buyer, a male buyer, and a chatbot buyer. We tailor the messages
+to incorporate dierent recommendation conditions. Thereafter, we record and compare suppliers'
+responses. Table 1 summarizes the study design.
+Table 1: Field Experiment Design
+Design
+Automation  Recommendation Condition
+No Recommendation Human Recommendation AI Recommendation
+Chatbot Female Male Chatbot Female Male Chatbot Female Male
+Planned Sample Size 440 440 440 440 440 440 440 440 440
+Actual Sample Size 440 439 437 435 436 439 440 439 439
+Notes. The planned sample size was 3,960|that is, 440 suppliers per treatment arm. The actual sample size is 3,944 after
+excluding unavailable listings.
+We select a sample of 3,960 products from 3,960 suppliers in the car accessories sector.2 This
+sector, which is the backbone of China's industrial ascent (Hong and Einhorn, 2018), has a large
+number of suppliers on 1688. Car-related products have also been studied to test price discrimination
+behavior in previous literature (Busse et al., 2017). In our sample, there are 14 product
+subcategories including, for example, automobile data recorders, car cameras, car MP3, vehicle
+displays, vehicle bluetooth headsets, vehicle bluetooth speakers, vehicle-mounted mobile holders,
+vehicle chargers, vehicle lockers, car vacuum cleaners, GPS locators, vehicle air puriers, vehicle
+refrigerators, and vehicle-mounted inverters.3 Each supplier usually sells a wide selection of products
+(e.g., a vehicle refrigerator in capacities of 6, 12, or 20 liters). From each supplier's listed
+products, we select a product model that is the most common and standard in the market. Suppliers
+are randomly assigned to one of the nine (33) treatment arms. Consequently, we obtain
+1,320 suppliers per buyer type, 1,320 suppliers per recommendation condition, and 440 suppliers
+per treatment arm. This means that each supplier is quoted only once.
+Note that all of our studied products are commodity products. Relative to non-commodities
+which are custom and unique, commodities are standard and basic goods. One might question that
+whether procuring standard commodities requires buyers to have extensive expertise in product
+2 The sample size is determined by the statistics power calculation. By running a pilot experiment with 40 chatbot
+buyers, 40 female buyers, and 40 male buyers under the no recommendation, human recommendation, and AI recom-
+mendation conditions, respectively, we compare the price discounts across treatment arms and obtain their eect size.
+Based on a two-sided t-test with a power level of 0.8 and a signicance level of 0.05, we require 99 observations with
+a 0.40 eect size between chatbot and female buyers under the \no recommendation" condition, 38 observations with
+a 0.65 eect size between chatbot and male buyers under the \no recommendation" condition, 393 observations with
+a 0.20 eect size between the \no recommendation" and \human recommendation" conditions, and 164 observations
+with a 0.31 eect size between the \no recommendation" and \AI recommendation" conditions. We determined the
+sample size per treatment arm to be 440 (>393) to further ensure the validity of the experiment.
+3 In order to explore new markets, the trading company species these 14 product categories from which our research
+team independently selects the supplier and product sample. We validate with the company that there is no previous
+supplier in the sample.
+
+ral highly experienced trading managers conrm that buying
+commodity products also requires signicant professional knowledge such as product materials,
+size, functionality, and after-sales service, which enables suppliers to exert in-depth communications
+and negotiations. Their exact interview quotes are summarized in Table 9 in the appendix. On
+the other hand, when procuring non-commodity products, chatbots might be less knowledgeable
+in product specics due to their uniqueness. Therefore, the estimated eect of automation for
+non-commodities products might be larger than the eect identied in our study.
+In order to ensure that suppliers are randomly assigned to treatment arms, we conduct a randomization
+check across the following supplier characteristics: (1) membership status (i.e., the number
+of years that the supplier has been an elite member), (2) credibility (i.e., the supplier's credibility
+based on the Alibaba credit system), (3) number of transactions in the past 90 days, (4) number
+of buyers in the past 90 days, (5) repeat purchase rate in the past 90 days, (6) refund rate in the
+past 90 days, (7) listed price of the selected product, (8) trading volume of the selected product
+in the past 30 days; (9) number of reviews for the selected product, and (10) review rating for the
+selected product. Table 2 presents the summary statistics of these variables. Further, the p-values
+in Table 3 are all larger than 0.05, which ensures the randomized assignment.
+5.2. Study Procedure
+Buyers' characteristics (male, female, or chatbot) are signaled by their names and prole pictures.4
+The buyers sent price inquiries to the selected suppliers during the period December 18, 2019,
+to January 20, 2020.5 Each message asks for a price quote per unit for 1,000 units of the preselected
+product. The message content varies based on the recommendation conditions. In the \no
+recommendation" condition, the buyer includes the most basic information in the inquiry message
+without indicating any human or AI recommendation. In particular, all buyers in this condition sent
+a message that said, \Hello, I am [a procurement manager or a chatbot buyer]. We are interested
+in your product: [the specic product name and link of this product]. Could you please quote
+us your best price per piece for an order of 1,000 units?" The AI chatbot buyers disclose their
+machine identity in order to comply with China's regulation regarding AI (Laskai and Webster,
+2019). Quoting a price including the packaging fee is the industry norm. In order to ensure that the
+quoted prices are not confounded by the value-added tax or shipping fee, the buyers ask suppliers
+4 The chatbot buyer has a standard robotic prole picture. We edit the photos of human buyers using Photoshop to
+ensure their photos have a similar attractiveness.
+5 Our experiment (which was from December 18, 2019, to January 20, 2020) was conducted before the outbreak of
+COVID-19 (which caused the rst lockdown measure to take place on January 23, 2020) and before the Chinese New
+Year (which was from January 24, 2020, to January 30, 2020). As a result, our experiment was not aected by the
+pandemic or the holiday.
+
+
+
+
+Notes. \No. of Trans." indicates the numbers of transactions. C, F, and M represent chatbot buyer, female buyer, and male
+buyer, respectively. N, H, and A represent no recommendation, human recommendation, and AI recommendation, respectively.
+to quote a price excluding these fees. The original inquiry messages in the eld experiment are in
+Chinese and are carefully translated and presented in Figure 5 in the appendix.
+
+ition, the buyer discloses that the supplier is recommended
+ recommended to us by a peer." We follow the common
+practice and the industry norm to not include the peers' name in the inquiry message.6 In the \AI
+recommendation" condition, the buyer reveals that the supplier is recommended by AI's market
+search and data analysis: \Your company was recommended to us by an AI system's market
+information collection and data processing."
+Within a week after the inquiry, we record and compare the initial price quotes.7 We received
+1,807 responses that included a price quote from the 3,944 suppliers that we sent messages to.
+6. Results
+In this section, we study the eect of automation and smartness on suppliers' price quoting strategy.
+We examine the eect of automation in Section 6.1, the eect of smartness in Section 6.2, and the
+joint eect of automation and smartness in Section 6.3.
+6.1. Eect of Automation
+In a B2B setting, it is an industry norm and a common practice that suppliers privately quote a
+lower price than their publicly listed prices (Cui et al., 2020). In order to conduct a fair comparison
+of the amount of price discount oered by suppliers, we follow previous literature (Cui et al., 2020)
+to compare the price discount percentage relative to the listed price:
+Discount=100%
+
+Listed Price􀀀Supplier's Quoted Price
+Listed Price
+
+: (1)
+Automation without Smartness. We rst focus on the \no recommendation" condition and
+investigate the eect of automation on suppliers' price quoting strategy. Panel A of Table 10 in
+the appendix presents the summary statistics of the suppliers' price discounts for chatbot, female,
+and male buyers. Figure 2 presents a visual illustration. In particular, chatbot, female, and male
+buyers receive an average price discount of 18.01%, 19.15%, and 20.96%, respectively|that is, both
+female and male buyers receive a lower price quote than chatbot buyers. Moreover, the dierence
+of the price discount between male and chatbot buyers is statistically signicant (p-value =0:07).
+6 In our \human recommendation" message design, a buyer does not provide the name of the peer who recommended
+the supplier, and it has been validated that such a design format conforms to norms regarding both condentiality
+and industry practice (Cui et al., 2020).
+7 Following the literature (Ayres and Siegelman, 1995; Busse et al., 2017; Cui et al., 2020), our study focuses on the
+initial price quote because (1) the initial price quote re
+ects the supplier's perception of the buyer's willingness to
+pay; (2) suppliers could easily lose customers to competitors if they do not oer an attractive initial price in an online
+trading platform; and (3) the initial price quote, unlike a second price quote or price concession, is not confounded
+by any bargaining or negotiation techniques.
+
+
+
+ble that represents whether a buyer is a chatbot, female, or male;
+Controlsi is a vector of control variables regarding supplier characteristics, including membership
+status, number of transactions, listed price, repeat purchase rate, and number of reviews.
+Figure 2: Eect of Automation and Smartness
+18.01
+19.15
+20.96
+19.36
+17.39
+19.46
+18.01 18.28
+22.57
+18.76
+21.04 20.65
+16
+18
+20
+22
+24
+Chatbot Female Male All Data
+Discount (%)
+Buyers' Type
+No Recommendation Human Recommendation AI Recommendation
+The estimation results are presented in the rst column of Table 4, where the omitted buyers'
+type is the chatbot group. The coecients of Female (Male) represent the additional price
+discounts oered to female (male) buyers relative to chatbot buyers. The coecient of Male is
+weakly positively signicant (p-value < 0:1), which implies that the supplier quotes a signicantly
+lower wholesale price to human|particularly male|buyers than chatbot buyers, which weakly
+supports Hypothesis 1. Note that we conduct several analyses in order to conrm the robustness
+of this coecient: a combined regression with all the observations in Section 7.1 and an analysis
+with time xed eects in Section 7.2. All these analyses support Hypothesis 1. In other words, the
+implementation of pure automation does not help buyers and can even backre in a procurement
+setting. This is because a chatbot buyer, due to its autonomous and unsmart nature, signals a
+higher willingness to pay than human buyers, and human suppliers are less interested in building
+a professional relationship with a chatbot buyer.
+Automation under Smartness. Next, we discuss the eect of automation on suppliers' pricing
+strategy in the presence of smartness. Panel C of Table 10 in the appendix presents the summary
+statistics of the suppliers' price discounts for chatbot, female, and male buyers under the \AI
+recommendation" condition. In particular, chatbot, female, and male buyers, when equipped with
+smart recommendations, receive a price discount of 22.57%, 18.76%, and 21.04%, respectively. The
+
+having automation and smartness) and human buyers (only
+ 4. We can see that chatbot buyers receive a signicantly lower
+er words, automation is helpful in the presence of smartness.
+This nding echoes the conjecture of Boute and Van Mieghem (2020): in the presence of smart
+controls, it is conceivable that trust in the algorithm increases and risk is contained, which opens
+up the possibility of higher levels of autonomy.
+Automation under Human Recommendation. In addition, from column II of Table 4, we can
+observe that under the \human recommendation" condition, the coecient of Female is weakly
+positively signicant (p-value < 0:1), which implies that the supplier quotes a signicantly lower
+wholesale price to human|particularly female|buyers than chatbot buyers. In other words, the
+implementation of automation still results in a higher price even when human recommendations are
+adopted. This highlights the importance of having smart controls when implementing automation
+in a procurement setting.
+Table 4: Eect of Automation on Price Quote
+Dependent Variable: Discount
+No Recommendation
+I
+Human Recommendation
+II
+AI Recommendation
+III
+All Data
+IV
+Male 0.028
+(0.016)
+0.009
+(0.014)
+-0.015
+(0.016)
+0.009
+(0.009)
+Female 0.010
+(0.016)
+0.026
+(0.014)
+-0.037
+(0.016)
+0.004
+(0.009)
+Supplier Controls Yes Yes Yes Yes
+Observations 595 665 547 1,807
+R2 0.047 0.054 0.031 0.033
+Notes. This table tests the eect of automation on the price discount for four dierent samples. Results from columns I{
+III are based on the sample under the \no recommendation" condition, under the \human recommendation" condition,
+and under the \AI recommendation" condition, respectively. Results from column IV are based on the full sample.
+p <0:1; p <0:05.
+Gender. A natural extension that we can study is whether suppliers price discriminate based
+on buyers' gender. Table 10 in the appendix and Figure 2 summarize the price discounts for
+female and male buyers under dierent recommendation conditions. In the \no recommendation"
+condition, we nd that female and male buyers receive an average price discount of 19.15% and
+20.96%, respectively; there is no statistically signicant dierence between male and female buyers
+(p-value=0:26). This result also holds under the \human recommendation" condition and the \AI
+recommendation" condition. We also formally test the price dierence based on buyers' gender,
+Discounti =+Genderi +
+Controlsi +i; (3)
+
+17
+re presented in Table 5, where the omitted variable is Female;
+nicant.
+
+No Recommendation
+I
+Human Recommendation
+II
+AI Recommendation
+III
+All Data
+IV
+Male 0.020
+(0.016)
+-0.017
+(0.014)
+0.022
+(0.015)
+0.006
+(0.009)
+Supplier Controls Yes Yes Yes Yes
+Observations 410 453 395 1,258
+R2 0.046 0.040 0.045 0.033
+Notes. This table tests the eect of gender on the price discount for four dierent samples. Results from columns I{III
+are based on the sample under the \no recommendation" condition, under the \human recommendation" condition,
+and under the \AI recommendation" condition, respectively. Results from column IV are based on the full sample.
+We show that there is no gender discrimination in the B2B procurement context. This result differs
+from the ndings in the business-to-consumer (B2C) settings|that female consumers receive
+a higher price than male consumers because they are perceived to be less knowledgeable (Busse
+et al., 2017; Mejia and Parker, 2019). Unlike B2C consumers whose purchasing decisions are often
+emotional and irrational, B2B buyers are professional procurement managers whose job is to negotiate
+with suppliers. Consequently, male and female procurement managers are perceived to have
+a similar willingness to pay (Goldberg, 2018).
+6.2. Eect of Smartness
+AI recommendation. We investigate how AI recommendation aects suppliers' price quoting
+strategy for chatbot, female, and male buyers, respectively. Table 11 in the appendix summarizes
+the suppliers' price discounts for chatbot, female, and male buyers. Figure 2 presents an
+illustration. In particular, for chatbot buyers, the average price discount is 18.01% under the \no
+recommendation" condition and 22.57% under the \AI recommendation" condition, respectively.
+This implies that, compared to the \no recommendation" condition, AI recommendation signi-
+cantly reduces the wholesale price quoted for chatbot buyers (p-value = 0:01). For female (male)
+buyers, the average price discount is 19.15% (20.96%) under the \no recommendation" condition
+and 18.76% (21.04%) under the \AI recommendation" condition, respectively. This implies that,
+compared to the \no recommendation" condition, AI recommendation cannot reduce the wholesale
+price quoted for female or male buyers.
+We also formally examine the impact of recommendation conditions on price discounts,
+Discounti =+Conditioni +
+Controlsi +i; (4)
+
+18
+where Conditioni is a binary variable that represents the \no recommendation" condition or \AI
+" condition.
+
+
+Female
+II
+Male
+III
+All Data
+IV
+AI Recommendation 0.042
+(0.017)
+-0.003
+(0.015)
+0.000
+(0.015)
+0.012
+(0.009)
+Supplier Controls Yes Yes Yes Yes
+Observations 337 421 384 1,142
+R2 0.040 0.032 0.058 0.033
+Notes. This table tests the eect of smartness on price discounts for four dierent samples. Results from columns
+I{III are based on the sample of chatbot, female, and male buyers, respectively. Results from column IV are based
+on the full sample. p <0:05.
+The coecient of AI Recommendation represents the additional price discount that a buyer can
+obtain when signaling that the supplier is recommended by an AI algorithm, compared to the
+\no recommendation" condition. The coecient of AI Recommendation is signicant and positive
+(p-value < 0:05) for a chatbot buyer, but not signicant for female or male buyers. These results
+conrm that a smart recommendation is eective for lowering prices for chatbot buyers but not
+for human buyers, thereby supporting Hypothesis 2. Because of AI's ability to search and learn
+about market information, suppliers believe that chatbot buyers have a lower reservation price and
+a lower willingness to pay, and therefore reduce their wholesale price. However, human buyers are
+deemed to not fully follow algorithms' recommendations and would not be able to benet from
+claiming the use of AI recommendations.
+In summary, having a purely autonomous process leads to a higher wholesale price, putting
+buyers in a disadvantageous position, whereas having a smart control leads to a lower wholesale
+price. In other words, automation is not very valuable when implemented without smart controls,
+which suggests that building smartness is necessary before high levels of autonomy are to be
+considered.
+Human Recommendation. Recall that we introduced a treatment with human recommendation
+in order to disentangle the pure impact of having any recommendation at all and the pure impact
+of having smart controls. Next, we study this human recommendation eect. If this eect is weak,
+then we can conclude that the eect of AI recommendation stems from having smart controls.
+Table 11 in the appendix and Figure 2 indicate that the average price discount for chatbot buyers
+is 18.01% under the \no recommendation" condition and 17.39% under the \human recommendation"
+condition, respectively. We perform a t-test and nd that the dierence is insignicant
+(p-value = 0:68). We nd a similar result for human buyers that human recommendations cannot
+
+19
+help human buyers lower the wholesale price received from suppliers. We conjecture that this is
+driven by two reasons. First, due to humans' limitations in information processing (Payne, 1982;
+often distrust buyers when they present soft social information
+hanging suppliers' belief regarding buyers' willingness to pay and
+their pricing strategy.
+6.3. Joint Eect of Automation and Smartness
+Thus far, we have demonstrated that automation brings a negative eect to buyers while smartness
+brings a positive eect. Next, we study the joint value of automation and smartness. Table 12 in
+the appendix summarizes the price discounts received with and without automation and smartness.
+This table reveals that autonomous chatbot buyers, when informing suppliers that they are selected
+by smart algorithms, receive a lower wholesale price quote than human (particularly female) buyers
+without any recommendation (p-value =0:05). We also formally test this joint eect,
+Discounti =+Jointi +
+Controlsi +i; (5)
+where Jointi is a categorical variable that represents a chatbot buyer aided by AI recommendations,
+a female buyer without recommendations, or a male buyer without recommendations. The
+estimation results are presented in Table 7, where the omitted variable is when a buyer is equipped
+with both automation and smartness. Table 7 reveals that having both automation and smartness
+can eectively reduce the price for (particularly female) buyers (p-value<0:05). This implies that
+we should improve the levels of autonomy and smartness simultaneously.
+Table 7: Joint Eect of Automation and Smartness on Price Quote
+Dependent Variable: Discount
+Male -0.014
+(0.018)
+Female -0.034
+(0.017)
+Supplier Controls Yes
+Observations 562
+R2 0.034
+Notes. This table tests the joint eect of automation and smartness on price
+discount. Results are based on the sample of chatbot buyers under AI recommen-
+dation pooled with human buyers without recommendation. p <0:05.
+We summarize the results of buyers' AI strategies in our framework in Figure 3. First, when a
+buyer adopts pure automation but without smartness by moving from the \Human Buyer" zone
+to the \Automated" zone, the buyer suers from automation by receiving a higher price. However,
+
+
+Figure 3: Framework and Results of Automation and Smartness in Procurement
+Human Buyer
+Automated
+
+
+Automated
+Smart
+Smart
+Automated
+_ _
+Notes. +, 􀀀, and = represent higher, lower, and similar price quotes, respectively.
+when the buyer adopts automation in the presence of smartness by moving from the \Smart" zone
+to the \Automated+Smart" zone, the buyer benets from automation by receiving a lower price.
+Second, when a human buyer is equipped with a smart algorithm by moving from the \Human
+Buyer" zone to the \Smart" zone, smartness does not change the price. However, when a chatbot
+buyer incorporates a smart recommendation system by moving from the \Automated" zone to
+the \Automated+Smart" zone, smartness becomes helpful in reducing the price. Last, when the
+buyer adopts both automation and smartness by moving from the \Human Buyer" zone to the
+\Automated+Smart" zone, the buyer can also benet from receiving a lower price quote.
+7. Robustness Check
+In this section, we conduct additional analysis to check the robustness of our key insights regarding
+the individual and joint eects of automation and smartness.
+7.1. Combined Regression
+In our main analysis, we studied the eect of automation and the eect of smartness separately.
+We now combine all observations into a single regression:
+Discounti =+0Typei +1Recommendationi
++2Typei Recommendationi +
+Controlsi +i; (6)
+where Recommendationi is a categorical variable that represents the \no recommendation" condition,
+\human recommendation" condition, or \AI recommendation" condition.
+Table 13 in the appendix reports the estimation results, where the omitted buyers' type is the
+chatbot buyer and the omitted recommendation condition is the \no recommendation" condition.
+This table shows three observations. First, the coecient of Male is weakly positively signicant
+(p-value<0:1). That is, chatbot buyers receive a signicantly higher price quote than human buyers
+without recommendations; this is consistent with our result on the eect of automation without
+
+thesis 1. Second, the coecient of AI Recommendation is positively
+signicant (p-value < 0:05). That is, AI recommendations help chatbot buyers receive a
+lower price quote; this is consistent with our result on the eect of smartness on chatbot buyers,
+thereby supporting Hypothesis 2(a). Third, the coecients of Male  Human Recommendation
+ negatively signicant (p-value < 0:1). That
+e discrimination; these results are consistent with
+our main result on the eect of automation under smartness, thereby supporting Hypothesis 3(a).
+7.2. Time Fixed Eects
+We test our key results by including the time xed eects at two levels: the inquiries' request date
+and the inquiries' quote date. Because dierent suppliers may take dierent amounts of time to
+respond to a price inquiry, the quote dates for the same batch of inquiries might dier. To ensure
+rigor and robustness, we test for both time xed eects.
+The estimation results with time xed eects are shown in Tables 14 and 15 in the appendix. As
+shown in column I of Panel A in Tables 14 and 15, the coecients of Male are positively signicant
+(p-value<0:1), which implies that suppliers quote a signicantly lower wholesale price to human|
+particularly male|buyers than chatbot buyers in the absence of smartness. However, column III
+of Panel A in Tables 14 and 15 shows that the coecients of Female are negatively signicant
+(p-value < 0:05), which implies that chatbot buyers receive a signicantly lower price quote than
+(particularly female) buyers when smartness is adopted. This is consistent with our main results
+regarding the eect of automation, thereby supporting Hypothesis 1 and Hypothesis 3(a).
+As shown in Panel B of Tables 14 and 15, the coecients of AI recommendation are positively
+signicant (p-value < 0:05) for a chatbot buyer, but not signicant for female or male buyers.
+This is consistent with our main results regarding the eect of smartness, thereby supporting
+Hypothesis 2(a) and Hypothesis 2(b).
+As shown in Panel C of Tables 14 and 15, having both automation and smartness can eectively
+reduce the price for (particularly female) buyers (p-value<0:05). This is consistent with our main
+results regarding the joint eect of automation and smartness, thereby supporting Hypothesis 3(b).
+7.3. Simulated AI Recommendation
+In our design, the signal that the supplier is recommended by AI is randomly assigned to each
+supplier. In practice, it may be true that only some (high-quality) suppliers would receive such
+signals. In order to simulate such a scenario, we follow our collaborative company's guide to score
+10 supplier/product characteristics (as shown in Section 5) according to how much they determine
+
+22
+ suppliers above the average score as high-quality suppliers
+and the rest as low-quality suppliers. We then simulate an AI recommendation condition where
+buyers equipped with AI recommendation only contact the high-quality suppliers. In this way, we
+can simulate the situation where only high-quality suppliers are selected by AI algorithms and
+tness in practice by comparing suppliers' wholesale prices
+0.25 under the \no recommendation" condition, which is lower
+than 0.31 under the \simulated AI recommendation" condition, conrming that only high-quality
+suppliers are included in the sample.
+Table 16 in the appendix summarizes the suppliers' price discounts for chatbot, female, and
+male buyers under the \simulated AI recommendation" condition and the \no recommendation"
+condition. In particular, for chatbot buyers, the average price discount is 18.01% without recommendations
+and 23.91% with the simulated AI recommendation. This means that the simulated
+AI recommendation signicantly reduces the wholesale price quoted for chatbot buyers (p-value=
+0:01). However, consistent with our main result, the simulated AI recommendation cannot reduce
+the wholesale price quoted for human buyers; for female (male) buyers, the average price discount
+is 19.15% (20.96%) without AI recommendation and 18.76% (21.34%) with simulated AI
+recommendation, respectively.
+We also formally examine the impact of the \simulated AI recommendation" on price by
+Discounti =+AIRecommendationi +
+Controlsi +i; (7)
+where AIRecommendationi is a binary variable that represents the \no recommendation" condition
+or the \simulated AI recommendation" condition. The estimation results are presented in
+Table 17 in the appendix, where the coecient of Simulated AI Recommendation is signicant (p-
+value < 0:05) and positive for chatbot buyers, but not signicant for human buyers. These results
+again conrm that a smart recommendation is eective in lowering prices for chatbot buyers but
+not for human buyers.
+7.4. Heterogeneous Treatment Eect
+We next test whether any supplier or product characteristics (i.e., the number of transactions, listed
+price, review rating, and trading volume) could change the eect of automation and smartness.
+For the eect of automation, we use the following estimation:
+Discounti =+1Typei +2Moderatori +3Moderatori Typei +
+Controlsi +i; (8)
+
+23
+where 2 represents how a supplier or product characteristic moderates the eect of automation
+on the wholesale price quotes. Moderatori represents the number of transactions for the supplier,
+product's listed price, review rating, or trading volume. Controlsi includes all other control variables
+except for the tested moderator. Table 18 in the appendix presents the estimation results.
+For the eect of smartness, we use the estimation below. Table 19 in the appendix presents the
+estimation results.
+Discounti =+1Conditioni +2Moderatori
++3Moderatori Conditioni +
+Controlsi +i: (9)
+For the joint eect of automation and smartness, we use the estimation below. Table 20 in the
+appendix presents the estimation results.
+Discounti =+1Jointi +2Moderatori +3Moderatori Jointi +
+Controlsi +i: (10)
+Overall, none of the studied characteristics (except for the listed price) has an impact on the
+individual and joint eects of automation and smartness. A higher listed price weakens the eectiveness
+of smartness for chatbot buyers, probably because suppliers are more prudent when selling
+expensive products and are less likely to regard AI-driven price quotations as a serious negotiation.
+8. Conclusion
+AI is transforming the very nature of procurement|how to operate and how to interact with
+supply chain partners. According to the Roland Berger's survey on Fortune Global 500 companies,
+67% of chief procurement managers rank AI among their top three priorities for the next 10 years
+(Marlinghaus, 2018). Thus, we explore how a buyer's AI strategy would aect the wholesale price
+received from suppliers. By designing and conducting a randomized eld experiment, we nd that
+having a purely autonomous request-for-quotation process results in a higher price quote|that
+is, suppliers price-discriminate a not-so-smart chatbot buyer. Further, we nd that introducing a
+smart control|signaling that the supplier is recommended by a smart system|can reduce the
+price quoted for chatbot buyers. Last, we show that automation and smartness can jointly reduce
+the wholesale price quoted by suppliers, thereby highlighting the potential of a smart automation
+in procurement.
+Our study provides guidance for companies moving toward automating their standard and routine
+processes, such as price requests and new supplier selection. In fact, excessive and duplicated
+processes can comprise up to 40%{60% of a procurement company's capacity (Papa et al., 2019).
+AI is capable of unlocking employees' workload for more strategic pursuits, thereby transforming
+the transaction-oriented procurement toward the strategy-oriented procurement, which is known
+
+24
+as Procurement 4.0 (Marlinghaus, 2018; Loo and Santhiram, 2018). Our results indicate the great
+potential of these AI-related initiatives in procurement.
+Our ndings further shed light on how to implement AI strategies in procurement. In the absence
+of AI smartness, automation alone can backre. This implies that a company should rst initiate
+and strengthen its smart control algorithms, such as improving the prediction accuracy of its
+recommendation systems, before considering a high level of autonomy. In order to ensure the eectiveness
+of smartness, companies should help their employees get along with AI|that is, reduce
+their biases and enhance their trust in algorithms. Our work also provides managerial implications
+for online trading platforms aiming to embrace AI. Platforms such as Alibaba have initiated
+the automatic request-for-quotation systems as a premium service provided for buyers (Alibaba,
+2020b). Our study suggests that such automatic systems should be facilitated with a smart supplieridenti
+cation system in order to reduce the wholesale price charged to downstream buyers as well
+as reducing the ineciencies of supply chains arising from the double marginalization issue.
+AI has become the universal engine of execution, driving the explosive growth of new business
+models, but there is limited empirical research to understand and quantify how AI works and when
+it is the most powerful (Terwiesch et al., 2020; Terwiesch, 2019). Our study is among the rst to
+research how AI creates and delivers value in a critical business process, namely, procurement. We
+hope that our paper will serve as a stepping stone for future AI-related business research.

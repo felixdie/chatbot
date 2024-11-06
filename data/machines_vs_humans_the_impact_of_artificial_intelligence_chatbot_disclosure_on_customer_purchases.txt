@@ -1,0 +1,633 @@
+Luo, X., Tong, S., Fang, Z., & Qu, Z. (2019). Frontiers: Machines vs. humans: The impact of
+artificial intelligence chatbot disclosure on customer purchases. Marketing Science, 38(6),
+937-947.
+
+Abstract
+Empowered by artificial intelligence (AI), chatbots are surging as new technologies
+with both business potential and customer pushback. This study exploits field experiment
+data on more than 6,200 customers who are randomized to receive highly
+structured outbound sales calls from chatbots or human workers. Results suggest that
+undisclosed chatbots are as effective as proficient workers and four times more effective
+than inexperienced workers in engendering customer purchases. However, a disclosure of
+chatbot identity before the machine–customer conversation reduces purchase rates by
+more than 79.7%. Additional analyses find that these results are robust to nonresponse bias
+and hang-ups, and the chatbot disclosure substantially decreases call length. Exploration of
+the mechanisms reveals that when customers know the conversational partner is not a
+human, they are curt and purchase less because they perceive the disclosed bot as less
+knowledgeable and less empathetic. The negative disclosure effect seems to be driven by a
+subjective human perception against machines, despite the objective competence of AI
+chatbots. Fortunately, such negative impact can be mitigated by a late disclosure timing
+strategy and customer prior AI experience. These findings offer useful implications for
+chatbot applications, customer targeting, and advertising in conversational commerce.
+
+Keywords: artificial intelligence, chatbot, conversational commerce, new technology, disclosure
+
+Introduction
+Chatbots are a popular new technology with unprecedented
+business potential, galvanized by artificial intelligence
+(AI) and machine learning. Essentially, AI
+chatbots are computer programs that simulate human
+conversations through voice commands or text chats
+and serve as virtual assistants to users. Google Duplex,
+a groundbreaking application of AI chatbots, can make
+restaurant and haircut reservations over the phone,
+wherein people answering the call may not know they
+are engaging conversations with bots (Leviathan and
+Matias 2018).
+The market size of chatbots is expanding quickly,
+from $250 million in 2017 tomore than $1.34 billion in
+2024 (Pise 2018). More than 21% of U.S. adults and
+more than 80% ofGeneration Z use voice/text bots for
+information search and shopping (Del Valle 2018).
+Many brands, such as American Eagle Outfitters and
+Domino’s Pizza, have rolled out chatbots to take orders
+or recommend products, and major platforms,
+such as Amazon, eBay, Facebook, and WeChat,
+have adopted chatbots for conversational commerce
+(Thompson 2018).
+AI chatbots can provide several unique business
+benefits. First, they automate customer services and
+facilitate firm-initiated communications. Chatbots are
+equipped with sophisticated speech recognition and
+natural language-processing tools that enable them to
+understand complex and subtle dialogs and address
+consumer requests with depth, compassion, and even
+humor (Wilson et al. 2017). Moreover, chatbots can
+converse in a friendly way with customers because
+they don’t have bad days and never get frustrated or
+tired like humans. In addition, they can easily scale
+up to handle a large volume of customer
+Despite such potential benefits for the supply side,
+a key challenge for AI chatbot applications is customer
+pushback from the demand side (Froehlich
+2018). Customers may feel uncomfortable in talking
+with computer programs for personal needs or letting
+chatbots assist in purchase decisions. That is, humans
+may prejudice that chatbots lack personal feeling and
+empathy, perceiving bots as less trustworthy with
+payment information and product recommendations
+(i.e., the uncanny valley feelings and algorithm aversion
+inDietvorst et al. (2018) andKestenbaum(2018)).
+Therefore, firms face a dilemma in disclosing the
+usage of AI chatbot technology to customers. On the
+one hand, if firms disclose the machine identity, they
+might not gain the full business value of AI chatbots
+because of customer pushback. On the other hand,
+customers have the right to knowwhether it is a bot or
+a human that handles their communications because
+of business ethics (Wise 2018). Moreover, regulators
+are increasingly concerned about customer privacy
+protection and have encouraged companies to be
+transparent on chatbot applications during customer
+communications (Federal Trade Commission 2017).
+Against this backdrop, we collaborate with a large
+financial service company to conduct a randomized
+field experiment on chatbot disclosure. The company
+randomly assigned 6,255 customers to receive
+highly structured outbound sales calls from chatbots
+or human workers. A novel part of our experiment
+design is to vary the disclosure of chatbots (no disclosure,
+disclosure before conversation, disclosure
+after conversation, or disclosure after decision) as
+well as human expertise (proficient or inexperienced
+workers).1 This allows us to test the causal impact of
+chatbot disclosure on customer purchases and compare
+the performance of chatbots and human workers
+in the six-condition experiment.
+Our data suggest that undisclosed chatbots are as
+effective as proficient workers and four times more effective
+than inexperienced workers in engendering
+customer purchases. However, the disclosure of chatbot
+machine identity before conversation reduces purchase
+rates by more than 79.7%. Our results are robust to
+various falsification checks and additional analyses
+with nonresponse bias and hang-ups.Also, compared
+with the condition of no disclosure, disclosure before
+conversation substantially reduces the call length.
+Next, we test the behavioral mechanisms by augmenting
+the field experiment with survey data and
+voice-mining of conversation records. The survey data
+support that, when customers know the conversational
+partner is not a human, they are brusque and purchase
+less because they perceive the disclosed bot as less
+knowledgeable and less empathetic. However,
+voice-mining of the objective conversation records
+suggests that the undisclosed chatbot is competent in
+terms of knowledge and empathy. Thus, the negative
+chatbot disclosure effect seems to be driven by a subjective
+human perception against machines despite the
+objective competence of AI chatbots.
+Moreover, we explore various ways to mitigate the
+negative effect of chatbot disclosure on customer
+purchases. We find that such negative impact can be
+allayed by a late disclosure timing strategy and customer
+prior AI experience.
+Our research makes several contributions. It provides
+the first field experiment evidence for the business value
+of emerging AI technology and challenges of chatbot
+applications. Our field data and voice-mining approaches
+not only reveal the negative impact of chatbot
+disclosure on customer purchases, but they also shed
+light on the underlying mechanism. Our findings of the
+mitigated effects are nontrivial because they empower
+marketers to target certain customer segments for more
+optimal value of AI chatbot services. Also, brands can
+advertise the role of experiential learning so as to cultivate
+consumer trust in chatbots, that is, from aversion
+to appreciation of bots.
+More broadly speaking, we extend the discussion
+about machines versus humans. Our data suggest
+that undisclosed chatbots that incur almost zero
+marginal costs can outperform the paid underdogs by
+five times in purchase rates. These findings imply that
+the potential replacement of underperforming human
+workers by AI chatbots and other new automation
+technologies is an inevitable trend. However, our results
+of the negative disclosure effect also imply that
+chatbots may not perfectly substitute human labors in
+the near future because of a subjective human perception
+again bots. These findings have useful implications
+for chatbot applications in conversational
+commerce. Indeed, motivated by our findings, the financial
+service company has taken actions to implement
+a human–AI assemblage strategy. AI chatbots
+assist call center workers, especially the underdogs, by
+analyzing customer queries and emotional stresswith
+voice-mining and by displaying best answers from the
+depository of company knowledge bank as possible
+solutions to customer needs.
+Related Literature on AI Applications and
+Text-Based Bots
+Prior research has recognized the benefits of AI
+technologies across various fields. In finance, trading
+bots and robo-advisors can facilitate investors for
+stock analytics (Trippi and Turban 1993). AI applications
+can improve banks’ operation efficiency, fraud
+detection, and asset management (Fethi and Pasiouras
+2010). Studies in healthcare have explored how AIpowered
+algorithms can help doctors diagnose
+cancers (Esteva et al. 2017, Leachman and Merlino
+2017). AI applications can reduce medical errors
+and improve hospital efficiency (Patel et al. 2009,
+Bennett and Hauser 2013). In marketing, Huang and
+Rust (2018) note that the future trend of AI applications
+hinges upon empathetic tasks that require
+computers to understand people’s emotional status
+and respond appropriately with care and feeling.
+Leung et al. (2018) find that AI automation may be
+undesirable to consumers when the identity motives
+are important drivers of consumption. However,
+Logg et al. (2019) document that nonexperts appreciate
+algorithmic advice based on laboratory experiments.
+Prior research also discusses how AI
+and robots will replace the labor and work force
+(Brynjolfsson and Mitchell 2017, Lu et al. 2018). We
+extend this literature by providing real-world field
+experiment evidence for the negative impact of AI
+chatbot disclosure on customer purchases. We demonstrate
+the challenges of and harsh reactions to disclosed
+chatbots in outbound sales calls although the
+bots can simulate human conversations in an intelligent
+and empathetic manner.
+Our work on voice-based chatbots is related to and
+extends the literature on text-based chatbots (e.g.,
+Sivaramakrishnan et al. 2007, K¨ohler et al. 2011, Saad
+and Abida 2016,Mimoun et al. 2017). Compared with
+text-based bots, voice-based bots offer more anthropomorphism
+in the humanized computer representations
+and richer interaction data, such as voice pitch
+and tone beyond the narratives. Importantly, narratives
+only capture what is said but miss how it is
+said (e.g., do the conversation participants raise their
+voices suddenly, or is there a frustration tone?). Extending
+prior literature on text-based chatbots, our
+research involves voice-mining analytics that can
+provide auditory cues of the sentiment and intent of
+the conversation participants. Also, extending prior
+research with surveys or laboratory studies measuring
+soft outcomes, such as perceived fun and social
+presence, we conduct a field experiment addressing
+the hard metrics in terms of customer purchases.
+We further leverage deep learning methods of voicemining
+and survey data to identify behavioral mechanisms
+that might account for the negative impact of
+disclosed bots on customer purchases.
+Company Background and
+Experiment Settings
+The randomized field experiment was conducted
+by a major internet-based financial service company
+in Asia (that wishes to be anonymous). In terms of
+types of business, this company offers various financial
+services, such as personal loans, refinance, and
+equity investments, to individual customers through
+its mobile app. Ranked among the top 20 in the Fintech
+internet loan industry, this multibillion-dollar
+company hasmore than 23 million registered customers.
+Its customers are from all major provinces in the
+country (see Online Appendix C). In our experiment,
+the customers are borrowers who keep a high credit
+score and have successfully repaid their loans to the
+company in the past 11 months for the 12 monthly
+installments. Because only one repayment is left,
+there is a sales opportunity of loan renewal. Most loans
+are in the amount between USD $800 to $2,500 for the
+purposes of purchasing electronic products, such as
+smartphones, computers, and TVs. The company can
+assign chatbots or human workers in its call center to
+make the outbound sales calls. In order to boost responses,
+the service agents inform customers about a
+special promotional offer for renewing the loan. The
+promotion is a 24-hour limited-time offer to waive the
+regular loan application processing fees if the customer
+decides to renew the loan with the same terms
+(loan amount, interest, and installments). All the
+outbound sales calls occur on a Tuesday afternoon
+from 2 p.m. to 4 p.m. during working hours of the day,
+and most customers would be at their workplace rather
+than home.
+The company implements a sophisticated voice AI
+chatbot in its call center to provide timely customer
+services and improve the operational efficiency with
+lower labor costs. Unlike traditional rule-based systems
+that only handle simple inquiries with prerecorded
+messages, the voice chatbot can conduct live
+and natural conversations with customers. The AI
+chatbot here is trained with the company’s call center
+voice data to emulate the best-performing human
+workers in terms of understanding financial loan
+product features and deploying adaptive selling strategies
+(Churchill et al. 1985) in serving customers over
+the phone. The chatbot is applied to make highly
+structured outbound sales calls because outbound
+calls have relatively standard conversation content
+for computers to handle. In the setting of structured
+outbound calls, without disclosure, customers would
+not realize the machine identity of the AI chatbot
+over the phone.2 The chatbot in our experiment has
+an optimized female voice, that is, with the most
+appealing pitch, tone, speed, and intonation to capture
+customer attention. The company uses a female
+voice because there is no significant difference between
+optimized female and male voices in call performance
+during pilot tests. Indeed, most chatbots
+(e.g., Alexa) in the industry adopt a female voice.
+Next, we present the field experiment design.
+Field Experiment Design
+In the field experiment, the company randomly assigned
+customers to receive a sales call from either
+human agents or AI chatbots. Each customer receives
+only one call and is randomized into one of the six
+experimental conditions in a between-subject design.
+Figure 1 (the top panel) presents the six conditions
+and sample sizes.
+The first condition is underdogs in the call center,
+that is, unseasoned human workers whose past sixmonth
+call report performance is among the bottom
+20th percentile. The second condition is proficient
+workers, that is, experienced human agents whose
+past performance is among the top 20th percentile.
+The third condition is AI chatbot without disclosure. In
+this group, the chatbot initiates the sales call without
+revealing its machine identity. For these three
+conditions, the agent starts the call with a greeting
+statement: “Dear customer, I am the service agent of
+the company XYZ” prior to communicating the promotional
+deal to the customers.
+The fourth condition is AI chatbot with disclosure
+before conversation. Here, the chatbot reveals its machine
+identity at the beginning of the conversation
+with the customer. The disclosure of chatbot identity
+is a simple statement: “Dear customer, I am the AI
+voice chatbot of the company XYZ” prior to communicating
+the same promotional deal. The fifth condition
+is AI chatbot with disclosure after conversation.
+In this group, the chatbot does not reveal its machine
+identity (with the same statement as in the fourth
+condition) until after communicating the promotional
+deal to customers but right before they decide
+whether to purchase. The sixth and final condition
+is AI chatbot with disclosure after decision,
+wherein the chatbot reveals its machine identity (also
+with the same statement as in the fourth condition)
+right after customers decide whether to purchase.3
+All service agents across the six conditions follow
+the same sales call procedure as shown in Online
+Appendix A. Service agents first greet customers and
+appreciate their good repayment history before offering
+the special promotion deal over the phone. If
+customers are not interested, the agent tries to remedy
+the sales call by elaborating that the deal is designed
+for high-value customers and expires in 24 hours and
+by encouraging customers to review the promotion
+details on themobile app.4 However, if customers are
+interested in the promotion, the agent asks follow-up
+questions about their changes in job as well as credit
+card balance. Customers are then asked to confirm
+whether to renew the loan. If customers agree to
+renew the loan, they need to log on to the mobile
+app to sign the documents (99% of the people who
+agreed to do so indeed followed through ultimately
+according to the company records). Examples of the
+call transcripts of the six experimental conditions
+can be found in Online Appendix B, and audio examples
+of the AI chatbot used in our experiment
+are available online. In the data, making a purchase
+means that customers agree to renew their loans during
+the promotion period with the financial service
+company.
+Data and Randomization Check
+Figure 1 shows that there are a total of 6,255 attempted
+customers who are called by service agents.
+Out of these, 255 are nonresponses (customers who
+may be too busy or have changed their contact numbers),
+and each condition has 1,000 responses to
+achieve the promotion goal with an automated replacement
+technique. Our proprietary data set includes
+rich information about the customers. Table 1
+summarizes the descriptive statistics. According to
+average age of 30.86, and most of them have a high
+school or higher degree. The statistics also indicate
+that targeted customers tend to be young working
+professionals who frequently use credit cards and
+engage in online shopping. They have, on average,
+1.26 credit cards, US$1,843 credit card spending,
+and US$107 online spending in the past 30 days as
+well as 10 online personal loan inquiries in the past
+30 days. Their personal loan amount with the company
+is around US$2,017. We conducted randomization
+checks with these background variables. The
+results in Table 2 suggest that there is no significant
+difference among these variables across the six
+experimental conditions according to F-test statistics.
+Thus, the data passed the randomization check.
+Effects of Chatbot Disclosure on
+Customer Purchases
+The model-free results based on the raw data across
+the six treatments in Table 3 suggest that the condition
+of disclosure before conversation tends to have
+lower purchase rates, higher hang-up rates, and shorter
+call length.
+Next, we apply econometric models to test the effects.
+Because we have randomized field experiment
+data to identify causal effects, our modeling analyses
+of purchase rates are straightforward. We develop
+a logit model, in which the unobserved purchase
+likelihood is a logit function of the randomized
+conditions:
+Purchase Likelihoodi  Exp(Ui)
+Exp(Ui) + 1
+Ui α + α1 *Underdogsi + α2 * WithoutDisclosurei
++ α3 * Before Conversationi + α4 * AfterConversationi
++ α5 * AfterDecisioni + ΓControlsi + εi, (1)
+where Ui denotes the latent utility of making a purchase,
+and the dependent variable of purchase is
+whether the customer has decided to renew the loan.
+The key independent variables are the six groups
+in our experiment, that is, the five dummy variables
+with the proficient human agent group as the
+comparison baseline. Controlsi is a vector of control
+variables with individual customer profiles, including
+gender, age, education, and location dummies
+(see Online Appendix C for a frequency distribution
+of the 33 provinces); number of credit cards; online
+loan inquiries; loan amount; credit card spending;
+and online spending as well as customer voice pitch
+(which are derived from speech-to-text, Word2Vec,
+and Hierarchical Softmax Python tools; see Online
+Appendix D for details). Note that, in the natural
+holdout case, without any sales call, the organic purchase
+rate is zero during the promotion period because
+customers would not know the loan renewal opportunitywithout
+the sales calls. Thus, all effects on purchases
+here are incremental.
+Table 4, columns (1)–(3), reports the results for all
+attempted calls. Across three models (logit, probit,
+and ordinary least squares (OLS)), the results consistently
+suggest that, relative to proficient human
+workers, disclosing the chatbot machine identity before
+the conversation statistically significantly reduces
+customer purchase rates (p < 0.01).
+Besides the statistical significance, we present the
+magnitude of the effects in Figure 2. Compared with
+the without disclosure condition, disclosure before
+conversation decreases customer purchase rates dramatically
+by 79.7% (from 0.237 to 0.048).
+Robustness Checks with
+Falsification Tests
+Our results are robust to various falsification checks.
+First, because the AI chatbot is trained by the calling
+records of the company’s proficient workers, performance
+should be similar. Results in Table 4 indeed
+support that the purchase rate of no disclosure is not
+significantly different from that of proficient workers
+(p > 0.10). This also rules out an alternative explanation
+that it might be the bad service quality of the
+chatbot itself rather than the act of disclosure that
+drives the negative effects. Also, the underdogs generate
+a significantly low purchase rate of 0.05 (p < 0.01).
+This makes sense because they are inexperienced
+rookies and unseasoned call center employees in the
+company. Still, they get some purchase results because
+of the exerted sales efforts. Moreover, we expect
+that the condition of after decision will not differ
+from the condition of proficient workers because it is
+after the fact (customers have already made the decision
+of purchasing or not). This is confirmed by
+the insignificant coefficient of after decision in Table 4,
+thus passing another sanity or falsification check.
+More Robustness Checks with
+Nonresponses and Hang-ups
+First, we conducted additional analyses with possible
+nonresponse bias. Customers are randomized to receive
+the call but not answer it. Thus, one possible
+concern is that customers may self-select to ignore the
+call and not purchase. That is, not all attempted calls
+are answered by customers because some customers
+cannot answer the phone (as this study was done
+during work hours), and others might have changed
+their contact numbers. As presented in Figure 1, the
+middle panel, our data have a total of 255 nonresponses
+with a response rate of 96% from attempted
+customers. This high response rate is not surprising
+because the targeted loan borrowers may fear missing
+out on important loan-update information from the
+lending company.More importantly, our data suggest
+that the nonresponse rates are almost evenly distributed
+among the six experiment groups, ranging from
+3.5% to 5% as shown in Figure 1 and Table 2, last
+column. We also run the models after excluding the
+nonresponses. Results in Table 4, columns (4)–(6),
+confirm that all our main results are robust. Thus,
+possible selection effects resulting from nonresponses
+cannot explain our results.
+Moreover, we check our data regarding hang-ups
+(defined as the cases in which customers terminate
+the call within five seconds right after knowing the
+bot machine identity). If customers terminate the
+call or hang up too early, they might not have indicated
+theirpurchasedecisions.As reportedinFigure 1,
+bottom panel, there are a total of 608 hang-ups. The
+condition of disclosure before conversation had 563
+cases (hang-ups without much interaction with the
+AI chatbot), and the condition of disclosure after conversation
+had 45 cases (hang-ups after the initial interaction
+with the AI chatbot). The remaining four
+groups had zero hang-up cases. We rerun the models
+after further excluding the hang-ups so as to scale the
+purchase rate {= number of “yes” purchase decisions/
+(numberof“yes” purchase decisions + number of “no”
+purchase decisions)}. Again, Table 4, columns (7)–(9),
+confirm that all our main results are robust after accounting
+for hang-ups. We also check the robustness
+by measuring hang-ups within four, three, two, and
+one seconds after the botmachine identity disclosure,
+and again, all results are robust across these different
+measures of hang-ups. These analyses of hang-ups
+resulting from chatbot disclosure motivated us to
+dive deeper by examining call length.
+Additional Analyses with Call Length
+One plausible explanation for our results is that, when
+customers know the conversational partner is not a
+human, they tend to be curt (i.e., hang up abruptly or
+terminate early) and purchase less. If so, the call length
+in the disclosed chatbot condition should be significantly
+shorter than that of the undisclosed chatbot condition.
+This is confirmed by the Online Appendix D
+histograms of call length. Among the six experimental
+conditions, the case of chatbot identity disclosure before
+conversation has the shortest call length. We also run
+the models with call length as the dependent variable.
+Results in Table 5 with both OLS and tobit models
+consistently support the negative and significant effect
+of before conversation on call length for the samples
+of attempted calls, excluding nonresponses and hangups.
+However, these results cannot reveal the underlying
+psychological mechanisms, which are explored next.
+Behavioral Mechanisms for the Negative
+Effects of Chatbot Disclosure
+To understand the behavioral mechanism, we augment
+the field experiment with subjective data from
+postcall surveys as well as objective voice data from
+audio analytics of the conversation records. The
+surveys poll all customers who have completed or
+hung up the calls and ask their satisfaction with the
+service agent’s knowledge level and sentimental empathy
+(see Online Appendix E). Figure 3 reports the
+results of a formal mediation test with 5,000 replications
+in bootstrapping (Preacher and Hayes 2004).
+The results confirmthat, relative tonodisclosure, chatbot
+disclosure before conversation significantly reduces the
+perceived knowledge and empathy of chatbots and,
+through these two mediational routes, decreases call
+length and purchase rates (all path p < 0.01; see Online
+Appendix E for more details). In other words, when
+customers know the conversational partner is not a
+human, they are brusque and purchase less because
+they perceive the disclosed bot as less knowledgeable
+and less empathetic. However, voice-mining of the objective
+conversation records suggests that the undisclosed
+chatbot is indeed as competent as proficient workers in
+terms of knowledge and empathy (see Online Appendix
+F). Thus, the negative impact of chatbot disclosure may be
+driven by a subjective human perception against machines
+despite the objective competence of AI chatbots.
+Additional Checks on Deception Feeling
+and Order Cancellation
+Another alternative explanation is a customer feeling
+of deception. However, in the condition of disclosure
+before conversation, the customers are informed up
+front about the chatbot machine identity; that is, the
+disclosure is done immediately. Thus, it is more likely
+that customers’ subjective perception against the chatbot
+rather than their feeling of deception drives the negative
+disclosure effect. Also, voice-mining of the conversation
+records failed to find words with strongly
+negative feelings across all experimental conditions,
+more evidence ofnoseriousdeceptionfeeling.Moreover,
+according to company records, there are no order
+cancellation or overt consumer complaints against
+the company in the conditions of chatbot identity
+disclosure after the experiment.
+Strategies to Mitigate the Negative Effects
+of Chatbot Disclosure
+Mitigation Strategy One
+Results in Table 4 on the coefficient comparisons
+indicate that customer purchase rates significantly
+improve when the disclosure is delayed from before
+to after the conversation and to after the decision (all
+ps < 0.01). Thus, more interactions with and experiential
+learning of chatbots may help allay the negative
+chatbot disclosure effect. In other words, as long as
+the chatbot identity is disclosed, regardless of before
+or after the conversation, customer purchase rates
+are negatively affected. However, disclosing the bot
+identity after the conversation helps mitigate such
+negative impact. This is reasonable because the customer
+might form a good impression in the first oneminute
+interaction with the AI chatbot, which can
+help reduce the distrust of the chatbot.
+Mitigation Strategy Two
+We also explore how customers’ prior AI experience
+can affect the negative effects of chatbot disclosure.
+The data set provided by the company includes a
+binary variable that indicates whether a customer
+downloaded and used other AI apps on the smartphone
+(1 = has at least one AI app with smart digital
+agents similar to Google Allo, ELSA Speak, Cortana,
+FaceApp, Edison Assistant and 0 = otherwise).
+As shown in Table 6, prior experience with AI induces
+more customer purchases. More importantly, the coefficient
+of the interaction term PriorAI Experiencei *
+Before Conversationi is positive and significant (p < 0.01),
+suggesting that prior AI experience is helpful in reducing
+the negative disclosure effect.
+Conclusion and Future Research
+This research examines AI chatbots, a timely and managerially
+relevant topic. On the basis of a six-condition
+field experiment, it finds that the disclosure of chatbot
+machine identity reduces purchase rates substantially.
+Further analyses reveal that customers tend to purchase
+less and even terminate the calls early because
+they perceive the disclosed chatbot as less knowledgeable
+and empathetic.
+Our setting of structured outbound calls is limited
+because the chatbot only engages in a restricted two-way
+information exchange rather than a highly interactive
+two-way conversation. This restrictive nature is an
+important limitation here, which may help open up
+new research. For example, it would be fruitful for
+future research to investigate dynamic differences of
+the two-way conversation between chatbot–customer
+dyads versus worker–customer dyads. Another direction
+for future research is to test the generalizability
+of our results in other settings, such as themore dynamic
+inbound calls. Moreover, we address the first-order
+disclosure effects (with or without disclosure). Future
+research may test the second-order effects with different
+framings in the introduction of disclosed bots. For
+instance, the AI chatbots may self-introduce to customers
+with the framing of enhanced technological
+benefits (big data computing and fast quantitative
+learning of AI chatbots), reduced customer hassle costs
+(less waiting time to get answers from AI chatbots), or
+even surprising consumer welfare (offering the product
+at a lower price because bots help save labor costs).
+Indeed, bots may help make life less prickly in certain
+interactions that are inherently bleak (e.g., call customer
+service support to fix computers or replenish a product).
+Paradoxically, in these interactions, humans are trained
+to behave like a bot. Also, customers have different
+innate preferences of talking to bots as some can be cordial
+and don’t feel judged, but others tend to be rude and
+brusque (Thompson 2018). Thus, depending on the
+degree of task complexity and customer preference
+heterogeneity, future endeavors may let customers
+self-selectwho (bots or humans) to serve themover the
+phone in order to boost purchases in conversational
+commerce. As millions tell Alexa, Siri, or Google Assistant
+to play music, reorder products, and make
+appointments, the impact of AI new frontiers on our
+daily life will be ubiquitous in the long run.
+In conclusion, more scholarly works are strongly encouraged
+to address this pivotal area of AI chatbot applications
+for marketing promotions and customer services.

@@ -1,0 +1,1269 @@
+Boyacı, Tamer, et al. (2024). “Human and machine: The impact of machine input on decision
+making under cognitive limitations.” Management Science,
+https://doi.org/10.1287/mnsc.2023.4744.
+
+Abstract
+The rapidadoptionofAItechnologiesbymanyorganizationshasrecentlyraisedconcernsthatAImayeven-
+tually replacehumansincertaintasks.Infact,whenusedincollaboration,machinescansignificantlyenhance
+the complementarystrengthsofhumans.Indeed,becauseoftheirimmensecomputingpower,machinescan
+performspecifictaskswithincredibleaccuracy.Incontrast,humandecision-makers(DM)areflexibleand
+adaptivebutconstrainedbytheirlimitedcognitivecapacity.Thispaperinvestigateshowmachine-based
+predictions mayaffectthedecisionprocessandoutcomesofahumanDM.Westudytheimpactofthese
+predictions ondecisionaccuracy,thepropensityandnatureofdecisionerrorsaswellastheDM’scognitive
+efforts. Toaccountforbothflexibilityandlimitedcognitivecapacity,wemodelthehumandecision-making
+processinarationalinattentionframework.Inthissetup,themachineprovidestheDMwithaccuratebut
+sometimes incompleteinformationatnocognitivecost.Wefullycharacterizetheimpactofmachineinput
+on thehumandecisionprocessinthisframework.Weshowthatmachineinputalwaysimprovestheoverall
+accuracy ofhumandecisions,butmaynonethelessincreasethepropensityofcertaintypesoferrors(suchas
+false positives).Themachinecanalsoinducethehumantoexertmorecognitiveefforts,eventhoughitsinput
+is highlyaccurate.Interestingly,thishappenswhentheDMismostcognitivelyconstrained,forinstance,
+becauseoftimepressureormultitasking.Synthesizingtheseresults,wepinpointthedecisionenvironments
+in whichhuman-machinecollaborationislikelytobemostbeneficial.Ourmaininsightsholdfordifferent
+information andrewardstructures,andwhentheDMmistrustthemachine.
+
+Key words : machine-learning,rationalinattention,human-machinecollaboration,cognitiveeffort
+
+1. Introduction
+The increasingadoptionofsmartmachinesanddata-basedtechnologieshavequestionedthefuture
+role ofhuman-baseddecisionsinorganizations(Kleinbergetal.2017).Whilenewtechnologies
+sometimes substituteforlabor,awealthofevidencesuggestthattheycanalsocomplementhuman
+skills (seeFeltenetal.2019andreferencestherein).Indeed,thepurposeofmanyreal-worldapplica-
+tions ofsupervisedmachinelearningisnottoproduceafinaldecisionbasedsolelyonanalgorithm’s
+output, butrathertoprovideusefulinformationintheformofautomatedpredictionstoahuman
+decision-maker(Lipton2016,Agrawaletal.2018).Varioussectorscurrentlyseektoharnesssuch
+
+human-machinecomplementarity,includingthedefenseandhealthcareindustries(DARPA2018),
+legal andtranslationservices(Katz2017),humanresourcesmanagement(Gee2017),supplier
+management(Saenzetal.2020)orsupplychainoperations(IBM2017).
+Humans andmachinescomplementeachotherbecausemachinesoftensubstituteforonlyasubset
+of thedifferenttasksrequiredtoperformanactivity(Autor2015).Thisistypicallythecasefor
+judgmentanddecisionproblems.Indeed,humandecision-makersrelyontheircognitiveflexibility
+to integrateinformationfromvastlydiversesources,includingtheverycontextinwhichthese
+decisions aremade(Diamond2013,Laureiro-Mart´ınezandBrusoni2018).Machines,bycontrast,
+are muchmorerigidandcanonlyextractalimitedsubsetofthisinformation(Marcus2018).
+Hence, humansmayhaveaccesstopredictivevariablesthat,forexample,amachine-learning(ML)
+algorithm cannotsee(Cowgill2018).However,machine-extractedinformationcanhavehigher
+accuracy becauseoftheenormousandreliablequantitativecapacityofmachines.Incontrast,
+the cognitivecapacityofhumansislimited,andhencehumandecision-makersneedtoconstantly
+balance thequalityoftheirdecisionswiththeircognitiveefforts(Payneetal.1993).
+Forinstance,whendecidingonwhichstockstoinvestin,mutualfundmanagersestimateboth
+idiosyncratic shocks(forstockpicking)andaggregateshocks(formarkettiming)(Kacperczyk
+et al.2016).Becauseoftheirsuperiorcomputingcapability,MLalgorithmsidentifyidiosyncratic
+shockswithgreatersuccess,butfailtodetectaggregateonescomparedtohumans(Fabozzietal.
+2008, Abis2020).Inthemedicaldomain,MLalgorithmscaneasilyprocesslargeandrichmedical
+histories, butmaynotobtainvaluableinformationfromthepersonalinteractionbetweenphysicians
+and theirpatients.Similarly,manyHRmanagersbasetheirhiringdecisionsoninformationthat
+ML algorithmscannotaccess(Hoffmanetal.2017).
+Totheextentthatdata-basedtechnologiesimprovetheprovisionofcertaininformation,the
+co-productionofdecisionsbyhumansandmachinestypicallybooststheoverallqualityofthese
+decisions (Mims2017).Forinstance,thecollaborationbetweenhumanradiologistsandmachines
+improvestheoverallaccuracyofdiagnosesforpneumoniaovertheperformancesofradiologists
+alone, ormachinesalone(Pateletal.2019).Effectivehuman-machinecollaborationssuchasthese1
+are sometimescoined“centaurs”(half-human,half-machine)intheliteratureandpopularpress
+(Case 2018).Yet,theprovisionofmachine-basedpredictionsmaynotimproveallaspectsofhuman
+decisions. Forinstance,Stoffeletal.(2018)findthatwhenradiologiststakeintoaccountthe
+deep-learning analysisofultrasoundimages,thediagnosesofbreasttumorssignificantlyimprove.
+This isconsistentwiththeclaimthathuman-machinecollaborationimprovesoverallperformance.
+1 The ideaofhuman-machinecollaborations–orchesscentaurs–werepopularizedbyWorldChessChampionGary
+KasparovfollowinghisnotoriousdefeatagainstIBMDeepBluein1997.Anonlinechesstournamentin2005confirmed
+the superiorityofchesscentaursovermachines.
+
+3
+However,thisimprovementmainlystemmedfromaradicaldecreaseinfalsenegatives,whilethe
+false positiveratedidnotsignificantlychange.
+This impactofmachine-basedpredictionsondecisionerrors,andmoregenerallythetimeand
+cognitiveeffortsthathumansputintotheirdecisions,remainslargelyunknown.Asaresult,the
+participation ofmachinesinhumandecisionsmayhaveunintendedconsequences.Increasingthe
+numberoffalsepositiverates,forinstance,mayexertunduepressureonahealthcaredelivery
+system andputhealthypatientsatrisk.Andincreasingthecognitiveloadofadecision-makermay
+slowdownthedecisionprocess,whichmayresultindelaysandcongestion.
+In thispaper,weconsiderthedefiningcharacteristicsofhumanandmachineintelligenceto
+address thefollowingfundamentalquestions:Whatistheimpactofhavingmachine-basedpre-
+dictions onhumanjudgment?Inwhichwaysdothesepredictionsinfluencethedecision-making
+processofhumans,theextentoftheircognitiveefforts,andthenatureoftheirdecisionerrors?In
+whichdecisionenvironmentsarethecollaborationsbetweenhumansandmachinesmorefruitful?
+Toanswerthesequestions,weconsideranelementarydecisionprobleminwhichanMLalgorithm
+(the machine)assistsahumandecision-maker(theDM)byassessingpartof,butnotall,the
+uncertaintythattheDMfaces.Wemodelthisproblemwithinthetheoryofrationalinattention
+formalized bySims(2003,2006)tocapturethemostfundamentalsourcesofcomplementarity
+betweenmachineandhumanintelligence.Namely,theDMleverageshercognitiveflexibilityto
+integratevarioussourcesofinformation,includingherdomainknowledgeorspecificaspectsofthe
+contextinwhichthedecisionismade.However,theDMisconstrainedbyherlimitedcognitive
+capacity,sothatassessinginformationrequiresexertingcognitiveefforts.ThemoreefforttheDM
+exerts, themoreaccurateherassessmentis.Incontrast,themachinedoesnotsufferfromthis
+limitation andcanprovideanaccurateassessmentofsomeinformationatnocost.Yet,themachine
+cannot assessallinformationsourcessuchastheDM’sdomainknowledgeandthedecisioncontext.
+The rationalinattentionframework,withinwhichwedevelopourmodel,enablesustorepresent
+the DM’scognitiveflexibilityandlimitedcapacityinacoherentmanner.Indeed,thistheory
+assumes thatpeoplerationallydecideonwhatpieceofinformationtolookfor,inwhatdetail,
+and theydosoinanadaptivemanner.Inparticular,theframeworkendogenouslyaccountsfor
+people’sscarceresources,suchastime,attentionandcognitivecapacityaswellasthenatureof
+the decisionenvironment.Peoplearefreetouseanyinformationsource,inanyorder,togenerate
+knowledgeatanyprecisionlevel,butlimitedcognitiveresourcesleadtoinformationfrictionsand
+hence, possiblemistakenjudgments.Inotherwords,theframeworkdoesnotimposeanyapriori
+restrictions onpeople’ssearchstrategy(cognitiveflexibility)otherthanalimitontheamountof
+processedinformation(limitedcognitivecapacity).Moregenerally,thistheorynaturallyconnects
+the fundamentaldriversinhumandecision-making,suchaspayoffs,beliefs,andcognitivedifficulties
+
+4
+in arationallearningsetup,andisperceivedasabridgingtheorybetweenclassicalandbehavioral
+economics. Thereisalsoagrowingbodyofempiricalresearchthatfindsevidenceofdecision-making
+behaviorconsistentwiththetheory(Mackowiaketal.2021).
+In thissetup,weanalyticallycomparetheDM’schoice,errorrates,expectedpayoff,cognitive
+effort, andoverallexpectedutilitywhentheDMdecidesaloneandwhensheisassistedbya
+machine.Ouranalysisfirstconfirmsthesuperiorityofthehuman-machinecollaboration,i.e.,we
+showthattheaccuracyandtheDM’soverallexpectedutilityalways(weakly)improveinthe
+presence ofamachine.Wefurtherfindthatthemachinealwaysreducesfalsenegativeerrors.
+Yet,ourresultsalsoindicatethatmachine-basedpredictionscanimpairhumandecisions.Specif-
+ically,wefindthatmachine-assisteddecisionssometimes increase the numberoffalsepositives
+compared towhentheDMdecidesalone.(Incidentally,thisfinding,alongwithourresultthatthe
+machinereducesthefalsenegativerates,offerssometheoreticalfoundationfortheempiricalresults
+of Stoffeletal.2018.)Inaddition,themachinecaninducetheDMtoexert more cognitiveefforts
+in expectation,andmakeherultimatechoice moreuncertain a priori.Inotherwords,themachine
+can worsencertaintypesofdecisionerrors,andincreaseboththetimeandvarianceinvolvedina
+decision process,whichisknowntocreatecostlydelaysandcongestion(Alizamiretal.2013).
+Wefullycharacterizetheconditionsunderwhichtheseadverseeffectsoccurinoursetup.A
+prominentcaseiswhentheDM’spriorbeliefisrelativelyweakandhercognitivecostofassessing
+information isrelativelyhigh(i.e.,hercognitivecapacityisreducedduetoexogenoustimepressure,
+or consumedbycompetitivetasksbecauseofmultitasking).Yet,thoseareconditionsunderwhich
+using amachinetooffloadtheDMismostappealing.Inotherwords,improvingtheefficiency
+of humandecisionsbyrelyingonmachine-basedpredictionsmayinfactbackfirepreciselywhen
+these improvementsaremostneeded.Theseresultsholdatleastdirectionallyfordifferentpayoff
+structures, whentheDMisbiasedagainst(ormistrusts)themachine,andwhenthemachineis
+also imprecise.Weexplainindetailwhereandwhytheyoccur.
+Our findingsaremostrelevantinsettingsinwhichahumandecisionmakerneedstoexertsome
+cognitiveefforttomakerepetitivedecisionsthathingeonpredictions.Examplesincludediagnostic
+tasks byradiologists(Liuetal.2019),predictivemaintenanceandqualitycontrolinmanufacturing
+(Brosset etal.2019),theassessmentofwhetherapartcanberemanufacturedinaproduction
+system (Nwankpaetal.2021),evaluatingapplicationsbyHRprofessionals(Gee2017)orassessing
+a legalcaseinjudicialsystems(Cowgill2018).Ourframeworkislesssuited,however,fordecision
+tasks wherethekeyunknownisacausalrelationship.
+The restofthepaperisorganizedasfollows.In §2, werelateourworktotheexistingliterature.
+In §3, weintroduceourbasicmodelofhumansandmachinesandfollowin §4 bycharacterizingthe
+choicebehaviorandcognitiveeffortthathumansspend,aswellastheirimplieddecisionerrors.In
+
+5
+§5, weanalyzetheimpactofmachinesontheseandexplainourfindings.In §6, wediscussfurther
+extensions tothedecisionandlearningenvironmentandinvestigatetheirimplicationsforhuman
+and machineinteraction.Finally,in §7 wepresentourconcludingremarks.
+2. RelatedLiterature
+Overthepastdecade,researchersinMLhaverepeatedlydemonstratedthatalgorithmicpredictions
+can match,andattimesevenoutperform,theeffectivenessofhumandecisionsinmanycontexts
+(see, forinstance,Liuetal.2019forarecentandsystematicreviewinnhealthcare).Morerecently,
+however,anemergingliteraturehasfocusedonimprovingthecollaborationbetweenmachinesand
+humansasopposedtopitchingthemagainsteachother.Forinstance,averyrecentstreamof
+researchincomputerscienceaimsatoptimizingalgorithmsbylettingthemautomaticallyseek
+humanassistancewhenneeded(e.g.,Bansaletal.2019).Moregenerally,thefieldaimstoimprove
+the interpretabilityofML-basedpredictionssoastofacilitatetheirintegrationintoahuman
+decision-making process(e.g.,Doshi-VelezandKim2017).
+Researchersinmanagementsciencehavealsostartedtostudytheintegrationofhumanjudg-
+mentsintothedevelopmentofMLalgorithms.Ibrahimetal.(2021),forinstance,explorehowthe
+elicitation processofhumanforecastsbooststheperformanceofanalgorithminanexperimental
+setup. Petropoulosetal.(2018)similarlystudyhowhumanjudgmentcanbeusedtoimprove
+the selectionofaforecastingmodel.Sunetal.(2021)alsoproposesanewbinpackingalgorithm
+that accountsforthetendencyofhumanworkerstodeviatefrommachine’srecommendations.
+Karlinsky-ShichorandNetzer(2019)findthatprovidinganalgorithm-basedpricerecommendation
+to salespeopleimprovestheirpricingperformances,whichrelyontheirexpertise,relationshipsand
+salesmanship skills.Conversely,KesavanandKushwaha(2020)findinaspare-partsretailersetting
+that allowingmanagerstodeviatefromthesuggestionofanalgorithmincreasesprofitability.Oth-
+ers havefurtherexploredtheconditionsunderwhichproductcategorymanagers(VanDonselaar
+et al.2010)orradiologists(Lebovitzetal.2020)deviatefromanalgorithmrecommendation.
+Overall,thesedifferentstreamsofresearchfocusonempircialyidentifyingwhenhumansdevi-
+ate fromanalgorithm’srecommendation,andimprovingtheinteractionbetweenhumansand
+machinesAfewauthorshavenonethelessanalyzedthishuman-machineinteractioninatheoretical
+decision-making framework.Agrawaletal.(2018),inparticular,postulatethatAIandhumans
+complementoneanotherinthatalgorithmsprovidecheapandaccuratepredictionswhilehumans
+determine, atacost,thepotentialpayoffsassociatedwiththedecision,i.e.,theDMneedstoexert
+effort tolearnherutilityfunction.Ourworkaddressesadifferentformofcomplementarity,in
+whichhumancognitionisflexiblebutoflimitedcapacitywhilethemachineisrigidbuthasample
+capacity.Morerecently,BordtandvonLuxburg(2020)proposerepresentingthehuman-machine
+
+6
+jointdecisionprocessinadynamicmulti-armbanditframework.Thegoalistostudyunderwhich
+conditions humansandmachineslearntointeractovertimeanddynamicallyimprovetheirdeci-
+sions. Incontrast,westudytheimpactofmachine-basedpredictionsonhumancognitionand
+decisions. Oursetupisthereforestatic,butitendogenizesthehumancognitiveefforts.
+The rationalinattentiontheoryonwhichourmodelisbasedwasfirstintroducedbySims(2003,
+2006) andhassincebeenappliedinmanydifferentcontexts,suchasdiscretechoiceandpric-
+ing (Matˇejka2015,BoyacıandAk¸cay2018),finance(Kacperczyketal.2016)orservicesystems
+(CanyakmazandBoyaci2021)amongmanyothers.Severalempiricalstudieshavefurtheradded
+supporttothetheory(see,forinstance,Mackowiaketal.2021forarecentsurvey).Notably,Abis
+(2020) proposesanempiricaltestforasimplemodeloffinancialmarketsmadeofrationallyinat-
+tentivehumansandmachineswithunconstrainedcapacity.Whilemachinesandhumansdecide
+independentlyandmayevencompeteinthissetup,ourmodelconsiderstheircomplementarity.
+Perhapsclosertoourpaper,JerathandRen(2021)showinastandardrationalinattention
+set-up thatDMsalwaysprocessinformationthatconfirmstheirpriorbeliefswheninformationcost
+is high.Themachine’spredictioninoursettinginteractswiththistendencytoconfirmaprior
+belief,leadingsometimestheDMtoactuallyexertmoreeffortswhentheinformationcostishigh.
+Besides rationalinattention,othermodelsofattentionhavebeenproposed.ForinstanceChe
+and Mierendorff(2019)investigateasequentialattentionallocationproblembetweentwoPoisson
+signals aboutatruestate.However,theDM’sinformationsourcesarerestrictedtothesetwo
+signals intheirmodel,whiletheDMhasfullflexibilitytoelicitanysignalinoursetup.Inaddition,
+the DM’sinformationacquisitionstrategyisonlydrivenbytheincentivestructureinCheand
+Mierendorff (2019),whilethisstrategyisalsodeterminedbytheDM’spriorbeliefinoursetting.
+Our workisalsorelatedtothehypothesistestingBayesianframework,inwhichtheDMruns
+a seriesofimperfecttestsanddynamicallyupdatesherbeliefaccordinglyaboutwhichdecisionis
+best(DeGroot1970).Thisapproachhasbeensuccessfullyappliedtoavarietyofproblems,suchas
+the managementofresearchprojectsordiagnosticservices(McCardleetal.2018,Alizamiretal.
+2013, 2019),butislesssuitedtorepresentthecognitiveprocessofadecision-maker.Indeed,this
+Bayesianframeworktypicallyassumesthateachtest’sprecisionortheorderinwhichtheyare
+run areexogenouslydetermined.Incontrast,ourset-upfullyendogenizesthelevelofprecisionas
+wellastheassociatedcognitiveeffortinatractableway.Thisenablestoproperlyaccountforthe
+flexibilityofhumancognition(Diamond2013,Laureiro-Mart´ınezandBrusoni2018).
+Wefurthercontributetothenascentbehavioralresearchonmachine-humaninteractions,and
+the issueoftrustinparticular.Forinstance,Dietvorstetal.(2016)findincontrolledexperiments
+that DMsareadversetomachine-basedpredictions.deV´ericourtandGurkan(2022)alsoexplore
+to whichextentaDMmaydoubtamachineassheobservesthecorrectnessofitsprescriptions
+
+7
+overtime.Moregenerally,Donohueetal.(2020)callformoreresearchinthisfieldtobetterunder-
+stand whenhuman-machinecollaborationsprovidesuperiorpreformance.Wecontributetothisby
+identifyingenvironments,inwhichusingamachinetoimproveefficiencyiscounter-productive.
+Finally inoursetup,humansassessinformationfrommultiplesources,whichjointlydesignate
+the truestateoftheworld.Inthisregard,ourpaperisrelatedtotherichliteratureonsearchwith
+multipleattributes(see,forinstance,OlszewskiandWolinsky2016,Sanjurjo2017,andreferences
+therein). Inparticular,Huettneretal.(2019)studyamulti-attributediscretechoiceproblem
+whichgeneralizestherationalinattentionmodelinMatˇejka(2015)toaccountforheterogenous
+information costs.Inourmodel,someattributesareeasiertoassesswhenthemachineispresent,
+as inHuettneretal.(2019),butwespecificallyinvestigatetheimpactofthisonhumanchoice,the
+extentofdecisionerrorsandcognitiveefforts.
+3. AModelofHumanandMachine
+In thissection,wefirstpresentadecisionmodelthatcapturestheflexibilityandlimitedcognitive
+capacityofthehumaninarationalinattentionframework.Wethenconsiderthecasewherethe
+DM isassistedbyamachine.
+Consider ahumandecision-maker(whichwewillrefertoasDMhereon),whoneedstocorrectly
+assess thetruestateoftheworld ω ∈ {g,b}, whichcanbegood(ω =g) orbad(ω =b). Wedenote
+by μ the DM’spriorbeliefthatthestateisgood(μ = P{ω = g}). TheDMcanexertcognitive
+efforts toevaluatetherelevantinformationandadjustherbeliefaccordingly.Themoreeffortshe
+exerts, themoreaccurateherevaluationis.Whenavailable,amachine-learningalgorithm(which
+wesimplyrefertoas“themachine”inthefollowing)assiststheDMbyaccuratelyevaluatingsome
+of thisinformation,atnocognitivecost,toaccountforitsimmensecomputingcapabilities.Based
+on herassessment,theDMthenannounceswhetherornotthestateisgood.Wedenotethischoice
+by a ∈ {y,n} (yes/no),where a=y when theDMchoosesthegoodstateand a=n otherwise. The
+choiceisaccurateifshechooses a = y and thetruestateis ω = g, orif a = n and ω = b. TheDM
+enjoysa(normalized)unitofpayoffifherdecisionisaccurate,andnothingotherwise.Thus,her
+expectedpayoffistheprobabilitythatshewillmakeanaccuratechoice,whichwedefineasthe
+accuracy ofherdecision.TheDM’sobjectiveisthentomaximizetheexpectedaccuracyofher
+decision,2 net ofanycognitivecosts.
+2 In otherwords,DM’spayoffsarethesamewhethershecorrectlyidentifiesthegoodstate(a=y when ω =g) orthe
+bad one(a = n when ω = b). Thisisforthesakeofclarityonly,though.Ouranalysisdirectlyextendstoageneral
+payoffstructure,aswediscussin §6.1.
+
+8
+3.1. TheHumanDecision-Maker
+The DMisconstrainedbyherlimitedcognitivecapacity,sothatassessingavailableinformation
+requires exertingcognitiveefforts,aprocessweformalizewithinthetheoryofrationalinattention.
+In thisframework,theDMisawareofhercognitivelimitationsandendogenouslyoptimizeshowto
+allocatehereffortaccordingly.Todothis,theDMelicitsinformativesignalsaboutthetruestate
+of theworldfromdifferentsourcesofinformationwhichreduceherprioruncertainty.
+Specifically,theDMcanelicitanysignal s of anyprecisionlevelaboutstate ω ∈ Ω={g,b} from
+anyinformationsource.Wedefineaninformationprocessingstrategyasajointdistribution f (s,ω)
+betweensignalsandstates.TheDMisfreetochooseanyinformationprocessingstrategyaslong
+as itisBayesianconsistentwithherpriorbelief(i.e.,
+R
+s f (s, g) ds = μ musthold).Thisimplies
+that choosingastrategy f (s,ω) is equivalenttodetermining f(ω|s), theDM’sposteriorbeliefthat
+the truestateis w givensignal s. Inotherwords,theDMisfreetochoosetheprecisionofher
+posteriorbelief.Thus,theDMmayelicitdifferentsignalsfromdifferentinformationsourcesinany
+particular sequence,andmakehersearchfornewsignalscontingentonpreviousonestodetermine
+the precisionofherposteriorbelief.3 She mayalsodecidenottoprocessanyinformationatallso
+that f(g|s)=μ or equivalently f(s, g)=μf(s).
+CognitiveEffort. The DM’sbeliefaboutthestateoftheworldspecifiestheprevalentinitial
+uncertainty.Bygeneratinganinformativesignal s, theDMupdatesprior μ to posterior f(g|s).
+Wemeasureuncertaintyintermsofentropy,denotedas H(p) foraprobability p that theworldis
+in thegoodstate,where H(p) = −p log p−(1−p) log (1−p). Entropyisameasureofuncertainty
+whichcorrespondstotheexpectedlossfromnotknowingthestate(FrankelandKamenica2019).
+In oursetup, H(μ) measuresthepriorlevelofuncertaintythattheDMneedstoresolve,and
+thusfullycapturesthedifficultylevelofthedecisiontask.Thetaskpresentsnodifficultywhen
+the DMisfullyinformedaboutthestate,thatis,when μ = 1or μ = 0forwhich H(μ) isnull.
+The decisiontaskismostdifficultwhentheDMhasnopriorinformationaboutthestates,thatis,
+when μ=1/2 whichmaximizes H(·). Wethusreferto H(μ) as the taskdifficulty in thefollowing.
+Similarly,ex-postentropy H(f(g|s)) measuresthelevelofuncertaintyuponelicitingsignal s and
+thus Es[H(f(g|s))] istheexpectedlevelofremaininguncertaintyunderstrategy f, beforetheDM
+processesanyinformation.Wereferto Es[H(f(g|s))] as the residualuncertainty in thefollowing.
+The expectedreductioninuncertaintyisthenequalto H(μ)−Es[H(f(g|s))], whichcorresponds
+to themutualinformationbetweenpriorandposteriordistributionsininformationtheoryand
+3 Eliciting informativesignalscanalsobeimaginedastheDMaskingaseriesofyes-or-noquestionsandobserving
+the outcomes.Bychoosinganinformationprocessingstrategy,theDMiseffectivelychoosingwhatquestionstoask
+and inwhichsequence.
+
+9
+specifiestheexpectedamountofelicitedinformation.Thisquantityisalwayspositive,thatis,
+information alwaysdecreasesuncertainty,duetotheconcavityofentropy H(·).
+Reducing uncertainty,however,comesatacognitivecost.Thelargerthereductioninuncertainty,
+the moreinformationisprocessedandthusthemorecognitiveeffortisrequired.Followingthe
+rational inattentionliterature,weassumethattheDM’scognitivecostislinearintheexpected
+reduction inuncertainty.Formally,thecognitivecostassociatedwithaninformationprocessing
+strategy f is equalto
+C (f)=λ(H (μ)−Es [H (f(g|s))]) (1)
+where λ>0 isthemarginalcognitivecostofinformationwhichwerefertoas the informationcost.
+Overall,informationcost λ determines howconstrainedtheDMisintermsoftime,attention,
+and cognitiveability.Itmayrepresenttheinherentdifficultyofassessingapieceofinformationor
+the extenttowhichtheDM’scognitivecapacityisconsumedbycompetitivetasks,becauseoftime
+pressure ormultitasking.Inthelattercase, λ is theshadowpriceoftheconstraintcorresponding
+to thelimitedcognitivecapacity.Thus,thehigherthevalueof λ, themoreefforttheDMneeds
+to exerttoelicitsignalsthatreduceuncertainty.Inthelimitwhere λ is infinite,theDMcannot
+assess anyinformationandonlydecidesbasedonherpriorbelief μ. Incontrast,theDMdoesnot
+haveanylimitonhercapacitywhen λ=0,andcanperfectlyassessthetruestateoftheworld.
+The linearityofthecognitivecostintheexpectedreductioninentropyisastandardassumption
+in therationalinattentionliterature,whichisjustifiedbythefundamentalcodingtheoremof
+information theory(see,e.g.,MatˇejkaandMcKay2015formoredetails).Importantly,however,
+the cognitivecostisconvexintheprecisionofthegeneratedsignals(i.e. C is convexin f(s|ω)).
+That is,elicitingadditionalmoreinformativesignalsbecomesincreasinglycostly.
+Decisions andAccuracy. The DMchoosesinformationprocessingstrategy f, atcost C(f),
+to yieldupdatedbelief f(g|s). Giventhisupdatedbelief,theDMthenchoosesheraction a ∈ {y,n}
+to maximizeaccuracy,suchthat a = y if f(g|s) > f(b|s) and a = n otherwise (recallthatinour
+setup, theexpectedpayoffisequaltotheexpectedaccuracy).Thus,thepriorprobabilitythat
+the DMwillchooseaction a = y beforeshestartsassessinganyinformation4 is equalto p(f) ≡
+R
+s I{f(g|s)≥f(b|s)}f (s) ds, where I denotes theindicatorfunction,whichyieldsexpectedaccuracy
+A(f)≡
+R
+s maxa∈{y,n} {f(g|s)Ia=y +f(b|s)Ia=n} f (s) ds=
+R
+s max{f(g|s), f(b|s)} f (s) ds.
+4 Note thattheDMcommitstoadecisionwithcertaintyex-post,i.e.,aftersheassessestheavailableinformation.But
+becausethesignalsshewillobtainareunknownbeforeshestartstheprocess,herfinaldecisionisrandomex-ante.
+
+10
+The DecisionProblem. Anticipatingherexpectedposteriorpayoffuponreceivingsignals,the
+DM firstdecidesonherinformationacquisitionstrategy,takingintoaccountthecognitivecost
+associatedwithitsimplementation.TheDMthenchoosesheraction.Itfollowsthatgivenherchoice
+of informationprocessingstrategy f, theDMenjoysanexpectedtotalvalueof V (f)≡A(f)−C(f).
+She determinesherinformationprocessingstrategybysolvingthefollowingoptimizationproblem:
+max
+f
+V (f) s.t.
+Z
+s
+f (s, g) ds=μ (2)
+where theconstraintguaranteesthattheDM’sinformationprocessingstrategyisBayesianconsis-
+tentwithherpriorbelief.Givenprior μ, wedenoteby V ⋆(μ), theoptimalexpectedvaluesuchthat
+V ⋆(μ) = V (f⋆), where f⋆ solves(2).Similarly,wedefineby A⋆(μ), C⋆(μ) and p⋆(μ) theoptimal
+accuracy,cognitivecost,andchoiceprobability,respectively,givenprior μ.
+Takentogether,oursetupcapturesboththecognitiveflexibilityandcognitivelimitationsof
+humans.Inthisframework,theDMendogenouslydecideshowtoallocateherlimitedattention
+and howmuchefforttoputintoresolvingtheprevalentuncertainty.Indoingso,theDMchooses
+howmucherrorshewilltolerateandtheprecisionofherdecisions.Thisframeworkfurtherallows
+us toaccountformachine-basedpredictionsintheDM’sdecisionprocess,asweshownext.
+3.2. AccountingfortheMachine
+Toassessthestateoftheworld,theDMleverageshercognitiveflexibility(Diamond2013,Laureiro-
+Mart´ınezandBrusoni2018)tointegrateinformationfromdiversesources.Themachine,bycon-
+trast, onlyextractsalimitedsubsetofthisinformation(Marcus2018).Thus,wepartitiontheset
+of informationsourcesfromwhichsignals s are drawnintotwodistinctsubsets:afirstonethat
+boththemachineandtheDMcanevaluate,andasecondonewhichisonlyavailabletotheDM.
+Werepresenttheaggregateinformationcontainedinthesetwosubsetsasrandomvariables X1
+and X2, respectively.Inparticular,r.v. X2 summarizes thepredictivevariablesthatareunobserv-
+able totheMLalgorithm.ThesemayincludeinformationdrawnfromtheDM’sdomainknowledge
+or specificaspectsofthecontextinwhichthedecisionismade.Toputthissetupintoperspective,
+consider themedicaldomain.Randomvariable X1 maythenrepresentthestatisticalsummaryof
+all thetangibleinformationthatisobservabletothealgorithm,suchasthepatient’sfullmedical
+history.Randomvariable X2, ontheotherhand,mayrepresenttheinformationthatthephysician
+obtains throughpersonalinteractionwiththepatient.IncontrasttotheMLalgorithm,theDM
+can elicitsignalsfrombothsources.RecallthatwedonotimposeanyrestrictionontheDM’s
+strategy,particularlytheorderinwhichshemayassessthesesources.
+Realization xi ∈ {−,+} of Xi, i=1, 2, issuchthat xi =+(resp. −) isindicativeofagood(resp.
+bad) state.Thetruestateoftheworldisgoodonlyifallavailableinformationispositive,5 i.e.,
+5 When onepositiveinformationsufficestodeterminethegoodstate,theproblemcanbemadeequivalenttothe
+currentsituationbyrelabelingthegoodstateandthepositiveinformationasthebadandnegativeones,respectively.
+
+11
+ω =g if andonlyif x1 =x2 =+.Wereferto π(x1,x2)>0 with(x1,x2) ∈ {−,+}2 as theDM’sprior
+distribution of(X1,X2). Thus,theDM’spriorbeliefinthegoodstateis μ = π (+,+) . Without
+machine,theDMneedstoallocatehercognitiveeffortbetweentheassessmentsof x1 and x2.
+In contrasttothehuman,themachinedoesnotsufferfromanycognitivelimitationsduetoits
+virtually unboundedcomputingcapacity.Weassumethatitcanextracttheexactvalueof x1 at no
+cognitivecost,sothattheDMcandedicatehereffortsolelytotheassessmentof x2. Inthepresence
+of themachine,therefore,theDMonlyassesses x2 so astoupdatehernewbelief,whichaccounts
+for themachine’sevaluation x1. Specifically,define μx as theDM’snewbeliefthatthestateis
+good,giventhemachine’sevaluation x ∈ {−,+}. Wehave,usingBayes’rulewith μ=π (+,+),
+μ− =0and μ+ =
+μ
+μ + π (+,−)
+> μ. (3)
+That is,anegativeevaluationbythemachinerevealsthatthetruestateisbad,whiletheDM’s
+beliefthatthestateisgoodincreaseswithapositiveevaluation.ItfollowsfromSection3.1that
+when themachineoutputis x, theoptimalexpectedvalue,accuracy,cognitivecost,andchoice
+probability,areequalto V ⋆(μx), A⋆(μx), C⋆(μx) and p⋆(μx), respectively.
+Weconsideraperfectlyaccuratemachineforclarityonly.AswediscussattheendofSection6.2
+and inAppendixD.1,ourapproachcanbeextendedtoaccountforinaccuratemachinepredictions.
+(All proofsandappendicescanbefoundinthepaper’selectroniccompanion.)
+4. OptimalDecisions,AccuracyandCognitiveCost
+In thissection,wecharacterizeoptimalchoice p⋆(·) asafunctionofpriorbelief μ ∈ (0, 1), fromwhich
+wededucetheoptimalexpectedvalue,accuracy,andcognitivecost(V ⋆, A⋆, and C⋆, respectively).
+Tothatend,wefollowMatˇejkaandMcKay(2015)whoestablishthatproblemsofthetype(2)
+where theDMchoosesstrategy f, areequivalenttoproblemsinwhichshedirectlyselectsthe
+conditional probabilitiesofchoosingaction a givenstate w.6 The intuitionforthisequivalenceis
+that aone-to-onecorrespondenceexistsbetweenactions a and signals s in theoptimalsolution.
+Indeed, elicitingdistinctsignalsthatleadtothesameposteriorbelief(andhencedecision)incur
+additional costswithoutchangingtheDM’sdecision,whichissuboptimal.Inadiscretechoice
+setting, thisyieldsanoptimalsolutionofGMNL(generalizedmultinomiallogit)formwherepayoffs
+include endogenouslydeterminedterms.ThenextLemmaformalizesthisresultinoursetup.
+Lemma 1. Given prior 0 < μ< 1, theoptimalchoiceprobability p∗ (μ) is theuniquesolutionto
+the followingequationsin p ∈ [0, 1],
+p=(1−μ) pb +μpg, where pg =
+pe1/λ
+pe1/λ +1−p
+, pb =
+p
+p+(1−p) e1/λ . (4)
+6 Note thatthisisan“asif”resultsuchthattheDMisnotactuallyoptimizingoverchoiceprobabilitiesbutusingan
+optimal informationprocessingstrategythatisbehaviorallyequivalenttotheinducedoptimalchoiceprobabilities.
+
+12
+Further,wehave
+A⋆(μ)=(1−μ) (1−pb)+μpg and C⋆(μ)=λ[H (p)−(1−μ)H (pb)−μH (pg)] (5)
+Probabilities pg and pb correspondtotheoptimalconditionalprobabilitiesthattheDMchooses y
+giventhatthetruestateis g and b, respectively.Probability p is thenthe(unconditional)probability
+of choosing y according toconsistencyequation(4).Probabilities pg and pb also determinethe
+extentofthemistakestheDMtolerates.Specifically,theoptimalfalsepositiveandfalsenegative
+rates, whichwedenoteas α⋆ and β⋆, respectivelysuchthat α⋆ +β⋆ =1−A⋆, areequalto
+α⋆ =(1−μ)pb and β⋆ =μ(1−pg). (6)
+4.1. OptimalDecisions
+Lemma 1statesthattheoptimalchoiceprobability p⋆(μ) correspondingtoproblem(2)isthe
+solution ofasystemofequations,whichalsodeterminesdecisionaccuracy A⋆(μ), cognitivecost
+C⋆(μ), andhenceexpectedvalueobtained V ⋆(μ) = A⋆(μ) − C⋆(μ). Thenextresultprovidesthe
+explicit solutiontotheseequations.
+Theorem 1. The optimalchoiceprobability p⋆(μ) that solves (4) , is equalto
+p⋆ (μ)=
+
+
+0 if μ ≤μ
+μ
+1−e−1/λ − 1−μ
+e1/λ−1
+if μ<μ<μ
+1 if μ ≥μ
+(7)
+where μ = (e1/λ +1)−1 < 1/2 < μ = e1/λ(e1/λ +1)−1. Furthermore, p⋆ (μ) is non-decreasingin μ, μ
+is increasingin λ and ¯μ is decreasingin λ.
+Overall,Theorem1characterizestheeffectoftheDM’spriorbelief μ on heroptimalchoice
+probability p⋆(μ). IftheDM’spriorbeliefaboutthetruestateoftheworldissufficientlystrong
+(i.e., μ ≥μ or μ ≤μ), exertinganyefforttolearnmoreaboutthisstateisnotworththecognitive
+cost. TheDMthenmakesanimmediatedecisionwithoutassessinganyinformation,basedsolelyon
+her prior(i.e., p⋆ (μ)=1or0).Otherwise,theDMexertsefforttoassesstheavailableinformation
+untilherbeliefaboutthetruestateofthewordissufficientlystrong,atwhichpointshecommits
+to achoice.But,becauseshedoesnotknowwhatthisassessmentwillrevealapriori,herfinal
+decision isuncertainex-ante(i.e.,0 < p⋆(μ) < 1). Furthermore,thestrongertheDMbelievesa
+priori thattheworldisinthegoodstate,themorelikelyshewilldecideaccordinglybychoosing
+a=y (i.e., p⋆ (μ) is non-decreasingin μ).
+Theorem 1alsoenablescharacterizingtheimpactofinformationcost λ on theoptimalchoice
+probability,whichwedenoteby p⋆(λ) inthenextresultwithaslightabuseofnotation.
+
+13
+Corollary1. Given prior 0 < μ< 1, apositive(possiblyinfinite)threshold ¯λ exists suchthat
+the optimalchoiceprobabilityisequalto
+p⋆ (λ)=
+
+
+μ
+1−e−1/λ − 1−μ
+e1/λ−1
+if λ<¯λ
+0 if λ≥¯λ and μ<0.5
+1 if λ≥¯λ and μ>0.5,
+(8)
+where ¯ λ(μ) =
+
+log 1−μ
+μ
+
+−1
+if μ ̸= 0.5 and ¯λ = +∞ if μ = 0.5. Further, p⋆ (λ) is decreasing(resp.
+increasing)in λ, and ¯λ increasing(resp.decreasing)in μ when μ<0.5 (resp. μ>0.5).
+0 0.20.40.60.81
+Priorbelief μ
+0
+2
+4
+6
+8
+Informationcost 6
+6
+ChoosenChoosey
+Acquire
+information
+Figure 1Effectofpriorbelief μ on theDM’stolerancetoinformationcost ¯λ
+Hence, theDMexertseffortonlyiftheinformationcostisnottoohigh,i.e.,lessthanathreshold.
+In thiscase,herprobabilityofchoosingthegoodstateincreaseswith λ if shefavorsthisstateapriori
+(μ > 1/2), anddecreasesotherwise.Indeed,thehighertheinformationcost,thelessinformation
+the DMassessesandthusthelesslikelyherupdatedbeliefwillsignificantlychangefromher
+prior. Otherwise,shedecidesapriorithatthestateisgood(resp.bad)ifherpriorislarger(resp.
+smaller) than1/2.Inthiscase,theDMjumpstoconclusionsasshereliessolelyonherpriorbelief
+without assessinganyinformation.Inthissense,threshold ¯λ determines theDM’stolerancetothe
+information cost.Takentogether,Corollary1statesthatthesetofpriorbeliefsforwhichtheDM
+processesinformationisanintervalcenteredat1/2,thatshrinkswithinformationcost λ.
+Figure 1depictstheimpactofprior μ on threshold ¯λ. WhentheDMdoesnothavemuchprior
+knowledgeaboutthetruestateoftheworld(thevalueof μ is closeto1/2),sheisreadytoexert
+a lotofcognitiveefforttolearnmoreandhencetoleratehighinformationcosts(thevalueof ¯λ is
+high). Inparticular,theDMalwaysassessesinformationandexertseffortwhenthetruestateis
+perfectlyunknown(¯λ =+∞ for μ=1/2). AstheDMismorecertainaprioriaboutthetruestate
+(μ approaches0or1),sheislesswillingtoexerteffortandjumpstoconclusionsforlowervalues
+of informationcosts(¯λ decreases as μ approaches0or1).
+
+14
+4.2. DecisionAccuracyandCognitiveEffort
+FromLemma1andTheorem1,weobtainthefollowingclosedformsfor A⋆(μ), C⋆(μ) and V ⋆(μ).
+Corollary2. Given prior μ, wehave
+ If μ ≤μ, then A⋆(μ)=1−μ and C⋆(μ)=0.
+ If μ<μ<μ, then A⋆(μ)= e
+1λ
+e
+1λ
++1
+and C⋆(μ)=λ[H (μ)−φ(λ)].
+ If μ ≥μ, then A⋆(μ)=μ and C⋆(μ)=0, where
+φ(λ)≡log
+
+e
+1λ
++1
+
+−
+1
+λ
+e
+1λ
+e
+1λ
++1
+. (9)
+Further, φ(·) is increasing,with φ(0)=0 and limλ→∞ φ(λ)=log2. Also, V ⋆(μ)=A⋆(μ)−C⋆(μ).
+Function φ(λ) is theresidualuncertainty Es[H(f(g|s))] (seeSection3.1)atoptimality.The
+higher theinformationcost,thelessprecisetheelicitedsignalsare,andthusthelessuncertainty
+is reduced.PerCorollary2,residualuncertainty φ(λ) is fullydeterminedbytheinformationcost
+and independentoftheprior.Infact,aslongastheDMchoosestoprocessinformation(i.e.,
+μ<μ<μ), herdecision’sexpectedaccuracydependssolelyontheinformationcostandnotonher
+prior belief.Figure2aillustratesthisforafixed λ. Here,thereddottedcurvegivenbymax(μ, 1−μ)
+correspondstothedecisionaccuracyleveltheDMobtainswhenshebasesherdecisionsolelyonher
+prior belief(i.e., λ→∞). Thesolidbluecurveistheaccuracyfunction A(μ) forafiniteinformation
+cost value,whichisconstantwhentheDMchoosestoprocessinformation.Thedifferencebetween
+these twocurvespreciselycorrespondstothegaininaccuracytheDMenjoysduetocognitive
+effort. Whenthedecisiontaskismostdifficult(i.e.,whentheDMismostuncertainwith μ=0.5),
+the DMobtainsthehighestaccuracygain,whilethemagnitudeofthisgaindependson λ.
+In contrast,theDM’sprioraffectsexpectedvalue V ⋆ through taskdifficulty H(μ), ifshechooses
+to exerteffort.Specifically,thetaskdifficultyincreasesthereductioninuncertainty H(μ)−φ(λ)
+that theDM’seffortbringsabout.Thus,Corollary2impliesthattheexpecteduncertaintyreduc-
+tion andhencetheoptimalexpectedcostincrease,whiletheexpectedvaluedecreaseswiththe
+task difficulty(i.e.,as μ approaches1/2)whichisillustratedinFigure2b.SimilartoFigure2a,
+the dottedcurvecorrespondstotheexpectedvaluetheDMobtainswhenthereisnocognitive
+effort, inwhichcaseitisequaltotheexpectedaccuracy.Thedifferencebetweenthesetwocurves
+correspondsthentotheexpectedgainthattheDMenjoyforexertingcognitiveeffort.
+The structureofoptimalcost C⋆ in Corollary2shedsfurtherlightonthresholds μ and ¯μ.
+Indeed, thesethresholdsdeterminewhenthetaskdifficultyisexactlyequaltotheoptimalreduced
+uncertainty,thatis, H(μ) = H(¯μ) = φ(λ). If μ <μ or μ > ¯μ, theleveloftaskdifficultyisalready
+lowerthanthereduceduncertaintythatanycognitiveeffortwouldachieveinoptimality,thatis,
+H(μ)<φ(λ), andtheDMpreferstodecideapriori,withoutassessinganyinformation.
+
+15
+0 0.20.40.60.81
+Priorbelief μ
+0
+0.2
+0.4
+0.6
+0.8
+1
+Decisionaccuracy
+accuracyfor 6 = 0.5
+accuracyfor 6 !1
+accuracy gain
+due to effort
+(a) Decisionaccuracy
+0 0.20.40.60.81
+Priorbelief μ
+0
+0.2
+0.4
+0.6
+0.8
+1
+Expectedvalue
+valuefor 6 = 0.5
+valuefor 6 !1
+value gain
+due to effort
+(b) Expectedvalue
+Figure 2TheDM’saccuracyandvaluefunctions,andcorrespondinggainsduetocognitiveeffort.
+That theoptimalaccuracyisindependentofthepriorstemsfromawell-knownpropertyof
+rationally inattentivechoiceandthefactthattheDMmaximizesaccuracy(netofcognitivecosts).
+Indeed, whensomeinformationisprocessedatoptimality,rationallyinattentiveagentsalwaysform
+the sameposteriorbeliefregardlessoftheirprior(seeCaplinandDean2013).Theseoptimalpos-
+teriors correspondexactlytothebeliefthresholdsthatdefinewhetheritiseconomicallyattractive
+for theDMtoprocessinformation(μ and μ), whichdependonlyonthepayoffsandinformation
+cost λ. Intuitively,thismeansthattheDMsharpensherbeliefbyprocessingcostlyinformation,
+up untilthepointbeyondwhichitisnolongerjustified.Morespecifically,inourcontext,theDM’s
+optimal posteriorbeliefthatthestateisgoodgiventheaggregatesignalsthatleadtotheaction
+a = y (resp. a = n) isprecisely μ (resp. μ) whensheprocessesinformation.Additionally,sincethe
+payoffstructureissymmetricinthestates,thesethresholds(hence,theoptimalposteriors)are
+also symmetric.Thatis,theDM’sposteriorbeliefthatthestateisgoodgivenaction a=y (i.e., μ)
+is equaltoherposteriorbeliefthatstateisbadgiven a=n (i.e., 1−μ). Inoursetup,thesearealso
+equal totheaccuracy,asitisjusttheexpectationoftheseoverthechoice(action)probabilities.
+4.3. DecisionErrors
+Being constrainedoncognitivecapacity,theDMisboundtomakechoicesbasedonpartialinfor-
+mation. Indeed,eliminatingalluncertaintyisneveroptimal(φ(λ)>0 for λ>0). Hence,accuracy
+is strictlylessthanoneandtheDMmakesfalsepositiveandnegativeerrors,withrates α⋆ and β⋆,
+respectively.FromTheorem1,weobtaintheseerrorratesinclosedforminthefollowingcorollary.
+
+16
+Corollary3. Given prior μ, errorrates α⋆(μ) and β⋆(μ) areequalto
+α⋆ (μ)=
+
+
+0 if μ ≤μ
+1−μ if μ ≥μ
+μ(e1/λ+1)−1
+e2/λ−1
+otherwise
+and β⋆ (μ)=
+
+
+μ if μ ≤μ
+0 if μ ≥μ
+e1/λ−μ(e1/λ+1)
+e2/λ−1
+otherwise.
+If theDMisconfidentenoughthatthestateisbad(μ ≤ μ), shechooses a = n without any
+cognitiveeffort,preventingherfrommakingafalsepositiveerror(α⋆ = 0)butmaximizingher
+chanceofmakingafalsenegativeone(β⋆ = μ). Thereverseistrue(a = y, α⋆ = 1−μ and β⋆ = 0)
+when theDMissufficientlyconfidentthatthestateisgood(μ ≥ ¯μ). Otherwise,theDMprocesses
+some informationandtheerrorratesdependonboththepriorandtheinformationcost(with
+0<α⋆ <1−μ and 0<β⋆ <μ).
+Both α⋆ and β⋆ are piecewiselinearandunimodalfunctionsof μ. Inparticular,whentheDM
+exerts effort(μ<μ< ¯μ), thefalsepositiverateincreases,whilethefalsenegativeonedecreasesas
+the priorincreases.Infact,anincreaseinprior μ has twoconflictingeffectsonthefalsepositive
+rate. Ononehand,thegoodstateismorelikely,whichdecreasesthechanceoffalsepositiveerrors.
+On theotherhand,theDMismorelikelytochooseaction a=y for ahigherlevelof μ perTheorem
+1, whichincreasesthechanceoffalsepositiveerrors.Inessence,Corollary3indicatesthatthe
+second effectalwaysdominatesthefirstone.Asimilarresultholdsforthefalsenegativerate.
+5. ImpactofMachineInputonHumanDecisions
+Thusfar,wehaveconsideredarationallyinattentiveDMthatdecidesalone.Wenowinvestigate
+howtheDM’sdecisionprocessanditsoutcomeschangewhensheisassistedbyamachine-based
+assessment.Inparticular,wecomparetheDM’sdecisions,theextentoferrorsshemakes,andthe
+amountofeffortsheexpendswithandwithoutthemachine.
+5.1. Machine-AssistedDecision-Making
+With themachine,theDMfirstobservesthemachine’soutput x1, whichdetermineshernewbelief
+μx, x ∈ {+,−}, accordingto(3).TheDMthendedicatesallhercognitivecapacitytoevaluating
+x2. Wedenoteby p⋆
+m(μ) theresultingex-anteprobabilitythattheDMchooses a=y as afunction
+of herinitialpriorbelief μ. Similarly, A⋆
+m(μ), C⋆m(μ), V ⋆
+m(μ), α⋆m (μ) and β⋆m (μ) denotedecision
+accuracy,cognitivecost,expectedvalue,anderrorrates,respectively,thattheDMachievesinthe
+presence ofthemachine.Thefollowing(immediate)lemmacharacterizesthesedifferentmetrics.
+Lemma 2. Given prior μ, wehave
+p⋆
+m(μ)=
+μ
+μ+ p⋆ 􀀀
+μ+
+, α⋆
+m(μ)=
+μ
+μ+α⋆ 􀀀
+μ+
+β⋆
+m(μ)=
+μ
+μ+ β⋆ 􀀀
+μ+
+A⋆
+m(μ)=1−
+μ
+μ+ +
+μ
+μ+A⋆ 􀀀
+μ+
+, C⋆
+m(μ)=
+μ
+μ+C⋆ 􀀀
+μ+
+, V ⋆
+m =1−
+μ
+μ+ +
+μ
+μ+ V ⋆ 􀀀
+μ+
+.
+
+17
+Thus,giveninformationcost λ, thedecision’soutcomesinthepresenceofthemachinecanbe
+describedwithtwofreeparameters(μ,μ+) ∈ S≡{(x, y) ∈ [0, 1]2, s.t. x <y}; prior μ, andupdated
+prior μ+ when themachinegivesapositivesignalon X1.
+5.2. ImpactonDecisionAccuracyandValue
+Since themachineprovidesaccurateinformationatnocognitivecost,themachinealwaysimproves
+the expectedaccuracyandtotalvalueoftheDM,asstatedbythefollowingresult.
+Proposition1. Foranygiven λ>0 and (μ,μ+) ∈ S, wehave A⋆
+m ≥A⋆ and V ⋆
+m ≥V ⋆.
+Figure 2illustratesProposition1.Theaccuracylevelsthatcanbeachievedwithamachinefor
+all combinationsof(μ,μ+) ∈ S correspondtotheconvexhulloftheaccuracycurveinFigure2a
+(solid bluecurve)withoutthemachine.Allthesepointslieabovethecurveandhenceprovide
+greater accuracy.Similarly,theconvexhullofthevaluecurveinFigure2bdepictsthesetofall
+possibleexpectedvaluesthattheDMcanachievewithamachine,showingthatitalwaysincreases
+the DM’sexpectedvalue.
+This resultprovidestheoreticalsupportforthegrowingempiricalliteratureshowingthathuman-
+machinecollaborationsboostoverallaccuracy.Interestingly,Proposition1ispartlydrivenbyour
+premise thathumancognitionisflexible.Thisfeaturecorrespondsinoursetuptotheunrestricted
+feasible setofinformationprocessingstrategies(otherthantheBayesianconsistencyrequirement).
+Indeed, whenapriorirestrictionsareimposedonthisfeasibleset,andhencehumancognitionis
+less flexible,accuracysometimesdecreasewiththemachine(seeAppendixF).
+5.3. ImpactonDecisions
+The machineimprovestheexpectedaccuracyandtotalvalueofthedecisionbyinfluencingthe
+DM’s choice.Thenextresultdetermineshowthepresenceofthemachineaffectsthischoiceasa
+function ofprior μ and posteriorbelief μ+.
+Theorem 2. Given informationcost λ, wehave
+i) If μ+ ≤μ, then p⋆
+m =p⋆ =0.
+ii) If μ ≤μ and μ+ ∈
+􀀀
+μ,μ
+
+, then p⋆
+m >p⋆ =0.
+iii) If μ ≤μ and μ+ ≥μ, then p⋆
+m >p⋆ =0.
+iv) If μ<μ<μ+ <μ, then p⋆
+m >p⋆.
+v) If μ ∈
+􀀀
+μ,μ
+
+and μ+ ≥μ, then ˆμc exists suchthat p⋆
+m >p⋆ if μ< ˆμc and p⋆
+m ≤p⋆ otherwise.
+vi) If μ ≥μ, then 1=p⋆ >p⋆
+m.
+Further,threshold ˆμc is decreasingin μ+ and equalto ˆμc =
+
+e1/λ +1− e1/λ−1
+μ+
+−1
+≥ 1/2.
+
+18
+0 μ 0.5 μ 1
+Priorbelief μ
+0
+μ
+0.5
+μ
+1
+Posteriorbelief μ+
+ˆμc
+p⋆
+m
+6 p⋆
+p⋆
+m
+5 p⋆
+0.5
+i
+ii
+iii
+iv
+v vi
+Figure 3ImpactofthemachineontheDM’sdecisioninparameterspaceS,for λ= 1.
+Overall,Theorem2identifiesnecessaryandsufficientconditionsunderwhichthepresenceof
+the machine decreases the DM’sprobabilityofchoosing a=y. ThishappenswhentheDM’sprior
+beliefisstrongenough(ˆμc < μ), andapositiveassessmentbythemachinebooststhisbelieftoa
+sufficientlyhighlevel(μ+ ≥ ¯μ). Thresholdˆμc is thenthevalueofprior μ, atwhichthedirectionof
+the machine’simpactchanges.
+Figure 3illustratesthisresultinparameterspace S, foragiven λ. Thepartitionofparameter
+space S in sixdifferentsubsetscorrespondstocases i-vi in thetheorem.Cases i, ii and iii depict
+situations inwhichtheDMdoesnotexertanyeffortintheabsenceofthemachineandchooses
+a = n as aresult.Thishappenswhenherpriorissufficientlylow(i.e., μ ≤ μ) perTheorem1.
+Similarly,case vi correspondstosituationsinwhichtheDMchooses a = y a prioribecauseher
+prior issufficientlyhigh(i.e., μ ≥ μ). Incases iv and v, however,theDMalwaysexertseffortto
+assess informationintheabsenceofthemachine.Thefiguredemonstratesthatthresholdˆμc divides
+space S intotwo(top-rightandbottom-left)areas,suchthatthepresenceofthemachinedecreases
+the DM’sprobabilityofchoosingthegoodstate(i.e., p⋆
+m ≤ p⋆), when(μ,μ+) liesinthetop-right
+area, andincreasesthechoiceprobabilityotherwise.
+This resultstemsfromthefactthatthemachinesometimesdispensestheDMfromexertingany
+effort aswellastheimpactoftheinformationcostontheDM’schoice.Toseewhy,considerthe
+effect ofthemachineontheDM’schoiceprobabilityasafunctionoftheinformationcost,which
+wecharacterizenext.
+Corollary4. We havethefollowing:
+
+19
+ If μ ≤0.5, then p⋆
+m ≥p⋆.
+ If μ>0.5, then threshold λ∗ exists suchthat p⋆
+m ≥p⋆ if λ<λ∗ and p⋆
+m ≤p⋆ otherwise.
+Further,threshold λ∗ is decreasinginpriorbelief μ with, λ∗ =log
+
+μ+μ+μ− μ+
+μ(1 −μ+)
+−1
+.
+In otherwords,whentheDMbelievesapriorithatthegoodstateismorelikely(μ > 1/2),
+the presenceofthemachinereducesherprobabilityofchoosing a = y if theinformationcostis
+sufficientlyhigh(λ >λ∗) andincreasesthisprobabilityotherwise.Figure4illustratestheresult
+and depictsthreshold λ∗ as afunctionofprior μ.
+0 0.20.40.60.8
+Priorbelief μ
+0
+1
+2
+3
+4
+5
+6
+Informationcost 6
+6$
+p⋆
+m
+6 p⋆
+p⋆
+m
+5 p⋆
+Figure 4ImpactofthemachineontheDM’sdecisionasafunctionofinformationcost λ and prior μ, for
+μ+ = 0.8
+Without themachine,probability p⋆ is increasingintheinformationcostwhentheDMfavors
+the goodstateapriori,thatis, μ>1/2 (perCorollary1).Thisisbecausethehighertheinformation
+cost, thelessinformationtheDMassessesandthusthelesslikelyitisthatshewilldeviatefrom
+her priorchoice.Withthemachine,apositiveassessmentbythemachinebooststheDM’sbelief,
+further amplifyingthiseffect.Infact,wheninformationcost λ is greaterthanthreshold λ(μ+)
+defined inCorollary1,apositivemachine’sassessmentpromptstheDMtoimmediatelychoose
+a = y without exertinganyadditionaleffort(since0.5 < μ<μ+). Thus,theex-anteprobabilityof
+choosingthegoodstate, p⋆
+m, correspondsexactlytothechanceofapositiveresultbythemachine.
+And sincethemachinedoesnotexertanycognitiveeffort,thisprobabilityisindependentofthe
+information cost.Hence,probability p⋆ increases, whileprobability p⋆
+m remains constantandthe
+former dominatesthelaterwhentheinformationcostissufficientlylarge.7
+7 By thesametokenwhen μ < 1/2, thechoiceprobabilityisnon-increasingintheinformationcostswhichexplains
+whywehave p⋆ < p⋆
+m in thiscase.
+
+20
+In otherwords,aDMwithoutmachinestickstoherex-antechoicewithhighprobabilityunder
+high informationcost.Incontrast,aDMassistedbyamachineexclusivelyreliesonthemachine’s
+result underhighinformationcost.IfthemachineisnotsufficientlylikelytoconfirmtheDM’s
+prior, thepresenceofthemachinereducestheDM’schanceofchoosingthegoodstate.Itincreases
+this probabilityotherwise.Ineffect,themachinemayincreasethevariabilityoftheDM’sdecision.
+5.4. ImpactonDecisionErrors
+FromProposition1,weknowthatthemachinealwaysimprovesaccuracyandhencereducesthe
+overallprobabilityofmakingamistake.ButTheorem2indicatesthatthemachinechangesthe
+ex-anteprobabilityofchoosinganaction.This,inturn,shouldaffectthenatureoferrorsthatthe
+DM islikelytomake.Thenextresultcharacterizesthiseffect.
+Theorem 3. Given informationcost λ, β⋆m ≤β for all μ ∈ [0, 1]. Further,wehave
+i) If μ+ ≤μ, then α⋆m =α⋆ =0.
+ii) If μ ≤μ and μ+ ∈ (μ,μ), then α⋆m >α⋆ =0.
+iii) If μ ≤μ and μ+ ≥μ, then α⋆m >α⋆ =0.
+iv) If μ<μ<μ+ <μ, and μ+ ∈ (μ,μ), then α⋆m >α⋆.
+v) If μ ∈
+􀀀
+μ,μ
+
+and μ+ ≥ μ, thenthreshold ˆμfp < ˆμc exists suchthat α⋆m > α⋆ if μ < ˆμfp, and
+α⋆m ≤α⋆ otherwise.
+vi) If μ ≥μ, then α⋆m <α⋆.
+Further,threshold ˆμfp is decreasingin μ+ and equalto ˆμfp =
+
+e2/λ +e1/λ − e2/λ−1
+μ+
+−1
+.
+0 μ 0.5 μ 1
+Priorbelief μ
+0
+μ
+0.5
+μ
+1
+Posteriorbelief μ+
+ˆμfp
+ˆμc
+,⋆
+m
+6 ,⋆
+,⋆
+m
+5 ,⋆
+0.5
+Figure 5ImpactofthemachineonDM’sfalsepositiveerrorrateinparameterspaceS,for λ = 1.
+
+21
+Theorem 3statesthatthemachinealwaysimprovesthefalsenegativerateandthusdecreases
+the DM’spropensityofchoosing a = n when thestateisactuallygood.Thishappensevenwhen
+the machineinducestheDMtochoose a=n more apriori(i.e., p⋆
+m ≤p⋆ when μ ≥μ+c perTheorem
+2). However,themachinesometimesbooststhefalsepositiverateandthusincreasesthechance
+that theDMwillchoose a=y while thestateisactuallybad.ThishappensiftheDM’spriorbelief
+is nottoostrong(μ < ˆμfp). Themachinedecreasesthefalsepositiverateotherwise.Infactthis
+mayhappenevenwhenthemachineraisesthepossibilityofmakingthismistakebyincreasingthe
+overallprobabilityofchoosingthegoodstate(i.e.,whenˆμfp <μ< ˆμc perTheorem2).
+Figure 5illustratesthisresultinparameterspace S, foragiven λ. Itdemonstratesthatthreshold
+ˆμfp divides space S intotwo(top-rightandbottom-left)areas,suchthatthepresenceofthe
+machinedecreasestheDM’sprobabilityofmakingafalsepositivetypeerror(i.e., α⋆m ≤α⋆), when
+(μ,μ+) liesinthetop-rightarea,andincreasesotherwise.Theeffectofinformationcost λ on DM’s
+error rates,however,ismoresubtleasthenextcorollaryshows.
+Corollary5. Given prior μ, we α⋆m ≥α⋆ for μ+ ≤0.5. For μ+ >0.5, we have
+ If μ ≤μ∗ =4μ+ 1−μ+
+(2−μ+)2 , then α⋆m ≥α⋆.
+ If μ∗ <μ<0.5, λfp and λfp exist s.t. α⋆m ≥α⋆ if λ<λfp and λ>λfp. Otherwise α⋆m ≤α⋆.
+ If μ ≥0.5, α⋆m ≥α⋆ if λ<λfp. Otherwise α⋆m ≤α⋆.
+Corollary 5establishesthatregardlessofthecostofinformation,iftheDM’spriorissufficiently
+low,themachinealwaysincreasestheDM’spropensityofmakingafalsepositiveerrorwhichis
+consistentwithTheorem3.ThisisbecausewhentheDMsufficientlyfavorsthebadstate,she
+chooses a = n more often,whichgreatlyreducesherchanceofmakingafalsepositiveerror.In
+fact, when μ <μ, shenevermakesafalsepositiveerror.Ontheotherhand,apositivemachine
+assessmentmayrendertheDMmoreuncertain(when μ+ is closeto0.5) ormaygreatlyfavorthe
+goodstate,promptinghertomakemorefalsepositiveerrors.
+When theDM’spriorisnottoolow,theinformationcostplaysacentralroleindetermining
+the machine’simpactontheDM’sdecisionerrors.Tounderstandthiseffect,firstconsiderthecase
+where theDMinitiallyfavorsthegoodstate(i.e., μ>0.5). Whentheinformationcostissufficiently
+low,itiseasierfortheDMtodistinguishthestatesandlesslikelythatshewillmakeanerror.Yet,
+the machinecanincreasetheDM’schancesofmakingafalsepositiveerrorbyincreasingherprior
+to asufficientlyhighlevelwhereshechooses a=y directly withoutacquiringfurtherinformation.
+On theotherhand,whentheinformationcostishigh,theDMwithoutthemachineislikelyto
+makeafalsepositiveerrorassheisinclinedtochoose a=y based onherpriorbelief(seeCorollary
+1). Themachine,however,candecreasethischancebycompletelyrevealingthebadstates.
+
+22
+A moresubtleeffectoftheinformationcostemergeswhentheDMissufficientlyuncertain,but
+favorsthebadstateinitially(μ is closebutstrictlylessthan0.5). Again,whentheinformation
+cost issufficientlylow,shemakesfewerfalsepositiveerrorswithoutthemachineasshecanstill
+distinguish thestates,andthemachinemayinducehertochoose a=y directly withoutacquiring
+further information.However,contrarytothepreviouscase,shealsomakesfewerfalsepositive
+errors withoutthemachinewhentheinformationcostissufficientlyhigh,assheisinclinedtochoose
+a = n based onherpriorbelief.Thus,themachineonlyhelpstheDMtoreduceherfalsepositive
+errors formoderateinformationcostlevels.Figure6illustratesthis.Thefigureplotsinformation
+cost thresholds λfp and λfp as functionsofpriorbelief μ for thecasewhere μ+ > 0.5. Theprior
+belief μ at whichthetwocurvesmeetpreciselycorrespondsto μ∗. Weprovidetheclosed-form
+characterizationsofthetwoinformationcostthresholdsinAppendixA(proofofCorollary5).
+0 0.2 μ$ 0.50.70.9
+Priorbelief μ
+0
+2
+4
+6
+8
+10
+Informationcost 6
+6fp
+6fp
+,⋆
+m
+6 ,⋆ ,⋆
+m
+5 ,⋆
+Figure 6ImpactofthemachineonDM’sfalsepositiveerrorininformationcost λ and prior μ, for μ+ = 0.9
+Takentogether,theresultsofthissectionhaveimportantimplicationsfortheoperationsof
+organizations. Inparticular,theincreaseinfalsepositivesthatthemachinemayinducetranslates
+intoanunnecessaryincreaseincapacityutilizationinthedownstreamstagesofaprocess.This
+means, forinstance,thatcongestionlevelsandwaitingtimesfollowingthedecisiontaskcanincrease
+exponentially,asperbasicqueueingtheory.Thisisindeedthecaseinmanufacturingoperations
+involvingAI-assistedqualityinspectionandfaultdetectionwhereincreasingfalsepositivesmay
+lead tounnecessarydowntime,productivitylossesandincreasedcosts.Consequencesareeven
+more severewhenthetaskconsistsindetectinglow-frequencyandhigh-riskeventssuchasmoney
+laundering andfraudinbanking,whereevenslightincreasesinfalse-positiveratesmaydramatically
+increase subsequentworkload(KaminskyandSchonert2017).
+
+23
+5.5. ImpactonCognitiveEffort
+The machineimprovestheexpectedvalueofhumandecisions, V ⋆ =A⋆−C⋆, byincreasingaccuracy
+A⋆ (Proposition1)duetoadecreaseindecisionerrors,butalsoachangeoferrortypes(Theorem
+3). Anadditionalandperhapsmoreintuitivechannelbywhichthemachinemightimprovethis
+expectedvalueiscognitivecost C⋆. Indeed,themachineprovidesinformationatnocostandmay
+partially relievetheDMofhercognitiveeffort.This,inturn,shouldimprovethedecision’sexpected
+value.Yet,thefollowingresult,oneofourmainfindings,showsthatthisisnotalwaysthecase.In
+fact, themachinesometimesincreasestheDM’scognitivecostwith C⋆m >C⋆.
+Theorem 4. Given informationcost λ we have,
+i) If μ+ ≤μ, then C⋆m =C⋆ =0.
+ii) If μ ≤μ and μ+ ∈
+􀀀
+μ,μ
+
+, then C⋆m >C⋆ =0.
+iii) If μ ≤μ and μ+ ≥μ, then C⋆m =C⋆ =0.
+iv) If μ< μ<μ+ <μ, then ˆμe ≤1/2 exists suchthat C⋆m >C⋆ if μ< ˆμe and C⋆m ≤C⋆ otherwise.
+v) If μ ∈
+􀀀
+μ,μ
+
+and μ+ ≥μ, then 0=C⋆m <C⋆.
+vi) If μ ≥μ, then C⋆m =C⋆ =0.
+Furthermore,threshold ˆμe is decreasingin μ+ and theuniquevalueof μ, for μ < μ<μ+ < μ, that
+satisfies
+H(μ)−
+μ
+μ+H(μ+)=(1−
+μ
+μ+ )φ(λ) (10)
+0 μ 0.5 μ 1
+Priorbelief μ
+0
+μ
+0.5
+μ
+1
+Posteriorbelief μ+
+ˆμe
+C⋆
+m > C⋆
+C⋆
+m < C⋆
+Figure 7ImpactofthemachineonDM’scognitiveeffortinparameterspace S, for λ = 1
+Theorem 4identifiesthenecessaryandsufficientconditionsunderwhichthemachineinduces
+the DMtoexert more effort. ThishappenswhentheDMsufficientlyfavorsthebadstateapriori
+
+24
+(μ < ˆμe ≤ 1/2), whichisillustratedinFigure7.Inthiscase,thetaskdifficultyincreaseswitha
+positivemachineoutputandtheDMneedstoexertmoreeffort.
+More generally,themachineaffectstheDM’scognitivecostviathetaskdifficultyandtheresidual
+uncertainty(H(μ) and φ(λ), respectively,with C⋆ =H(μ)−φ(λ)) butinoppositedirections.On
+one hand,themachinealwaysprovidesadditionalinformation,whichthusalwaysreducesthetask
+difficultyinexpectation(H (μ) > EX1H(μX1 )). Thistasksimplificationcontributestoreducing
+cognitiveeffort.Notethattheeffectisexante.TheDMexpectsthemachinetoreducethedifficulty
+beforeobtainingthemachineassessment.Expost,apositiveresultofthemachinecanincrease
+the taskdifficulty(i.e., H(μ) < H(μ+)). Ontheotherhand,themachineispreciseandhence
+alwaysdecreasestheresidualuncertainty.Inparticular,thestateisknownwhenthemachine’s
+result isnegativeand,thus,themachinealwaysreducestheresidualuncertaintyinexpectation
+(φ(λ)>P (X1 =1)φ(λ)). ThisgaininprecisioncontributestoincreasingtheDM’scognitiveeffort.
+Hence, themachineinducestheDMtoexertmoreeffortwhentheprecisiongaindominatesthe
+task simplificationthatthemachinebringsabout.Thishappenswhenthepriorissufficientlysmall
+and theinformationcostislargeenough,asstatedbythefollowingcorollary.
+Corollary6. If μ+ ≥ 0.5 and μ > 1 − μ+, then C⋆m ≤ C⋆. Otherwise,auniquethreshold λ∗
+e
+exists suchthat C⋆m > C⋆ if λ >λ∗
+e and C⋆m ≤ C⋆ otherwise. Further,threshold λ∗
+e is increasingin
+μ and satisfies
+H (μ)− μ
+μ+H (μ+)
+1− μ
+μ+
+=φ(λ∗
+e) (11)
+0 0.10.20.30.40.50.60.7
+Priorbelief μ
+0
+0.5
+1
+1.5
+Informationcost 6
+6$
+e
+C⋆
+m
+6 C⋆
+C⋆
+m
+5 C⋆
+Figure 8ImpactofthemachineonDM’scognitiveeffortininformationcost λ and prior μ, for μ+ = 0.7
+In otherwords,iftheDMsufficientlybelievesthatthestateisgood(μ > 1−μ+), themachine
+alwaysdecreaseshercognitivecostsinexpectation.Otherwise,themachineincreasesthecognitive
+
+25
+cost whentheinformationcostissufficientlylarge(λ>λ∗
+e). Thismeans,perhapssurprisingly,that
+a machineinducesmorecognitiveeffortswhentheDMisnotsureaboutthegoodstateandis
+already experiencingahighlevelofcognitiveload(i.e.,forahigh λ), butreducestheseefforts
+when sheisrelativelysureaboutthegoodstate or has alreadyamplecognitivecapacity(i.e.,for
+a low λ). Figure8illustratesthis.Thefiguredepicts λ∗
+e as afunctionofpriorbelief μ for thecase
+where μ+ = 0.7. Notethat λ∗
+e is definedonlyforbeliefvaluesthatarelessthan1−μ+ = 0.3 and
+determines whetherthemachineincreasestheDM’scognitiveeffortornot.
+6. Extensions
+Weextendourbaselinemodelinvariousdirectionstogleanfurtherinsightsregardingtheimpact
+of machineonhumanbehavior.Inparticular,wefirstgeneralizethepayoffstructureandassume
+that DMaimstomaximizeherexpectedpayoff(netofcognitiveeffort)insteadofaccuracy.This
+allowsustoincorporateasymmetriccostsforfalsenegativeandpositiveerrors.Wethenexplore
+settings wheretheDMmistrustsandisbiasedagainstthemachine.Lastly,westudythecasewhere
+the machinereducestheDM’suncertaintyinasymmetricmanner(i.e.,notalwaysrevealingthe
+bad stateuponnegativeassessment),byconsideringthreepossiblestatesoftheworldinsteadof
+two.MoredetailsandallformalresultscanbefoundintheAppendix.
+6.1. GeneralizedPayoffs
+Our basemodelassumesthattheDM’spayoffcorrespondstotheoverallaccuracyofherdecisions.
+Accuracy isindeedthemainperformancemetricofinterestintheempiricalliteratureonmachine-
+assisted decisions.However,ourframeworkcanalsoaccountforageneralpayoffstructureofthe
+form u(a,ω), for(a,ω) ∈ {y,n} ×{g,b}. Thisgeneralpayoffstructuremaypossiblycreatean
+asymmetry intheDM’sincentivesthatourpreviousanalysisdoesnotcapture.Specifically,aDM
+who caresonlyaboutaccuracydoesnotpreferonestateovertheother.Bycontrast,anasymmetric
+payoffstructuremayinducetheDMtoallocatemoreefforttowardaspecificstateattheexpense
+of theother.Thishasimplicationsforherchoicesanddecisionerrors.Forinstance,ifidentifying
+the badstateismoreimportant(asisperhapsthecaseinamedicalsettingwhereitcorrespondsto
+a sickpatient),theDMmaytoleratefalsenegativesmoreandchoose a=n more often.Weassume
+w.l.g that u(y,g) = 1and u(n, g) = 0(seeAppendixB),suchthatdifference δ = u(n, b) − u(y,b)
+representsthenetvalueofcorrectlyidentifyingthebadstate.
+Wefindthatthethresholdstructureofourresultscontinuestoholdinthismoregeneralset-up
+(see AppendixB).Further,thesetofbeliefs μ and μ+ for which p⋆
+m ≥ p⋆ widens as δ increases.
+Similar resultsholdforthefalsepositiveerrorrateandexpectedcognitiveeffort.Thesetofprior
+valuesforwhichthemachineinducesfewerfalsepositives(α⋆m ≤ α⋆) andreducescognitiveeffort
+(C⋆m≤ C⋆) shrinksas δ increases. Andasinourbasecase,themachineconsistentlyreducesthe
+false negativerateregardlessoftheincentivestructureacrossstates.
+
+26
+6.2. IncorporatingTrust(Bias)toMachineInput
+In ourbasemodel,theDMfullytruststhemachineinput.Weextendourmodeltoaccount
+for possiblebiasesthattheDMmayholdagainst(ortoward)themachine.Asaresultofthis
+mistrust, theDMmaynotfullybelieve,forinstance,thatthestateisbadwhenthemachine’s
+signal isnegative.Inthissense,themachineisnotseenasperfectlyaccurateanymore.Infact,
+the frameworkweproposenextcanalsoaccountforthefalsepositiveornegativeerrorsthatan
+inaccurate machinemaygenerate.
+ToaccountfortheDM’strustandbiastowardthemachine,wefollowthebehavioraloperations
+literature (see ¨ Ozer etal.2011)andassumethatgivenmachineinput x1 ∈ {+,−}, theDMupdates
+her beliefaccordingto μ+γ = (1−γ)μ + γμ+ and μ−
+γ = (1−γ)μ, wherehighervaluesoftrust
+parameter γ ∈ [0, 1] indicatesmoretrustinthemachine.Thatis,theDMmixesherpriorbelief μ
+with theposteriorbeliefshewouldhavewereshetofullytrustthemachine.Weretrieveourbase
+modelwhen γ = 1,whiletheDMfullyignoresthemachineandalwaysdecidesalonewhen γ = 0.
+For0 < γ< 1, theDM’sleveloftrustweakenstheeffectofthemachineinputontheDM’sbelief,
+i.e. μ− = 0 < μ−
+γ < μ<μ+γ < μ+. Inparticular,thenegativesignalofthemachinedoesnotfully
+revealthebadstate,thatis μ−
+γ >0 inthiscase.
+In thissetup,weshowthatthemachinealwaysimprovestheDM’sexpectedaccuracyandvalue
+for anytrustlevel(seeProposition2,AppendixD).Wealsofullycharacterizetheimpactofthe
+machineontheDM’sbehavior,andfindthatthemachinemaycontinuetoincreasetheDM’s
+propensityofmakingfalsepositiveerrors.Asinourbasemodel,thishappenswhentheDMdoes
+not stronglyfavorthegoodstateapriori.Incontrasttoourbasemodel,however,themachine
+mayalsoincreasetheDM’spropensitytomakefalsenegativeerrors.ThishappenswhentheDM
+strongly favorsthegoodstateapriori,andisduetotheDM’smistrustinthemachine’snegative
+signal, whichyields μ−
+γ >0 (seeProposition3,AppendixD).
+Similarly,weshowthatthemachinecanincreasetheDM’scognitiveeffortinthissetupaswell.
+This happenswhentheDMsufficientlyfavorseitherthebadorthegoodstate(seeProposition
+4 andFigure13inAppendixD).TheformercaseisconsistentwithTheorem4,andasimilar
+rationale holds.Thesecondcase,however,doesnotoccurinourbasemodel.
+6.3. ASymmetricSettingwithanAdditionalState
+In ourbasemodel,themachinereducestheDM’suncertaintyinanasymmetricwayasitfully
+resolvesthebadstatefortheDMwhenthefirstinformationsource X1 is negative.Wenow
+extend ourmodeltoaccountforasymmetricsetting,andshowthatourkeyinsightscontinueto
+hold. Inparticular,weconsiderathirdstate,whichwecall moderate (denoted by ω = m) anda
+correspondingaccuratedecision,whichisdeclaringthetestas inconclusive (denoted by a=o). We
+
+27
+assume thatthetruestateis good (resp. bad) ifandonlyifboth X1 and X2 are positive(resp.
+negative).Otherwise(i.e.,if(X1,X2) ∈ {(+,−), (−,+)}), thestateisassumedtobe moderate. In
+this setup,themachineneverfullyresolvestheDM’suncertainty.Thatis,althoughanegative
+signal rulesoutthegoodstate,theDMmaystillneedtoprocessinformationtodistinguishthebad
+from themoderatestate.Notethatwithmorethantwostates,theDMnowforms consideration
+sets (see Caplinetal.2019)andmayruleoutsomeofthemapriori,beforeelicitinganysignal.
+WefullycharacterizetheDM’schoiceprobabilitiesasafunctionofherpriorbeliefsinthisset-
+up (Proposition5inAppendixE).Asinourbasemodel,weshowthatwheninformationcost λ
+increases, theDMbecomeslesswillingtoprocessinformationforweakerpriorbeliefs(seeFigure14
+in AppendixE).ThemachinealsocontinuestoalwaysimprovestheDM’saccuracyandexpected
+value(Proposition6,AppendixE).
+Although themachinealwaysimprovesoverallaccuracy,themachinemaystillincreasecertain
+error typesandinducetheDMtoexertmorecognitiveeffortasinourbasemodel.Toexplorethis,
+wefocusonsituationsinwhichthemachinereducesuncertaintyinasymmetricmanner,i.e.where
+the DM’spriorandposteriorbeliefsaresymmetric.Inthiscase,wefindthatthemachineincreases
+the DM’sfalsepositiveandnegativeerrors,aswellashercognitiveeffortifshesufficientlyfavors
+the moderatestateapriori(Propositions7and8,AppendixE).8
+7. ConcludingRemarks
+Humans havealwaysbeeninterestedinharnessingtechnologyandmachinecapabilitiesforcom-
+petitiveadvantage.Withtheadventofdata-basedtechnologiesandAI,thecollaborationbetween
+humansandmachinehasmovedevenmoretotheforefront.Thisstemsfromtheincreasingrecog-
+nition thathumanandmachinescancomplementeachotherinperformingtasksandmaking
+decisions. Inthispaper,wedevelopananalyticalmodeltostudytheimpactofsuchcollaborations
+on humanjudgmentanddecision-making.Ourmodelincorporatesthequintessentialdistinguishing
+features ofhumanandmachineintelligenceinaprimarydecision-makingsettingunderuncertainty:
+the flexibilityofhumanstoattendtoinformationfromdiversesources(and,inparticular,the
+humandomainknowledgeandthedecisioncontext),butunderlimitedcognitivecapacity,andin
+contrast,therigidityofmachinesthatonlyprocessalimitedsubsetofthisinformation,butwith
+great efficiencyandaccuracy.
+Weintegratethesefeaturesendogenouslyutilizingtherationalinattentionframework,andana-
+lytically characterizethedecisionsaswellasthecognitiveeffortspent.Comparingthecasewhen
+the humandecidesalonetothecasewithmachineinput,weareabletodiscerntheimpactof
+machine-basedpredictionsondecisionsandexpectedpayoff,accuracy,errorrates,andcognitive
+8 Accuracy increasesbecausefalsepositiveandnegativeerrorsareoffsetbyadecreaseinfalsemoderateerrors.
+
+28
+effort. Toputtheseresultsinperspective,consideragenericmedicalassessmentsetup,inwhich
+machine-basedpredictions(e.g.,MLalgorithmprocessingdigitalimages)providediagnosticinput
+to thephysician.Thephysiciancanconductmoreassessmentsandtestswiththepatient.When
+both assessmentsarepositive,thenthepatientis“sick”.Thepriorreflectsthetruenatureofthe
+disease’sincidence within thepatientpopulation(probabilityofpatientbeingsick).
+Our findingssuggestthatthemachineimprovesoveralldiagnosticaccuracy(Proposition1)by
+decreasing thenumberofmisdiagnosedsickpatients(Theorem3).Themachinefurtherboosts
+the physician’spropensitytodiagnosepatientsashealthywhenthedisease’sincidenceishigh
+(Theorem 1),andtomisdiagnosehealthypatientsmoreoftenwhentheincidenceislow.The
+physicianalsoexertslesscognitiveeffortswiththemachine,whenthedisease’sincidenceishigh
+(Theorem 4).Incontrast,themachineinducesthephysiciantoexertmorecognitiveeffortwhen
+the disease’sincidenceislowandthephysicianisundersignificanttimepressure(Corollary6).
+In thisexample,thepatientissickwhenbothassessmentsarepositive,whichcorrespondstoour
+basic setup.Otherinformationstructures,however,arepossible.Forinstance,considerageneric
+judicial rulingtask,inwhichmachine-basedpredictions(e.g.,MLalgorithmcheckingevidence
+authenticity,orlie-detectiontest)provideevidencetothejudge.Thejudgecananalyzeadditional
+data relevanttothecase.When any assessmentispositive,thenthesuspectis“guilty.”Theprior
+reflects thetruenatureofthe crime level within thesuspectpopulation(probabilityofsuspect
+beingguilty).AswebrieflymentioninSection3.2,ourbasicsetupcanaccountforthissituationby
+relabelingthegoodstateandthepositiveinformationinourmodelasthebadandnegativeones,
+respectively.Thisalsoreversestheeffectinourresults,asTable1depicts.Thistableprovidesa
+flavorofthedifferentimplicationsthatcouldarisefromourfindingsintwohypotheticalsettings
+fitting toourcontext.
+Medical assessment&diagnosticaccuracy Judicial ruling&convictionaccuracy
+• Overalldiagnosticaccuracyisimproved • Overallconvictionaccuracyisimproved
+• Fewermisdiagnosedsickpatients • Feweracquittedguiltysuspects
+• More patientsdeclaredhealthywhenthe
+disease incidenceishigh
+• More suspectsdeclaredguiltywhencrime
+levelislow
+• More misdiagnosedhealthypatientswhen
+the diseaseincidenceislow
+• More convictednon-guiltysuspectswhen
+crime levelishigh
+• Physicianspendslesscognitiveeffortto
+diagnose whentheincidenceishigh
+• Judge spendslesscognitiveefforttoassess
+evidence whencrimelevelislow
+• Physicianspendsmorecognitiveeffortto
+diagnose whentheincidenceislowandtime
+is constrained
+• Judge spendsmorecognitiveeffortto
+assess evidencewhenthecrimelevelishigh
+and timeisconstrained
+Table1: Impact ofthemachineonhumandecisionsfortwogenericsettings
+
+29
+As theaboveexampleshighlight,theincorporationofmachine-basedpredictionsonhumandeci-
+sions isnotalwaysbeneficial,neitherintermsofthereductionoferrorsnortheamountofcognitive
+effort. Thetheoreticalresultswepresentunderscorethecriticalimpactmachine-basedpredic-
+tions haveonhumanjudgmentanddecisions.Ouranalysisalsoprovidesprescriptiveguidanceon
+when andhowmachineinputshouldbeconsidered,andhenceonthedesignofhuman-machine
+collaboration.Weofferbothhopeandcaution.
+On thepositiveside,weestablishthat,onaverage,accuracyimprovesduetothiscollaboration.
+However,thiscomesatthecostofmakingcertaindecisionerrorsmoreandincreasedcognitive
+effort, inparticularwhenthepriorbelief(onthe“good”state)isrelativelyweak.Consequently,
+applications ofmachine-assisteddecision-makingiscertainlybeneficialwhenthereisapriorisuffi-
+cientconfidenceinthegoodstatetobeidentified.Inthiscase,themachineinputhasatendency
+toward“confirmingtheratherexpected,”andthisprovablydecreasesallerrorratesandimproves
+the “efficiency”ofthehumanbyreducingcognitiveeffort.Insharpcontrast,cautionisadvised
+for applicationsthatinvolvesearchingandidentifyingasomewhatunlikelygoodstate,especially
+when thehumanissignificantlyconstrainedincognitivecapacityduetolimitedtimeormulti-
+tasking. Inthiscase,apositiveindicationbythemachinehasastrongeffectof“falsifyingthe
+expected.”Theresultingincreaseintaskdifficultynotonlydeterioratestheefficiencyofthehuman
+byinducingmorecognitiveeffort,butalsoincreasesherpropensitytoincorrectlyconcludethat
+the stateisgood.Hence,human-machinecollaborationmayfailtoprovidetheexpectedefficiency
+gain (andtosomeextentaccuracy)preciselywhentheyarearguablymostdesirable.Ourresults
+and insightsarequiterobust;theyremainvalidwhentheDMhasamistrustorbiasagainstthe
+machineassessment,andingeneralizedsettingswhenthepayoffsormachineimpactonpotential
+false positiveandnegativeerrorsarealtered.
+Finally,weconsiderinthispaperthreedifferentextensionsofourbasemodel,butothersare
+possible.AnoteworthyresearchdirectionistoexplorehowourfindingschangewhentheDMdoes
+not fullyknowthemachine’saccuracy.deV´ericourtandGurkan(2022)haverecentlyproposeda
+dynamic bayesianframeworktostudythisproblem.Afruitfulapproachconsiststheninconsidering
+a settingsimilartotheirs,inwhichtheDMisrationallyinattentiveasinours.
+Another interestingavenueoffutureresearchistheestimationandvalidationofourmodelusing
+actual data.Thiscouldbeconductedinaspecificmedicalassessmentsetting,suchasradiologists
+making diagnosticdecisionswithMLinputfromdigitalimages.Anothersuitablesettingisthe
+sepsis alertsystemdiscussedinAyvacietal.(2021).Here,analgorithm(machine)studiesthe
+health statusofapatienttogenerateanalert,whichthentriggersadditionaldiagnosticactions
+bythecaregiverstoconfirmsepsisdetection.Differentpatientcharacteristics(e.g.,age,disease
+history) naturallyleadtodifferentriskprofilesregardingsepsis.Thesepriorscanbeestimated
+
+30
+on thebasisofpastdata.Throughcontrolledexperimentswithandwithoutmachineinput,it
+wouldbepossibletostudythechangesinoverallaccuracyindetection,aswellastheerrorrates.
+Conducting theseexperimentsundervaryingtimeconstraints,theimpactofinformationcostscan
+bedetermined.Combiningsuchempiricalresultswiththetheoreticalpredictionswouldfurther
+advanceourunderstandingoftheconditionsthatmakemachine-basedinputsmostbeneficial.

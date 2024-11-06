@@ -1,0 +1,1534 @@
+Grand-Clément, J., & Pauphilet, J. (2024). The best decisions are not the best advice:
+Making adherence-aware recommendations. Management Science.
+
+Abstract
+Many high-stake decisions follow an expert-in-loop structure in that a human operator receives recommendations
+from an algorithm but is the ultimate decision maker. Hence, the algorithm’s recommendation may
+differ from the actual decision implemented in practice. However, most algorithmic recommendations are
+obtained by solving an optimization problem that assumes recommendations will be perfectly implemented.
+We propose an adherence-aware optimization framework to capture the dichotomy between the recommended
+and the implemented policy and analyze the impact of partial adherence on the optimal recommendation.
+Our framework provides useful tools to analyze the structure and to compute optimal recommendation policies
+that are naturally immune against such human deviations, and are guaranteed to improve upon the
+baseline policy.
+
+Key words : Expert-in-the-loop systems; Prescriptive analytics; Recommender systems; Discretion; Markov
+Decision Processes
+
+1. Introduction
+While some decisions can be automated and made directly by algorithms based on artificial intelligence
+(AI), many high-stake decisions follow an expert-in-loop structure in that an expert decision
+maker (e.g., a doctor) receives information, predictions, or even recommendations, and decides
+which course of action to follow. Consequently, the human decision maker (DM) does not systematically
+implement what the algorithm recommended. In other words, they may have a discretionary
+power to override/reject the recommendations from the algorithm, hence impacting the potential
+benefits from the AI tool. For instance, in a field experiment, Kesavan and Kushwaha (2020)
+1
+
+2
+observed that merchants overrode the recommendations from a data-driven decision tool 71.24%
+of the time, resulting in a 5.77% reduction in profitability.
+To understand this phenomenon and its ultimate impact on the quality of the decision being
+made, a growing body of literature has investigated the mechanisms driving non- or partial adherence
+of humans to algorithmic recommendations. In this work, we ask a complementary question:
+Given the fact that the decision maker will partially implement recommendations made by an
+algorithm, should we adjust these recommendations in the first place and how? In other words,
+we investigate the impact of partial adherence on algorithm design and decision recommendation.
+Our main contributions are as follows.
+A new model of partial adherence. We consider a model of sequential decision-making based
+on Markov decision processes (MDPs) and assume that the decision maker currently follows a
+baseline policy πbase (or state of practice) and is provided with a recommendation policy πalg by an
+algorithm. We propose a framework, namely adherence-aware MDP, to compute recommendations
+that are immune against human deviations. Our framework is behavioral in that it models the
+human switching behavior between their baseline policy and the algorithmic recommendations,
+but without specifying why these deviations are undertaken by the DM. Despite its simplicity,
+we show that our model is consistent with five different models for the DM’s adherence decision,
+including random or adversarial adherence decisions. Furthermore, we provide examples where the
+co-existence of the human DM and the algorithmic recommendations performs either strictly worse
+or strictly better than any of the two policies alone, hence illustrating the ability of our model to
+capture the rich range of situations observed in practice. In particular, we show that (even rare)
+human deviations from algorithmic recommendations can lead to arbitrarily poor performance
+compared with both the expected performance of the algorithm and that of the current state of
+practice. In other words, we show that deploying a recommendation engine that was designed
+assuming its recommendations will be final decisions can have a dramatic impact on the effective
+performance. This set of negative results underscores the importance of accounting for the current
+baseline and the partial adherence phenomenon when building recommendation systems.
+3
+A tractable, structured, and flexible model. We study the appealing structural and computational
+properties of our adherence-aware MDP framework. In particular, we show that an optimal
+recommendation policy may be chosen stationary and deterministic, which is important from an
+implementation standpoint, and that it may be computed efficiently by a reduction to a classical
+MDP problem. We also show several structural properties, such as piecewise constant optimal
+recommendation policy and monotonicity of the optimal return (both as regards the adherence
+level). We identify classes of MDPs for which the decision maker may overlook the issue of partial
+adherence at some states (i.e., where the partial adherence phenomenon has no impact on the algorithmic
+recommendation to be made). We finally present extensions of our framework, including
+models where the adherence levels are state-dependent, action-dependent, uncertain, or where the
+baseline policy is not entirely known.
+Numerical study. We evaluate the practical impact of our model on a series of numerical experiments.
+Our simulations highlight the importance of accounting for the potential non-adherence of
+the decision maker, showing empirically that severe performance deteriorations can happen when
+partial adherence is overlooked in the search for an optimal policy. The magnitude of this performance
+deterioration depends both on the current baseline policy and on the level of adherence of
+the decision maker. Consequently, in addition to classical sensitivity and robustness analyses used
+in the literature, we encourage practitioners to conduct a systematic adherence-robustness analysis
+of their algorithms to assess their effective performance prior to deployment.
+The rest of the paper is organized as follows: We present related work from the operations
+literature in Section 2. Section 3 introduces our framework for sequential decision-making under
+partial adherence, discusses its connection with various models for the DM’s adherence decision,
+and provides examples of situations where the co-existence of human and algorithmic decisions leads
+to improved or, on the contrary, impaired system performance. In Section 4, we present algorithms
+to compute optimal recommendation policies, and we analyze their structural properties and their
+sensitivity to the adherence level. We illustrate the practical impact of imperfect adherence and
+the value of our framework on numerical experiments in Section 5. Finally, we discuss extensions
+of our framework in Section 6.
+4
+2. Literature review
+Our paper contributes to the rich literature of behavioral operations that studies the partial adherence
+of decision makers to machine recommendations. This phenomenon is also referred to in the
+literature as discretion, overriding, or deviation.
+Many field studies have documented this phenomenon in a wide range of tasks and industries
+such as demand forecasting (Fildes et al. 2009, Kremer et al. 2011, Kesavan and Kushwaha 2020),
+warehouse operations (Sun et al. 2022), medical treatment adherence (Lin et al. 2021), or task
+sequencing (Ibanez et al. 2018). Actually, partial adherence also occurs when the recommendation
+does not come from a machine. In the context of chronic diseases, for instance, the World Health
+Organization (WHO) defines adherence as “the extent to which a person’s behavior-taking medication,
+following a diet, and/or executing lifestyle changes corresponds with agreed recommendations
+from a health-care provider” (Sabat´e 2003). The WHO notes that adherence of the patients to
+therapy for chronic illnesses is as low as 50 % in the long-term, and that this partial adherence leads
+to suboptimal clinical outcomes. To anticipate its potential impact on operational performance,
+it is important to understand the drivers of partial adherence, such as information asymmetry or
+algorithmic aversion.
+In the context of operations, assuming that humans have more and better information than
+the machine, deviations due to information asymmetry can be beneficial to effective performance.
+In an inventory management setting, Van Donselaar et al. (2010) conclude that providing store
+manager discretion may result in higher profits due to their superior information. In a field experiment
+with an automotive replacement parts retailer, Kesavan and Kushwaha (2020) evaluate that
+merchants overriding demand forecasts increases (resp. decreases) profitability for growth- (resp.
+decline-) stage products, suggesting that the information advantage of merchants increases when
+the machine has limited access to historical data on the product. However, on average, they observe
+a negative effect of human overriding power. Similarly, Fildes et al. (2009) document the heterogeneous
+impact of human adjustment on prediction accuracy, depending on the company but also
+5
+the magnitude and direction of the adjustment. In another context, Sun et al. (2022) study the
+box size recommendation algorithm of Alibaba. Since the algorithm ignores the foldability and
+compressibility of the items, they observe that warehouse workers are able to pack some orders in
+smaller boxes than the ones recommended.
+Partial adherence can also result from multiple conflicting objectives that are weighted differently
+by the human and the algorithm. In Alibaba’s warehouses for instance, Sun et al. (2022) hypothesize
+that workers switching to larger boxes might do so to save packing effort at the expense of time and
+cost. In a healthcare setting, Ibanez et al. (2018) observe that doctors tend to re-prioritize tasks so
+as to group similar tasks together and reduce mental switching costs, but that such prioritization
+may reduce long-term productivity.
+Another reason that could explain why humans fail to follow machine recommendation is algorithm
+aversion, as first documented by Dietvorst et al. (2015). Algorithm aversion refers to a general
+preference to rely on humans instead of algorithms. This general preference could be due to an
+inflated confidence in human performance. In a lab experiment, for instance, Logg et al. (2019)
+observed that subjects (and in particular experts) were more prone to follow their own judgment
+over an algorithm’s advice, or advice provided by another human. Alternatively, Dietvorst et al.
+(2018) hypothesize that decision makers seek control over the output. In an empirical study, they
+successfully reduced algorithm aversion by offering decision makers some control over the machine’s
+output. Lin et al. (2021) propose and empirically evaluate algorithm use determinants in algorithm
+aversion.
+In an effort to propose alternative explanations to algorithm aversion, de V´ericourt and Gurkan
+(2023) develop a theoretical framework to study the evolution of the decision maker’s belief about
+the performance of a machine and her overruling decisions over time. In their setting, decisions
+and recommendations are binary (to act or not to act, e.g., collect a biopsy or not) and the
+decision maker only collects performance data when choosing to act. Because of this verification
+bias, de V´ericourt and Gurkan (2023) identify situations under which a (rational) decision maker
+6
+fails to learn the true performance of the machine, and indefinitely overrules its recommendation
+with some non-zero probability.
+Understanding the drivers of partial adherence is useful to propose solutions and incorporate
+behavioral aspects into the algorithmic recommendations. In a pricing setting, for example, Caro
+and de Tejada Cuenca (2023) observe adherence patterns that are consistent with the fact that
+inventory and sales are more salient to managers and conduct two interventions aimed at increasing
+the salience of revenues. A growing literature has studied features of the recommendation system
+or the recommended policy that could increase adoption, such as partial control over the output
+(see discussion above and Dietvorst et al. 2018), simplicity (Bastani et al. 2021), or interpretability
+(see, e.g., Kallus 2017, Bravo and Shaposhnik 2020, Ciocan and Miˇsi´c 2022, Jacq et al. 2022).
+The underlying intuition is that policies that have simple structural forms are more likely to be
+adopted because of legal requirements for a ‘right to explanation’ (Goodman and Flaxman 2017)
+and because decision makers and stake-holders value policy they can understand and audit (Bertsimas
+et al. 2013, 2022). Assuming that humans are more likely to adhere to recommendations
+that constitute small changes to their current practice, Bastani et al. (2021) propose a reinforcement
+learning approach to compute optimal ‘tips’, i.e., small changes in the current practice, and
+validate their approach in a controlled experiment. In an attempt to increase interpretability of
+reinforcement learning policies, Jacq et al. (2022) propose the lazy-MDP framework to learn and
+recommend when to act (i.e., in what states of the system), on the top of the decisions. Meresht
+et al. (2020) propose to learn when to switch control between machines and human decision makers.
+Nonetheless, these works assume that the simplicity or interpretability of the recommendation
+will not only increase adherence, but will lead to perfect adherence. In this paper, we complement
+this literature by challenging this assumption and investigating the impact of partial adherence
+directly on the actions to be recommended. We develop a framework to incorporate the potential
+departure of the human decision maker within the search for a good recommendation policy. Our
+goal resembles that of robust optimization under implementation errors where there is a similar
+7
+discrepancy between the computed solution and the implemented one as in Bertsimas et al. (2010),
+Men et al. (2014), except that their error model is purely adversarial and their decision problem
+static, and that our model accounts for the current baseline practices.
+In a similar vein, Sun et al. (2022) reduce non-adherence in Alibaba’s warehouses by 19.3%
+and packing time by 4.5%, by modifying the box size recommendations for the “at-risk” orders
+(defined as having >50% chance of being overruled). In this paper, we have a similar objective of
+adjusting the recommendation of the algorithm to the expected adherence level. However, instead
+of an ad-hoc adjustment, we propose to account for the adherence level directly in the optimization
+problem which the recommendation is a solution of. Furthermore, our objective is not to increase
+adherence per se but to adjust the algorithm’s recommendation to the adherence level, so as to
+increase the performance of the human-in-the-loop system.
+3. Modeling partial adherence in a decision framework
+In this section we formally introduce our model of decision under partial adherence.
+We consider a human decision maker (DM) which repeatedly interacts with an environment. The
+goal of the DM is to maximize a cumulative expected return, which captures both the instantaneous
+reward and the long-run objective. A policy of the DM is a map from the set of possible states of
+the environment to the set of actions. We assume that we have access to a baseline policy, called
+πbase, which models the historical decisions of the DM. In a healthcare setting, for example, the
+DM is a medical practitioner, observes the health condition of a patient at each time period, and
+chooses a treatment to maximize the chances of survival, e.g., intravenous fluids and vasopressors
+for hospital patients with sepsis (Komorowski et al. 2018), proactive transfers to the intensive care
+units for patients in the emergency room (?), or drug treatment decisions for heart disease in
+patients with type 2 diabetes (Steimle and Denton 2017). The baseline policy πbase captures the
+current standard of care.
+Classical methods from the operations management literature design models and algorithms to
+compute an alternative recommendation policy πalg that leads to improved performance compared
+8
+with the baseline. The underlying assumption is that the DM, convinced by the value of the algorithmic
+approach, will systematically follow πalg and not revert to πbase. However, in many practical
+problems, πalg is only a recommendation. The practitioner does not commit to implementing it.
+She has some discretionary power and the resulting policy is likely to be neither πbase nor πalg,
+but a mixture of the two. The main objective and contribution of our paper is to incorporate this
+partial adherence phenomenon within the optimization problem that defines πalg, i.e., adjust the
+recommended policy to the adherence level.
+3.1. Preliminaries on Markov decision process
+Formally, we adopt the framework of Markov Decision Processes (MDPs; Puterman 2014). The
+system or environment is described via a set of possible states S. At every decision period, the
+DM is at a given state s ∈ S, chooses an action a ∈ A, transitions to the next state s′ ∈ S with
+a probability Psas′ ∈ [0, 1] and obtains a reward rsas′ ∈ R. The future rewards are discounted by a
+factor λ ∈ (0, 1) and we assume that S and A are finite sets. An MDP instance M consists of a
+tuple M= (S,A,P, r,p0,λ), with r = (rsas′)s,a,s′ ∈ RS×A×S and P = (Psas′)sas′ ∈ (Δ(S))S×A, and
+p0 ∈ Δ(S) is an initial probability distribution over the set of states S. Here, we denote Δ(S) the
+simplex over S, defined as
+Δ(S)=
+(
+p ∈ RS | ps ≥0, ∀ s ∈ S,
+X
+s∈S
+ps =1
+)
+.
+A policy π maps, for each period t ∈ N, the state-action history (s0, a0, s1, a1, ..., st) to a probability
+distribution over the set of actions A. A policy π is Markovian if it only depends of the current
+state st, and stationary if it is Markovian and it does not depend on time. Therefore, a stationary
+policy is simply a map π : S →Δ(A). We call Π = (Δ(A))S the set of stationary policies, ΠM the
+set of Markovian policies, and ΠH the set of all policies (possibly history-dependent). In an MDP,
+the goal of the DM is to compute a policy π to maximize the return R(π), defined as
+R(π)=Eπ
+"
+X+∞
+t=0
+λtrstatst+1
+#
+, (3.1)
+9
+with st the state visited at time period t, at the action chosen with probability πsa, and the
+expectation is as regards with the distribution defined by the policy π on the set of infinite-horizon
+trajectories. The return R(·) is sometimes called expected reward, and we use the term return to
+distinguish it from the instantaneous reward rsa. The value function vπ ∈ RS of a policy π ∈ ΠH
+represents the return obtained starting from any state: vπ
+s = Eπ
+hP+∞
+t=0 λtrstatst+1 | s0 =s
+i
+, ∀ s ∈ S.
+Note that in all generality, the return function π 7→ R(π) is neither convex nor concave on Π. An
+optimal policy can be chosen stationary and deterministic and can be computed efficiently (see
+Puterman 2014, chapter 6). We will say that a policy π′ is an ϵ-optimal policy if its return is within
+ϵ>0 of the optimal return: R(π′)+ϵ≥max{R(π) | π ∈ Π}.
+Remark 3.1 (Finite-horizon setting). In this paper, we only consider MDPs with infinite
+horizon. It is straightforward to extend our framework and results to the case of finite-horizon
+MDPs by adding an absorbing state with instantaneous reward 0 after the last period.
+3.2. Adherence-aware MDP
+We now incorporate the phenomenon of partial adherence into an MDP framework. Let M be
+an MDP instance, πbase a baseline policy, and πalg a recommendation policy. We assume that πbase
+belongs to the set Π of stationary policies. To capture the fact that the DM does not systematically
+implement πalg, let us introduce a parameter θ ∈ [0, 1], which we call the adherence level. Intuitively,
+the adherence-level θ quantifies the compliance of the decision maker to follow the recommendation
+policy πalg instead of the baseline policy πbase. Therefore, the policy effectively implemented by the
+DM depends on πalg, πbase, and θ. In particular, we consider an effective policy of the form:
+πeff(πalg, θ)=θπalg +(1−θ)πbase. (3.2)
+According to this model, when θ = 0, the DM always follows the baseline policy πbase, and when
+θ = 1, the DM always follows the recommendation policy πalg. When θ ∈ (0, 1), the DM follows an
+effective policy πeff(πalg, θ), which is a mixture of πalg and πbase. Consequently, the effective return
+for the DM is R(πeff(πalg, θ)), with πeff(πalg, θ) = θπalg + (1 − θ)πbase. For a fixed adherence level
+10
+θ, our objective is to compute an optimal recommendation policy such that the effective return
+πalg 7→ R(πeff(πalg, θ)) is maximized, i.e., our goal is to solve the following decision problem, called
+Adherence-aware MDP (AdaMDP):
+sup
+πalg∈ΠH
+R(πeff(πalg, θ)). (AdaMDP)
+When the supremum in the above optimization program is attained, we write π⋆
+alg(θ) for an optimal
+recommendation policy and we write π⋆
+eff(θ) for the resulting optimal effective policy, i.e., π⋆
+eff(θ)=
+πeff(π⋆
+alg(θ), θ). For simplicity, we assume for now that θ is the same for all states s ∈ S, an assumption
+we will challenge in Section 6. We first note that an optimal policy π⋆
+alg(θ) for AdaMDP can be
+chosen stationary and deterministic, two properties that are appealing from an implementation
+standpoint.
+Proposition 3.1. The supremum in AdaMDP is attained at an optimal recommendation policy
+π⋆
+alg(θ) that can be chosen stationary and deterministic:
+sup
+πalg∈ΠH
+R(πeff(πalg, θ))= max
+πalg∈Π
+R(πeff(πalg, θ)).
+The proof of Proposition 3.1 uses some more advanced results that we will introduce in Section
+4.2. We present the detailed proof in Appendix F.
+Remark 3.2. Interestingly, a similar type of mixture policies have been studied in the online
+learning literature, yet with a different motivation. To address the exploration-exploitation tradeoff,
+many policies obtained via reinforcement learning are implemented together with an ad-hoc
+exploration mechanism. Instead, Shani et al. (2019) propose to compute “exploration-conscious”
+policies that are designed for a particular exploration policy (e.g., choosing actions uniformly at
+random) and exploration rate, which play a similar role as πbase and 1 − θ in our framework.
+However, they view the exploration policy and exploration rate as additional parameters one can
+tune to mitigate the exploration-exploitation tradeoff, while we consider πbase and θ as uncontrolled
+inputs (arising from potential human deviations) and study their impact on actual performance.
+11
+3.3. Discussion: Mechanisms for partial adherence and effective policy
+Our adherence-aware MDP framework posits that the effective policy can be simply expressed as
+a convex combination of the algorithmic and the baseline policies, as presented in (3.2). In this
+section, we further justify the practical relevance of our framework by discussing how different
+models for the DM’s adherence decision connects with our framework.
+To model the DM’s decision to adhere, we introduce a variable us,t ∈ [0, 1] indicating, in state
+s, at time t, whether she follows the recommended policy πalg (the case us,t = 1) or whether she
+follows πbase (the case us,t =0). We call us,t the adherence decision at state s and period t, and we
+write u := (us,t)s∈S,t∈N. With this notation, the effective policy at state s at time t is given as
+πeff(πalg,u)s,t =us,tπalgs,t +(1−us,t)πbases,t, (3.3)
+and specifying an adherence mechanism is equivalent to specifying how the DM chooses u.
+Random model. For example, the DM could sample us,t following any distribution with support
+included in [0, 1] and with a mean θ. For instance, in the case of a Bernoulli distribution with
+parameter θ, at each time period, the decision maker follows πalg with probability θ and πbase with
+probability 1 − θ. In practice, this random model of adherence decisions can be interpreted as
+being agnostic to the reasons for partial adherence. Whatever the cause (e.g., algorithm aversion,
+information asymmetry), they are inaccessible to the algorithm, hence are perceived by the algorithm
+as random deviations from the recommended policy. In other words, this model mimics the
+observed behavior of DM but does not capture from first principles why she sometimes decides to
+deviate from the recommendations. For example, in a stylized setting with a rational DM trying
+to learn whether a machine is more accurate than her, de V´ericourt and Gurkan (2023) identify
+regimes where the DM’s belief oscillates permanently, hence justifying models like this one, where
+the DM’s adherence decisions us,t and us,t′ may be different for t ̸=t′, even though the state is the
+same. In the next theorem, we show that this model with random adherence decision u is exactly
+equivalent to AdaMDP.
+12
+Theorem 3.1. Consider the following model of random adherence decisions, where each
+(us,t)s∈S is sampled from a distribution with mean (θ, ..., θ) ∈ [0, 1]S, independently across t ∈ N.
+Then
+sup
+πalg∈ΠH
+Eu [R(πeff(πalg,u))]= max
+πalg∈Π
+R(πeff(πalg, θ))
+and an optimal recommendation may be chosen stationary and deterministic in the left-hand side
+of the above equation.
+We present a detailed proof in Appendix A. Note that under the assumption of Theorem 3.1,
+the random variables us,t and us′,t may be dependent for s ̸=s′. In fact, the proof relies on showing
+that Eu [R(πeff(πalg,u))]=R(Eu [πeff(πalg,u)]), despite the return R(·) being non-linear. This follows
+from the properties that us,t and us′,t′ are independent across pairs (s, t), (s′, t′) such that t ̸= t′.
+Noting that Eu [πeff(πalg,u)]=πeff(πalg, θ) concludes the proof.
+Adversarial model. Alternatively, as discussed in the literature review in Section 2, partial adherence
+can be driven by information asymmetry or conflicting objectives between the algorithm and
+the DM. In other words, the decision maker could choose to follow the recommendation policy πalg
+or the baseline policy πbase according to a different MDP instance M′ than the MDP instance M
+that parametrized the algorithm. Adopting a conservative view, one can assume the DM picks each
+us,t ∈ [θ, 1] adversarially in a set B ⊆[θ, 1]S×N:
+sup
+πalg∈ΠH
+min
+u∈B
+R(πeff(πalg,u)) . (3.4)
+Without any restrictions, i.e., in the case B =[θ, 1]S×N, the DM could decide to follow the algorithm
+in state s at time t and, when visiting the same state s at a later stage, decide to override it. Hence,
+we can enrich the set B with several consistency constraints to model more realistic situations. In
+some settings, for instance, it might be more realistic to assume a time-invariant adversarial model,
+i.e., to assume that the DM’s adherence behavior depends on the state but is consistent over time.
+For example, one could assume that she chooses an adherence decision us ∈ [θ, 1] adversarially for
+each state s and adopts this policy throughout, i.e., us,t =us,∀ t ∈ N. Note that the time-invariant
+13
+adversarial model assumes that the decision maker has some discretionary power at the beginning
+but commits to one policy for the rest of the trajectory, which can be seen as contradictory. Another
+realistic model consists of state-invariant adherence decisions, i.e., us,t = ut ∈ [0, 1] across all pairs
+(s, t) ∈ S × N. A fourth model could assume that the adherence decisions are time- and stateinvariant,
+i.e., that us,t =u ∈ [0, 1] across all pairs (s, t) ∈ S ×N. Fortunately, as stated (informally)
+in Theorem 3.2, studying our effective policy (3.2) is equivalent to studying any of these three
+adherence mechanisms:
+Theorem 3.2. (Informal statement) An optimal algorithmic recommendation π⋆
+alg(θ), solution
+to AdaMDP, is an optimal solution of the decision problem (3.4), whenever the adherence decision
+u is chosen according to one of the following adversarial models: for all (s, t) ∈ S ×N,
+• (Unconstrained Adversarial) us,t chosen independently and adversarially in [θ, 1].
+• (Time-invariant Adversarial) us,t = us with us chosen independently and adversarially in
+[θ, 1].
+• (State-invariant Adversarial) us,t = ut with ut chosen independently and adversarially in
+[θ, 1].
+• (Time- and State-invariant Adversarial) us,t =u with u chosen adversarially in [θ, 1].
+Additionally, strong duality holds for these models of adversarial adherence decisions.
+We defer a formal statement and proof of Theorem 3.2 to Appendix B. Theorem 3.2 shows that
+AdaMDP can be interpreted as the robust counterpart of the aforementioned adversarial models,
+and perhaps surprisingly, that these robust models yield the same worst-case return, and from the
+proof of Theorem 3.2, the same optimal policy as well. The strong duality results show that the
+case where πalg is chosen before the adherence decisions u and the case where πalg is chosen after
+the adherence decisions u are equivalent. We should emphasize, however, that Theorem 3.2 only
+claims an equivalence in terms of optimal effective return. For a given (sub-optimal) policy, its
+effective return under each model (AdaMDP or one of the adversarial models) can differ.
+14
+Remark 3.3. The proof of Theorem 3.2 shows that for these adversarial models, a worst-case
+us,t can be chosen as us,t = θ,∀(s, t) ∈ S ×N. Therefore, when θ = 0, we recover the fact that the
+agent never follows the algorithmic recommendation πalg.
+Overall, Theorems 3.1 and 3.2 show that our simple proposal for adherence-aware MDPs subsumes
+a collection of DM-level models of partial adherence, hence justifying our subsequent analysis
+of the effective policy (3.2) and the optimal recommendation problem (AdaMDP).
+We summarize the equivalences obtained in this section in Table 1. For the adversarial model,
+time-invariance and state-invariance are described in Theorem 3.2. For the random model of adherence
+decisions, time-invariance corresponds to a model where there exist two periods t ̸=t′ for which
+the random variables us,t and us′,t′ are dependent for some states s, s′ ∈ S, and state-invariance
+corresponds to the case where there exist s ̸= s′ and t ∈ N for which us,t and us′,t are dependent
+random variables. The assumption in Theorem 3.1 corresponds to random models that are not
+time-invariant. We provide more discussion on these time-invariant and state-invariant random
+models at the end of Appendix A.
+Constraints Model of adherence decisions
+Time-invariance State-invariance Random Adversarial
+× × AdaMDP AdaMDP
+× ✓ AdaMDP AdaMDP
+✓ × unknown AdaMDP
+✓ ✓ unknown AdaMDP
+Table 1 Summary of the adherence decision models considered in this paper and their relations with AdaMDP.
+Cardinality-constrained model. Under an adversarial lens, one could model the DM’s unwillingness
+to implement a large number of changes to her current practice by, e.g., imposing a limit
+on the number of states where she adheres. For example, let us assume that adherence decisions
+15
+are time-invariant and let us model the DM’s adherence problem as that of finding up to k states
+where she follows the algorithmic recommendation, with k ∈ N:
+min
+u∈{0,1}S,
+P
+s∈S us≤k
+R(πeff(πalg,u)). (Constrained-AdaMDP)
+The evaluation problem above (let alone the problem of then optimizing for πalg) is hard, as we
+characterize in the following result:
+Theorem 3.3. Constrained-AdaMDP is APX-hard, i.e., there exists a constant α >0, for which
+it is NP-hard to approximate Constrained-AdaMDP within a factor smaller than 1+α.
+Our proof of Theorem 3.3 is based on a reduction from the constrained assortment optimization
+under the Markov Chain-based choice model (D´esir et al. 2020) and we provide the details in
+Appendix C. This shows that adding a simple cardinality constraint to AdaMDP makes the decision
+problem intractable. For the sake of completeness, and since Constrained-AdaMDP may be of
+independent interest, we provide a mixed-integer optimization formulation for solving Constrained-
+AdaMDP in Appendix D.
+3.4. Examples of competition/complementarity between the human and the
+algorithm
+Before turning to a more formal analysis of our framework, we demonstrate the implications of the
+effective policy (3.2) on a simple MDP instance, to provide some intuition on the interactions at
+play between πalg and πbase as well as illustrate the rich range of situations that can arise in our
+framework. Indeed, we provide an example where the co-existence of the algorithmic and baseline
+policies can lead to arbitrarily bad performance and another example where, on the contrary, they
+complement each other.
+We consider the MDP instance from Figure 1. There are 5 states, the rewards are independent
+from the chosen action and only depend on the current state. We assume that the transitions are
+deterministic and are represented with dashed arcs in Figure 1a, along with the rewards above
+the states. The actions consist in choosing the possible next states. The MDP starts in State 1,
+16
+and State 4 and State 5 are absorbing. The MDP instance is parametrized by ϵ ∈ {−1, 1}, which
+impacts the reward of State 5.
+The current policy πbase is represented in Figure 1b. Observe that πbase prescribes to transition
+from State 2 to State 5 but that, according to πbase, State 2 should not be visited in the first place.
+For example, in a healthcare setting, State 2 could correspond to a newly introduced treatment,
+which the practitioner is not used to prescribing. The expected return of πbase is
+R(πbase)=
+λ2
+1−λ
+,
+where λ ∈ (0, 1) is the discount factor. Note that, by definition of the effective policy πeff , for any
+θ ∈ [0, 1], πbase = πeff(πbase, θ). In other words, for any adherence level θ ∈ [0, 1], recommending πbase
+leads exactly to the implementation of πbase. We further consider that the algorithm prescribes the
+policy πalg represented in Figure 1c, whose expected return is
+R(πalg)=0.1λ+
+λ2
+1−λ
+>R(πbase) .
+Detailed computations of policy returns reported in this section are presented in Appendix E.
+1
+2
+3
+r4 = 1
+r5 = 1 + ϵ
+r2 = 0.1
+r3 = 0
+r1 = 0 4
+5
+(a) MDP instance.
+1
+2
+3
+r4 = 1
+r5 = 1 + ϵ
+r2 = 0.1
+r3 = 0
+r1 = 0 4
+5
+(b) Baseline policy πbase.
+1
+2
+3
+r4 = 1
+r5 = 1 + ϵ
+r2 = 0.1
+r3 = 0
+r1 = 0 4
+5
+(c) Representation of πalg.
+Figure 1 Details on the transitions and rewards of our MDP instance.
+Case 1: partial adherence hurts. We first assume that ϵ=−1. In this case, it is easy to verify that
+πalg is optimal under perfect adherence (θ =1). If adherence is not perfect, however, continuing to
+recommend πalg can lead to sub-optimal performance. Indeed, πbase chooses suboptimal actions in
+State 2, which πalg recommends to visit (unlike πbase). So, the mixture policy πeff(πalg, θ) can lead to
+17
+worse performance than either πalg or πbase. Formally, the return of the effective policy πeff(πalg, θ)
+is equal to
+R(πeff(πalg, θ))=R(πbase)+2θ
+λ2
+1−λ
+
+θ − ˜θ
+
+with ˜θ := 1 − 0.1
+1−λ
+2λ
+≤ 1. If ˜θ ≤ 0, the behavior of the effective return function is intuitive: In
+this case, we observe that θ 7→ R(πeff(πalg, θ)) is increasing. In particular, R(πalg)=R(πeff(πalg, 1))≥
+R(πeff(πalg, θ)), i.e., partial adherence degrades the effective return obtained by recommending πalg
+compared with the perfect adherence case. Furthermore, R(πeff(πalg, θ))≥R(πbase), i.e., recommending
+πalg improves over the current standard of practice, πbase.
+However, the analytic expression above reveals surprising behaviors when ˜θ >0. In this case, the
+function θ 7→ R(πeff(πalg, θ)) is non-monotone (see Figure 2a, obtained with λ=0.5, hence ˜θ =0.95):
+It decreases on [0, ˜θ/2] and increases on [˜θ/2, 1]. Since the effective policy is a convex combination
+of πalg and πbase, it is intuitive to believe that its performance will be bounded above and below
+by R(πalg) and R(πbase) respectively. This example disproves this intuition. In particular, we have
+R
+
+πeff(πalg, ˜θ)
+
+<R(πbase). In other words, overlooking the adherence level θ and recommending the
+same policy πalg may lead to lower return than the baseline policy itself! Actually, as we formally
+prove in the next section, this sub-optimality gap can be made arbitrarily large.
+Finally, via backward induction, we can find an optimal recommendation policy π⋆
+alg(θ) for any
+value of θ ∈ [0, 1]. In particular, we find an optimal recommendation policy of the following form
+(see derivations in Appendix E): π⋆
+alg(θ)=π⋆ if θ >max(0, ¯θ) for π⋆ that chooses 1→2, 2→4, 3→4
+and ¯θ =1−0.1(1−λ)/λ; and π⋆
+alg(θ)=πbase if θ ≤max(0, ¯θ). Note that by varying λ, the breakpoint
+max(0, ¯θ) can be made arbitrarily close to 1. In the following section, we show that, for any MDP
+instance, the optimal recommendation policy π⋆
+alg(θ) enjoys such piecewise constant structure.
+Case 2: partial adherence helps (complementarity). We now consider the case where ϵ = 1 so
+that neither πalg nor πbase are optimal and there is room for improvement. Actually, we show in this
+example that partial adherence improves upon both policies, illustrating complementarity benefits
+18
+between the human DM and the algorithm. We now compute the expected return of the effective
+policy πeff(πalg, θ)=θπalg +(1−θ)πbase. In particular, we obtain that
+R(πeff(πalg, θ))=R(πalg)+2R(πbase)(1−θ)(θ −(1− ˜θ)),
+with ˜θ previously defined. Thus, if 1−˜θ <1, we observe that R(πeff(πalg, θ))>max{R(πalg),R(πbase)}
+for any θ ∈ (1− ˜θ, 1). In other words, there exists a regime where the partial implementation of πalg
+leads to greater performance than πalg or πbase alone.
+These examples show that, despite its simple form, the class of effective policies defined in (3.2)
+can capture many realistic situations where the co-existence of the algorithm and the DM hurts or
+benefits the overall system performance. Because our objective is prescriptive and we are interested
+in informing the design of the algorithmic recommendations πalg, we assume in the rest of the paper
+that recommendations are optimal for the true MDP parameter r,P,λ and the adherence level θ,
+i.e., where πalg = π⋆
+alg(θ) with π⋆
+alg(θ) an optimal solution to the optimization problem (AdaMDP).
+This corresponds to the case where there is no model misspecification, and where θ is known. In
+particular, under this assumption, algorithmic recommendations that ignore the issue of partial
+adherence correspond to πalg = π⋆
+alg(1), and Case 1 in this section shows that R(π⋆
+eff(θ)) may be
+much greater than R(πeff(πalg, θ)). Given an estimate of the adherence level θ, our objective is thus
+to compute an optimal recommendation π⋆
+alg(θ) as a solution of an optimization problem, enabling
+us to prove important structural properties and tractability results in the next sections. We should
+emphasize that diverting from the assumption that the algorithmic recommendation is the solution
+of an optimization model leaves open the question of how to define (and compute) the algorithmic
+recommendation in practice.
+Remark 3.4. In our MDP instance for the second case (complementarity), neither πalg nor πbase
+are optimal. Indeed, by definition, if πalg or πbase is an optimal policy for the nominal MDP, then it is
+impossible that R(πeff(πalg, θ)) > max{R(πalg),R(πbase)}, i.e., complementarity cannot occur. More
+complex models of partial adherence could lead to interesting human-machine complementarity,
+for instance in the case where both the algorithm and the human only have access to partial
+19
+information on the state or action sets or have different objectives. Our agnostic model may
+adequately complement these cases where more is known (or assumed) about the rational behind
+partial adherence. Because decision models are necessarily a simplification of real-life decisions,
+integrating more complex behavioural models behind partial adherence is an important direction
+for future work.
+0.0 0.2 0.4 0.6 0.8 1.0
+Adherence level
+0.30
+0.35
+0.40
+0.45
+0.50
+0.55
+Return
+R( eff( alg, ))
+R( alg)
+R( base)
+R( eff( ))
+(a) Co-existence hurts (ϵ=−1)
+0.0 0.2 0.4 0.6 0.8 1.0
+Adherence level
+0.5
+0.6
+0.7
+0.8
+0.9
+1.0
+Return
+R( eff( alg, ))
+R( alg)
+R( base)
+R( eff( ))
+(b) Co-existence helps (ϵ=1)
+Figure 2 Illustrating the impact of the partial adherence phenomenon (hence the coexistence of a baseline and
+algorithmic policy) in the MDP instance from Figure 1a. We choose λ = 0.5 in our simulations.
+4. Analyzing adherence-aware MDPs
+We now theoretically analyze the class of adherence-aware MDPs we introduced in the previous
+section. As a motivation, we first provide negative results showing the worst-case performance
+deterioration that can be experienced by overlooking the partial adherence phenomenon, i.e., by
+recommending π⋆
+alg(1) instead of π⋆
+alg(θ). We then show how to compute optimal adherence-aware
+recommendations efficiently and investigate how they depend structurally on θ.
+4.1. Worst-case analysis of the performance of π⋆
+alg(1)
+As the example in Section 3.4 shows, an optimal recommendation policy π⋆
+alg(θ) may be different
+from an optimal nominal policy π⋆
+alg(1), which itself can lead to worse performance than the baseline
+policy πbase alone. We now formalize these observations.
+20
+First, we analyze the performance of πeff(π⋆
+alg(1), θ) for π⋆
+alg(1) an optimal nominal policy and
+show that recommending π⋆
+alg(1) (i.e., ignoring the partial adherence effect) can lead to arbitrarily
+worse returns than the baseline policy.
+Proposition 4.1. For any scalar M ≥0, for any adherence level θ ∈ (0, 1), there exists an MDP
+instance M such that R(πbase) ≥M +R
+􀀀
+πeff(π⋆
+alg(1), θ)
+
+, where π⋆
+alg(1) is an optimal policy for the
+nominal MDP instance M.
+Proof of Proposition 4.1 Fix M ≥ 0 and θ ∈ (0, 1) and consider the MDP instance of Section
+3.4 with ϵ=−1, with π⋆
+alg(1) as in Figure 1c. In the limit where λ→1, we have R
+􀀀
+πeff(π⋆
+alg(1), θ)
+
+−
+R(πbase)∼2θ λ2
+1−λ (θ− ˜θ)→−∞ since θ <1. Hence, we can have R
+􀀀
+πeff(π⋆
+alg(1), θ)
+
+−R(πbase)≤−M
+for λ close to 1. □
+Proposition 4.1 generalizes the observation that πeff(π⋆
+alg(1), θ) can lead to arbitrarily worse performance
+than the current baseline policy itself (e.g., the current state of practice). As elicited in
+the example from Section 3.4, this phenomenon happens when the baseline policy πbase chooses
+sub-optimal actions in some states. As a result, the effective policy πeff(π⋆
+alg(1), θ) can also end
+up in these bad states that are overlooked by π⋆
+alg(1), which assumes that the actions are always
+chosen from π⋆
+alg(1). Consequently, for any value of θ ∈ (0, 1), the policy π⋆
+alg(1) can be arbitrarily
+sub-optimal.
+Corollary 4.1. For any scalar M ≥0, for any adherence level θ ∈ (0, 1), there exists an MDP
+instance M such that R(π⋆
+eff(θ))≥M +R
+􀀀
+πeff(π⋆
+alg(1), θ)
+
+.
+Proof of Corollary 4.1 The result follows from Proposition 4.1 since R(πbase) =
+R(πeff(πbase, θ))≤R(π⋆
+eff(θ)). □
+While Proposition 4.1 and Corollary 4.1 show that ignoring the adherence level θ can lead to
+arbitrarily large losses in performance, there are worst-case statements where, for each value of
+θ ∈ [0, 1), a particular MDP instance M is constructed. In practice, one might be interested in a
+single MDP instance and the impact of varying θ ∈ [0, 1] on this instance in particular, which is
+the focus of the rest of this section.
+21
+4.2. Solving adherence-aware MDPs
+We now show how to efficiently compute an optimal policy π⋆
+eff(θ) for adherence-aware MDPs.
+Note that when θ = 1, the DM is simply solving a classical MDP problem, which can be done
+efficiently with various algorithms such as value iteration, policy iteration, and linear programming
+(see chapter 6 in Puterman 2014). Additionally, for the classical MDP problem, it is well-known
+that an optimal policy can be chosen stationary and deterministic without loss of optimality, which
+greatly simplifies implementation and interpretation of such policies in practice. We show that the
+same holds for the adherence-aware MDP problem in the next proposition.
+Proposition 4.2. There exists a unique vector v∞ ∈ RS defined as
+v∞
+s = max
+πs∈Δ(A)
+θ ·
+X
+a∈A
+πsaP⊤
+sa (rsa +λv∞)+(1−θ) ·
+X
+a∈A
+πbase,saP⊤
+sa (rsa +λv∞) ,∀ s ∈ S, (4.1)
+and an optimal recommendation policy π⋆
+alg(θ) can be computed as a stationary deterministic policy
+attaining the argmax of Equation (4.1) for each s ∈ S.
+The proof of Proposition 4.2 is akin to our proof of Proposition 3.1, presented in Appendix F, and
+we omit it for conciseness. We note that we can rewrite Equation (4.1) as
+v∞
+s = max
+πs∈Δ(A)
+X
+a∈A
+πsa
+􀀀
+r′
+sa +λP′⊤
+sa v∞
+,∀ s ∈ S, (4.2)
+with P′ ∈ (Δ(S))S×A , r′ ∈ RS×A defined as
+P′
+sa := θ ·Psa +(1−θ) ·
+X
+a′∈A
+πbase,sa′Psa′ ,
+r′
+sa := θ ·P⊤
+sarsa +(1−θ) ·
+X
+a′∈A
+πbase,sa′P⊤
+sa′rsa′ ,
+(4.3)
+for all (s, a) ∈ S ×A. This shows that for any θ ∈ [0, 1], an optimal recommendation π⋆
+alg(θ) can be
+viewed as the optimal policy for another MDP instance M′ = (S,A,P′, r′,p0,λ), where the new
+transition probabilities P′ and the new rewards r′ are defined as (4.3), and, interestingly, where the
+instantaneous rewards only depend on the current state-action pair (s, a) but not on the subsequent
+state s′. In the context of “exploration-conscious” reinforcement learning and in the simpler case
+22
+where rsas′ = rsa, ∀ (s, a, s′) ∈ S ×A×S in the MDP instance M, Shani et al. (2019) refer to the
+MDP instance M′ as the surrogate MDP. This shows that we can efficiently compute an optimal
+recommendation policy by computing an optimal policy of the surrogate MDP. Note that even
+though π⋆
+alg(θ) can be chosen deterministic since it is an optimal policy to the surrogate MDPs, the
+effective policy π⋆
+eff(θ) may be randomized, since by definition π⋆
+eff(θ)=θπ⋆
+alg(θ)+(1−θ)πbase.
+For the sake of completeness, we now describe two efficient methods to compute v∞.
+Iterative method: value iteration. Let us define the operator f : RS →RS as
+fs(v)= max
+πs∈Δ(A)
+θ ·
+X
+a∈A
+πsaP⊤
+sa (rsa +λv)+(1−θ)
+X
+a∈A
+πbase,saP⊤
+sa (rsa +λv) ,∀ s ∈ S. (4.4)
+Note that when θ =1, this is the classical Bellman operator. The operator f is a contraction for ℓ∞:
+for any v,w ∈ RS, we have ∥f(v) − f(w)∥∞ ≤ λ∥v −w∥∞. Therefore, as for classical MDPs, the
+fixed-point v∞ can be computed efficiently via value iteration (VI): v0 =0,vt+1 =f(vt),∀ t ∈ N. To
+obtain an ϵ-optimal recommendation policy, we can stop as soon as ∥vt−f (vt) ∥∞ ≤ϵ(1−λ)(2λ)−1,
+which is satisfied after O(log (ϵ−1)) iterations (Puterman 2014, theorem 6.3.3).
+Linear programming formulation. The optimal value function v∞ ∈ RS can also be computed
+with linear programming (Puterman 2014, section 6.9). In particular, v∞ is the unique solution
+to the optimization problem min
+P
+s∈S vs | vs ≥fs(v),∀ s ∈ S
+	
+, which can reformulated in the following
+linear program with |S| decision variables and |S|×|A| linear constraints:
+min {p⊤
+0 v | vs ≥θP⊤
+sa (rsa +λv)+(1−θ)
+X
+a′∈A
+πbase,sa′P⊤
+sa′ (rsa′ +λv) , ∀ (s, a) ∈ S ×A}.
+4.3. Structure and sensitivity of π⋆
+alg(θ) with respect to the adherence level
+We now investigate how the optimal recommendation π⋆
+alg(θ) and its performance R(πeff(π⋆
+alg(θ), θ))
+depend on the adherence level θ.
+First, the example from Section 3.4 illustrates that the mapping θ 7→ R(πeff(π, θ)), for a fixed
+policy π, is not necessarily monotone. Still, we can recover monotonicity when considering π⋆
+alg(θ)
+instead, as shown in the next proposition.
+23
+Proposition 4.3. For any MDP instanceM, the map θ 7→ R(π⋆
+eff(θ)) is non-decreasing on [0, 1].
+Proof. This is straightforward from the equivalence of AdaMDP and the models of adversarial
+adherence decisions from Theorem 3.2. We provide a simple, more direct proof below. Let θ1, θ2 ∈
+[0, 1] with θ1 ≤ θ2. We will show that R(π⋆
+eff(θ1)) ≤ R(π⋆
+eff(θ2)). Following the definition of π⋆
+eff(θ1),
+we have π⋆
+eff(θ1)=θ1π⋆
+alg(θ1)+(1−θ1)πbase. We can rewrite this as
+π⋆
+eff(θ1)=θ2
+
+θ1
+θ2
+π⋆
+alg(θ1)+
+θ2 −θ1
+θ2
+πbase
+
++(1−θ2)πbase,
+and ˆπ := θ1
+θ2
+π⋆
+alg(θ1) + θ2−θ1
+θ2
+πbase is a policy since 0 ≤ θ1 ≤ θ2 ≤ 1. Overall, we conclude that
+R(π⋆
+eff(θ1))=R(πeff(ˆπ, θ2))≤R(π⋆
+eff(θ2)), by optimality of π⋆
+alg(θ2). □
+Proposition 4.3 shows that as the DM deviates more and more from the recommendation policy
+(i.e., as θ decreases), the optimal effective return decreases. Note that this result holds because we
+consider π⋆
+alg(θ), in other words because we adjust our recommended policy as the adherence level
+varies. Since π⋆
+eff(0) = πbase, Proposition 4.3 also implies that R(π⋆
+eff(θ)) ≥ R(πbase): recommending
+π⋆
+eff(θ) can only improve performance compared with the current baseline, which may not be the
+case when recommending π⋆
+alg(1), as highlighted in Proposition 4.1. Overall, Proposition 4.3 also
+suggests that it is always beneficial to try to increase the compliance of the decision maker (i.e.,
+increase the value of θ), as this leads to more returns for the optimal effective policy π⋆
+eff(θ).
+Actually, we now show that the optimal recommendation π⋆
+alg(θ) does not vary continuously in
+θ but rather enjoys a piecewise constant structure:
+Proposition 4.4. For any MDP instance M:
+1. There exists ¯θ ∈ [0, 1), such that π⋆
+alg(θ)=π⋆
+alg(1) for any θ ∈ [¯θ, 1].
+2. There exists n ∈ N and 0 = θ1 < θ2 < · · · < θn = 1 such that, for any i ∈ {1, ...,n − 1}, π⋆
+alg(θ)
+can be chosen constant over the interval [θi, θi+1].
+3. If πbase =π⋆
+alg(θ) for some θ ∈ [0, 1], then π⋆
+alg(θ)=πbase for any θ ∈ [0, θ].
+Combined with the fact that π⋆
+alg(1) is an optimal recommendation for θ = 1, Statement 1 shows
+that, when the adherence level is sufficiently close to 1, we can overlook the issue of partial adherence
+24
+and output the same recommendation as when θ = 1, which reduces to the classical MDP model.
+More generally, Statement 2 in Proposition 4.4 shows that, in general, π⋆
+alg(θ) has a piecewise
+constant structure. The piecewise constant structure of π⋆
+alg(θ) combined with the fact that πbase is
+an optimal recommendation for θ = 0 also ensures that πbase is an optimal recommendation in a
+neighborhood of 0. Statement 3 generalizes this observation and states that if the baseline policy
+is an optimal recommendation policy for an adherence level θ, then it is optimal for any lower
+adherence level. A trivial example is the case where θ =1, i.e., when πbase is optimal in the classical
+MDP model, then we should systematically recommend the baseline. To motivate our study, we
+implicitly assumed that R(πbase)<R(π⋆
+alg(1)), i.e., that the baseline policy could be improved.
+Lastly, we uncover two conditions on the MDP instance under which the partial adherence phenomenon
+can be ignored by the decision-maker. We start with a simple example where the optimal
+recommendation π⋆
+alg(θ) does not depend on θ and πbase. We observe that when the transitions
+Psa ∈ Δ(S) do not depend on the action but only on the current state: Psa =Ps ∈ Δ(S) and when
+rsas′ =rsa for all (s, a, s′) ∈ S ×A×S, then the optimality equation (4.1) becomes
+v∞
+s =θ · max
+πs∈Δ(A)
+
+π⊤
+s rs
+	
++θ · λP⊤
+s v∞ +(1−θ) ·π⊤
+base,srs +(1−θ) · λP⊤
+s v∞, ∀ s ∈ S,
+and we can choose an optimal recommendation policy π⋆
+alg(θ) that is independent from θ and πbase.
+In other words, partial adherence only impacts the effective return but it does not change the
+optimal recommendation. This special case occurs, for example, when the DM faces a sequence
+of independent single-stage decision problems (e.g., patients arriving independently to be treated)
+where each decision provides an immediate reward but does not impact the next decision problem,
+see de V´ericourt and Gurkan (2023) for a detailed study of this case in a learning setting.
+We now describe a condition under which the decision-maker may ignore partial adherence at a
+given state. Inspecting the surrogate MDP defined in Equation (4.3), we note that the new pair of
+rewards and transitions (r′,P′) is a convex combination of the nominal parameters (r,P) and the
+rewards and transitions induced by πbase. Therefore, if πbase chooses an optimal action at a state
+¯s ∈ S, we may expect that the algorithmic recommendation coincides with πbase at ¯s. We show that
+this intuition is true in the next proposition.
+25
+Proposition 4.5. Let ¯s ∈ S such that v
+π⋆
+alg(1)
+¯s = vπbase
+¯s . Then for any θ ∈ [0, 1], we have vπ⋆
+eff (θ)
+¯s =
+vπbase
+¯s and we can choose π⋆
+alg(θ)¯s =πbase,¯s.
+We provide the proof of Proposition 4.5 in Appendix H. Proposition 4.5 shows that if the baseline
+policy obtains the optimal nominal value at a given state ¯s ∈ S, then the decision-maker can
+guarantee this same value at ¯s for any value of the adherence level θ ∈ [0, 1] by recommending the
+same action as the baseline policy. We conclude this section by noting that obtaining a meaningful
+bound on the suboptimality of a policy πalg against π⋆
+alg(θ) for a given value θ ∈ [0, 1] of the adherence
+level is an interesting direction for future work. We derive a bound in Appendix I, noting that it
+may be hard to interpret, due to the piece-wise constant structure of the optimal recommendation
+policies (Proposition 4.4).
+5. Numerical experiments
+In this section, we numerically study the impact of the adherence level and of the baseline policy on
+two decision-making examples, in machine replacement and healthcare respectively, that have been
+studied in the MDP literature.We solve all the decision problems using the value iteration algorithm
+presented in Section 4.2. Among others, these numerical results illustrate the importance of taking
+into account the current state of practice and the adherence level when designing algorithmic
+recommendations. In particular, the adherence-aware optimization framework we develop in this
+paper provides simple tools to evaluate the robustness of a policy with respect to the adherence
+level and to obtain improved solutions in situations where the performance is the most impacted.
+5.1. Machine replacement problem
+We start with the a machine replacement problem introduced in Delage and Mannor (2010) and
+studied in Wiesemann et al. (2013), ?.
+MDP instance. We represent the machine replacement MDP in Figure 3. The set of states is
+{1, 2, 3, 4, 5, 6, 7, 8,R1,R2} and the set of actions is {repair, wait}. Each state models the condition
+of the same machine. In State 8 the machine is broken, while State R1 and State R2 model some
+ongoing reparations. State R1 is a normal repair while State R2 is a long repair. We use the same
+26
+rewards and transitions as in Delage and Mannor (2010). In particular, there is a reward of 0 in
+State 8, a reward of 18 in State R1, a reward of 10 in State R2, and a reward of 20 in the remaining
+states. We set a discount factor of λ=0.99 and the DM starts in State 1.
+R1
+1 8
+0.1
+R2
+2
+0.3
+0.3 0.3
+0.1 0.1
+0.6
+0.6
+0.6
+1
+0.4
+(a) Transition probabilities for
+action repair.
+R1
+1 8
+R2
+2
+1
+0.8 0.8
+0.2
+1
+0.8
+0.2 0.2
+(b) Transition probabilities for
+action wait.
+Figure 3 Transition probabilities for the machine replacement MDP. There is a reward of 18 in state R1, of 10
+in state R2 and of 0 in state 8. All others states have a reward of 20.
+Numerical results. Assuming θ = 1, an optimal policy π⋆
+alg(1) is to choose action wait in States
+1, 2, 3, 4,R2 and action repair in States 5, 6, 7, 8,R1. We now compare the effective return of π⋆
+alg(1)
+with that of the best recommendation π⋆
+alg(θ), for varying values of the adherence level θ. We first
+consider the case where πbase chooses to always wait instead of repairing the machine. We present
+the results of our empirical study in Figure 4. In Figure 4a, we report the effective return of
+both policies, namely R(π⋆
+eff(θ)) and R(πeff(π⋆
+alg(1), θ)), for varying θ ∈ [0, 1]. We also compute the
+proportional deterioration in performance,
+􀀀
+R(π⋆
+eff(θ))−R(πeff(π⋆
+alg(1), θ))
+
+/R(π⋆
+eff(θ)) in Figure 4b.
+As expected from Proposition 4.4, when θ is sufficiently close to 1 (here, for θ ≥ 0.88), we have
+π⋆
+eff(θ) = π⋆
+eff(1) and there is no deterioration in performance. However, as the value of θ decreases
+towards 0, overlooking the adherence level and recommending π⋆
+alg(1) can lead to as much as 13.34%
+proportional deterioration compared with the optimal return R(π⋆
+eff(θ)). We also note in Figure 4b
+that small changes in θ can lead to very severe deterioration, for instance in the region θ ∈ [0, 0.20],
+i.e., for very low adherence from the human decision maker. The different regions over which the
+27
+optimal decision θ 7→ π⋆
+alg(θ) is constant are shown in Figure 4c, which highlights that the optimal
+recommendation policy may change many times as the adherence level decreases.
+0.0 0.2 0.4 0.6 0.8 1.0
+Adherence level
+250
+500
+750
+1000
+1250
+1500
+1750
+2000
+Return
+Return for eff( ) Return for eff( alg(1), )
+(a) Returns for recommending
+π⋆
+alg(θ) and π⋆
+alg(1).
+0.0 0.2 0.4 0.6 0.8 1.0
+Adherence level
+14
+12
+10
+8
+6
+4
+2
+0
+Deterioration (%)
+Proportional deterioration for alg(1) against alg( )
+(b) Proportional deterioration
+for π⋆
+alg(1) against π⋆
+alg(θ).
+0.0 0.2 0.4 0.6 0.8 1.0
+Adherence level
+1
+2
+3
+4
+5
+6
+7
+Different policies
+Regions with different alg( )
+(c) Subregions with constant
+recommendation policies.
+Figure 4 Numerical results for the machine replacement MDP with πbase always choosing action wait.
+We also study the impact of the adherence level when πbase is the policy that avoids being
+trapped in the “bad” states (States 8,R1,R2). In particular, let us consider a policy πbase that
+always waits when the machine is not broken (State 1 to State 7) or in the normal repair state
+(State R2), but chooses to repair in State 8 and in the long repair state (State R1). The numerical
+results are presented in Figure 5. In this case, we see that the performance of π⋆
+alg(1) are robust
+for θ ≥0.35, with a proportional deterioration of only 0.5% compared to the return of the optimal
+recommendation policy π⋆
+alg(θ) (Figure 5b). However, for θ ≤ 0.35, there is a significant drop in
+performance, leading to a 4.01% reduction in effective return.
+5.2. Stylized healthcare decision problem
+We consider an MDP instance inspired from sequential decision-making in healthcare. In particular,
+we approximate the evolution of the patient’s health dynamics using a Markov chain, using a
+simplification of the models in Goh et al. (2018) and ?.
+MDP instance. The dynamics of the MDP is represented in Figure 6. There are 5 states representing
+the severity of the health condition of the patient, and an absorbing mortality state m. State
+1 represents a healthy condition for the patient while State 5 is more likely to lead to mortality.
+28
+0.0 0.2 0.4 0.6 0.8 1.0
+Adherence level
+1700
+1750
+1800
+1850
+1900
+Return
+Return for eff( ) Return for eff( alg(1), )
+(a) Returns for recommending
+π⋆
+alg(θ) and π⋆
+alg(1).
+0.0 0.2 0.4 0.6 0.8 1.0
+Adherence level
+4.0
+3.5
+3.0
+2.5
+2.0
+1.5
+1.0
+0.5
+0.0
+Deterioration (%)
+Proportional deterioration for alg(1) against alg( )
+(b) Proportional deterioration
+for π⋆
+alg(1) against π⋆
+alg(θ).
+0.0 0.2 0.4 0.6 0.8 1.0
+Adherence level
+1
+2
+3
+4
+5
+6
+7
+Different policies
+Regions with different alg( )
+(c) Subregions with constant
+recommendation policies.
+Figure 5 Numerical results for the machine replacement MDP with πbase repairing in the absorbing states 8,R1
+and waiting in the other states.
+There are three actions {low, medium, high}, corresponding to prescription of a given drug dosage
+at every state. In any given state (except mortality), there is a reward of 20 for choosing action
+low, a reward of 15 for choosing action medium, and a reward of 10 for choosing action high. There
+is a reward of 0 in the mortality state m. The goal of the decision maker is to choose a policy to
+keep the patient alive (by avoiding the mortality state m) while minimizing the invasiveness of the
+treatment. We choose a discount factor of λ=0.99 and the patient starts in State 1.
+1 2 5
+0.4
+0.3
+0.7 0.4
+0.3
+0.3 0.3
+0.3
+m
+1
+0.3
+(a) Transition probabilities for
+action low.
+1 2 5
+0.4
+0.2
+0.8 0.4
+0.4
+0.2 0.2
+0.4
+m
+1
+0.2
+(b) Transition probabilities for
+action medium.
+1 2 5
+0.4
+0.1
+0.9 0.4
+0.5
+0.1 0.1
+0.5
+m
+1
+0.1
+(c) Transition probabilities for
+action high.
+Figure 6 Transition probabilities for the healthcare MDP instance.
+Numerical results. An optimal policy π⋆
+alg(1) is to choose action low in States 1, 2, and to choose
+action high in States 3, 4, 5. We now test the robustness of π⋆
+alg(1) to partial adherence of the
+patient. In particular, we consider three different baseline policies πbase. In Figure 7, Figure 8 and
+29
+Figure 9, we consider baseline policies πbase that always chooses action low, medium or high in every
+health states, respectively. Our simulations highlights the sensitivity of the effective performance of
+π⋆
+alg(1), with respect to both the baseline policy and the adherence level. In particular, while π⋆
+alg(1)
+may loose up to 6.52% of the optimal effective return when the baseline policy always chooses low
+dosage (Figure 7b), it only loses a maximum of 0.97% of the optimal effective return when the
+baseline policy always chooses medium dosage (Figure 8b), and loses close to 0% of the optimal
+effective return when the baseline policy always chooses high dosage (Figure 9b). In addition, we
+observe that the range of the θ-values for which π⋆
+alg(1) is optimal differs greatly from one baseline
+policy to another (Figures 7c-8c-9c): when πbase always chooses low dosage, π⋆
+alg(1) is optimal for
+θ ≥ 0.82, whereas when πbase always chooses medium dosage, π⋆
+alg(1) is optimal for θ ≥ 0.51, and
+when πbase always chooses high dosage, π⋆
+alg(1) is optimal for θ ≥0.20.
+0.0 0.2 0.4 0.6 0.8 1.0
+Adherence level
+800
+1000
+1200
+1400
+1600
+Return
+Return for eff( ) Return for eff( alg(1), )
+(a) Returns for recommending
+π⋆
+alg(θ) and π⋆
+alg(1).
+0.0 0.2 0.4 0.6 0.8 1.0
+Adherence level
+6
+5
+4
+3
+2
+1
+0
+Decrease (%)
+Proportional deterioration for alg(1) against alg( )
+(b) Proportional deterioration
+for π⋆
+alg(1) against π⋆
+alg(θ).
+0.0 0.2 0.4 0.6 0.8 1.0
+Adherence level
+1.00
+1.25
+1.50
+1.75
+2.00
+2.25
+2.50
+2.75
+3.00
+Different policies
+Regions with different alg( )
+(c) Subregions with constant
+recommendation policies.
+Figure 7 Numerical results for the healthcare MDP with πbase choosing action low in all states.
+30
+0.0 0.2 0.4 0.6 0.8 1.0
+Adherence level
+1200
+1300
+1400
+1500
+1600
+Return
+Return for eff( ) Return for eff( alg(1), )
+(a) Returns for recommending
+π⋆
+alg(θ) and π⋆
+alg(1).
+0.0 0.2 0.4 0.6 0.8 1.0
+Adherence level
+1.0
+0.8
+0.6
+0.4
+0.2
+0.0
+Decrease (%)
+Proportional deterioration for alg(1) against alg( )
+(b) Proportional deterioration
+for π⋆
+alg(1) against π⋆
+alg(θ).
+0.0 0.2 0.4 0.6 0.8 1.0
+Adherence level
+1.00
+1.25
+1.50
+1.75
+2.00
+2.25
+2.50
+2.75
+3.00
+Different policies
+Regions with different alg( )
+(c) Subregions with constant
+recommendation policies.
+Figure 8 Numerical results for the healthcare MDP with πbase choosing action medium in all states.
+0.0 0.2 0.4 0.6 0.8 1.0
+Adherence level
+1000
+1100
+1200
+1300
+1400
+1500
+1600
+Return
+Return for eff( ) Return for eff( alg(1), )
+(a) Returns for recommending
+π⋆
+alg(θ) and π⋆
+alg(1).
+0.0 0.2 0.4 0.6 0.8 1.0
+Adherence level
+0.06
+0.05
+0.04
+0.03
+0.02
+0.01
+0.00
+Decrease (%)
+Proportional deterioration for alg(1) against alg( )
+(b) Proportional deterioration
+for π⋆
+alg(1) against π⋆
+alg(θ).
+0.0 0.2 0.4 0.6 0.8 1.0
+Adherence level
+1.00
+1.25
+1.50
+1.75
+2.00
+2.25
+2.50
+2.75
+3.00
+Different policies
+Regions with different alg( )
+(c) Subregions with constant
+recommendation policies.
+Figure 9 Numerical results for the healthcare MDP with πbase choosing action high in all states.
+6. Extensions and discussion
+Finally, we discuss additional properties and potential extensions of our adherence-aware decision
+framework.
+6.1. Heterogeneous adherence levels across states
+We have restricted our previous analysis to the case of a homogeneous adherence level θ ∈ [0, 1],
+common to all states s ∈ S. However, in practice, it is possible that the adherence level differs
+across states. For instance, in a healthcare setting, practitioners may be more prone to overlook
+the algorithms’ recommendations when the patient is in a critical health condition because any
+error may have life-threatening consequences. To model this practical consideration, we can extend
+our model to heterogeneous adherence levels, θs ∈ [0, 1] for each state s ∈ S. In this model, at every
+31
+decision period t ∈ N and visited state st, the decision maker decides to follow the recommendation
+policy πalg (with probability θs) or the baseline policy πbase (with probability 1−θs). The effective
+policy πeff(πalg,θ) is now defined as
+πeff(πalg,θ)s =θsπalg,s +(1−θs)πbase,s,∀ s ∈ S. (6.1)
+All the structural results from Section 4.1 would generalize to this simple extension. In particular,
+Proposition 4.3 still holds provided the non-decreasing property of θ 7→ R(π⋆
+eff(θ)) is replaced with
+an order-preserving property:
+θs ≤θ′
+s, ∀ s ∈ S ⇒R(π⋆
+eff(θ))≤R(π⋆
+eff(θ′)).
+Importantly, we can still efficiently find an optimal recommendation policy π⋆
+alg(θ) for any adherence
+level θ ∈ [0, 1]S, by adapting the value iteration and the linear programming formulation to the
+map fθ : RS →RS, defined as
+fθ,s(v)= max
+πs∈Δ(A)
+θs ·
+X
+a∈A
+πsaP⊤
+sa (rsa +λv)+(1−θs) ·
+X
+a∈A
+πbase,saP⊤
+sa (rsa +λv) ,∀ s ∈ S.
+6.2. Heterogeneous adherence levels across states and actions
+Furthermore, it is plausible in practice that recommendations that are close to the baseline actions
+are more likely to be followed than drastically different ones, e.g., in a healthcare setting where the
+actions correspond to drug dosages. To model this situation, we can extend our framework further
+to involve an adherence level that depends on each state s ∈ S and each action in a ∈A. Formally,
+we could study policies of the form
+πeff(πalg,θ)sa =θsaπalg,sa +(1−θsa)πbase,sa, ∀ (s, a) ∈ S ×A.
+However, for every state s ∈ S, we need πeff(πalg,θ)s ∈ Δ(A), which imposes some non-trivial restrictions
+on the values of θsa (which would depend on the probability of playing each action according
+to πalg and πbase).
+32
+To circumvent this issue, we propose an alternative model where πeff(πalg,θ)s ∈ Δ(A) by design.
+For the sake of simplicity, in this section, we assume that πbase is a deterministic stationary policy:
+for each state s ∈ S we write πbase(s) ∈A for the action chosen by the policy πbase. At a state s ∈ S,
+a recommended action a is sampled from the probability distribution πalg,s ∈ Δ(A). Then with
+probability θsa ∈ [0, 1] the DM follows the recommendation (action a), otherwise the action selected
+by the DM is πbase(s). With this model, the effective policy πeff(πalg,θ) for some (θsa)(s,a)∈S×A ∈
+[0, 1]S×A is such that
+πeff(πalg,θ)sa =
+
+
+πalg,saθsa if a ̸=πbase(s),
+1−
+P
+a′∈A\{πbase(s)} πalg,sa′θsa′ if a=πbase(s).
+Note that the expression for the case a=πbase(s) simply follows from
+1−
+X
+a′∈A\{πbase(s)}
+πalg,sa′θsa′ =πalg,sπbase(s) +
+X
+a′∈A\{πbase(s)}
+πalg,sa′(1−θsa′), (6.2)
+i.e., action πbase(s) is chosen either because it has been sampled following πalg,s or because another
+action a′ was sampled but the decision maker chose to follow πbase, which happens with probability
+1 − θsa′ . We can now write the value function of a policy πeff(πalg,θ). For any s ∈ S, we obtain,
+using (6.2):
+v
+πeff (πalg,θ)
+s =
+X
+a∈A
+πsa
+􀀀
+θsaP⊤
+sa
+􀀀
+rsa +λvπeff (πalg,θ)
++(1−θsa)P⊤
+sπbase(s)
+􀀀
+rsπbase(s) +λvπeff (πalg,θ)
+.
+Overall, we have obtained that the value function vπeff (πalg,θ) satisfies
+v
+πeff (πalg,θ)
+s =
+X
+a∈A
+πsa
+􀀀
+r′
+sa +λP′⊤
+sa vπeff (πalg,θ)
+,∀ s ∈ S
+with P′ ∈ (Δ(S))S×A , r′ ∈ RS×A the transition probabilities and the instantaneous rewards of
+another surrogate MDP M′ with transitions and rewards defined as P′
+sa := θsa · Psa + (1 − θsa) ·
+Psπbase(s), r′
+sa := θsa ·P⊤
+sarsa+(1−θsa) ·P⊤
+sπbase(a)rsπbase(a), for all (s, a) ∈ S×A. This shows that for this
+model of state-action-dependent adherence level, we can efficiently find an optimal recommendation
+policy by computing an optimal (nominal) policy for the surrogate MDP M′.
+33
+6.3. Uncertain adherence level
+In our framework, we have assumed that the adherence level θ ∈ [0, 1] was known and used as
+an input to design the recommendation policy πalg. This assumption is likely violated in practice,
+where θ is not perfectly known. Instead, we can assume that the true adherence level θ is
+uncertain but belongs to an interval [θ, ¯θ]. Under this assumption, we take a robust optimization
+approach (Bertsimas and Sim 2004, Ben-Tal et al. 2009) and model the uncertainty in the value of
+θ as an adversarial choice from the set [θ, ¯θ] of all possible realizations. The goal is to compute an
+optimal robust recommendation policy, that optimizes the worst-case objective over all plausible
+values of the adherence levels:
+sup
+πalg∈ΠH
+min
+θ∈[θ,¯θ]
+R(πeff(πalg, θ)). (6.3)
+The optimization problem (6.3) is reminiscent to robust MDPs, which consider the case where the
+rewards and/or the transition probabilities are unknown (Iyengar 2005, Wiesemann et al. 2013),
+but in our setting the same adherence level θ has an impact on the transition probabilities out of
+every states s ∈ S in the surrogate MDP, which contradicts the classical rectangularity assumption
+for robust MDPs. However, thanks to the structural properties highlighted in Section 4.1, the
+optimization problem (6.3) can be solved as efficiently as AdaMDP, the adherence-aware decisionmaking
+problem with known adherence level θ. Crucially, an optimal recommendation policy can
+still be chosen stationary (i.e., in the set Π) instead of history-dependent (i.e., in the set ΠH), and
+deterministic. Formally, we have the following theorem (proof detailed in Appendix J):
+Theorem 6.1. An optimal robust recommendation policy in (6.3) may be chosen stationary:
+sup
+πalg∈ΠH
+min
+θ∈[θ,¯θ]
+R(πeff(πalg, θ))= max
+πalg∈Π
+min
+θ∈[θ,¯θ]
+R(πeff(πalg, θ)).
+Additionally, the pair
+􀀀
+π⋆
+alg(θ), θ
+
+with π⋆
+alg(θ) a deterministic policy is an optimal solution to (6.3).
+Theorem 6.1 is remarkable in that it shows that the same value of θ (in particular, the most
+pessimistic value θ) is attaining the worst-case return for all policies. In practice, it reduces the
+problem of estimating the true adherence level to the (admittedly easier) task of obtaining a valid
+34
+lower bound only. Furthermore, Theorem 6.1 also has significant computational impact since it
+shows that solving (6.3) can be done by applying the same algorithms as the one described in
+Section 4.2 with θ = θ. The resulting recommendation will also be a deterministic policy, which is
+desirable in practice. The proof is very similar to the case of time- and state-invariant adversarial
+adherence decision in Theorem 3.2 and we present it in Appendix J.
+6.4. Uncertain baseline policy
+Similarly, the baseline policy πbase is currently a known input to our adherence-aware MDP framework.
+However, in practice it is possible that the algorithm only has access to an estimation ˆπbase of
+the baseline policy, learned from a finite dataset, and that the true baseline policy differs from ˆπbase.
+We consider a robust approach where the recommendation policy optimizes over the worst-case
+baseline policy πbase ∈ Γ, where the set Γ ⊆ (Δ(A))S represents feasible baseline policies that are
+close to the estimation ˆπbase, i.e., we consider
+sup
+πalg∈ΠH
+min
+πbase∈Γ
+R(θπalg +(1−θ)πbase). (6.4)
+The following theorem shows that (6.4) is still a tractable optimization problem under some mild
+assumption on Γ. We provide the detailed proof in Appendix K.
+Theorem 6.2. Assume that the set of feasible baseline policies Γ satisfies the following rectangularity
+assumption: Γ=×s∈AΓs where Γs ⊆Δ(A) is a convex, compact set for each s ∈ S. Then an
+optimal solution to (6.4) exists and can be chosen stationary. Additionally, if the set Γ is a polytope
+or defined with conic constraints, then an optimal solution to (6.4) can be computed efficiently.
+Our proof is based on showing that the optimization problem (6.4) can be reformulated as an
+s-rectangular robust MDP (Wiesemann et al. 2013) with uncertain pair (r,P) of instantaneous
+rewards and transition probabilities. This follows from the interpretation of AdaMDP as solving a
+surrogate MDP, where the rewards and transitions, defined in (4.3), are dependent on πbase.
+35
+6.5. Varying adherence level
+The adherence level θ may also vary over time. As the DM observes the recommendation made by
+the algorithm over time, her trust in the recommendation, hence her adherence, may increase (or
+decrease).
+One could endogeneize these dynamics by making θ explicitly dependent on the recommended
+policy πalg. However, the works of Boyacı et al. (2023), de V´ericourt and Gurkan (2023) highlight
+how complex these dynamics can be, even for highly stylized decision problems, because of cognitive
+limitations and asymmetric performance evaluation. Therefore, we conjecture that such gametheoretic
+approaches (where πalg and θ are updated at each step) would be intractable for the type
+of complex multi-stage decision problems we consider in this paper. Furthermore, as discussed
+in Section 2, many mechanisms could explain partial adherence. Consequently, any method that
+restricts the reasons for non-adherence (e.g., information asymmetry, algorithm aversion, cognitive
+limitations) and derives update rules for the adherence level θ based on these mechanisms could
+suffer from model misspecification.
+Alternatively, one could capture the dynamic nature of θ by estimating it from past observations
+in an online fashion. At a high-level, the optimization problem to which π⋆
+alg(θ) is a solution
+resembles that of an MDP whose transition probabilities depend on θ (and πbase). Hence, a varying
+adherence level would lead to non-stationary transition probabilities. In the multi-armed bandit
+literature, two types of assumptions are used to address non-stationarity. Garivier and Moulines
+(2011) introduced a piecewise stationary assumption, where the parameters are constant over certain
+time periods and change at unknown time steps. Alternatively, Besbes et al. (2014, 2015)
+considered a slowly varying setting where the absolute difference between parameters at two consecutive
+time-steps are bounded (by a so-called variation budget). Although originally derived for
+multi-armed bandit problems, both these frameworks have been extended and used to solve nonstationary
+MDPs (or non-stationary reinforcement learning problems) as well. We refer to Auer
+et al. (2008) and Cheung et al. (2023) for an analysis of non-stationary MDPs under the piecewise
+36
+stationary and slowly varying assumptions respectively. Beyond the technical difficulties addressed
+by the aforementioned works, learning θ from past historical data also suffers from a censorship
+issue: if both πalg and πbase recommend the same action at a given state st, then it is impossible to
+distinguish adherence from non-adherence.
+We see our model based on partial adherence in offline sequential decision-making as a first
+step towards a better understanding of the phenomena arising in expert-in-loop systems and a
+better design of algorithmic recommendations. The online extension of our framework, where the
+adherence level (and potentially the baseline policy πbase) needs to be continuously learned from
+past observations constitutes an interesting future direction, as well as the case where the real MDP
+parameters (r,P) themselves are only partially known to the human agent and the algorithm and
+must be learned over time.

@@ -1,0 +1,1121 @@
+Fügener, A., Grahl, J., Gupta, A., & Ketter, W. (2022). Cognitive Challenges in
+Human–Artificial Intelligence Collaboration: Investigating the Path Toward Productive
+Delegation. Information Systems Research, 33(2), 678-696.
+https://doi.org/10.1287/isre.2021.1079
+
+Abstract
+We study how humans make decisions when they collaborate with an artificial intelligence (AI) in a setting
+where humans and the AI perform classification tasks. Our experimental results suggest that humans and AI
+who work together can outperform the AI that outperforms humans when it works on its own. However, the
+combined performance improves only when the AI delegates work to humans, but not when humans delegate
+work to the AI. The AI's delegation performance improved even when it delegated to low-performing subjects;
+in contrast, humans did not delegate well and did not benefit from delegation to the AI. This bad delegation
+performance cannot be explained with some kind of algorithm aversion. On the contrary, subjects acted
+rationally in an internally consistent manner by trying to follow a proven delegation strategy and appeared
+to appreciate the AI support. However, human performance suffered due to a lack of metaknowledge, i.e.,
+humans were not able to assess their own capabilities correctly, which in turn led to poor delegation decisions.
+In contrast to reluctance to use AI, lacking metaknowledge is an unconscious trait. It fundamentally limits
+how well human decision makers can collaborate with AI and other algorithms. The results have implications
+for the future of work, the design of human-AI collaborative environments, and education in the digital age.
+
+Key words : Future of work, Artificial Intelligence, Machine Learning, Delegation, Metaknowledge,
+Human-AI Collaboration
+
+1. Introduction
+Early AI that tried to mimic human decision rules was only partly successful as it suered from
+what Autor (2014) calls Polanyi's paradox: The fact that humans can often not accurately describe
+the decision rules they use to solve a problem. Modern AI approaches such as deep neural nets seem
+to overcome this limitation by learning 
+exible models from large training sets instead of relying
+on human-described rules (LeCun et al. 2015, Schmidhuber 2015). AI is now widely applicable and
+eective, and perceived as a general purpose technology (McAfee and Brynjolfsson 2017) that fuels
+innovation in diverse domains, such as medicine (Kononenko 2001, Esteva et al. 2017), and generic
+perceptional tasks, such as processing images, text, and speech (Hinton et al. 2012, Deng and Yu
+2013). We agree that AI performance will likely improve further and that AI will be embedded in
+our day-to-day life. But, as Brynjolfsson et al. (2018) point out, not all decision making can be
+automated completely as some tasks remain challenging for AI.
+Perhaps the best prediction we can make today is that humans will remain integral to the
+workplace, and they will work together with AI, algorithms, or intelligent machines. This is re
+ected
+in current IS research, having special issues on augmented intelligence in ISR and on managing
+AI in MISQ, both issued in 2021. Baird and Maruping (2021) propose a theoretical framework for
+next generation of IS research focusing on delegation from and to information systems, such as
+AI. They explicitly state that both the information system and the human could be the delegating
+unit. This mindset is in line with the concept of Human-in-the-loop AI (Zanzotto 2019), where
+humans remain an integral part of AI decision making.
+The critical question in delegation is how rms should distribute work between humans and AI.
+Polanyi's work points to a facet of human decision making that is critical to the discussion, but
+vastly ignored until now. When humans can solve a problem, but are unable to explain their decision
+rules clearly, they should, nonetheless, be able to contribute complementarities to an algorithm
+(Autor et al. 2003). Since humans have dierent experiences and education, decision models and
+knowledge also dier between individual humans, and between humans and AI. Because we cannot
+
+
+ 3
+articulate our idiosyncratic \decision rules" well, it is hard for learning algorithms to imitate them
+precisely, even from large training sets. Humans' inability to tell what they know shields their
+abilities from perfect digital imitation. The variety of human thought, only partially observable
+through their actions, creates the possibility that humans have complementary knowledge with
+respect to AI algorithms. The AI, on the other hand, may nd a way to solve a problem no human
+being has thought about before. Thus, both humans and the AI potentially have complementary
+knowledge, and the performance of humans working with an AI system may be better than that
+of the AI system (or humans) working alone.
+Our study focuses on the case where either an AI algorithm or a human is allowed to perform
+a task by itself, or to delegate that task to the other actor. On a generic level, there are three
+main boundary conditions that enable the combined performance to exceed the performance of the
+better performing actor:
+1. Existence of complementarities: In order to enhance performance through delegation between
+two actors, complementary knowledge has to exist between the two actors, that is, a human and
+an AI system. We claim that this should be the case for all tasks where Polanyi's paradox applies,
+i.e., where humans cannot exactly specify their decision rules.
+2. Recognition of complementarities: A delegating partner needs to recognize that complementarities
+between the two partners exist and that the tasks should be performed by the better-suited
+partner. While having information on the other partner's ability helps, the most important ability
+is to estimate one's own ability. If an actor knows that they can perform a task, it is always wise
+for them to complete the task themselves. On the other hand, it is wise to delegate if the actor
+knows that they cannot perform the task but their partner potentially can. In line with Lories
+et al. (1998) and Evans and Foster (2011), we denote this ability to assess own capabilities as
+\metaknowledge." Therefore, we argue that metaknowledge is a crucial resource for recognizing
+complementarities.
+3. Execution of ecient delegation rules: Once a delegating partner recognizes complementarities,
+they haves to delegate tasks to the better-suited actor. While this can be easily constructed
+
+
+4 
+and executed for an AI system, humans have to be willing to construct and follow such a delegation
+rule.
+In a series of behavioral experiments, we investigate how work is delegated between humans and
+an AI algorithm. When designing the experiments, we aimed at making the results as generalizable
+as possible. Central to the paper is a delegation rule that does not make assumptions about the
+context in which it is used. Further, we conducted the experiments in a context where humans
+make good decisions naturally, and modern AI performs equally well or even better. We chose
+an environment where humans do not require any specic training. Contexts requiring specic
+training make the results less generalizable, whereas abilities in more general settings can carry
+over into more specialized tasks. Furthermore, expertise may not enable better decision making:
+Metaknowledge seems to be only minimally increased by training (Hansson et al. 2008), and trained
+experts could even show lower levels of metaknowledge compared to inexperienced subjects (Brezis
+et al. 2018).
+Therefore, we chose image classication as the focal task for our experiments. While humans are
+naturally skilled at it, deep learning has improved AI algorithms beyond the human performance
+level recently (Russakovsky et al. 2015). In our experiments, humans and an AI algorithm work
+together on the same image classication tasks. In the rest of the paper, we refer to the image
+classication AI algorithm as the \AI." Humans can delegate images to the AI, and the AI can
+delegate images to humans in a condition called inversion.
+Such collaboration between AI systems and humans is currently under-researched. A related eld
+analyzes human decision makers' attitude toward algorithms. Several researchers have documented
+the reluctance of human decision makers to use algorithms (Bazerman 1985, Dawes 1979, Kleinmuntz
+1990), although some recent research has challenged this notion. In a recent seminal work,
+Dietvorst et al. (2015) demonstrated that humans might react more strongly to errors made by
+machines than to errors made by humans, even if the machine performs better, and if its errors are
+smaller than those of human decision makers. The authors label this loss of condence \algorithm
+
+
+Information Systems Research 00(0), pp. 000{000, 
+erm picked up willingly by the popular press. But neither Dietvorst et al. (2015) nor
+a follow-up study (Dietvorst et al. 2018) document general human distrust towards algorithms.
+Logg et al. (2019) study multiple prediction tasks and nd that humans are indeed willing to work
+with machines, a tendency they label as \algorithm appreciation."
+We are not aware of research that studies delegation between AI and humans in a setting with
+complementary skills, and explores fundamental factors which might hinder or support collaboration.
+The central questions that our study answers are:
+ Study 1: Can delegation between humans and AI outperform humans or AI working alone,
+and who can delegate better?
+ Study 2: What factors limit human delegation performance? How can we overcome these
+limitations?
+Our experiments reveal that while the AI improves considerably by delegating to humans,
+humans are naturally bad delegators to the AI. Even worse, and more interestingly, humans' performance
+only slightly improves when they are taught a good delegation rule, even when they apply
+it consistently and rationally. We observe little or no bias against the use of AI, in other words, our
+results indicate that our subjects do not exhibit general algorithm aversion. Instead, humans try to
+work with the AI to the best of their abilities but fail despite their best intentions. Humans seem to
+be unable to judge their own capabilities and the diculty of the task, which in turn leads to bad
+delegation decisions. Thus, humans delegating to the AI do not meet the boundary condition of a
+sucient level of metaknowledge to enable a successful human-AI collaboration. We also conduct
+additional robustness studies addressing the impact of continuous feedback and increasing task
+diculty.
+In the following, we summarize the theoretical underpinnings of our study and dierentiate our
+study from the existing literature. We discuss theoretical antecedents in Section 2, describe the
+experimental studies and the robustness checks in Sections 3 and 4, and conclude with a discussion
+and an outlook on future research directions in Section 5.
+
+
+6 
+2.tant work and theories that inform our research questions and experimental design.
+In the following subsections, we discuss contributions of our work. Specically, we shed light on
+human attitude towards algorithms (Section 2.1), consider the role of delegation settings (Section
+2.2), the role of complementarities on the task instances level (Section 2.3), and the role of feedback
+(Section 2.4) to lay the foundation for our work.
+2.1. Attitude towards AI
+Research that studies how humans use computers for problem solving dates back decades and
+includes works that compare human decisions with results from mathematical models (Meehl 1954).
+Even during the infancy of computing environments in the 1950s, some computer models outperformed
+human decision makers. It was observed that in many instances, humans were reluctant to
+use algorithms, despite possible performance benets (Bazerman 1985, Dawes 1979, Kleinmuntz
+1990). However other studies, such as Dijkstra (1999), demonstrated general willingness of humans
+to use algorithms, even allowing machines to overrule their own inferior decisions. How humans
+make decisions in concert with algorithms has been revisited lately and has been of great interest
+with the surge in usage of AI techniques. Current applications look at investor usage of roboadvising
+services in ntech (Ge et al. 2021), reactions to AI advice in health care (Jussupow et al.
+2021), or the eect of similarity to human language used by chatbots (Schanke et al. 2021).
+In a seminal work on attitude towards algorithms, Dietvorst et al. (2015) demonstrate that
+humans react dierently to errors made by humans as compared to algorithms. In their experiments,
+they let humans work with AI algorithms for prediction tasks. When the subjects saw the AI
+perform, and err, they lost condence in it. Interestingly, this loss is much stronger than the loss
+in condence in humans who made mistakes in the same task. The authors label this tendency
+\algorithm aversion." Logg et al. (2019) studied whether human decision makers prefer advice from
+other humans or algorithms and found that decision makers show a clear tendency for preference
+for algorithmic advice over human advice. This preference holds for multiple prediction tasks, and
+
+
+ 7
+(according to a survey the authors conducted) was not expected by most academics. In contrast
+to Dietvorst's work, Logg et al. (2019) label their results as \algorithm appreciation." While this
+seems like a contradiction, Dietvorst's work does not show a general aversion towards algorithms
+but rather a dierent reaction towards errors made by algorithms and human decision makers.
+2.2. Delegation
+We consider a scenario, where a human has to perform a task without information about the
+solution or performance of the AI for a specic task. We denote this as a \delegation" scenario. We
+allow delegation to work in both directions. The human may delegate work to the machine, and the
+machine may delegate work to the human. The latter approach is sometimes called inversion, or
+using the human as an exit option (McAfee 2013). In delegation settings, a good decision heuristic
+is the following: \If I am certain to know the correct answer, I should do the job. If I am uncertain,
+I should delegate!" This rule works well because delegating a task that the decision maker is not
+able to perform cannot decrease performance, independent of the other party's abilities.
+When humans apply this rule, they have to rely on their metaknowledge. This is the ability to
+assess one's own capabilities, that is, to know what you know (Lories et al. 1998, Evans and Foster
+2011). A decision maker with strong metaknowledge can delegate well, as she will know whether
+her answer is correct or not. If her level of metaknowledge is insucient, she might be certain that
+incorrect answers are correct, and she might be uncertain about correct answers. In such cases, the
+joint performance of a human and an algorithm will suer due to inappropriate delegations.
+Note that this entire idea { to delegate tasks when you are uncertain { is particularly relevant if
+delegation does not move an entire stack of tasks, or all the work, but when it occurs on the level
+of task instances. We discuss this in the next section.
+2.3. Complementarity on the instance level
+Occupations typically consist of bundles of tasks (Autor et al. 2003), some of these tasks are suitable
+for machine learning, others not (Brynjolfsson and Mitchell 2017). Because of this, many experts
+do not expect that AI will automate entire bundles of tasks associated with a job but only specic
+
+
+8 
+parts of the bundle (Brynjolfsson et al. 2018). Therefore, a likely consequence of automation on
+the task level is that some tasks are automated, while others are not. This leads to redesigned job
+proles and work
+ows based on the economic benets associated with such work arrangements.
+For example, Agrawal et al. (2018) discuss ways to compute the economic value of automation on
+the task level and present a related AI canvas.
+We take this argument further and argue that structural complementarities between humans
+and AI may exist even on the task instance level. Our reasoning builds on the design principles for
+current AI systems. While traditional expert systems were built by humans who coded concrete
+decision rules, current AI algorithms discover their own decision rules based on training data. Due
+to structurally dierent decision rules, we argue that for each task there might be instances where
+human decision rules work better than AI decision rules, and vice versa.
+Sharing work between humans and AI algorithms on the task level can leverage these complementarities,
+and joint performance of an AI working with humans may exceed the performance of
+either of the parties individually. Even if the AI performance is better than the human performance,
+the optimal allocation will assign some work to a human and some to the AI, and humans and AI
+both can provide value. Therefore, it is important to conduct research in the area of human-AI
+collaboration on the level of task instances. As we demonstrate in this paper, it oers signicantly
+dierent implications for the future of work than the established paradigms have argued.
+2.4. The role of feedback
+While some extant research has used the eect of feedback on task level performance and accuracy,
+we decided to not include such feedback in our main experiments to concentrate on our research
+questions. The reason for our choice is manifold. For successful human-AI collaboration, several
+factors have to be considered on the human side of the equation. When prior research considered
+environments where humans make their decisions on the basis of observed AI performance and
+errors, they found that receiving immediate feedback on AI performance might trigger behavioral
+eects that undermine the collaborative setting. Examples include diminished trust in algorithms
+
+
+ 9
+(lower adherence to algorithmic advice) when humans see the algorithm err (Dietvorst et al. 2015),
+or the overweighting of signals from forecasting errors (Kremer et al. 2011). In that case, errors
+resulting from random variation of data are misinterpreted as systematic errors.
+There are many situations where AI feedback is not available or practical, for example when
+predicting long-term eects, such as climate change (Logg et al. 2019). In other situations, decisions
+have to be made quickly, such as in autonomous driving, or very frequently, such as in digital
+markets. In these contexts, AI errors are either not available, it may not be economical to consider
+them repeatedly, or there may simply be no time to integrate AI performance in decision making.
+While we do not study the eects of feedback in our main study, we do explore whether continuous
+feedback aects our ndings in a dedicated study in the robustness check section.
+In the following sections, we provide details of our experimental studies.
+3. Experimental Studies
+After providing a rationale on the study context, we describe the hypotheses, designs and results
+of two primary experimental studies with 902 subjects in total. We followed Nosek et al. (2018)
+and pre-registered the experiments at the Open Science Foundation (Foster and Deardor 2017),
+including the recruitment and data collection process, the initial hypotheses, and the statistical
+analysis.
+3.1. Study context
+When designing the experimental studies, we aimed for a non-specialized setting, as we claim that
+contexts that do require specic training make results less generalizable, while ndings in general
+tasks can carry over to more specialized tasks. We also aimed for a task, where the three boundary
+conditions for value-adding delegation between humans and AI are potentially met: 1) Existence
+of complementarities, 2) recognition of complementarities, and 3) execution of ecient delegation
+rules. We chose image classication as our experimental study context. Image classication is
+the task of assigning a focal image to a class. A class can be thought of as a content group. A
+classication is correct if the focal image is assigned to the right class (a focal picture with the
+
+
+10 Information Systems Research 00(0), pp. 000{000, 
+c 0poodle" is assigned to the \poodle" class, not to \husky" or \cat"). The research
+design follows the logic of Fugener et al. (2021): We sampled 100 focal images with known class
+labels from the ImageNet database. The ImageNet database consists of tens of millions of humanannotated
+images that are used by current image recognition challenges, such as the ImageNet
+Large Scale Visual Recognition Challenge (ILSVRC) (Russakovsky et al. 2015). We sample images
+used in the ILSVRC image classication task that contain everyday objects and animals, and that
+are assigned to one of 1,000 possible classes. The diculty of each task may be associated with
+three main dimensions: 1) The image itself. This might include visibility of the object, size of the
+object, or whether multiple objects are present. 2) Possible classes. A main driver for diculty of
+image classication tasks is the denition of possible choices, for example, ne-grained recognition
+between similar classes, such as breeds of dogs, is more dicult compared to more dierent classes,
+such as between zebra, lion, or tiger. 3) The annotator. Familiarity with image and with possible
+classes is a big driver of subjective diculty. This could depend on training data (in case of an AI)
+or on personal experiences and interests (in case of a human). A diculty of human annotators is
+to cope with a large number of classes, as they might not be aware of the existence of a specic
+class (Russakovsky et al. 2015). To avoid this eect, we chose to display ten possible classes along
+with the focal image. As in Russakovsky et al. (2015), we illustrated each possible answer class
+by name and 13 example images. One answer was correct. A central performance measure was
+classication accuracy, the percentage of correctly classied images.
+We chose GoogLeNet Inception v3 (Szegedy et al. 2016) as AI. It is among the best AIs for image
+classication and was trained on the ImageNet database with 1,000 classes. GoogLeNet assigns
+a score to each class that can be interpreted as the likelihood of being correct. We obtained its
+classication accuracy by applying it to the 100 images, and by comparing the image with the
+highest score to the correct answer. As the AI is trained based on outcome data, the decision rules
+dier from human decision rules, and complementarities between the AI and humans should exist.
+We recruited human subjects via Amazon's Mechanical Turk (MTurk). We believe that using
+MTurk to recruit subjects is particularly suitable for our study for the following reason: we are
+
+
+ 11
+no specic training. Many tasks at MTurk relate to classication problems (Difallah
+et al. 2015), thus, our experiment is a natural task for MTurk workers. We provide evidence that
+subjects took the tasks seriously and performed them with a high degree of internal validity.
+They made logical delegation decisions based on their internal assessment (see Figure 6 and the
+subsequent discussion).
+Study 1 \Delegation and Inversion" compares four dierent types of delegation: AI working alone,
+humans working alone, humans who may delegate to AI, and an AI that may delegate to humans
+(inversion). As expected, the AI outperforms humans. Surprisingly, the AI delegates better than
+humans when it follows a simple rule. Study 2 \Explaining and Enforcing a Delegation Strategy"
+explores the root cause for poor human delegation and analyzes the eects of teaching humans a
+similar strategy to that of the AI.
+3.2. Study 1: Delegation and Inversion
+Hypotheses. Study 1 tackles our rst research question: can delegation outperform humans or AI
+working alone, and who can delegate better? Thus, we compare four dierent settings: AI working
+alone, humans working alone, humans who may delegate to AI, and an AI that may delegate to
+humans (inversion). We chose image classication as focal task, and use an AI that is expected to
+perform (slightly) above human performance. Our key measure is classication accuracy, that is, the
+percentage of correctly classied images. We formulated and preregistered four initial hypotheses
+considering the relation of accuracy between those options. In the following, we present three of
+those hypotheses and theory that motivates them. One pre-registered hypothesis claimed that a
+state-of-the-art AI outperforms human decision makers on average. While this is supported for our
+specic setting (Szegedy et al. 2015, 2016), it lacks generality, and we decided to exclude it.
+The rst two hypotheses motivate the value added through delegation. In the introduction, we
+dened three boundary conditions: Existence of complementarities between the AI and humans,
+recognition of complementarities, and execution of ecient delegation rules. We assume the rst
+
+
+12 
+property, existence of complementary knowledge, to hold for all tasks that follow Polanyi's paradox,
+sucrities and the execution of ecient delegation rules, there is ample research
+from the domain of humans working with decision support systems, ranging from seminal theoretical
+work, such as Huber (1990), to recent experimental studies as carried out in Dietvorst et al.
+(2018), conrming that humans can benet from working with advanced information technologies,
+and that the second and third boundary conditions are at least partially given. This directly leads
+to our second hypothesis:
+Hypothesis 1.1 : Humans who can delegate tasks to the AI (after seeing the image to be classied)
+perform better than humans who can not.
+A more dicult question is to hypothesize on the eect of providing AI the possibility to delegate
+to humans (inversion), given that human performance is potentially inferior to that of the AI. To
+be able to improve accuracy, the AI has to delegate those tasks that AI is not able to execute, but
+humans potentially are. For the second boundary condition, the recognition of complementarities,
+it is important that the AI can assess its own certainty, that is, probability of success. Assessing its
+own certainty is a main feature of modern AI that has gone through appropriate level of training,
+and enables the AI to perform in a robust manner by using its certainty assessment to make the
+nal choice. In our case of image classication, the AI score of the sample of 100 images estimated
+an average likelihood of being correct of 0.769, and classied 77 images correctly. Using AI score as
+an indicator for certainty and some benchmark for expected human certainty, we dene an ecient
+delegation mechanism that the AI follows to leverage the potential of complementary knowledge.
+We formulate our next hypothesis:
+Hypothesis 1.2 : AI that can delegate image classication tasks to humans (after seeing the image)
+performs better than an AI that can not.
+In theory, both delegation and inversion could achieve the same accuracy: If the delegating actor
+delegates all tasks that she or he is not able to perform, all tasks that at least one could perform
+
+
+Information Systems Research 00(0), pp. 000{000, 
+dered correct. We denote this as ex-post optimal combination of humans and AI,
+where all complementarities are realized. The AI in our inversion condition applies such a strategy
+ or AI are better at delegating tasks might depend on the second and third
+boundary conditions of successful delegation: humans need to have a sucient level of metaknowledge,
+that is, correctly identifying tasks where they do not perform well, and humans have to come
+up with an ecient delegation strategy and be willing to follow it through. We know that the AI
+has a very high level of metaknowledge and will follow an ecient delegation strategy, whereas
+both boundary conditions are uncertain for human delegators. This leads to our nal hypothesis
+of Study 1:
+Hypothesis 1.3 : AI that can delegate image classication tasks to humans performs better than
+humans who can delegate to the AI.
+In the following, we lay out the details of our study design before presenting our results.
+Design. We compare classication accuracy between four conditions. In the \AI alone" condition
+(1), GoogLeNet classied alone. In the \humans alone" condition (2), subjects classied alone.
+Subjects in the delegation condition (3) could choose for each image to either classify alone, or
+to delegate the image to the AI (subjects were informed about the AI accuracy measure). In the
+inversion condition (4), the AI could choose for each image to classify alone or to delegate the
+image to humans.
+For conditions (2)-(4), we ran a between-subject design with 449 subjects in August 2018.We randomly
+assigned subjects to the conditions humans alone (149 subjects), delegation (154 subjects),
+and inversion (146 subjects). The humans alone (2) and inversion (4) conditions were identical.
+Figure 1 shows a screenshot of the humans alone/inversion and delegation conditions.
+In the delegation conditions, we added a button labeled \Delegate this question to the AI" at a
+random position between the answers. If a subject clicked, she did not classify the image herself,
+but delegated it to the AI. She would not see the AI's answer. The AI's answer was considered
+
+
+14 
+Figure 1 Screenshots of the humans alone/inversion condition (left) and the delegation condition (right).
+hers, and she received her payment accordingly. We made it clear that each correct classication
+earned a payment, regardless of whether the AI or the human classied the image. Subjects in
+the
+To ensure that the eects can be related to dierent delegation, and not to dierent human
+classication behavior, subjects in the inversion condition had to classify all 100 images, like subjects
+in the other conditions. We constructed the results for the inversion condition (4) after the
+experiment. The AI classies images or delegates them to humans based on a simple rule: if the
+score for the best answer was below a certain threshold, then GoogleNet delegated this image to
+the humans. Otherwise, GoogLeNet classied the image. To simulate this mechanism we paired
+GoogleNet with each subject from the inversion condition. The threshold was the average accuracy
+of subjects in the humans alone condition (2). The AI thus delegated all images where the
+estimated likelihood of being correct was below average human accuracy.
+All subjects received instructions, had to pass a short quiz so that we could exclude bots, and
+completed an example classication to ensure that they understood the task. They then had to
+classify the 100 images in random order. Each subject received a base fee of 50 cents, and an
+additional 5 cents for each correct answer. Afterwards, they were asked how many images they
+
+
+Information Systems Research 00(0), pp. 000{000, 
+ssied correctly. They could earn 1 additional dollar if this estimation did not dier
+from the actual number by more than ve images.
+Average pay was $4.45, slightly above average pay on MTurk in general (Hara et al. 2018). The
+average duration of the experiment was 57.7 minutes.
+tic
+Dep. Var.: Treatment N Min. Mean Max. St. Dev. Pctl(25) Median Pctl(75)
+Accuracy
+AI alone 0.770
+Humans alone 149 0.310 0.717 1.000 0.132 0.650 0.740 0.810
+Delegation 154 0.250 0.740 0.990 0.101 0.700 0.760 0.800
+Inversion 146 0.710 0.870 0.980 0.042 0.850 0.870 0.898
+Results. Descriptive statistics (Table 1) and visual evidence (Figure 2) suggest that the ability to
+delegate aects classication accuracy. On average, accuracy is highest in the inversion condition
+(87.0%), followed by the delegation condition (74.0%) and humans alone (71.7%). By itself, AI
+accuracy is 77.0% (vertical dashed line in Figure 2). The standard deviation of accuracy (in number
+of images) is highest when humans work alone (13.2), smaller when humans can delegate (10.1)
+and smallest when the AI delegates to humans (4.2). We used .717 as the threshold in the inversion
+condition. The results for inversion are robust for dierent threshold values (inversion accuracy is
+above .840 for all thresholds between the 25th and 75th percentile of human performance, that is,
+.650 and .810). The ex-post optimal combination of humans and AI of Treatment 1 would lead
+to an upper bound of 89.9% average accuracy { that is, assuming that each image is classied
+correctly, where either the AI or the (randomly picked) human classied the image correctly.
+The variance of accuracy is signicantly dierent across experimental conditions (Levene test,
+F(2, 446) = 36.752, p < :001; Hartleys Fmax test, Fmax = 9:962 > critical value), and means are
+signicantly dierent as well (ANOVA with heterogeneous variances, F(2, 245.05) = 178.41, p <
+:001, 2 = :315, which represents a large eect). Post-hoc tests with Tanhames T2 statistic for
+
+
+16 
+HumAI
+Inversion
+0.2 0.4 0.6 0.8 1
+Accuracy
+Treibution plots for accuracy per experimental condition (Study 1). The vertical dashed line is the AI
+classication accuracy of 77%.
+multiple comparisons show that most pairwise mean dierences are signicant (see Table 2 for a
+summary of pairwise comparisons). Humans in the delegation condition seem to outperform humans
+alone. However, this dierence (2.37 percentage points) is not signicant (p=:120) and represents
+a relatively small eect (d=:2). Inversion clearly outperforms humans alone. This dierence (15.38
+percentage points) is signicant (p < :001) and represents a large eect (d = 1:67). Inversion also
+outperforms the delegation condition. This dierence (13 percentage points) is signicant (p<:001)
+and represents a large eect (d=1:56).
+Table 2 Summary of p-values for pairwise comparisons of accuracy (Study 1).
+Humans alone Delegation Inversion
+AI <0.001 <0.001 <0.001
+Humans alone 0.120 <0.001
+Delegation <0.001
+Mean accuracies for the humans alone, delegation and inversion conditions are signicantly different
+from AI alone (p<:001), and except for inversion, are all lower than AI alone. Performance
+
+
+Information Systems Research 00(0), pp. 000{000, 
+
+
+0.3
+0.4
+0.5
+
+0.8
+0.9
+1.0
+0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0
+Delegation rate
+Accuracy
+Delegation Rate (Study 1)
+Figure 3 Scatter plot of accuracy per image (horizontal axis) against delegation rate per image (vertical axis).
+The regression line is estimated from all images.
+in the inversion condition is signicantly higher than when the AI is working alone, suggesting
+that humans can improve the performance of an AI by providing their input. Not only is inversion
+better than the other settings on average, we also notice that the AI benets from working with
+almost all humans. In the inversion condition, only three of the 146 AI-human pairs had a performance
+smaller than the AI itself; even the 25th accuracy percentile of inversion (85.0%) is much
+larger than AI accuracy. To summarize, sharing work between humans and AI could outperform
+humans and AI working alone. Inversion was highly eective, but human delegation was not.
+To understand inferior human performance in the delegation condition, we investigate how
+humans delegate. In Figures 3 and 4, image diculty is depicted on the horizontal axis. Image
+diculty is the average accuracy in the humans alone condition of the respective image. A .2 dif-
+culty/accuracy means 20% of subjects classied the image correctly. The vertical axis in both
+gures shows the delegation rate, i.e., the ratio of subjects who delegated the image to the AI.
+If we consider the entire data set (Figure 3), a weak trend can be detected where images with
+higher accuracy (lower diculty) are delegated less often and vice versa. Thus, humans seem
+to \rationally" delegate those images more often, which they are less able to classify correctly.
+However, if we partition the data into images with less than 70% accuracy (these images are more
+
+
+18 
+0.0
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+1.0
+0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0
+Delegation rate
+Accuracy
+Delegation Rate (Study 1)
+Figure 4 Scatter plot of accuracy per image (horizontal axis) against delegation rate per image (vertical axis).
+The two regression lines are estimated from two partitions of the data.
+dicult than average human performance), and above 70% accuracy (these images are easier than
+average human performance), the pattern changes (Figure 4): Human delegation is not in
+uenced
+by the diculty of an image if the image is relatively \dicult." Human delegation seems to follow
+a \rational" pattern if the image was relatively \easy" to classify. Note that we chose the threshold
+of 70% consistently over the following studies - as no image had an average accuracy between 0.7
+and 0.717, setting the threshold to the precise average accuracy of 0.717 does not lead to any
+changes. Eect sizes and signicance levels are in Table 3. Why did humans delegate randomly if
+images were hard?
+In the next section, we present Study 2 that explores possible explanations related to the boundary
+conditions of successful delegation as potential mechanisms for the observed phenomenon.
+3.3. Study 2: Explaining and Enforcing a Delegation Strategy
+Hypotheses. This study seeks to analyze the cognitive challenges in human delegation and aims
+at providing assistance to explore potential paths towards more productive delegation. In the
+previous study, we observed random delegation patterns for hard images. Our boundary conditions
+of successful delegation lead to dierent possible explanations that we test in this study:
+1. Humans might not have a sucient level of metaknowledge. To be able to analyze this, we
+asked humans to self-report their level of certainty for each image in all treatments.
+
+
+Information Systems Research 00(0), pp. 000{000, 
+sion results for delegation (Study 1).
+70% Accuracy
+Accuracy 0:029 􀀀0:535
+(0:104) (0:067)
+Constant 0:169 0:557
+(0:052) (0:059)
+Observations 41 59
+R2 0.002 0.529
+Adjusted R2 -0.024 0.521
+Residual Std. Error 0.090 (df = 39) 0.038 (df = 57)
+F Statistic 0.080 (df = 1; 39) 64.138 (df = 1; 57)
+Note: p<0.1; p<0.05; p<0.01
+Standard errors in parentheses
+2. Humans might not be able to come up with a good delegation strategy: We added a treatment
+where we advised humans with a strategy that imitates the inversion logic.
+3. Humans might not be willing to delegate suciently: We added a treatment where delegation
+was enforced based on human certainty - this treatment applies inversion with humans.
+Consequently, Study 2 contains three treatments, all allowing the option to delegate to the AI:
+A \baseline" condition that replicates the delegation condition of Study 1 asking for self-reported
+certainty for each image, a \strategy explained" condition, where we suggest a delegation strategy
+that imitates the delegation logic of inversion based on human certainty, and a \strategy enforced"
+condition, where we enforce a strategy by automatically delegating images to the AI if a human
+reports low certainty. As was the case in Study 1, we preregistered two initial hypotheses based on
+classication accuracy.
+Assuming that all three explanations of inferior human delegation performance apply, we state
+two hypotheses. First, if humans are simply unaware of good delegation strategies, they should
+improve if such a delegation strategy is suggested. Thus, we pose our rst hypothesis:
+Hypothesis 2.1 : Explaining the delegation strategy leads to a slight improvement in accuracy.
+If humans are reluctant to delegate, then enforcing a good strategy should increase accuracy
+even stronger than just suggesting it, which leads to our second hypothesis:
+
+
+20 
+Hypng, we present the detailed experimental design and the results of Study 2.
+Desevel of certainty for each image on a scale from 1 (uncertain) to 4 (certain) in all
+conditions. The \baseline" condition was set up like the delegation condition of Study 1. For the
+remaining two conditions, we propose a simple delegation rule similar to that of the AI in the
+inversion condition, where (1) it assessed its classication certainty and (2) delegates to humans
+if the certainty score was below average human performance. Accordingly, we advised subjects
+in the second condition, \strategy explained," to delegate images for which they were uncertain
+(certainty levels between 1 and 3, average accuracy expected to be below the AI performance of
+0.77). If subjects' certainty was high (certainty level 4, average accuracy expected to be above the
+AI performance of 0.77), we advised them to classify the image themselves. In the third condition,
+\strategy enforced," subjects could not delegate actively. We informed them that images will be
+delegated automatically if their self-reported certainty was between 1 and 3. The human answer
+was only considered if the reported score was a 4. This treatment represents most closely the human
+version of our inversion condition of our rst experimental study.
+We recruited 453 subjects via MTurk and randomly assigned them to experimental conditions.
+Average pay was $5.19, average duration was 56.2 minutes. The assignment process and experimental
+protocol was equivalent to that of Study 1.
+Results. Table 5 shows summary statistics for accuracy and delegation rates. Accuracy improved
+slightly and delegation rates increased strongly when the delegation strategy was explained or
+enforced. Delegation rates in the strategy enforced condition look similar to the strategy explained
+condition. This suggests that humans indeed followed the suggested delegation rule.
+This is supported by statistical analysis. A Levene test reveals no signicant dierences between
+the variances across experimental conditions (F(2, 450)=.849, p = :429), but means are dierent
+(ANOVA, F(2, 450)=2.97, p=:052, 2 =:13 which represents a medium eect). All pairwise comparisons
+are summarized in Table 4. Tukey's signicance test shows that humans in the strategy
+
+
+Information Systems Research 00(0), pp. 000{000, 
+tion outperform humans in the baseline condition. This dierence (2.714 percentage
+y explained condition is similar to that in the strategy enforced condition (p = :761).
+ signicant (p = :207). It would represent a small eect (d=.185). When comparing
+the condition's accuracies with AI performance, the baseline condition shows a signicantly lower
+performance (p=:010), but there is no signicant dierence between AI and the strategy explained
+(p = :727) or the strategy enforced condition (p = :484). In total, engaging with a good delegation
+strategy led to more delegation, but accuracy did not increase proportionally. We also compute the
+accuracy of humans per (self-reported) certainty score. From pre-tests, we expected the accuracy
+for images with certainty scores between 1 and 3 to be below 0.77, and for images with a certainty
+score of 4 to be above 0.77. Our results validate this assumption: For Treatment 1, the average
+accuracies for non-delegated images were 0.43 (certainty score 1), 0.52 (certainty score 2), 0.68
+(certainty score 3), and 0.87 (certainty score 4).
+Table 4 Summary of p-values for pairwise comparisons of accuracy (Study 2).
+Baseline Strategy explained Strategy enforced
+AI 0.010 0.727 0.484
+Baseline 0.207 0.048
+Strategy explained 0.761
+Figure 5 shows the delegation pattern. The horizontal axis depicts image diculty (average
+human accuracy of Treatment 1, Study 1), the vertical axis delegation rates. The baseline condition
+replicated the results of Study 1. Further, humans delegated more when the strategy was explained
+or enforced. However, their behavior for dicult images was still random. The randomness just
+centered around a higher average than in the baseline condition. Therefore, knowing a good delegation
+strategy did not prohibit random delegation of dicult images. Hence, we can rule out the
+second explanation from above: while providing a strategy helps to increase delegation, it could not
+
+
+22 
+Tabtic
+Dep. Var.: Treatment N Min. Mean Max. St. Dev. Pctl(25) Median Pctl(75)
+Accuracy
+Basined 157 0.240 0.767 0.880 0.103 0.750 0.800 0.825
+Strategy enforced 146 0.140 0.775 0.900 0.088 0.750 0.790 0.823
+Delegation rate
+Baseline 150 0.000 0.131 0.680 0.151 0.010 0.080 0.200
+Strategy explained 157 0.000 0.342 0.950 0.203 0.185 0.330 0.475
+Strategy enforced 146 0.010 0.335 0.960 0.183 0.190 0.315 0.463
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+1.0
+0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0
+Delegation rate
+Accuracy
+Delegation rate (baseline)
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+1.0
+0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0
+Delegation rate
+Accuracy
+Delegation rate (strategy explained)
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+1.0
+0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0
+Delegation rate
+Accuracy
+Delegation rate (strategy enforced)
+Figure 5 Scatter plots of accuracy against delegation rate per image and experimental conditions (Study 2).
+The two regression lines are estimated from the two partitions of the data.
+Table 6 Regressions per experimental condition (Study 2). The dependent variable is the images' delegation
+rate. The data is partitioned into two regions.
+Experimental condition
+Baseline Strategy explained Strategy enforced
+Dependent variable: Delegation rate for images with accuracy of
+<70% 70% <70% 70% <70% 70%
+Accuracy -0.041 -0.588 -0.230 -1.610 -0.131 -1.486
+(0.121) (0.072) (0.182) (0.165) (0.180) (0.142)
+Constant 0.233 0.592 0.650 1.626 0.579 1.520
+(0.060) (0.064) (0.090) (0.146) (0.090) (0.126)
+Observations 41 59 41 59 41 59
+R2 0.003 0.537 0.039 0.625 0.013 0.657
+Adjusted R2 -0.023 0.529 0.015 0.619 -0.012 0.651
+Residual Sd. Error 0.105 0.041 0.158 0.094 0.157 0.081
+F Statistic 0.117 66.08 1.59 95.14 0.531 109.30
+Note: * p<:1; ** p<:05; *** p<:01
+Standard errors in parentheses
+
+
+ 23
+0.0
+
+0.3
+0.4
+
+0.7
+0.8
+0.9
+1.0
+2.0 2.5 3.0 3.5 4.0
+Delegation rate
+Level of certainty
+Delegation rate (baseline)
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+1.0
+2.0 2.5 3.0 3.5 4.0
+Delegation rate
+Level of certainty
+Delegation rate (strategy explained)
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+1.0
+2.0 2.5 3.0 3.5 4.0
+Delegation rate
+Level of certainty
+Delegation rate (strategy enforced)
+Figure 6 Scatter plots of certainty against delegation rate per image and experimental conditions (Study 2).
+x the random delegation pattern for dicult images. Table 6 shows the corresponding statistical
+results.
+We now address the third explanation (humans do not want to use the AI). We analyzed how
+delegation rates changed with perceived image diculty (i.e., self-assessed certainty). Figure 6 plots
+delegation rates (vertical axis) against self-assessed certainty (horizontal axis). The gure suggests
+that humans delegated with great internal consistency. Images they perceived as more dicult were
+delegated more often. This was true, independent of whether they knew the delegation strategy or
+not. The subjects appeared to be aiming for a consistent delegation pattern. Once they learned a
+good delegation strategy, delegation rates more than doubled. Therefore, we conclude that in our
+experiments humans did not show reluctance towards using the AI.
+In light of these ndings, the rst explanation seems likely. Humans might not be able to judge
+the diculty of images when the images are hard. They may thus not be able to use the AI
+systematically for these images, a problem associated with lack of metaknowledge.
+To explore this explanation, we study how well humans can assess their own ability to classify
+images. In Figure 7 we plot the average self-assessed certainty of an image (vertical axis) against
+the average accuracy of the image (horizontal axis). The visual impression and the regression
+results in Table 7 suggest that humans can assess their ability for relatively easy images (accuracy
+above 70%), but they can not assess it for dicult images. An interesting side nding can be
+observed for the strategy enforced condition. Here, the constant of the regression model is positive
+and signicant for easy images. Thus, objective diculty explains perceived diculty (as in the
+
+
+24 
+2.0
+2.2
+2.4
+2.8
+3.0
+3.2
+3.6
+3.8
+4.0
+0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0
+Level of certainty
+Accuracy
+Certainty (baseline)
+2.0
+2.2
+2.4
+2.6
+2.8
+3.0
+3.2
+3.4
+3.6
+3.8
+4.0
+0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0
+Level of certainty
+Accuracy
+Certainty (strategy explained)
+2.0
+2.2
+2.4
+2.6
+2.8
+3.0
+3.2
+3.4
+3.6
+3.8
+4.0
+0.0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1.0
+Level of certainty
+Accuracy
+Certainty (strategy enforced)
+Figure 7 Scatter plots of accuracy against certainty per image and experimental conditions (Study 2).
+other conditions), but subjects seem to report higher certainty values independent of actual image
+diculty. A possible explanation is that subjects avoided automated delegation by (mis)reporting
+certainty values of four.
+Table 7 Regressions per experimental condition (Study 2). The dependent variable is the subjects' certainty
+per image. The data is partitioned into two regions.
+Experimental condition
+Baseline Strategy explained Strategy enforced
+Dependent variable: Certainty, where images have accuracy of...
+<70% 70% <70% 70% <70% 70%
+Accuracy 0.249 3.524 0.368 3.505 0.109 2.363
+(0.384) (0.344) (0.465) (0.374) (0.384) (0.238)
+Constant 2.716 0.383 2.675 0.453 3.161 1.608
+(0.191) (0.304) (0.231) (0.332) (0.191) (0.211)
+Observations 41 59 41 59 41 59
+R2 0.011 0.648 0.016 0.606 0.002 0.633
+Adjusted R2 -0.015 0.642 -0.009 0.599 -0.024 0.626
+Residual Sd. Error 0.334 0.196 0.403 0.214 0.334 0.136
+F Statistic 0.419 105.10 0.626 87.64 0.081 98.25
+Note: * p<:1; ** p<:05; *** p<:01
+Standard errors in parentheses
+Therefore, while humans delegate quite rationally based on their internal assessment (Figure 6),
+this assessment is not precise for relatively dicult tasks (Figure 7). Put dierently, although human
+delegation decisions are often misaligned with real problem diculty, they are not misaligned with
+their perceived problem diculty. We conclude that lack of metaknowledge seems to drive the
+inferior delegations. According to this explanation, humans did not know what they knew and
+delegated the wrong images to the AI.
+
+
+Information Systems Research 00(0), pp. 000{000, 
+Checks
+In this section, we test the robustness of our ndings with two additional studies. In the rst
+robustness check, we analyze whether continuous feedback on both human and AI performance
+r an AI could realize complementarities with humans, even in cases, where the tasks
+are more dicult than those the AI was trained with. We manipulate task diculty by scaling the
+images to a lower resolution and test the eectiveness of inversion.
+4.1. Study 3: The Role of Feedback
+Purpose. Study 3 relaxes the assumption of receiving no feedback on task results to analyze the
+eects of feedback on human delegation behavior and on human metaknowledge.
+At the outset, we would like to point out that the potential eects are unclear, ex-ante, and the
+literature provides no clear direction. We lay out possible eects in the following discussion. First,
+metaknowledge might be increased by providing continuous feedback because it could improve the
+human perception with regards to their own performance. However, we observe that even long-term
+experience does not seem to prevent poor metaknowledge (Brezis et al. 2018). Thus, the eect
+remains unclear. Second, feedback on human and AI performance might increase salience of AI
+superiority, and could consequently lead to higher delegation rates. On the other side, Dietvorst
+et al. (2015) demonstrated that humans relied less on algorithmic advice after seeing it err, even if
+the algorithmic performance was superior. Thus, we do not state any directional hypotheses in this
+study. In the following, we lay out the details of our study design before presenting our results.
+Design. We compare classication accuracy and delegation rate between two conditions. The
+\baseline" condition (1) replicates the \delegation" condition of Study 1 and the \baseline" condition
+of Study 2. In the \feedback" condition (2), subjects received feedback after each classication
+task, consisting of their own answer, the AI answer, and the correct answer. We ran a betweensubject
+design with 289 subjects in February 2021, and randomly assigned subjects to the baseline
+condition (148 subjects) and the feedback condition (141 subjects).
+
+
+26 
+Allan example classication to ensure they understood the task. They then had to
+classify the 100 images in random order. Each subject received a base fee of $2 , and an additional
+5 cents for each correct answer. Afterwards, they were asked how many images they think they
+claby more than ve images. Average pay was $4.92, slightly above average pay on
+MTurk in general (Hara et al. 2018). The average duration of the experiment was 62.7 minutes.
+Results. Descriptive statistics (Table 8) show little dierence among the the experimental conditions,
+regarding both accuracy (baseline: 53.4% feedback: 54.4%) and delegation rate (baseline:
+12.0%, feedback: 12.4%). Accuracy does not signicantly dier in the baseline and the feedback
+conditions (p=:697), neither does the delegation rate (p=:860). Thus, there is no indication that
+continuous feedback on human and AI performance aects human delegation behavior. Note that
+in line with literature on MTurk performance during COVID-19 (Arechar and Rand 2021), the
+average accuracy values are below those of our previous studies, while delegation rates remain
+similar.
+Table 8 Summary statistics for accuracy and delegation rate (Study 3).
+Summary statistic
+Dep. Var.: Treatment N Min. Mean Max. St. Dev. Pctl(25) Median Pctl(75)
+Accuracy
+Baseline 149 0.070 0.534 0.880 0.221 0.373 0.540 0.758
+Feedback 141 0.070 0.544 0.950 0.232 0.340 0.620 0.750
+Delegation rate
+Baseline 149 0.000 0.120 1.000 0.231 0.000 0.010 0.120
+Feedback 141 0.000 0.124 0.990 0.212 0.000 0.010 0.155
+Next, we analyze the eect of continuous feedback on metaknowledge by replicating the analysis
+of the relationship between accuracy and certainty in Study 2. We illustrate the relationship of
+delegation rate and diculty (average human accuracy of Treatment 1, Study 1) in Figure 8.
+We further summarize the regression results in Table 9: as in Study 2, we only see a signicant
+
+
+ 27
+0.0
+
+0.3
+0.4
+
+0.7
+0.8
+0.9
+1.0
+0.0 0.2 0.4 0.6 0.8 1.0
+Delegation Rate
+Accuracy
+Delegation Rate (baseline)
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+1.0
+0.0 0.2 0.4 0.6 0.8 1.0
+Delegation rate
+Accuracy
+Delegation Rate (feedback)
+Figure 8 Scatter plots of accuracy against certainty per image and per experimental conditions (Study 3). The
+two regression lines are estimated from the two partitions of the data.
+in
+uence of \diculty" (measured by the average accuracy of each image) for images with an
+average accuracy of at least 70%. Note that we use the average accuracy of the rst treatment
+of Study 1, where humans classied without AI delegation, to maintain a consistent denition of
+\easy" and \dicult" tasks.
+Table 9 Regressions per experimental condition (Study 3). The dependent variable is the subjects' certainty
+per image. The data is partitioned into two regions.
+Experimental condition
+Baseline Feedback
+DV: Certainty, images accuracy of...
+<70% 70% <70% 70%
+Accuracy 0.099 1.527 0.182 1.372
+(0.179) (0.238) (0.134) (0.205)
+Constant 3.130 2.067  3.083 2.148
+(0.089) (0.210) (0.067) (0.205)
+Observations 41 59 41 59
+R2 0.008 0.420 0.045 0.439
+Adjusted R2 -0.018 0.410 0.021 0.430
+Residual Sd. Error 0.156 0.136 0.116 0.117
+F Statistic 0.305 44.33 1.09 44.67
+Note: * p<:1; ** p<:05; *** p<:01
+Standard errors in parentheses
+In the next section, we present a robustness check on the impact of more dicult tasks on the
+eciency of delegation and inversion.
+
+
+28 
+4.2. Study 4: The Role of Diculty
+Purpose. Inversion was the most eective condition in our rst experimental study. The key of
+itsdicult than those it was trained with. In the case of image classication, this could
+relate to images with a lower resolution. Thus, we replicate Study 1 with a higher task diculty
+by applying a lower resolution to all images. We aim to analyze whether the AI would still be able
+to pare classication accuracy between two conditions, \humans alone" (1) and
+\delegation" (2). Those conditions mirror two conditions of Study 1. We further use condition (1)
+to simulate dierent inversion strategies. We ran a between subject design with 299 subjects in
+January 2021 and randomly assigned subjects to the \humans alone" condition (150 subjects) and
+the \delegation" condition (148 subjects).
+All subjects received instructions, had to pass a short quiz so that we could exclude robots,
+and completed an example classication to ensure they understood the task. They then had to
+classify the 100 images in random order. Each subject received a base fee of $2, and an additional
+5 cents for each correct answer. Afterwards, they were asked how many images they think they
+classied correctly. They could earn 1 additional dollar if this estimation did not dier from the
+actual number by more than ve images. Average pay was $4.61, slightly above average pay on
+MTurk in general (Hara et al. 2018). The average duration of the experiment was 65.9 minutes.
+Table 10 Summary statistics for accuracy (Study 4).
+Summary statistic
+Dep. Var.: Treatment N Min. Mean Max. St. Dev. Pctl(25) Median Pctl(75)
+Accuracy
+Humans alone 150 0.120 0.481 0.790 0.168 0.360 0.480 0.633
+Delegation 148 0.140 0.512 0.790 0.153 0.420 0.510 0.630
+Results. Humans slightly improve by about three percentage points with the possibility to delegate
+(p = :093), even though on average, only 7.6% of images were delegated. While no direct
+
+
+Information Systems Research 00(0), pp. 000{000, 
+
+0.5
+0.6
+3 0.4 0.5 0.6 0.7 0.8 0.9 1.0
+Accuracy
+Threshold
+ns alone AI alone
+Figure 9 Inversion accuracy by threshold value.
+comparison is possible, we see that the human performance does not seem to be strongly aected
+by lower resolution, as the total accuracy seems to be similar to those of Study 3. AI performance,
+however, was decreased signicantly from 77% to 54%. Human performance still remains below AI
+accuracy. Next, we analyze whether the AI is still able to improve by delegating to humans, even
+though its own performance dropped strongly. In Figure 9, we simulate inversion accuracies based
+on the humans alone condition with varying threshold values. A threshold of 0 symbolizes always
+choosing the AI prediction resulting in the AI accuracy of 54%, while a threshold of 1 symbolizes
+always choosing the human prediction resulting in the average human accuracy of 48.1%. With
+every threshold value below 0.95, the inversion accuracy outperforms both human and AI accuracy,
+with a maximum value at a threshold of 0.50, close to the average human accuracy. Using an
+inversion delegation rule with a threshold of 0.50 improves the human accuracy by 15 percentage
+points and the AI accuracy by nine percentage points. Thus, even in a situation where the AI
+performs relatively poor, inversion seems to be a powerful delegation mechanism.
+5. Discussion and Directions of Future Research
+Our results demonstrate that humans and AI can work together on image classication, even if
+there is no feedback about the AI performance and errors. In such a situation, it is benecial to
+let the AI delegate work to humans in case the AI is uncertain. Humans were unable to delegate
+
+
+30 
+welss if they know the correct class of dicult images. This result is interesting because
+it shows inferior human performance but no aversion to use the algorithm. Our data supports
+the explanation that subjects were indeed motivated to work with the machine and were willing
+to task diculty. We interpret this as a fundamental and latent limitation rather than
+as an act of conscious reluctance. In this regard, our results are consistent with the general view
+issued in Logg et al. (2019): humans do appreciate the help from AI. But we also show that they
+migesults challenge the assumption that an entire task should be handed over to
+an AI if the AI is better. We stated three boundary conditions where delegation and a good
+distribution of work can outperform the assignment to one party. First, humans and AI have to have
+complementary skills. We claim this should be the case for tasks where decision rules are not clearly
+dened.We conrm this using image classication as an example: An optimal combination of the AI
+and humans from the inversion condition would lead to an average accuracy of 89.9%, considerably
+more than 77% accuracy for AI alone and 71.7% for humans alone. Second, complementarities have
+to be recognized. We dene a sucient level of metaknowledge as a necessary condition. While the
+AI seems to have a good perception of own abilities, humans are not able to dierentiate between
+tasks they are able to do and those where this is not the case, especially for dicult images. Third,
+an ecient delegation rule needs to be followed, where a task is moved to the actor that is better at
+solving it. Under perfect information, a simple rule is eective: If you are able to do the task, do it
+yourself; if you are not, then delegate. We demonstrate that such a rule can easily be implemented
+for AI, and that humans can potentially be trained to follow such a rule.
+When AI delegates to humans: Inversion. If AI would be responsible to delegate to humans,
+several interesting things could happen. First, in our experiment the resulting performance was
+higher than that of the AI alone. This makes inversion economically desirable. Second, humans
+
+
+ 31
+would do some of the work. They contribute to the superior result, without them we would not
+timulating environment (Pink 2011). In our example, classifying easily identiable
+images is perhaps routine and boring, whereas the classication of dicult images could be an
+interesting challenge. Inversion might enable humans to spend less time on mundane tasks and more
+ could be interpreted not only as a delegation to humans but also as freeing humans
+some valuable time. The AI would not be the humans' boss but rather an assistant who swipes
+away distractions from the real work. However, inversion comes with a loss of human control.
+The AI decides about the delegations, it asks the human for support only if it is required. It
+does this without emotions, only to leverage complementarities that exist as foreseen by Polanyi's
+groundbreaking work.
+When humans delegate to AI: Metaknowledge and the quest for good delegation. Our research
+points to a fundamental characteristic of human behavior that needs to be understood in order to
+design more eective human-AI collaborative environments: Humans did not perform well in delegating
+tasks to the AI. We can design and teach simple delegation rules, especially in modularized
+tasks. However, even when humans diligently and rationally apply a delegation rule (Figure 5) that
+is internally consistent with their perception of task diculty, humans that delegate to AI do not
+perform as well as they should. The reason for this (Table 9) is an apparent lack of understanding
+what is dicult for them, and what is not. This phenomenon is not isolated to working with AI or
+computers. Humans tend to misjudge their certainty when dealing with high diculty questions
+as compared to medium-diculty or easier questions (Pulford and Colman 1997). In our research
+context, this translates into humans making more arbitrary delegation decisions when dealing with
+dicult tasks, which worsens their overall performance.
+More generally, the phenomenon to not understand the diculty of a task at hand relates to a
+lack of metaknowledge in terms of \appreciation of what we do know and what we do not know"
+
+
+32 Information Systems Research 00(0), pp. 000{000, 
+c 0oemaker 1992, p.8). In our formal education, we do not emphasize this higher
+level of learning to recognize our own strengths and shortcomings. Often, the impact of lacking
+metout alternatives, logical and procedural inconsistencies and/or errors. One way to
+interpret group discussions is to try and achieve the best compromise based on metaknowledge
+and primary knowledge based on facts, concepts, models, relationships and solution techniques.
+Howre specically where AI engages humans in a dialogue to resolve issues related
+to metaknowledge. If we want to produce students that will be eective in the future workforce,
+improving metaknowledge should be a central tenet of higher education.
+Limitations. Our study informs on delegation between humans and AI. To ensure a certain
+degree of generalizability of results, we aimed for a generic, non-specialized task and non-specialized
+workers relying on image classication and MTurk workers. While we think that our ndings carry
+over to many other settings, there might be additional eects in any specialized environment, that
+strengthen or weaken our ndings. While relying on non-specialized situations is a limitation of
+this study, it also creates an opportunity for future research, and to test whether our ndings can
+be replicated in specialized environments.
+There has been a lot of discussion on the suitability of MTurk workers for behavioral experiments.
+These discussions concentrate on three main criticisms of using MTurk in behavioral experiments:
+First, non-naivete, that is, subjects might be experienced in similar experiments and behave strategically
+(Chandler et al. 2019). Second, carelessness, that is, subjects act with a lower degree of rigor
+leading to noisy and partially inconsistent results (Aruguete et al. 2019). Third, representativeness,
+that is, the MTurk population does not re
+ect the composition of society in general. However, it
+should be noted that MTurk subjects are better representatives of the general population compared
+to typical student subjects used in a large number of academic studies (Chandler et al. 2019).
+How could we safeguard against these issues? We contend that non-naivete does not apply in this
+instance since our study is unique in character, compared to, for example, potentially hundreds of
+
+
+ 33
+studies looking at newsvendor problems or dictator games. A potential solution could be to rely on
+new MTurk workers or to exclude workers who participated in similar studies if this information
+is available. We excluded all subjects who participated in our own related studies or pre-tests. In
+higher spread in data quality in MTurk samples compared to traditional student
+samples and recommend measures to ensure validity of results. Following these suggestions, we
+decided to: a) restrict our subject pool to subjects with a positive track record and at least 90%
+ errors in order to participate in the study. Please note that for our set of robustness
+experiments (Study 3 and 4), we had to conduct the experiments during the COVID-19 pandemic.
+This led to an increased level of subjects' carelessness and lower performance compared to the other
+studies. This nding is in line with the literature (Arechar and Rand 2021), and we refrain from
+direct comparisons of the specic results between the rst set of experiments and the robustness
+checks. We admit that our study does not claim to represent a general population. Thus, we
+do not make any claims regarding absolute results of our study, such as \we expect humans to
+delegate 13% of tasks to an AI," rather we compare dierences in behavior between conditions.
+Replicating several studies from dierent subject samples with MTurk samples, Coppock (2019)
+conclude that MTurk samples can be compared to other national samples. Many other studies
+validate the appropriateness of MTurk samples for experimental studies in social sciences, such as
+Buhrmester et al. (2016), Horton et al. (2011), or Lee et al. (2018).
+Future research. As laid out above, a potentially relevant limitation of our sample lies in an
+expected low performance, especially for the samples drawn during the COVID-19 pandemic. In
+concert with focusing on non-specialized tasks, this limits the generalizability of the results regarding
+the absolute performance of our experiment. While we do not expect that those limitations
+have aected our main ndings regarding dierent congurations of delegation schemes, or the
+mechanisms we observed, we believe that analyzing similar settings with high-impact decisions and
+dedicated workers is a fruitful avenue for future studies.
+
+
+34 
+In addition to addressing potential limitations of our study, a key research area should be about
+making humans better delegators in order to develop eective human-AI collaborative environments.
+This requires research on three fronts:
+a) Research on human-AI dialogue and decision authority. How should an AI engine communicate
+and adapt when working with humans that have dierent levels of metaknowledge, and how should
+it develop an appropriate framework for decision making in these environments? For example, an
+AI engine can delegate decision authority to individuals with high levels of metaknowledge, whereas
+it may simply receive inputs from highly competent individuals lacking metaknowledge.
+b) Research on system feedback to increase metaknowledge. Prior research (Pulford and Colman
+1997) has shown that feedback may not aect metaknowledge, especially when the task is di-
+cult. No concerted eort has been made to design feedback environments that lead to improved
+individual metaknowledge when other options are available.
+c) Research on improving metaknowledge. Laboratory studies have shown that experience only
+partially impacts metaknowledge (Hansson et al. 2008), and our robustness check in Study 3 showed
+no eect of providing continuous feedback on metaknowledge. We still cannot rule out that longterm
+debrieng, for example as it is common with airline pilots (Kikkawa and Mavin 2017), might
+improve metaknowledge by providing a better understanding of our own strengths, weaknesses and
+boundaries. This may lead to better appreciation of alternative sources that can help in decisions. In
+human-only environments, providing long-term feedback and intensive debrieng is costly. Human
+feedback may show internal consistency problems and may be intrusive at the task level. However,
+modern technology, including realistic simulations (see Ketter et al. (2016) as an example), can
+potentially provide innovative solutions that help improve our metaknowledge.

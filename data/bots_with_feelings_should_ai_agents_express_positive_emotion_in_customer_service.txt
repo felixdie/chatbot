@@ -1,0 +1,761 @@
+Han, E., Yin, D., & Zhang, H. (2023). Bots with feelings: Should AI agents express positive
+emotion in customer service?. Information Systems Research, 34(3), 1296-1311.
+
+Abstract
+Customer service employees are generally advised to express positive emotion in their interactions
+with customers. The rise and maturity of artificial intelligence (AI) powered conversational agents, also
+known as chatbots, beg the question: should AI agents be equipped with the ability to express positive
+emotion in customer service? This research explores how, when, and why an AI agent’s expression of
+positive emotion affects customers’ service evaluations. We argue that AI-expressed positive emotion can
+influence customers via dual pathways: an affective pathway of emotional contagion and a cognitive
+pathway of expectation-disconfirmation. We propose that positive emotion expressed by an AI agent (vs.
+a human employee) is less effective in facilitating service evaluations because of a heightened level of
+expectation-disconfirmation. We further introduce customers’ relationship norm orientation as a novel
+individual difference variable that affects their expectations toward the AI agent and moderates the
+cognitive pathway of expectation-disconfirmation. Results from three laboratory experiments substantiate
+our claims. By revealing a distinctive impact of positive emotion expressed by an AI agent compared with
+a human employee, these findings deepen our understanding of customers’ reactions to emotional AIs and
+offer valuable insights for the deployment of AIs in customer service.
+
+Keywords: emotional artificial intelligence, conversation agent, chatbot, customer service, emotional
+contagion, expectation-disconfirmation, relationship norm orientation
+
+Introduction
+With the surge of technological innovations such as machine learning and deep learning, artificial
+intelligence (AI) has become a major interest for researchers, practitioners, and the public. In 2020, 56%
+of businesses adopted AI in at least one function, and more than 50% of the AI use cases were related to
+service operations (McKinsey 2021). Because of the cost efficiency and growing capabilities of AIpowered
+conversational agents (‘AI agents’ for brevity) in the form of chatbots or voice-based AIs, they
+have been increasingly deployed in customer service to reduce the burden of human labor and often
+replace customer service employees (Larivière et al. 2017). Financial Digest (2017) predicted that AIs
+would handle 95% of customer service interactions by 2025. Recognizing the popularity and importance
+of using AIs in customer service, researchers have started exploring how to maximize the value of AI
+service agents through means such as controlling their identity disclosure or humanizing AIs through
+visual, auditory, and communication cues (Lucas et al. 2014; Luo et al. 2019; Schanke et al. 2021; Yuan
+and Dennis 2019).
+While prior research has examined several aspects of AI service agents and their impact on service
+outcomes (Araujo 2018; Luo et al. 2019; Schanke et al. 2021), less attention has been paid to the AI
+agents’ expressed emotion. Emotional expression is regarded as one of the foundational attributes that
+define human nature (Haslam 2006). However, the recent debate about the emergence of a sentient AI
+gaining consciousness and feelings raises the possibility that AIs can also possess the primary attributes
+of human beings, such as the ability to perceive, think, and feel (Tiku 2022). The emerging emotional
+AIs, which can recognize, interpret, process, and simulate human emotions (Huang and Rust 2018, 2021),
+further underscore the need to investigate how people make sense of and react to the emotional
+capabilities of an AI. Indeed, the global affective computing market, which develops technologies for
+emotional AIs, is projected to reach $100 billion by 2024 and $200 billion by 2026 at a compounded
+annual growth rate of over 30% (Global Industry Analysts 2021; Reports and Data 2021). Such emotional
+AI technologies can be critical for the development and deployment of AI service agents because human
+employees’ positive emotions are a key driver of customer service evaluations in firm-customer
+
+3
+encounters (Kranzbühler et al. 2020). As AI service agents grow more popular, equipping them with the
+capability of expressing positive emotion (e.g., being cheerful and happy) is expected to benefit
+businesses and enhance customer experience.
+However, equipping AI service agents with this ability should be planned and rolled out cautiously
+because the positive effect of human-expressed positive emotion may not apply to an AI agent (Gray and
+Wegner 2012). Prior studies from HCI and psychology provided conflicting evidence for the effectiveness
+of AIs expressing emotion in non-business contexts (Creed et al. 2014; Stein and Ohler 2017). In the
+customer service setting, however, little research has examined the impact of AI-expressed emotion. We
+focus on AI service agents in the form of text-based chatbots increasingly deployed in customer service
+departments and explore the impact of their expressed positive emotion on service evaluations.
+Our research question is the following: how, when, and why does an AI agent’s expression of positive
+emotion influence customers’ service evaluations? Our primary goal is to examine the unique impact of
+AI-expressed emotion that might be different from the impact of human-expressed emotion. Since human
+service employees typically display positive emotion during a service encounter, we also restrict our
+focus to positive emotion that is deemed appropriate as a first step toward achieving our primary goal.
+Drawing on emotional contagion and expectation-disconfirmation literature (Hatfield et al. 1993; Oliver
+1977), we argue that positive emotion expressed by an AI agent can influence customers’ service
+evaluations through dual pathways: one affective and the other cognitive. On the one hand, the affective
+pathway of emotional contagion that underlies the positive effect of human-expressed positive emotion,
+as repeatedly confirmed in the prior customer service literature (Pugh 2001; Tsai and Huang 2002), may
+also apply to an AI service agent. On the other hand, an emotion-expressing AI agent might violate a
+customer’s expectation that it is not capable of feeling emotion (Gray et al. 2007; Haslam 2006). This
+negative, cognitive pathway may cancel out the positive, affective pathway of emotional contagion,
+resulting in a weakened effect of positive emotion on service evaluations. We further explore individual
+differences in people’s norms toward their relationship with an agent—termed “relationship norm
+orientation”—that can be distinguished into communal-oriented and exchange-oriented relationship
+
+4
+norms (Clark and Mils 1993). We propose that variations in these norms lead to different expectations
+toward an AI service agent and subsequently affect the potency of the negative pathway.
+To test these hypotheses, we present three experimental studies in which participants engaged in a
+hypothetical customer service scenario and chatted with an agent to resolve a service-related issue. We
+find consistent evidence for our predictions. Our theoretical framework and findings provide three
+primary contributions to the literature on expressed emotion in customer service and human-AI
+interactions. First, this paper is among the first to investigate the role of emotion expressed by an AI
+service agent. Our findings extend the customer service literature by exploring the implications of
+expressed emotion when the service is provided by an AI rather than a human. Second, we illuminate the
+effect of expressed emotion on observers in human-AI interactions, which is a nascent area of research.
+Third, we unravel the dual pathways of expressed emotion’s impact and reveal a boundary condition for
+the cognitive pathway, deepening our understanding of a critical but understudied phenomenon.
+Theoretical Development and Hypotheses
+Expressed Emotion in Customer Service
+In traditional customer service settings where humans are service providers, the role of their displayed
+emotion has been an important area of scholarly inquiry (Pugh 2001; Rafaeli and Sutton 1990). The
+display of positive emotion by service employees is generally desirable as it enhances service outcomes
+(Kranzbühler et al. 2020). For example, displaying a smile to customers can lead to higher service
+evaluations in both face-to-face and online interactions because of emotional contagion (Barger and
+Grandey 2006; Pugh 2001; Tsai and Huang 2002; Verhagen et al. 2014). Emotional contagion refers to
+the process in which an individual’s emotional state is transferred to an observer (Hatfield et al. 1993).
+The means through which emotional contagion occurs is not confined to nonverbal behaviors, such as
+facial, postural, or vocal expressions, and it also includes text-based computer-mediated communication
+(Goldenberg and Gross 2020). Thus, if a customer perceives positive emotion from a service agent, he or
+she can experience the same emotion and evaluate the service more positively as a result.
+
+5
+However, expressing positive emotion might not always be beneficial. For example, expressed
+emotion could backfire when it is perceived as inappropriate or inauthentic (Cheshin et al. 2018). Also, Li
+et al. (2018) investigated the effect of positive emotion expressed through emoticons during online
+service interactions and found that expressing positive emotion can enhance the perceptions of a service
+agent’s warmth but not competence. These findings suggest a need to explore the consequences of
+expressing positive emotion when the service is provided by an AI agent.
+AI-Expressed Emotion
+While prior studies provided extensive evidence for the effect of emotion expressed by a human
+service agent, little research has examined the applicability of these findings when an AI provides the
+service. AIs have been rapidly replacing human service agents in the recent decade (Oracle 2016).
+Moreover, we are witnessing the development of emotional AIs that are increasingly able to recognize
+human emotions and simulate human’s emotional responses (Somers 2019). Thus, it is crucial to
+understand how, when, and why the positive emotion expressed by an AI service agent can influence
+customers’ service evaluations.
+As the history of developing emotional AIs is short, research on the effect of AI-expressed emotion is
+nascent. The very few studies examining the effects of AIs’ simulated emotions, mostly in non-business
+contexts, provided mixed evidence, partly because the contexts of the studies varied substantially.
+Machines displaying emotions were preferred over their neutral counterparts in certain contexts (Creed et
+al. 2014), but they also elicited people’s negative feelings in other contexts (Kim et al. 2019; Stein and
+Ohler 2017). These mixed findings suggest that insights from earlier customer service studies based on
+humans expressing positive emotion may not apply to AIs equipped to mimic human emotions.
+AI-Expressed Positive Emotion and Dual Pathways
+First, we believe that the impact of a service agent’s expressed positive emotion in service encounters
+depends on the agent’s identity as a human or an AI. A possible reason is that emotion-related capabilities
+are deemed unique capabilities of humans, such as experiencing and expressing one’s own emotions as
+well as sharing others’ emotions (i.e., empathy) (Haslam 2006). Thus, customers should have different
+
+6
+expectations about these capabilities from a human versus an AI agent. As explained in more depth later,
+an AI agent is less expected to express positive emotion than a human employee because machines are
+generally believed to lack consciousness or feelings (Gray et al. 2007; The Economist 2022). A violation
+of this expectation in the case of an AI agent should weaken the positive impact of expressed positive
+emotion revealed in prior literature studying human agents. Thus, we propose the following:
+H1: The positive effect of positive emotion expressed by an agent on service evaluations depends on the
+agent’s identity, such that the effect is greater for a human agent than for an AI agent.
+Because the focus of our paper is positive emotion expressed by AI agents, we limit our attention in
+the rest of theory development to AI-expressed positive emotion and discuss how it influences service
+evaluations through dual, opposing processes: one affective and the other cognitive. First, one’s expressed
+emotion can lead an observer to feel the same emotion through emotional contagion (Hatfield et al. 1993).
+Prior literature in customer service showed that the display of a human employee’s positive emotion
+provokes the positive affect of a customer, thus enhancing service evaluations (Pugh 2001). In addition,
+the likelihood and extent of emotional contagion may depend on various factors, such as the expresser’s
+characteristics, the expresser-perceiver relationship, and the perceiver’s susceptibility to others’ emotions
+(Doherty 1997; van der Schalk et al. 2011).
+Emotional contagion might be weakened when the expresser is an AI rather than a human agent.
+However, we argue that the affective process of emotional contagion can still underlie the impact of AIexpressed
+positive emotion. After observing another person’s emotional expression, one’s affective states
+can be automatically and subconsciously evoked without involving any cognitive resources and often,
+even without being aware of the origin (Neumann and Strack 2000). Moreover, prior literature on
+computer-mediated communication suggested that textual cues suffice for eliciting emotional contagion
+because affective words prime an observer with the emotion conveyed in those words (Cheshin et al.
+2011; Hancock et al. 2008). This finding also implies that emotional contagion may occur through IT
+artifacts in digital environments that lack human presence, such as on social media (Ferrara and Yang
+2015; Kramer et al. 2014).
+
+7
+In our context, if an AI service agent expresses positive emotion during a service interaction, the
+textual cues of positive emotion can prime a customer with the same emotion, thus automatically
+triggering positive emotion of the customer before they form any cognitive judgment towards the agent’s
+identity. The triggered positive emotion will then serve as information for judging the service encounter.
+According to affect-as-information theory, one’s affective states provide information about an event he or
+she is involved in (Schwarz and Clore 1983). Specifically, affective valence can be attributed to the value
+judgment of an event, such that positive (negative) emotion leads to a perception that the event is pleasant
+(unpleasant) (Clore et al. 2001). Thus, a customer’s positive emotion triggered by emotional contagion
+will lead to a positive evaluation of a service encounter (Pugh 2001). Taken together, we propose that a
+customer’s felt positive emotion can mediate the impact of AI-expressed positive emotion.
+H2a (positive mediation through emotional contagion): An AI agent’s expressed positive emotion
+increases a customer’s positive emotion, which in turn enhances service evaluations.
+In addition to the affective pathway of emotional contagion, we also propose a cognitive pathway such
+that AI-expressed positive emotion increases the magnitude of expectation-disconfirmation, which refers
+to the extent to which an individual’s prior expectation does not align with the actual experience (Oliver
+1977). Expectation-disconfirmation is known to influence various consumer behaviors, such as product or
+service evaluations, post-purchase behavior, and continuous use of information systems (Bhattacherjee
+2001; Oliver 1993). During a service interaction, customers compare their expectations and the actual
+service experience when evaluating a service (Oliver 1993; Parasuraman et al. 1985). The impact of
+expectation is especially salient for interpersonal communication that involves emotion, as individuals
+have strong expectations toward others’ emotional expressions (Burgoon 1993). Beyond interpersonal
+communication, an expectation has also been revealed to play an important role in the context of
+communication through technological artifacts (Jensen et al. 2013; Jin 2012; Kalman and Rafaeli 2011;
+Ramirez and Wang 2008). Overall, when the expectation is violated, especially if the observed behavior is
+inferior to the expected behavior (i.e., negative violation), the resulting disconfirmation and cognitive
+dissonance often lead people to develop negative attitudes or behaviors (Festinger 1957).
+
+8
+While several factors can determine the impact of expectation, one factor is a communicator’s
+characteristics (Burgoon 1993), and we focus on the identity of a service agent as such a characteristic in
+our context. For an AI agent, customers should have prior expectations regarding its capability of feeling
+(and subsequently expressing) emotion, which should be different from that of a human agent. One of the
+core characteristics that define human nature and differentiate humans from machines is related to
+emotion, such as emotionality (i.e., experiencing or expressing one’s own emotions) and emotional
+responsiveness (i.e., understanding or sharing others’ emotions and responding accordingly) (Haslam
+2006). Different from humans, machines are commonly believed to lack the mental capability of feeling
+various emotions (e.g., joy, fear, rage) (Gray et al. 2007; Gray and Wegner 2012), which is a necessary
+step before emotional display. Due to this fundamental difference in emotional capabilities between
+humans and machines, customers should have different expectations for the agent’s emotional display,
+such that a human agent can and should express (supposedly positive) emotion, while an AI agent cannot.
+Thus, when an AI agent expresses emotion during an actual interaction, customers’ expectations about its
+emotional expression should be disconfirmed.
+While the violation of expectation can be either positive or negative, we argue that an emotionexpressing
+AI agent will result in a negative violation because emotionally capable machines can evoke a
+sense of threat to human uniqueness and lead to strong eeriness and aversion toward the machines (Stein
+and Ohler 2017). Such a negative violation of expectation will lead to lower service evaluations (Brady
+and Cronin 2001; Oliver 1993). Thus, expectation-disconfirmation can also mediate the impact of an AI
+agent’s expressed positive emotion on service evaluations.
+H2b (negative mediation through expectation-disconfirmation): An AI agent’s expressed positive
+emotion increases the extent of expectation-disconfirmation, which in turn reduces service evaluations.
+Accordingly, when an AI agent expresses positive emotion, the negative indirect effect through
+expectation-disconfirmation may cancel out the positive indirect effect through emotional contagion. The
+
+9
+co-occurrence of these two opposing processes may explain the weaker effect of an AI agent’s expressed
+positive emotion compared to a human agent’s expressed positive emotion, as proposed in H11.
+The Moderating Effect of Relationship Norm Orientation
+While two opposing processes might underlie the impact of AI-expressed positive emotion, the
+pathway of expectation-disconfirmation may vary based on an individual’s exact expectation. We suggest
+relationship norm orientation as an individual difference variable to capture the natural variation in
+customers’ expectations. Relationship norm is used in social psychology to explain people’s varying
+norms about two distinct types of relationships—exchange and communal—based on economic and
+social factors (Clark and Mils 1993). An exchange relationship is a quid pro quo relationship of
+exchanging a similar level of benefits. In communal relationships, however, such quid pro quo is not
+obligatory. Instead, benefits are given in response to a person’s need or to demonstrate a general concern
+for another. Because this distinction is based on a rule or a norm about giving and receiving benefits, the
+two relationships generate different norms of behavior which, in turn, influence expectations toward
+another’s behavior in an interpersonal relationship (Clark and Taraban 1991). Thus, the same behavior
+might lead to different interpersonal outcomes depending on the observer’s relationship norm orientation.
+Relationship norm orientation has been found to be influential beyond interpersonal relationships. For
+example, customers tend to form different expectations toward a brand depending on their relationship
+norm orientation, ultimately influencing their evaluations of the brand or its product (Aggarwal 2004; Liu
+and Gal 2011). These studies provide converging evidence that violating the relationship norm leads to a
+negative evaluation because of cognitive dissonance between expectations and actual observations.
+Similarly, customers’ relationship norm orientation may influence how they interpret certain cues from a
+service agent during a service encounter (Scott et al. 2013), which in turn can alter the subsequent
+likelihood of expectation-disconfirmation.
+1 Note that the two proposed pathways may be interdependent due to the intertwining of affect and cognition (Izard 2011; Phelps
+2006). While we acknowledge that the two processes can be mutually influential, we still treat the two pathways as distinct
+processes because a) such a model is more parsimonious and b) this treatment is consistent with similar theories such as the
+emotions as social information theory (Van Kleef 2009) and dual-process theories (Evans 2003; Petty and Cacioppo 1986).
+
+10
+In our context, customers can evaluate AI agents’ expression of positive emotion differently
+depending on their relationship norm orientation. Customers with a communal relationship norm—
+communal-oriented customers—will expect a service agent to show a genuine concern and care like a
+friend or a family member (Scott et al. 2013). Because the expression of positive emotion insinuates such
+care and attention, it will confirm communal-oriented customers’ expectations derived from their
+relationship norm, even if the source is an AI agent. Thus, the positive effect of AI-expressed positive
+emotion on expectation-disconfirmation will be weaker for communal-oriented customers.
+In contrast, customers with an exchange relationship norm—exchange-oriented customers—will
+expect a service agent to be more transaction-focused, providing a professional and exact service (Scott et
+al. 2013). Because the expression of positive emotion does not satisfy such a transaction-focused norm, it
+will not confirm exchange-oriented customers’ expectations derived from their relationship norm. As
+exchange-oriented customers are more likely to treat an AI agent as a machine (which is not supposed to
+have emotion) than a friend or family member, the positive effect of AI-expressed positive emotion on
+expectation-disconfirmation should be greater for them than for communal-oriented customers. Taken
+together, an AI agent’s expression of positive emotion should enhance the service evaluations when the
+customers are communal-oriented (because of emotional contagion and weaker expectationdisconfirmation),
+but this effect should weaken or even reverse when the customers are exchange-oriented
+(because of emotional contagion and expectation-disconfirmation operating in opposite directions). We
+propose our last hypothesis below. Figure 1 depicts the complete research framework.
+H3 (moderation by relationship norm orientation): For communal-oriented customers, an AI agent’s
+expressed positive emotion has a positive effect on service evaluations, but for exchange-oriented
+customers, such an effect is non-existent or even reversed.
+To test these hypotheses, we conducted three laboratory experiments in which participants were asked
+to interact with a customer service agent in a hypothetical scenario. In the first study, we tested H1 by
+manipulating the agent’s (human vs. AI) identity and the presence of positive emotional expression
+during the interaction. In Study 2, we focused only on the AI agent and explored the moderating role of
+
+11
+participants’ relationship norm orientations as proposed in H3. In the final study, we tested H3 as well as
+the underlying mechanisms as proposed in H2a and H2b.
+Figure 1. Research Framework
+Pretest
+Before the main experiments, we conducted a pretest to verify the effectiveness and validity of our key
+emotion manipulation in a customer service context. To achieve this goal, we varied an AI service agent’s
+expressed positive emotion at multiple levels in a between-subjects design and kept all other aspects of
+the interaction identical across conditions. We focused only on the AI agent in this pretest because our
+primary interest is the effectiveness of AI agents expressing emotion. During the study, participants took
+part in a hypothetical customer service task and interacted with an AI agent via virtual chat to resolve a
+service-related issue. After the chat, participants evaluated the expressed emotion of the AI agent.
+Stimulus Materials
+To ensure that participants across conditions receive the same messages from the AI agent during the
+chat except for the level of expressed emotion, we used a predesigned script. The script included four
+messages from the agent, with two to four sentences within each message. The script was devised based
+on examples of best practices and canned responses for live chat from livechat.com, a popular platform
+that provides live chat software. Messages at the beginning (for greetings) and end of the chat followed
+the exact examples from the platform. The rest of the messages also followed the best practice examples
+from the platform but were slightly modified to fit our setting.
+We manipulated expressed positive emotion at three levels by selecting one sentence from each
+message and varying the presence of emotional adjectives or exclamation marks in the sentence. We
+focused only on the positive emotion to avoid the possible confound of valence. For the low emotion
+
+12
+condition, there were neither emotional adjectives nor exclamation marks throughout the interaction. For
+the intermediate emotion condition, following Yin et al. (2017), we added exclamation marks and
+emotional adjectives to every manipulated sentence. For the high emotion condition, we added both
+exclamation marks and emotional adjectives to every manipulated sentence. Furthermore, to strengthen
+participants’ belief that they are interacting with an AI agent, we showed an introductory message of
+“being connected to a bot created by the customer service department” before the chat started. We also
+inserted a robot icon under the introductory message and next to each message from the agent. The three
+versions of the entire script can be found in Appendix A.
+Procedure
+One hundred and five subjects from Amazon Mechanical Turk (53 female) participated in the pretest.
+Participants were randomly assigned to one of the three conditions with different levels of expressed
+positive emotion. The cover story involved a hypothetical but realistic scenario that described a servicerelated
+issue. We chose the online retail industry as the setting because virtual chat is commonly deployed
+to communicate with customers, and this industry is at the forefront of rapidly replacing human agents
+with AI agents. For the service-related issue, we used one of the most common complaints in the online
+retail industry: a missing item from a delivery. The scenario described a recent delivery in which one of
+the items was missing. Participants were asked to chat with a service agent and request delivery of the
+missing item (see Appendix B for details). Then participants saw the introductory message that they were
+being connected to a customer service bot, and the chat started on a new screen.
+When the chat started, the first message was displayed. Participants had to type in their response
+below the first message before moving on to the next screen and seeing the agent’s next message.
+Participants were instructed to provide a response to the agent based on the cover story. Furthermore, on
+each screen, we provided a reminder of the facts from the cover story that pertained to the agent’s
+question so that the chat would not go off topic, and the subsequent message from the agent would appear
+logical. On each screen, participants could also see the chat history up to that point. To further enhance
+the live chat experience, each of the agent’s messages was presented with a slight delay.
+
+13
+To verify the effectiveness of our affect intensity manipulation (Jensen et al. 2013), we asked the
+participants to rate the intensity of the agent’s expressed emotion after the chat concluded. Emotional
+intensity was measured using three items from Puntoni et al. (2008) (e.g., “very little emotion / a great
+deal of emotion”). We also asked participants to report the appropriateness of expressed emotion to
+ensure that they are similarly appropriate across conditions (Van Kleef and Côté 2007). Emotion
+appropriateness was measured using four items from Cheshin et al. (2018) (e.g., “The emotions the
+service agent expressed were appropriate.”). All these questions were measured on a seven-point semantic
+differential scale. To identify outliers and ensure subject quality, we also asked participants to answer two
+attention check questions about the content of the service issue and the solution provided by the agent. All
+measurement items are listed in Appendix C.
+Results
+Out of 105 subjects, 84 subjects passed both attention check questions and were used in our analysis.
+We first conducted a manipulation check for the perceived intensity of the agent’s expressed emotion.
+Analysis revealed that participants perceived the emotional intensity of the agent differently across the
+three conditions (F(2, 81) = 17.324, p < .001). According to a Tukey post-hoc test, the low emotion agent
+was perceived as less emotionally intense than the intermediate emotion agent (Mlow = 2.36 vs. Mintermediate
+= 4.01, SDs = 1.43 and 1.53, t(54) = 4.16, p < .001) or high emotion agent (Mhigh = 4.48, SDhigh = 1.22,
+t(53) = 5.92, p < .001). However, the intermediate emotion agent and the high emotion agent were not
+perceived differently in terms of emotional intensity (p = .4). Thus, our manipulations indeed varied
+emotional intensity successfully between low and higher levels but not between intermediate and high
+levels.
+Next, we evaluated the appropriateness of expressed emotion to rule out this possible confound.
+Results revealed that subjects did not evaluate the appropriateness of emotion differently across
+conditions (F(2, 81) = .878, p = .4). The pairwise comparisons further confirmed that the participants did
+not perceive a difference in emotional appropriateness between low versus intermediate (p = .4), low
+versus high (p = .6), or intermediate versus high (p = 1) emotion conditions.
+
+14
+Discussion
+This pretest manipulated the level of emotion expressed by a service agent and validated this key
+manipulation. Among the three levels, we picked the low and high levels for use in the main studies for
+two reasons. First, the perceived intensity of the agent’s expressed emotion was the lowest in the low
+emotion condition and the highest in the high emotion condition, and this difference was significant. We
+did not choose the intermediate level of expressed emotion because we intended to strengthen the
+manipulation as much as possible. Second, we verified that perceived appropriateness did not differ
+across intensity levels. For simplicity, we will refer to the low and high levels as “emotion-absent” and
+“emotion-present,” and the presence of positive emotion as “positive emotion” henceforth.
+Study 1
+In Study 1, we investigated whether the effect of expressed positive emotion depends on the service
+agent’s identity, as suggested in H1. To do so, we varied both the presence of the expressed positive
+emotion and the agent’s (human versus AI) identity in a between-subjects design.
+Procedure and Measures
+To manipulate the agent’s identity, we varied the icons that appeared next to each of the agent’s
+messages from the chat (see Figure 2). For those assigned to the human condition, the employee was
+either male or female (randomly determined) to reduce a possible gender effect. For manipulating the
+presence of emotion, we used the low and high emotional intensity scripts verified in the pretest (see
+Figure 3).
+AI Agent
+Human Agent
+Figure 2. Agent Icons
+or
+
+15
+Emotion-absent Condition Emotion-present Condition
+Figure 3. Chat Scripts (in AI conditions)
+One hundred and fifty-eight undergraduate students (86 female) from a U.S. university participated in
+the study in exchange for course credit. Participants were randomly assigned to one of the four treatment
+conditions. The cover story and procedure were identical to that of the pretest, except that we asked the
+outcome variables right after participants finished their chat with the agent.
+We focused on two important service evaluation outcomes: perceived service quality and satisfaction
+with the service. Perceived service quality is an overall evaluation of the service outcome and interaction,
+and it is associated with key organizational outcomes such as customer loyalty, market share, and
+purchase intention (Brady and Cronin 2001). Satisfaction with the service is another essential evaluation
+metric, as it is a key predictor of customers’ intention to continue using the service (Oliva et al. 1992).
+Although the two have been revealed to jointly influence more downstream consequences (Cronin et al.
+
+16
+2000; Gotlieb et al. 1994), they are distinct constructs at the theoretical level (Anderson and Sullivan
+1993; Cronin et al. 2000; Taylor and Baker 1994). To measure perceived service quality and satisfaction
+with the service, we adapted existing scales from the customer service literature (Cronin et al. 2000).
+Perceived service quality was measured using three items (e.g., “poor / excellent”). Satisfaction with the
+service was measured using three questions (e.g., “Overall, how satisfied or dissatisfied did your
+experience with the service agent leave you feeling?”, “extremely dissatisfied / extremely satisfied”).
+After the measures for service evaluations, we asked two attention check questions as in the pretest,
+followed by the manipulation check questions. As a manipulation check for the presence of emotion, we
+used the same measure of emotional intensity from the pretest. As a manipulation check for the agent’s
+identity, we measured the perceived human-likeness of the agent on a seven-point, semantic differential
+scale, using three items from MacDorman (2006) and Lankton et al. (2015) (e.g., “very mechanical / very
+humanlike”). All measurement items of this study and the later studies are listed in Appendix C.
+Results
+We used 155 subjects who passed attention checks. The analysis of the manipulation checks revealed
+that participants perceived the emotion-present agent as more emotionally intense than the emotion-absent
+agent (Mpresent = 4.04 vs. Mabsent = 2.52, SDs = 1.35 and 1.47, t(153) = 6.703, p < .001). Also, participants
+perceived the human agent as more human-like than the AI agent (Mhuman = 3.23 vs. MAI = 2.68, SDs =
+1.79 and 1.27, t(153) = 2.208, p = .029). Therefore, both of our manipulations were deemed successful.
+To test H1, we conducted a two-way ANCOVA with positive emotion and the agent’s identity as
+between-subjects factors and gender as a covariate. We used gender as a covariate because of the prior
+literature indicating gender differences in emotion recognition and perception (Brody and Hall 2008;
+Fischer et al. 2018). Results revealed a main effect of positive emotion, such that overall, expressing
+positive emotion led to a more positive evaluation of service quality (Mabsent = 5.67 vs. Mpresent = 6.13, SDs
+= 1.45 and 1.07, F(1, 150) = 5.650, p = .019) and greater satisfaction (Mabsent = 6.04 vs. Mpresent = 6.41,
+SDs = 1.21 and .94, F(1, 150) = 4.601, p = .034). However, the main effect of agent identity was not
+observed (ps = .8), nor the main effect of gender (ps = .2 and .6).
+
+17
+Most importantly, agent identity significantly moderated the positive effect of positive emotion on
+perceived service quality (F(1, 150) = 5.451, p = .021) and on satisfaction (F(1, 150) = 3.606, p = .059).
+Pairwise comparisons showed that positive emotion from a human agent significantly increased perceived
+service quality (Mhuman_absent = 5.42 vs. Mhuman_present = 6.37, SDs = 1.25 and 1.29, t(75) = 3.282, p = .001)
+and satisfaction (Mhuman_absent = 5.86 vs. Mhuman_present = 6.57, SDs = 1.06 and 1.11, t(75) = 2.871, p = .005).
+In the case of an AI agent, however, the effects of positive emotion did not reach significance for service
+quality (MAI_absent = 5.94 vs. MAI_present = 5.93, SDs = 1.25, t(76) = .035, p = 1) or satisfaction (MAI_absent =
+6.27 vs. MAI_present = 6.23, SDs = 1.06, t(76) = .167, p = .9) (see Figure 4). These results confirmed H1.
+Figure 4. Interaction Effect of Positive Emotion and Agent Identity in Study 1
+Note: ns, not significant; ** p < .05
+Discussion
+This study provides direct evidence that positive emotion expressed by a human agent can increase
+perceived service quality and satisfaction with the service, but such effects are absent when the emotion is
+expressed by an AI agent. As discussed before, prior literature on customer service has shown that
+positive emotional expressions by a human service agent positively influence customers’ service
+evaluations (Kranzbühler et al. 2020). However, this study suggests that the positive impact of human’s
+positive emotional displays is not directly applicable when AI agents replace human agents.
+A reason for this lack of effect in the case of an AI agent might be that customers differ in perceived
+norms regarding their relationships with the AI agent and thus have different expectations toward the AI
+ns
+** **
+ns
+Emotion-absent Emotion-present
+
+18
+agent’s expressed emotion. Such different expectations may lead to different reactions, as we proposed in
+H3. Thus, we focused only on AI agents in the next study and tested this hypothesis.
+Study 2
+The goal of Study 2 was to investigate whether the effect of AI-expressed positive emotion is
+dependent on customers’ individual differences in their relationship norm orientation as proposed in H3.
+Because we shifted our focus to only the AI agent, we varied the presence of positive emotion as a single
+between-subjects factor and measured participants’ relationship norm orientation.
+Stimulus Materials, Procedure, and Measures
+We changed our predesigned script by switching to a different service-related issue and extending the
+length of the conversation. We asked participants to request an exchange for a textbook they had already
+ordered, as this scenario is more relevant to student subjects. We also added one more message to the
+conversation to enhance participant engagement. This additional message, which was inserted after the
+greetings message, asked why a participant wanted an exchange. Manipulation of emotional intensity was
+also implemented in this additional message and all other messages as in the first study.
+Ninety-two undergraduate students (49 female) from a U.S. university participated in this study in
+exchange for course credit. Participants were randomly assigned to either the emotion-absent or the
+emotion-present condition. The cover story and procedure were identical to those of Study 1. In addition
+to the measures used in Study 1, we added a new scale measuring participants’ individual differences in
+relationship norm orientation. We used a seven-point, semantic differential scale with three items,
+describing the kind of relationship a participant would want with an online customer service agent (e.g.,
+“strictly for business / bonded like family and friends”) (Aggarwal 2004; Li et al. 2018).
+Results
+We used the responses from 88 subjects who passed both attention checks. Analysis of the
+manipulation check for emotional intensity revealed that participants perceived the emotion-present agent
+as more emotionally intense than the emotion-absent agent (Mpresent = 4.22 vs. Mabsent = 2.86, SDs = 1.27
+and 1.39, t(86) = 4.791, p < .001). Therefore, this manipulation was deemed successful.
+
+19
+To test the moderation effect proposed in H3, we conducted a one-way ANCOVA with positive
+emotion as a between-subjects factor, relationship norm orientation as a continuous moderator, and
+gender as a covariate. First, replicating the AI-related findings from Study 1, we did not find any
+significant main effect of positive emotion on perceived service quality (Mabsent = 5.98 versus Mpresent =
+6.02, SDs = .93 and .94, F(1, 83) = .667, p = .4) or satisfaction (Mabsent = 6.25 versus Mpresent = 6.33, SDs
+= .96 and .73, F(1, 83) = 1.836, p = .2). Meanwhile, we observed a significant effect of gender on
+satisfaction, such that females tended to be more satisfied with the service than males (F(1, 83) = 6.140, p
+= .015), but not on service quality (F(1, 83) = 1.426, p = .2).
+Most importantly, we discovered that relationship norm orientation significantly moderated the effect
+of positive emotion on perceived service quality (F(1, 83) = 12.744, p = .001) and on satisfaction (F(1,
+83) = 14.066, p < .001). In order to probe the pattern of the interaction, we conducted a simple slope
+analysis and examined the marginal effect of positive emotion at one standard deviation above and below
+the mean of relationship norm orientation. For exchange-oriented individuals (relationship norm
+orientation = 1.10, -1 SD), AI-expressed positive emotion has a significant, negative effect on perceived
+service quality (b = -.57, t(86) = -2.12, p = .037) and satisfaction (b = -.44, t(86) = -1.88, p = .06). On the
+other hand, for communal-oriented individuals (relationship norm orientation = 3.95, +1 SD), AIexpressed
+positive emotion had a significant, positive effect on perceived service quality (b = .89, t(86) =
+3.04, p = .003) and satisfaction (b = .89, t(86) = 3.52, p < .001). Figure 5 illustrates the simple slope
+analyses. Taken together, these results indicate that the effect of positive emotion from an AI agent on
+service evaluations depends on an individual’s relationship norm orientation, thus confirming H3.
+
+20
+Figure 5. Moderating Effect of Relationship Norm Orientation in Study 2
+Note: * p < .1; ** p < .05; *** p < .001
+Discussion
+Study 2 extends our previous findings by revealing the moderating role of a theoretically relevant
+individual difference variable, relationship norm orientation. Individuals with a communal-oriented norm
+evaluated an AI agent’s service more positively when the agent expressed positive emotion than when it
+did not. Conversely, individuals with an exchange-oriented norm evaluated an AI agent’s service more
+negatively when the agent expressed positive emotion than when it did not. Despite the revelation of the
+moderating role of relationship norm orientation in this study, we have not explored the underlying
+mechanisms, which we turn to in the final study.
+Study 3
+In Study 3, we delved into the mechanisms proposed in H2a and H2b. Similar to Study 2, we focused
+only on AI agents and manipulated the presence of positive emotion as a single between-subjects factor.
+To test the proposed mechanisms, we added new measures for the subject’s felt positive emotion and the
+extent of expectation-disconfirmation to capture the opposing pathways.
+Procedure and Measures
+One hundred and eighty-six undergraduate students (93 female) from a U.S. university participated in
+this study in exchange for course credit. Similar to Study 2, participants were randomly assigned to either
+the emotion-absent or emotion-present condition. We used the predesigned script from Study 1 to vary the
+presence of positive emotion. The cover story and procedure were similar to those of prior studies. After
+**
+** ***
+*
+Emotion-absent Emotion-present
+
+21
+the service interaction, participants reported service evaluations, followed by attention checks, mechanism
+measures, manipulation checks, and individual difference measures of relationship norm orientation.
+To measure the mechanisms, we asked participants’ felt positive emotions to quantify emotional
+contagion because measuring one’s emotion right after an emotion-invoking stimulus can capture
+affective transfer (Hasford et al. 2015). We used five items from Pham (1998) to measure participants’
+felt emotions (e.g., “sad / joyful”). We also measured the extent to which participants confirmed their
+expectations toward the service agent, using three items from Bhattacherjee (2001). We modified the
+original items to tailor to our need to capture the specific expectations about the level of emotion
+expressed by the service agent (e.g., “The level of the chatbot’s emotional display was exactly what I
+expected”). In data analysis, we reversed these items’ scores to represent expectation-disconfirmation.
+Results
+One hundred and seventy-seven subjects passed the attention checks and thus were used in the
+following analyses. We first analyzed the perceived emotional intensity of the service agent as a
+manipulation check. We found that participants perceived the emotion-present agent as more emotionally
+intense than the emotion-absent agent (Mabsent = 3.11 vs. Mpresent = 5.19, SDs = 1.25 and 1.22, t(175) =
+11.194, p < .001), indicating that our manipulation of the presence of positive emotions was successful.
+Next, we conducted a one-way ANCOVA to replicate prior findings, with positive emotion included
+as a between-subjects factor, relationship norm orientation as a continuous moderator, and gender as a
+covariate. Results revealed that AI-expressed positive emotion did not significantly influence perceived
+service quality (Mabsent = 6.13 vs. Mpresent = 6.26, SDs = 1.02 and .82, F(1, 172) = .726, p = .4) or
+satisfaction with the service (Mabsent = 6.33 vs. Mpresent = 6.44, SDs = .93 and .75, F(1, 172) = .404, p = .5).
+We did not find any significant effect of gender on service evaluations (ps = .4 and .9). These results
+replicated the lack of effect of AI-expressed positive emotion in the earlier studies.
+We also discovered a significant moderation by relationship norm orientation for the effect of positive
+emotion on perceived service quality (F(1, 172) = 3.738, p = .055) and on satisfaction (F(1, 172) = 6.683,
+p = .011). Simple slope analysis showed that, for communal-oriented individuals (relationship norm
+
+22
+orientation = 4.54, 1 SD above the mean), AI-expressed positive emotion significantly increased
+perceived service quality (b = .41, t(172) = 1.99, p = .049) and satisfaction (b = .43, t(172) = 2.30, p
+= .023). However, for exchange-oriented individuals (relationship norm orientation = 1.67, 1 SD below
+the mean), positive emotion did not have any effect on perceived service quality (b = -.16, t(172) = -.76, p
+= .45) or on satisfaction (b = -.26, t(172) = -1.37, p = .17). Figure 6 illustrates the simple slope analyses.
+These results, once again, confirmed H3.
+Figure 6. Moderating Effect of Relationship Norm Orientation in Study 3
+Note: ns, not significant; ** p < .05
+To determine if the effect of AI-expressed positive emotion on service evaluations is mediated by
+emotional contagion and expectation-disconfirmation, we used PROCESS Model 4 (parallel mediation
+model) with gender as a covariate and a bootstrapped sample of 5,000 (Hayes 2013). Results revealed the
+lack of total effects and direct effects of AI-expressed positive emotion on perceived service quality (ps
+= .3 and 1) and satisfaction (ps = .4 and .9). However, AI-expressed positive emotion increased
+customers’ positive emotions (b = .26, t(175) = 1.737, p = .084), implying emotional contagion. An
+increase in felt positive emotion further led to greater perceived service quality (b = .62, t(173) = 11.498,
+p < .001) and greater satisfaction (b = .52, t(173) = 10.362, p < .001). The test of indirect effects revealed
+a marginally significant, positive indirect effect of AI-expressed positive emotion through participants’
+felt positive emotion on perceived service quality (b = .16, SE = .097, 90% CI = [.006, .332]) and on
+ns **
+ns **
+Emotion-absent Emotion-present
+
+23
+satisfaction (b = .14, SE = .082, 90% CI = [.007, .277]). These results provide suggestive evidence for the
+positive, affective pathway of emotional contagion as hypothesized in H2a.
+On the other hand, positive emotion increased expectation-disconfirmation (b = .32, t(175) = 1.859, p
+= .065), which further reduced perceived service quality (b = -.083, t(173) = -1.759, p = .080) and
+satisfaction (b = -.13, t(173) = -3.074, p = .003). The test of indirect effects confirmed a marginally
+significant, negative indirect effect of AI-expressed positive emotion through expectation-disconfirmation
+on satisfaction (b = -.043, SE = .033, 90% CI = [-.106, -.002]), but not on perceived service quality (b =
+-.026, SE = .023, 90% CI = [-.074, .001]). These results partially support the negative, cognitive pathway
+of expectation-disconfirmation proposed in H2b. Overall, our results suggest that the two opposing
+pathways may explain the lack of total effects of AI-expressed positive emotion on service evaluations.2
+Figure 7 shows the summary of the mediation model along with the results.
+Study 3 unraveled how individuals might react to AI agent’s expressed positive emotion affectively
+and cognitively, thus illuminating the potential reasons for the lack of effect of AI-expressed positive
+emotion on service evaluations. Although positive emotion expressed by an AI agent could be transferred
+to customers through emotional contagion, it violated the customers’ expectations toward the agent (e.g.,
+machines are not supposed to have emotions). Therefore, the positive affective pathway and negative
+cognitive pathway may have canceled out each other’s effects.
+However, our hypotheses regarding the indirect effects obtained only marginal statistical support, as
+the effects of AI-expressed positive emotion on the two mediators were marginally significant. First, the
+marginally significant indirect effect through expectation disconfirmation is not unexpected. The reason is
+that based on findings from Studies 2-3, the impact of positive emotion on expectation disconfirmation
+was revealed to depend on participants’ relationship norm orientation. In addition, as revealed in footnote
+2, the indirect effect through expectation-disconfirmation was present and significant for exchangeoriented
+individuals, but such an indirect effect was absent for communal-oriented individuals, exactly as
+we expected. Thus, the overall indirect effect through expectation disconfirmation is expected to be weak
+if we disregard this interaction in a pure-mediation model. Second, the marginal support for the indirect
+effect through emotional contagion may arise from different reasons, including the relatively subtle
+manipulation of expressed positive emotion, our focus on measuring the valence (but not other aspects) of
+felt emotion, and the presence of other mechanisms not captured in our dual-pathway model.
+General Discussion
+Extending the concept of expectation-disconfirmation (Oliver 1977), we propose that positive
+emotional expressions of AI service agents may not be as effective as those of human service employees
+in enhancing customers’ service evaluations. Despite customers’ increased positive feelings triggered by
+emotional contagion, there is also a risk of emotion-expressing AI service agents violating customers’
+expectations, thus weakening the positive effect of positive emotion. We further propose relationship
+norm orientation as a moderator because it might influence the likelihood of customers’ expectation-
+
+25
+disconfirmation as customers hold different norms regarding their relationship with service agents. Three
+experimental studies provided converging evidence for our predictions. Table 1 summarizes our findings.
+Table 1. Summary of Findings
+Study 1 Study 2 Study 3
+H1: The positive effect of positive emotion expressed by an agent on service
+evaluations depends on the agent’s identity, such that the effect is greater for a
+human agent than for an AI agent.
+Supported - -
+H2a (positive mediation through emotional contagion): An AI agent’s expressed
+positive emotion increases a customer’s positive emotion, which in turn
+enhances service evaluations.
+- - Supported
+H2b (negative mediation through expectation-disconfirmation): An AI agent’s
+expressed positive emotion increases the extent of expectation-disconfirmation,
+which in turn reduces service evaluations.
+- - Partially
+supported
+H3 (moderation by relationship norm orientation): For communal-oriented
+customers, an AI agent’s expressed positive emotion has a positive effect on
+service evaluations, but for exchange-oriented customers, such an effect is nonexistent
+or even reversed.
+- Supported Supported
+Note: “-” indicates that the hypothesis was not explored in that study.
+Theoretical Implications
+Prior investigations of the effect of emotional expressions by a customer service agent have focused
+entirely on human employees (Barger and Grandey 2006; Cheshin et al. 2018; Kranzbühler et al. 2020; Li
+et al. 2018). However, the rapid deployment of AIs for handling a service encounter calls for extending
+the study of emotions to AI service agents. Addressing this emerging phenomenon, we discover that the
+commonly observed positive effect of positive emotion from human service employees is not directly
+applicable to AI service agents. To the best of our knowledge, this paper is the first in the customer
+service literature to examine the role of emotion expressed by an AI service agent, illustrating the need to
+study the unique impacts of AI-expressed emotion in service encounters.
+This research also contributes to the burgeoning human-AI interaction literature, in which the
+exploration of interactions between emotional AIs and humans has just started to emerge (Creed et al.
+2014; Melo et al. 2013; Stein and Ohler 2017). Most of the research examining factors that influence the
+effectiveness of human-AI interactions focused on the transparency of an AI’s decision-making process
+and an AI’s behaviors that can enhance its social presence or conformity to the norms (Amershi et al.
+2019; Velez et al. 2019). On the other hand, emotional AIs have been increasingly popular in automated
+chatbots or conversational agents, and their expressed emotions can potentially influence various business
+outcomes. However, the impact of AI-expressed emotion, especially in business domains, has not
+
+26
+received much attention from scholars studying human-AI interactions. Our research underscores the
+importance of incorporating emotional factors in future investigations of human-AI interactions.
+At a broader level, we supplement the emotion literature by delving into how, when, and why
+emotions from an AI, a new entity, are perceived by the observers. Emotion has been known to serve an
+important role in interpersonal relationships (Van Kleef et al. 2010). Prior research has extensively
+documented how various aspects of emotion influence interpersonal outcomes (Lazarus 2006; van Kleef
+and Côté 2022). As emotion is universally considered a unique capability of human beings, emotion
+scholars rarely acknowledged the possibility of AI agents or machines expressing emotions. However, the
+latest technological innovations have enabled AI agents to mimic a human’s emotion-related capabilities,
+raising the need to study emotions in human-AI relationships. Our study addresses this need by
+discovering the distinct role of emotion expressed by human vs. non-human agents. Thus, this research
+opens up exciting opportunities for further studies to explore the impact of emotion in novel contexts.
+Also, our finding that emotional expressions from an AI agent may trigger emotional contagion
+extends this well-documented phenomenon beyond interpersonal relationships. Although prior literature
+suggested various boundary conditions of emotional contagion related to the characteristics of the
+expresser, the perceiver, and their relationship (Doherty 1997; van der Schalk et al. 2011), we confirm the
+existence of emotional contagion even when the expresser is an AI agent. This finding also contributes to
+the information systems literature on emotional contagion by supplementing prior findings on how
+emotional contagion may occur through IT artifacts that lack human presence, such as on social media
+and via instant messaging (Cheshin et al. 2011; Ferrara and Yang 2015; Goldenberg and Gross 2020).
+Finally, this paper unravels the underlying mechanisms and a boundary condition for the unique
+impact of AI-expressed positive emotion in customer service. Our findings of expectation-disconfirmation
+as an underlying pathway contribute to the emotion literature by highlighting the role of expectations in
+the social impact of emotions when the expresser is not a human. Prior literature has shown that various
+norms or display rules exist regarding emotional expressions (Ekman et al. 1969; Heise and Calhan
+1995). Such norms are also present when communicating with others, and others’ emotions are one of the
+
+27
+key expectations that significantly impact interpersonal outcomes (Burgoon 1993). Our work extends
+these prior findings by providing empirical evidence for the mediating role of expectation-disconfirmation
+in human-AI interactions and suggesting relationship norm orientation as a novel boundary condition.
+Practical Implications
+This work provides valuable guidance for practitioners who are interested in deploying emotional AIs
+in customer service. The argument of an AI becoming sentient has evoked a contentious debate not only
+about whether the argument is true, but also about the benefits and costs of deploying AIs (The Economist
+2022). AI service agents can save costs—both economic costs and emotional labor of human
+employees—and streamline firm-customer interactions. However, one of the primary goals of customer
+service is to maximize customers’ service evaluations through their experience and interaction with a
+service agent. Our findings suggest that the positive effect of expressing positive emotion on service
+evaluations may not materialize when the source of the emotion is not a human. Practitioners should be
+cautious about the unique impact of equipping AI agents with emotion-expressing capabilities.
+In addition, our findings indicate that an AI agent expressing positive emotion is beneficial when
+customers expect a communal relationship, but such a beneficial effect may not exist or even backfire
+when they expect an exchange relationship from the interaction. Companies can design emotional AIs in
+such a way that they are context-aware and express positive emotion only when the expression effectively
+facilitates service outcomes. For example, they may benefit from switching on or off the emotionexpressing
+capabilities of AI agents based on the type of customers that could be determined through past
+communication histories. Alternatively, companies can selectively deploy emotion-expressing AIs based
+on the nature of their tasks because different tasks may activate different relationship norms. For instance,
+AIs dealing with personalized tasks (activating a communal-oriented relationship norm) might benefit by
+expressing positive emotion, whereas AIs dealing with more standardized tasks (activating an exchangeoriented
+norm) might not. Companies may also set up a more communal environment beforehand to
+nudge customers’ expectations in such a way that can reduce their expectation disconfirmation when
+encountering emotional expressions of an AI agent.
+
+28
+Limitations and Future Research
+Several opportunities present themselves for future research. First, our findings for the moderating role
+of relationship norm orientation can be extended to various avenues. For instance, researchers can
+examine how customers’ norms toward their relationship with a brand (Aggarwal 2004) can influence the
+impact of AI-expressed emotion. A brand that oversees close interactions with customers and holds a
+communal relationship (e.g., in healthcare and education markets) may benefit from AI-expressed
+emotion. However, a brand with a pure exchange relationship (e.g., in finance markets) may not witness
+such a beneficial impact. In addition to relationship norm orientation, future research can also explore
+other factors that may vary the impact of AI-expressed emotion on customers’ expectations and norms
+during a service interaction, such as price, culture, etc.
+Second, our manipulation of emotional intensity is restricted to emotional phrases that are expressed
+normally or appropriately because companies are unlikely to configure AIs to express extremely intense
+emotion. Still, varying emotional intensity at a more granular level may yield interesting findings not
+uncovered in this research. Furthermore, emotional intensity can be manipulated through various vocal
+qualities (Murray and Arnott 1993). As voice-based AIs are another emerging trend in both personal lives
+(e.g., virtual assistants such as Apple’s “Siri” and Amazon’s “Alexa”) and customer service interactions
+(during phone calls), future research can look into the impact of emotions expressed through the voice.
+Third, our proposed theoretical model does not address the interdependencies of affective and
+cognitive processes. Due to the complex relationship between affect and cognition (Izard 2011; Phelps
+2006), it is likely for our two proposed mechanisms to influence each other. Although this work provides
+suggestive evidence for our parallel model after accounting for possible interdependencies (see footnote
+1), future research can attempt to disentangle affective and cognitive processing more clearly.
+Fourth, in addition to relationship norm orientation, other boundary conditions for our proposed
+mechanisms are worthy of further exploration. Because the likelihood and extent of the emotional
+contagion process in human relationships depend on the expresser, the perceiver, and the relationship
+between the two, it is also possible that boundary conditions exist for emotional contagion between an AI
+
+29
+and a human. For instance, emotional contagion may be stronger for those individuals who have more
+experience with AI agents or feel more attached to AIs. Furthermore, the expectation-disconfirmation
+process may depend on when and how expectations are formed. Whereas our studies disclosed the AI
+agent’s identity before the interaction, a disclosure during or after the interaction may lead to different
+expectations toward the agent, which can, in turn, influence the extent of expectation-disconfirmation and
+customers’ reactions to the agent’s emotional expression.
+Lastly, emotion is a complex concept that comprises various aspects, such as other dimensions (e.g.,
+valence) and discrete emotions. The ability of an AI to express emotion has just started to emerge, and
+further research into other aspects of emotional expressions can provide additional insights into the best
+ways of deploying emotionally intelligent AIs. For example, AI agents may empathize with customers’
+concerns by expressing sadness or responding to customers’ anger in an apologetic manner. Delving into
+other emotions can help draw a comprehensive picture of the unique impact of AI-expressed emotions.
+The emotion used in our work is also fixed to be appropriate because we primarily investigate the unique
+impact of emotion expressed by an AI rather than a human. AIs may be prone to errors or express
+irrelevant emotions, so exploring the consequences of inappropriate emotional expressions can have
+significant implications. Our work opens up exciting opportunities for future research to look into the role
+of emotion in this nascent but essential area.
+Conclusion
+Considering the recent trend in the rapid deployment of AIs across various industries and the growing
+capabilities of emotional AIs, this research points to the importance of studying the unique impact of AIexpressed
+emotion. Our paper provides experimental evidence that the emotional expressions of an AI
+service agent have a distinct impact on customers’ evaluations of service outcomes compared to those of a
+human agent. We also reveal a novel individual-difference variable, relationship norm orientation, further
+enriching our theoretical framework. We believe this work represents an initial step into a nascent yet
+critical area of human-AI interactions. We anticipate future research to further expand our understanding
+of the role of an AI’s emotional expressions in diverse contexts.

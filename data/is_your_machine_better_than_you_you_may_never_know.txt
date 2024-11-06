@@ -1,0 +1,1247 @@
+De Véricourt, Francis, and Huseyin Gurkan (2023). “Is your machine better than you? you
+may never know.” Management Science.
+
+Abstract
+Artificial intelligencesystemsareincreasinglydemonstratingtheircapacitytomakebetterpredictionsthan
+humanexperts.Yet,recentstudiessuggestthatprofessionalssometimesdoubtthequalityofthesesystems
+and overrulemachine-basedprescriptions.Thispaperexplorestheextenttowhichadecisionmaker(DM)
+supervisingamachinetomakehigh-stakedecisionscanproperlyassesswhetherthemachineproducesbetter
+recommendations. Tothatend,westudyaset-upinwhichamachineperformsrepeateddecisiontasks
+(e.g., whethertoperformabiopsy)undertheDM’ssupervision.Becausestakesarehigh,theDMprimarily
+focusesonmakingthebestchoiceforthetaskathand.Nonetheless,astheDMobservesthecorrectness
+of themachine’sprescriptionsacrosstasks,sheupdatesherbeliefaboutthemachine.However,theDM
+is subjecttoaso-calledverificationbiassuchthattheDMverifiesthemachine’scorrectnessandupdates
+her beliefaccordinglyonlyifsheultimatelydecidestoactonthetask.Inthisset-up,wecharacterizethe
+evolutionoftheDM’sbeliefandoverrulingdecisionsovertime.Weidentifysituationsunderwhichthe
+DM hesitatesforeverwhetherthemachineisbetter,i.e.,sheneverfullyignoresbutregularlyoverrulesit.
+Moreover,theDMsometimeswronglybelieveswithpositiveprobabilitythatthemachineisbetter.We
+fully characterizetheconditionsunderwhichtheselearningfailuresoccurandexplorehowmistrustingthe
+machineaffectsthem.Thesefindingsprovideanovelexplanationforhuman-machinecomplementarityand
+suggest guidelinesonthedecisiontofullyadoptorrejectamachine.
+
+Key words : machineaccuracy,decisionmaking,human-in-the-loop,algorithmaversion,dynamiclearning
+
+2 de V´ericourtandGurkan: betterorworse
+reporthowateamofradiologistsinalargeUS-basedhospitalabandoneddifferentMLalgorithms
+after usingthemforseveralmonths.
+This tendencytooverridealgorithmsistypicallyattributedtoanintrinsicmistrustofmachine-
+based predictions,oftenreferredtoasan algorithm aversion (Dietvorstetal. 2015, Gaubeetal.
+2021). Thisbias,however,maynotbethesolereasonforinappropriatelyandsystematicallyover-
+riding analgorithm.Indeed,theverycontextinwhichahumandecisionmaker(DM)workscan
+also preventtheDMfromlearningwhetheramachineproducesbetterprescriptions.
+In thispaper,weexploretheconditionsunderwhichmakinghigh-stakedecisionshampersthe
+DM’s abilitytoproperlylearnwhetheramachineissuperiortohumanexpertise.Importantly,
+wecharacterizethenatureoftheinappropriateoverridingdecisionsthattheselearningfailures
+giveriseto,withoutrelyingonanymistrustbias.Tothatend,weanalyzeaset-up,inwhicha
+DM performsrepeateddecisiontasksusingtheprescriptionsofamachine.Eachtaskconsistsin
+deciding whetherornottotakeaspecificaction.Thiscorresponds,forinstance,todecidingona
+biopsy inamedicalcontext.Tomakethischoice,themachineproducesarecommendationthat
+the DMmayoverrulebasedonherownexpertise.Crucially,theDMisuncertainaboutwhether
+the machinemakesbetterorworsedecisionsthanshedoes,butastheDMverifiesthecorrectness
+of thedifferentmachine’sprescriptions,sheformsabeliefaboutthemachine’strueaccuracy.
+Our focusisthusontheDM’slearningbehavioroncethealgorithmhasbeendeployed,thatis,
+after ithasbeenproperlytrainedandevaluatedonrepresentativedatasets(see Kubat 2017) and
+possiblyshownbetter-than-humanaccuracylevels.Thesedatasets,however,neverfullycapture
+the groundtruth,andtheissueofempiricalgeneralizabilityremains(see,e.g., Lebovitzetal. 2021).
+Hence, anexpertmaycontinuetoobserveandadjustherbeliefaboutthemachineafteradopting
+it. Yet,becausethemachineisdeployedandmakesprescriptionswithrealconsequences,learning
+can beimpairedinwaysthatdonotexistduringthetrainingphaseofthealgorithm.
+In particular,weconsidersituationsinwhichtheDMobservesthecorrectnessofthemachine’s
+prediction andupdatesherbeliefaccordinglyonlyiftheactionisactuallytaken(e.g.,whena
+biopsy isperformed).Inotherwords,theDMissubjecttotheso-called verificationbias (see,
+e.g., Pepe 2003, p.169),suchthattheaccuracyparametersofadiagnostictestarelearnedonly
+when atestresultisverifiedbyfollow-upwork(e.g.,abiopsyrevealsthepresenceorabsenceof
+the disease).Thislimitationcanalsostemfromaformofsaliencebiasorinattentionalblindness
+(TaylorandThompson 1982, Bordalo etal. 2012 and Tiefenbecketal. 2018), whichareespecially
+prevalentforhigh-stakesdecisions(see Lee etal. 2018). Inthiscontext,theDMfocusesherlimited
+attentiononmakingthedecisionsathandbutistriggeredtoreassessthemachine’squalityby
+the salientobservationofaverifiedsuccessorfailure.(See Camachoetal. 2011 for anexampleof
+similar salienteffectsinthecontextofnewdrugprescriptions.)
+de V´ericourtandGurkan: betterorworse 3
+Further,theDMonlydecideswhatisbestforthetaskathandandthusneveractsforthe
+purposeofverifyingthemachine’saccuracy.Inthissense,theDM’sdecisionsare exploration-free.
+This restrictionmaybeforlegalorethicalconcerns,whichareoftenwarrantedwhenthestakes
+are highasinthemedicalandjudiciarysectors(Bastani, BayatiandKhosravi 2021).
+In thispaper,wemainlyexaminethecasewherethemachineandtheDMare substitutes in that
+the DM’saccuracyiseitherbetterorworsethanthemachine’s.Wefocusonsubstitutionfortwo
+reasons. First,ourgoalistostudyinappropriateoverridingdecisionswithoutrelyingonalgorithm
+aversion,thestudiesofwhichassumesubstitution(Dietvorstetal. 2015, Sun etal. 2021). Second,
+and moreimportantly,weseektodetermineifacomplementaritybetweentheDMandthemachine
+mightemergefromtheDM’sinabilitytolearnthenatureofthemachine.Assumingsubstitution
+enables ustodisentanglethislearningeffectfromanintrinsiccomplementaritybetweentheDM
+and themachine.Nonetheless,wealsoexploresituationswherethemachineandDMcomplement
+one another(seeSection 8).
+Our approachthusconsistsinanalyticallystudyingtheevolutionoftheDM’sbeliefandoverrul-
+ing decisionsovertime.ThisenablesidentificationofsituationsinwhichtheDMproperlylearns
+whether themachinemakesbetterpredictionsthanshedoes.TheasymptoticbehavioroftheDM’s
+belieffurthercharacterizesthedifferentwaysinwhichtheDMfailstolearnthetruenatureofthe
+machine.
+Followingthisapproach,wefindthattheDMalwaysproperlylearnswhetherthemachineis
+betterorworseintheabsenceofhuman-machineinteractions,i.e.,whenthemachine’sprescriptions
+neverinfluencetheDM’sdecisions.Indeed,inthiscase,theDMverifiesthemachineindependently
+of itsprediction.1 Hence, inappropriateoverridingdecisionsmayoccuronlyifthemachinehas
+some influenceontheDM’schoices.
+When thisinfluenceismaximal,i.e.,themachine’sprescriptionsfullydeterminetheDM’s
+choices,wefindthattheDM’sabilitytolearndependsonherprioraboutthetask.Specifically,
+the DMproperlylearnsthatthemachineisbetter(resp.,worse),ifthepriorprobabilitythatan
+action isrequiredforthetaskathandisabove(resp.,below)acertainthreshold.Hence,theDM
+can endupbelievingthatthemachinemakesworsepredictionsthanshedoes,eventhoughthe
+machineisactuallybetter.Thisoccurswhentheactionisnottoofrequentlyrequiredforthetasks.
+Conversely,theDMlearnsthatthemachineisbettereventhoughitisactuallyworsewhenthe
+action isfrequentlyrequired.
+In thesetwobenchmarks,theDM’sbeliefaboutthemachinehasnoeffectonherchoices.This
+contrastswithourmainset-up,inwhichtheDM’sdecisiontoact,andhenceherabilitytolearn,
+1 Tobemoreprecise,theverificationeventintheno-interactionbenchmarkisduetotheDM’sownjudgment,and
+the eventthatthemachineprescribestoactisindependentoftheDM’sjudgmentconditionalonthetask’stype.
+4 de V´ericourtandGurkan: betterorworse
+are endogenouslydeterminedbyhercurrentbeliefaboutthemachine’squality.Specifically,in
+this setting,theDMoverrulesthemachinewhentheDM’sjudgmentcontradictsthemachine’s
+prescription andtheDMsufficientlybelievesthatthemachineisworse.
+When thisisthecase,weagainfindthattheprioraboutthetaskdetermineswhentheDMfails
+to learn.However,theDM’soverridingdecisionsfundamentallychangethenatureofmislearning.
+Indeed, whenthemachineisactuallybetterthantheDMandtheprioraboutthetaskislow,the
+DM’s beliefalwaysoscillatesovertime.Inotherwords,theDMpermanentlyremainsunsureabout
+whether themachineisbetterornotandconstantlyalternatesbetweenfollowingandoverriding
+its prescriptions.Further,andperhapsmoreinterestingly,theDMsometimestreatsthemachine
+as ifitspredictioncomplementsherownjudgment,whileinfact,thetwoarefullsubstitutes.In
+contrast,whenthemachineisworseandtheprioraboutthetaskishigh,thebeliefconverges
+to aBernoullirandomvariable:theDMproperlylearnsthatthemachineisworsewithagiven
+probabilitybutwronglylearnsthatitisbetterwiththeremainingprobability.Inotherwords,the
+DM randomlyendsupincorrectlybelievingthatthemachineisbetter.
+Takentogether,theseresultsidentifytwodifferentformsofmislearning—persistenthesitation
+and randominference—thatcanoccurwhenaDMworkswithamachinetomakehigh-stakes
+decisions. ThesefindingsalsohighlightthekeyrolethattheDM’sprioraboutthetaskplaysin
+her abilitytolearnthetruenatureofthemachine.Additionallytheyuncoveranovelrationale—
+the uncertaintyaboutthemachine’strueperformance—forwhyhumanexpertsmayco-produce
+their decisionswithamachine.ThesemislearningbehaviorsdonotdependontheDM’sinitial
+beliefaboutthemachineandthusholdevenwhentheDMsufficientlybelievedinthemachine’s
+performancetodeployitinthefirstplace.
+These resultsfurthersuggestguidelinesonthedecisiontofullyadoptorrejectamachineafterit
+has beendeployed.Thequestioniswhetherthemachineshouldmakeallthedecisionshenceforth
+or beabandonedforgoodatsomepointafterworkingwithit.Ourresultsindicatethatthelonger
+the DMbelievesthemachineisworse,themorelikelysheiscorrectinherassessmentandhence
+should abandonthemachine.Thesameisnottrue,however,iftheDMincreasinglybelievesthat
+the machineisbetter.Inthiscase,ourfindingssuggesttorelyonmultipleDMs.Ifaconsensus
+exists amongtheteamthatthemachineisbetter,thenthelargertheteamis,themorelikelyitis
+that themachineshouldbeadopted.(SeeSection 6.)
+Importantly,themislearningbehaviorswecharacterizeinthispaperdonotstemfromanintrinsic
+algorithm aversionbutratherfromcertaincontextsinwhichDMsmakehigh-stakesdecisions,
+as capturedwiththeverificationbiasandtheexploration-freecondition.Yet,aDMwhofaces
+situations suchasthesemayalsobesubjecttomistrustbiasesagainstthemachine,whichcan
+interactwithourfindings.
+de V´ericourtandGurkan: betterorworse 5
+Indeed, mistrustingthemachineaffectstheDM’sabilitytolearninatleasttwoways.First,the
+DM maydownplaythemachine’sprescriptionwhendecidingtoact(consistentlywiththedecision-
+making literature,see,e.g., Soll andMannes 2011), whichalterstheDM’sabilitytoobservethe
+correctness ofthemachine’spredictions.Second,andinlinewiththealgorithmaversionreported
+by Dietvorstetal. (2015), theDM’sbeliefinthemachinemaydisproportionatelydropupon
+observing amachine’spredictionerror.Weexplorehowtheseeffectsinteractwithourresults(see
+Section 7) andfindthatourresultsholdintheformercasebutnotinthelater.Whenmistrust
+introducesanegativitybiasintheDM’slearningprocess,theDMdoesnotalwaysproperlylearn
+that themachineisbetterifthepriorissufficientlyhigh,asinthemainset-up.Instead,theDM
+can wronglylearnwithapositiveprobabilitythatthemachineisworse.Inthissense,algorithm
+aversionsometimesinteractswithoursettingtorandomizetheDM’sabilitytolearn.
+Finally,ourresultsarerobusttoapartialrelaxationoftheverificationbias,whichislegitimate,
+for instance,whenthebiasstemsfromtheDM’slimitedattention.Inthiscontext,theDMalso
+learns fromunverifiedcases.Ourresultscontinuetoholdaslongasunverifiedcasesaresufficiently
+less salientthanverifiedones,forwhichthetruestateoftheworldisrevealed.
+After reviewingtheliteratureinSection 2, wepresentthemodelinSection 3. InSection 4,
+weanalyzetheno-interactionandno-overridingbenchmarksandthenfocusonthemainset-up
+in Section 5. WehighlighttheimplicationsofourfindingsinSection 6 and studytheeffectsof
+mistrust biasesonourfindingsinSection 7. Further,weexplorethesettingswherethemachine
+and theDMcomplementoneanotherinSection 8, andtheverificationbiasispartiallyrelaxedin
+Section 9. Finally,wediscussfutureresearchdirectionsintheconclusion.
+2. LiteratureReview
+Our studyisrelatedtotherecentandgrowingliteratureontheinteractionbetweenhumandecision-
+makersanddata-drivenalgorithms.Thisresearchexplorestheextenttowhichco-productionof
+decisions byamachineandaDMmayimproveperformance.Forinstance, Boyacietal. (2020)
+demonstrate inarationalinattentionframeworkthathuman-machineinteractionimprovesthe
+overallaccuracyofdecisions,butsometimesatthecostofhighercognitiveeffort(see Boyacietal.
+2020 for additionalreferencesonformalmodelsofmachine-humaninteractions).Machinelearning
+algorithms havealsobeenproposedtoprovideinterpretablecuestohelpdecisionmakersimprove
+their decisions(see Bastani, BastaniandSinchaisri 2021, forinstance).Thisstreamofresearch
+further exploreshowtousehumanjudgmenttotrainorimproveanalgorithm(VanDonselaar
+et al. 2010, Ibrahim etal. 2021, Cowgill 2019).
+WecontributetothisliteraturebyprovidinganovelrationaleforwhyaDMmaytreatthe
+machine’sprescriptionsasacomplementtoherjudgment.Infact,thisstreamofresearchtypically
+6 de V´ericourtandGurkan: betterorworse
+assumes thatthemachine’saccuracyisknownandcomplementstheDM’sjudgement.Incontrast,
+the DMandthemachinearesubstitutes,andthemachine’saccuracyisunknowninoursetting.
+In thissense,ourstudyiscloselyrelatedtotheliteratureonoverridingdecisionsand,more
+generally,trustinalgorithmicprescriptions.Inparticular, Lebovitzetal. (2021) documentover
+severalmonths,howateamofradiologistslosttrustinthequalityofamachinelearningalgorithm
+that helpedanalyzemedicalimages. Dietvorstetal. (2015) alsofoundinanexperimentalset-up
+that theirparticipantsoverrodeamachine’sprescriptions,evenafterseeingthatthemachine’s
+algorithm performedbetterthanthehumandidonaverage.Thistendencytowronglyoverride
+machine-basedprescriptionsisfurthersupportedbyempiricalevidenceinthefield.Forinstance,
+Sun etal. (2021) observedthatpackingworkersatthewarehousesoftheAlibabaGroupregularly
+deviated fromalgorithmicprescriptions,whichreducedoperationalefficiency.Severalapproaches
+havebeenexploredtoreducedeviationssuchasthese,eitherwithfieldexperiments(Sun etal.
+2021) orinthelab(Dietvorstetal. 2018).
+In contrasttothisstreamofpapers,ourstudyproposesanalternativeexplanationforinap-
+propriately overridingdecisionssuchasthese,whichmostlystemsfromthecontextinwhichthe
+decisions aremade.Specifically,wetracetheseerrorstofourfundamentals(exploration-free,verifi-
+cation bias,informativenessandsubstitution),whichcapturesomeessentialfeaturesofhigh-stakes
+decision makingusingmachine-basedpredictions.
+RecentstudiesalsosuggestthathumansfollowtheprinciplesofBayesianinferencewhenobserv-
+ing thecorrectnessofmachine-baseddecisions.Forinstance, Wangetal. (2018) and Guo etal.
+(2020) analyzeinanexperimentalset-uphowobserversdynamicallyupdatetheirtrustinthe
+machineastheyobservethefailuresandsuccessesofitspredictions(withoutoverridingthe
+machine,asinthebenchmarkofSection 4.2). ThesestudiesfindthatassumingBayesianobservers
+can explaintheempiricallevelofhumantrustinthemachineovertime.Thekeydifferencewith
+our set-up,however,isthattheDMisnotsubjecttoverificationbiasandthusalwaysobserves
+the correctnessofthemachine’spredictionintheirsettings.
+Verificationbiasisaformofselectionbiasthatwasfirstintroducedby Ransohoff andFeinstein
+(1978) todescribesituationswheretheaccuracyofadiagnostictestislearnedonlywiththeverified
+cases, i.e.,whenfollow-upactionsaretakentoconfirmatestresult.Thisbiastowardsverified
+cases permeatesthemedicalfield(e.g., Hujoeletal. 2021, Whiting etal. 2013, Petscavageetal.
+2011, Bates etal. 1993, and Greenes andBegg 1985) andhasbeenfoundinstudiesevaluating
+ML algorithmsformedicalapplications(see,e.g., Tschandletal. 2019). Mostofthisresearchhas
+focusedondevelopingestimatorsofaccuracybasedonthemaximumlikelihoodtocorrectthebias.
+de V´ericourtandGurkan: betterorworse 7
+The conditionsrequiredtoavoidthisbiasinthefrequentistliterature,however,donotholdinour
+set-up.2
+Learning withselectiveobservationsasinverificationbiascanalsostemfromaformofsalience
+bias orinattentionalblindness(TaylorandThompson 1982, Bordalo etal. 2012 and Tiefenbeck
+et al. 2018). Thebehavioralscienceliteraturehasstudiedbiasessuchasthese,(see,e.g., Kahneman
+1973, Chapter7,fortheeffectsoffocusedattentiononinformationfiltering),whicharedueto
+the DM’slimitedcognitivecapacity(Simon 1955). Inthissense,ourstudyalsocontributestothe
+growingstreamofoperationsandeconomicsliterature,whichdeviatesfromstandardBayesian
+learning toaccountforlimitedcognitivecapacity(see,e.g., Allon etal. 2021, Boyacietal. 2020 and
+the referencestherein).Inparticular,ourset-upisconsistentwiththenotionofselectiveBayesian
+updating(seetheseminalworkof Schwartzstein 2014), inthattheDMonlyselectstheactual
+success orfailureofthemachinetoupdateherbeliefaboutthemachine’stype.
+Finally,ourworkisrelatedtothevastliteratureonlearningproblems,whichhavebeenexten-
+sivelystudiedinmanagementscienceandoperationsmanagement.Forinstance,studieshave
+considered priceexperimentationtolearndemandcurvesbyfocusingonthetradeoffsbetween
+learning andearning,anddesignheuristicpoliciesachievinggoodregretperformance(Besbesand
+Zeevi 2009, Boyacıand ¨ Ozer 2010, Cheung etal. 2017, Keskin andBirge 2019). Inthisstreamof
+papers,theDMexperiments(explores)withdifferentpricesinthebeginningofthetimehorizon
+to earn(exploit)moreintheremainingperiods.Becauseofthisabilitytoexplore,theDMcan,
+in principle,properlyuncoverthetruedemandcurveinthelimit.Theobjectiveofthesepapersis
+then tolearnsufficientlyfastsoastomaximizeprofit.Incontrast,weconsidersituationswhere
+exploring isnotpossible.Thus,theDMoptimizeswithineachperiodandmislearningmayemerge
+in ourset-up.
+In thissense,ourapproachresembles Harrison etal. (2012) whichanalyzesmyopicpricing
+policies(seeSection4inparticular).Intheirset-up,demandfunctionsarethefocusoflearning,
+whereas weconsiderunknownaccuracyparameters.Therefore,thetypeofincompletelearning
+that mayoccurdiffersradicallyineachsetting.Inparticular,incompletelearningtakestheformof
+confounding beliefsin Harrison etal. (2012), suchthatthemyopicpolicychargesanuninformative
+price, whichpreventsBayesianupdatingfromproducingadifferentposterior.Asaresult,theDM
+becomesstuckinthesamebeliefovertime.Incontrast,mislearningcantaketheformofbelief
+oscillation inourset-up,whichcannotoccurin Harrison etal. (2012) perProposition2.
+2 Forinstance,ourmainset-updoesnotsatisfythemissing-at-randomassumptionusedby Begg andGreenes (1983)
+or therestrictionsimposedonthedatageneratingprocessproposedby Zhou (1993). Inaddition,ourno-overriding
+benchmarkcorrespondstoso-calledextremeverificationbias(Pepe 2003, p.180),forwhichtheestimationofaccuracy
+parameters isimpossible(Broemeling 2011).
+8 de V´ericourtandGurkan: betterorworse
+Learning problemssuchasthesearealsoextensivelystudiedineconomics(seeforinstance
+Smith andSørensen 2000, Acemoglu etal. 2011, andreferencestherein),withaparticularfocus
+on equilibriumlearningdynamicsshapedbymultiplestrategicagents.Inthisstreamofresearch,
+Herrera andH¨orner (2013) analyzesaset-upwithshort-livedmyopicinvestors,inwhichonly
+investingdecisionsareobservable.Althoughthismayresembleourset-up,theirpayoff,signaland
+learning structuresdiffer,whichyieldsadifferenttypeofmislearning.Inparticular,thebelief
+convergestoaninteriorpointintheirset-up(seePropositions1and4in Herrera andH¨orner
+2013), whileitmaynotconvergeinours.
+3. ModelDescription
+Weconsideradecisionmaker(DM)whofacesaseriesofindependentdecisiontasksoveradiscrete
+time infinitehorizon.AmachinefurtherassiststheDMbyproducingarecommendationabout
+whichdecisiontotakeforeachtask.TheDM,however,doesnotknowifthemachine’saccuracyis
+superiortoherownjudgment.Astheaccuracyofthemachine’spredictionsisrevealedovertime,
+the DMformsabeliefaboutwhetherornotsheshouldoverridethemachine’sprediction.Next,we
+introducethesingledecisiontaskproblemthattheDMperformsineachperiod.Wethenconsider
+the wholetimehorizon.
+3.1. SingleDecisionTask
+A taskconsistsindecidingwhetherornotaspecificaction(e.g.,abiopsy)isrequired.Wedenote
+as Θ ∈ {A,NA} the typeoftasksuchthattheactionisrequiredifΘ= A and isnotrequiredif
+Θ=NA. TheDMdoesnotknowthetask’stypebuthasapriorbelief p≜P(Θ=A) thatsheshould
+act.
+Toperformthistask,theDMappliesherexpertiseandelicitsimperfectsignal SH ∈ {+,−}, such
+that SH = +(resp., SH = −) indicatesthatΘ= A (resp., Θ= NA). Wedenotethesensitivity(true
+positiverate)andspecificity(truenegativerate)ofthesignalby αH and βH, respectively.The
+DM isfurtherassistedbyamachinelearningalgorithm,whichmakesanindependentprediction
+abouttypeΘ.Thispredictioncorrespondstoasecondsignal, SM ∈ {+,−}, withsensitivityand
+specificityequalto(αM,βM).
+Importantly,theDMisuncertainaboutwhetherthemachine’saccuracyisbetterthanherown.
+Specifically,wedenotethemachine’stypeasΓ ∈ {B,W}. WhenΓ= B (resp., Γ=W), signal SM
+is better (resp., worse) thansignal SH, andthesensitivityandspecificityofthesignalareequal
+to (αB,βB) (resp.,(αW,βW)). Themachineisbetter(resp.,worse)inthesensethattheDMnever
+(resp., always)overrulesthemachinewhenitstypeisperfectlyknown.Thiscorrespondstothe
+notion ofsubstitution,whichweintroduceandformalizelaterinthissection(seeequations 4 and
+de V´ericourtandGurkan: betterorworse 9
+5). Toexcludedegeneratedcases,wefurtherfocusouranalysisonsituationswhere αB > αW and
+βB >βW.3 This isonlyforthesakeofclarity,asallofourresultsextendtothemoregeneralcase.
+Probability b≜P
+􀀀
+Γ=B
+
+denotes thentheDM’sbeliefthatthemachineoutperformsherability
+to decide.Ineffect,thesetwotypesofmachineinducetwodifferentprobabilitymeasures PB{·}
+and PW{·} on thesamplespaceofthemachine’ssignals,suchthat PΓ(SM = +,Θ = A) = αΓp and
+PΓ(SM =−,Θ=NA)=βΓ ¯p for Γ ∈ {B,W} (with ¯x=1−x for x ∈ [0, 1]).
+Based onrealizations sH and sM of signals SH and SM, respectively,andherbelief b aboutthe
+machine,theDMupdatesherprior p that anactionisrequiredusingBayes’rule.Thecorresponding
+posteriorprobabilityisthus P(Θ=A|SH =sH, SM =sM, b) (withaslightabuseofnotation).4
+The DMthendecidestoactifandonlyiftheposteriorisaboveapositivethreshold r, i.e.,
+P(Θ=A|SH =sH, SM =sM, b)≥r; theDMdoesnotactotherwise.Thisdecisionruleisoptimal,for
+instance, whentheDMseekstomaximizetheexpectedvalueassociatedwithcorrectlyidentifying
+the task’stype.Inthiscase,threshold r accountsforthefalsepositiveandfalsenegativecosts
+associatedwiththedecision.5
+Informativeness: In thefollowing,weassumethatthesignalsproducedbyboththeDMand
+the machineareinformative,inthesensethateachsignalprovidessufficientinformationforthe
+DM todecide.Formally,thiscorrespondsto:
+P(Θ=A|SH =+) ≥r and P(Θ=A|SH =−)<r, (1)
+PB(Θ=A|SM =+) ≥r and PB(Θ=A|SM =−)<r, (2)
+PW(Θ=A|SM =+) ≥r and PW(Θ=A|SM =−)<r. (3)
+In otherwords,thesolerealizationofeither SH or SM, whetherthemachineisoftype B or W, fully
+determines whetherornottheposteriorislargerthanthreshold r, i.e.,theDMtakestheaction.
+These conditionsfurtherimplythatconsideringbothsignals SH and SM together isredundant
+when theirrealizationsarealigned,i.e.,when sH = sM. OnesignalisthensufficientfortheDMto
+decide sincetheDMactsif SH = SM = +anddoesnotactif SH = SM = −. Iftherealizationsare
+misaligned with sH ̸=sM, however,theDMandthemachinemayoverrideoneanother.Inthiscase,
+weconsidersituationswherethemachineandtheDMarefullsubstitutesinthefollowingsense.
+3 This assumptionguaranteesthattheDM’sbeliefinabettermachinedecreases(resp.,increases)uponobservingan
+incorrect (resp.,correct)machineprediction.Incontrast,assuming αW > αB (resp., βW > βB) impliesthattheDM’s
+beliefthatthemachineisbetteractuallyincreasesafterobservingafalsenegative(resp.,falsepositive)error.
+4 In particular,wehave P(Θ = A|SH = sH, SM = sM, 1) = PB(Θ = A|SH = sH, SM = sM) and P(Θ = A|SH = sH, SM =
+sM, 0) =PW(Θ =A|SH = sH, SM = sM).
+5 See, Alizamiretal. (2013) forinstance,foramicrofoundationofthreshold r.
+10 de V´ericourtandGurkan: betterorworse
+Substitution: Weassumethatatype B machinealwaysoverridestheDM’sjudgment,while
+the DMalwaysoverridestheprescriptionofatype W machine.Formally,thiscorrespondsto:
+PB(Θ=A|SH =+,SM =−)<r and PB(Θ=A|SH =−,SM =+)≥r (4)
+PW(Θ=A|SH =+,SM =−)≥r and PW(Θ=A|SH =−,SM =+)<r (5)
+Thus,ifthesignalsoftheDMandatype B machinecontradictoneanother,signal SM alone
+determines whetherornottheposteriorprobabilityislargerthanthethreshold(perequation(4)).
+Along withtheInformativenessproperty,thismeansthatatype B machinealwaysdetermines
+whether theDMshouldact,independentlyoftheDM’sjudgment.Incontrast,theDMdecidesalone
+and canignoretheprescriptionofatype W machine(perequation(5)). Hence,ifthemachine’s
+typeisfullyknown,theDMandthemachinenevercollaboratetomakeadecision.Inthissense,
+the DMandthemachinearesubstitutesforthetask.
+In essence,InformativenessandSubstitutionareconditionsontheDM’sposteriorprobability
+aboutthetask’stype,whichinturndependsonthesignals’sensitivitiesandspecificities,aswell
+as prior p and threshold r.
+3.2. RepeatedTasksandLearning
+WenowconsiderthesituationwheretheDMfacesaseriesofdecisiontasksoveradiscretetime
+infinite horizon.TasktypesΘt, t ∈ N, areindependentandidenticallydistributedwithprobability
+p. (Inthefollowing,weusesubscript t to denotetheparametersassociatedwiththetaskofperiod
+t.) Atthebeginningofperiod t > 0, theDM’sbeliefaboutthemachine’stypeisgivenby bt−1,
+where b0 is thepriorbeliefatthebeginningofthetimehorizon.TheDMthenobtainssignals
+SH
+t , SM
+t and decideswhethertoact.
+Exploration-Free: In makingthischoice,theDMconsidersonlythetaskathand.More
+formally,theDMactsif P(Θt =A|SH
+t , SM
+t , bt−1)≥r and doesnothingotherwise.Inparticular,the
+DM doesnotactforthesolepurposeofuncoveringthetruetask’stypeandthuslearningthe
+machine’s.Instead,theDMdecideswhatshethinksisbestforthecurrenttaskandisthusmyopic
+with respecttolearningthemachine’stype.
+Attheendoftheperiod,theDMupdatesherbelief bt−1 to posterior bt according toBayes’rule,
+if theDMobservestypeΘt.
+VerificationBias: The DM,however,observesthetask’stypeandupdatesherbeliefaccord-
+ingly ifandonlyifanactionistaken.Becausedecisionsareexploration-free,theverificationbias
+de V´ericourtandGurkan: betterorworse 11
+implies thattheDMupdatesherbeliefifandonlyif P(Θt =A|SH
+t , SM
+t , bt−1)≥r, inwhichcasewe
+assume thattheDMfollowsBayes’rule.Thus,wehave
+bt =
+
+
+bt−1 if P(Θt =A|SH
+t =sH, SM
+t =sM, bt−1)<r 
+1+
+¯b
+t−1
+bt−1
+PW(SM
+t =sM |Θt =θ)
+PB(SM
+t =sM |Θt =θ)
+−1
+if P(Θt =A|SH
+t =sH, SM
+t =sM, bt−1)≥r ,
+(6)
+where θ ∈ {A,NA} is theobservedvalueofΘt.
+Equation (6) highlightstwomechanismsbywhichtheDM’sbeliefaboutthemachine’stypeis
+endogenously determinedovertime.ThefirstcorrespondstotheBayesianupdatingofprior bt−1
+when theDMobservestypeΘt. ThesecondcorrespondstotheDM’sabilitytoverifytypeΘt in
+the firstplace,thatis,whetherposteriorbelief P(Θt = A|SH
+t , SM
+t , bt−1) issufficientlylarge.This,
+in turn,dependsonbelief bt−1. Equation(6) furtherimpliesthatwhentheDMacts,sheincreases
+(resp., decreases)herbeliefthatthemachineisbetterifthemachine’sprescriptionturnsoutto
+becorrect(resp.,wrong).
+This learningmechanismalsocorrespondstoaselectiveBayesianupdatingset-up(Schwartzstein
+2014) inwhichaDMfocusesherlimitedattentiononmakingdiagnosticdecisions,insteadof
+evaluatingthemachinethatassistsher.Thesalientobservationofanactualsuccessorfailureof
+the machine,however,redirectstheDM’sattentiontoreassessherbeliefaboutthemachine’stype.
+This mechanismresemblesthetwo-stagelearningprocessof Allon etal. (2021), inwhichagents
+allocatetheirattentiontodifferenttasks(screeningandbeliefupdatingintheirsetting)ineach
+stage. (WerelaxthislimitationontheDM’sattentioninSection 9.)
+When theDMacts,theDMupdatesbelief bt in partbasedonsignal SM
+t . Themachine’stype,
+however,determinestheprobabilitydistribution, PB{·} or PW{·}, ofthissignal.Hence,belief(bt)t∈N
+can followtwodifferentstochasticprocessesdependingonmachinetypeΓ.Theasymptoticbehavior
+of belief bt thuscapturestheDM’sabilitytolearnwhetherthemachinemakesbetterpredictions.
+Indeed, theDMproperlylearnsthemachine’stypeifherbeliefconvergesovertimeto1(bt
+a.s. −−→1)
+when themachineisbetter(Γ=B) andconvergesto0(bt
+a.s. −−→0) whenthemachineisworse(Γ=W).
+(Notation a.s. −−→ indicates almost-sureconvergence.)Incontrast,theDMmislearnsthemachine’s
+typewhen bt
+a.s. −−→0 (resp.,1)andΓ= B (resp., Γ=W). Learningmayevenbeinconclusivewhen
+belief bt convergestoaninteriorpointin(0, 1) oroscillates.Moreformally,astochasticprocess
+Yt is saidtobeoscillatingandrecurrentifrecurrentinterval I exists suchthatforany τ > 0,
+P(Yt ∈ I for some t>τ |Yτ ∈ I)=1(seeDefinition8.1in Gut 2009 for instance).
+Our objective,therefore,istostudytheasymptoticbehaviorof bt and characterizetheresulting
+learning behavioroftheDM.
+12 de V´ericourtandGurkan: betterorworse
+4. Benchmarks
+Wefirststudytwosettings,inwhichtheDMdoesnotaccountforherbeliefaboutthemachine
+when decidingtoact.Inthefirst no-interaction setting, theDMalwaysignoresthemachine’s
+prescription andbasesherchoicesolelyonherownjudgment SH
+t . Inthissense,theDMandthe
+machinedonotinteractwhendecidingontasks.Inthesecond no-overriding setting, themachine
+fully determinestheDM’schoicesothattheDMneveroverridesitsprediction SM
+t . Importantly,
+belief bt−1 doesnotdeterminewhetheranactionistakeninbothbenchmarksandthuswhether
+a machine’spredictionisverifiedexpost.Asaresult,thesecondmechanismbywhichbelief bt−1
+influences posterior bt in equation(6) ismute.Thisbeliefaffectslearningthroughonlythefirst
+mechanism,i.e.,theapplicationofBayes’rulewhentheDMacts.
+More specifically,theDMactsifandonlyif SH
+t = +,regardlessofthemachine’ssignal SM
+t in
+the no-interactionbenchmark,andifandonlyif SM
+t = +,regardlessofherownjudgment SH
+t in
+the no-overridingbenchmark.Theconditionforacting, P(Θt =A|SH
+t ,SM
+t , bt−1)≥r, thusreducesto
+P(Θt = A|SH
+t ) ≥ r in thefirstbenchmarkandto P(Θt = A|SM
+t , bt−1) ≥ r in thesecondone,which
+are, respectively,equivalentto SH
+t = +andto SM
+t = +forany bt−1 due toInformativeness(1)-(3).
+In bothbenchmarks,equation(6) thenbecomes
+bt =
+
+
+bt−1 if Sσ
+t =− 
+1+
+¯b
+t−1
+bt−1
+PW(SM
+t |Θt =θ)
+PB(SM
+t |Θt =θ)
+−1
+if Sσ
+t =+.
+(7)
+where σ = H and σ = M in theno-interactionandno-overridingbenchmark,respectively.Inpar-
+ticular, therealizationof Sσ
+t is independentofbelief bt−1, whichisincontrasttotheconditionin
+equation (6).
+Tostudytheasymptoticbehaviorof bt, weconsiderinsteadthelog-likelihoodratio Lt of the
+probabilitythatΓ= B in period t. Formally, Lt is amonotonecontinuoustransformationof bt
+givenby Lt ≜log
+
+bt
+1−bt
+
+, suchthat
+Lt =Lt−1 +Rt,
+where (Rt)t∈N are i.i.d.randomjumps.Inparticular,thelog-likelihoodratioisincreasinginthe
+DM’s belief,andtheasymptoticbehaviorof Lt fully determinestheasymptoticbehaviorof bt.
+Indeed, wehave bt
+a.s. −−→1 (and bt
+a.s. −−→0) ifandonlyif Lt
+a.s. −−→+∞ (and resp. Lt
+a.s. −−→−∞) perthe
+continuousmappingtheorem.
+Log-likelihoodratio Lt is arandomwalkgovernedbyjumps(Rt)t∈N, whichcapturethemagnitude
+and directionofthebelief’supdates.Theserandomjumpstakethreepossiblevalues:apositive
+(resp., negative)valuewhentheDMobservesthatthemachine’spredictioniscorrect(resp.,
+wrong), i.e., SM
+t =+andΘt =A (resp., Θt =NA), orzerowhenthetask’stypeisnotobserved,i.e.,
+de V´ericourtandGurkan: betterorworse 13
+when SH
+t = − in theno-interactionbenchmarkand SM
+t = − in theno-overridingbenchmark.The
+asymptotic behaviorof Lt is thenfullydeterminedbythesignofthemean EΓ[Rt]. If EΓ[Rt] > 0
+(resp., < 0), thenlog-likelihoodratio Lt increases inexpectationandconvergesalmostsurelyto
++∞ (resp., −∞),6 while Lt doesnotconvergewhen EΓ[Rt]=0.
+4.1. No-InteractionBenchmark
+First, wecharacterizetheDM’sabilitytolearnthemachine’stypeintheabsenceofDM-machine
+interactions,i.e.,whentheDM’sdecisionsalwaysignorethemachine’sprescriptions.Specifically,
+when equation(7) holdswith σ =H, wehave
+Theorem 1 (Learning withNo-Interaction). When themachineisbetter Γ = B (is worse
+Γ=W), bt
+a.s. −−→1 (and resp., bt
+a.s. −−→0).
+Toprovethisresult,wefirstestablishthat EΓ[Rt]>0 (resp., <0) ifΓ=B (resp., Γ=W) andthen
+apply thecontinuousmappingtheorem.(Allproofsareintheappendix.)
+Theorem 1 states thattheDMcorrectlylearnsthemachine’stypewhenshedecidestoactsolely
+based onherownjudgment.Inparticular,verificationbiasdoesnotpreventlearninginthelimit.
+This isbecausetheDM’ssamplingofthemachine’scorrectandwrongpredictionsisnotbiased
+in thiscase.Indeed,theDMactsandthusverifiesthemachinewhen {SH
+t = +}, regardlessofthe
+realization of SM
+t and hence,theprobabilitytoverifyisindependentofthemachine’sprescription
+(conditional onthetask’stype).This,ineffect,relaxestheexploration-freeconditionbyrandomly
+enabling learning(withprobability P(SH
+t = +)),evenwhenthemachine’sprescriptionwouldhave
+induced theDMnottoact(i.e.,when P(Θt =A|SH
+t =+, SM
+t =−, bt−1)<r) inequation(6).
+Overall,thetheoremrevealsthatinappropriateoverridingdecisionsmayoccuronlywhenthe
+machinebiasestheDM’sdecisionssincefulllearningoccursintheabsenceofDM-machineinter-
+actions. Next,weexplorethecasewherethemachinefullybiasesthesedecisionsandhencethe
+sampling ofobservations.
+4.2. No-OverridingBenchmark
+In ournextresult,wecharacterizetheDM’sabilitytolearnthemachine’stypewhentheDM’s
+choicesarefullydeterminedbythemachine’sprescriptions.Inthiscase,thebiasofthemachine
+on theDM’sdecisionisextreme.Specifically,weconsidertheDM’sasymptoticlearningbehavior
+when equation(7) holdswith σ =M. Wethenhave
+Theorem 2 (Learning withNo-Overriding). Unique thresholds pB and pW exist suchthat
+pB <pW and,
+6 The divergenceof Lt is duetothestronglawlargenumbers;see Gut (Theorem 8.3inp.68 2009) formoredetails.
+14 de V´ericourtandGurkan: betterorworse
+• when themachineisbetter(Γ = B), bt
+a.s. −−→0 if p <pB, bt
+a.s. −−→1 if p >pB; and bt is recurrent
+and oscillatesif p=pB,
+• when themachineisworse(Γ =W), bt
+a.s. −−→0 if p <pW, bt
+a.s. −−→1 if p >pW; and bt is recurrent
+and oscillatesif p=pW.
+Further,wehave pB ≜
+¯ βB log
+
+¯βW
+¯βB
+
+¯ βB log
+
+¯βW
+¯βB
+
++αB log
+
+αB
+αW
+ and pW ≜
+¯ βW log
+
+¯βW
+¯βB
+
+¯ βW log
+
+¯βW
+¯βB
+
++αW log
+
+αB
+αW
+.
+In essence,Theorem 2 states thattheDM’sabilitytolearndependsonherprioraboutthetask
+as wellasthemachine’stype.TheDMlearnsthatthemachineisworse(resp.,better)whenher
+prior isbelow(resp.,above) pΓ for typeΓ ∈ {B,W}. Importantly,thismeansthattheDMmay
+not properlylearnwhetherthemachineisbetterthanher.Indeed,whenprior p is low(p <pB),
+the DMlearnsthatthemachineisworse(bt
+a.s. −−→0), whilethemachineisactuallybetter(Γ= B).
+Similarly,whenprior p is high(p>pW), theDMlearnsthatthemachineisbetter(bt
+a.s. −−→1), while
+the machineisactuallyworse(Γ=W).
+Theorem 2 stems fromthefactthat,inthisbenchmark,theDMactsandobservesthemachine’s
+correctness onlyifthemachine’ssignalispositive.Inotherwords,theDM’sobservationsare
+sampled solelyfromtrueandfalsepositivepredictionsandneverfromtrueorfalsenegativeones.
+Indeed, recallfirstthattheDM’sbeliefincreases(resp.,decreases)whentheDMobservesacorrect
+(resp., incorrect)machinerecommendation.BecausetheDMisabletoobservethisonlywhen
+the machine’ssignalispositive,theDMincreasesherbeliefifandonlyifthemachinecorrectly
+prescribestoact(SM
+t =+andΘt =A) anddecreasesherbeliefifandonlyifthemachinewrongly
+prescribestoact(SM
+t =+andΘt =NA). Butwhetherthetasktrulyrequiresanaction(i.e.,Θt =A)
+is determinedbyprior p. Hence,theDMincreasesherbeliefmorefrequentlywhenthetaskis
+more likelytorequireanaction,i.e.,prior p takeshighervalues.TheDM’sbeliefwillconvergeto
+one (resp.,tozero)whenprior p is sufficientlyhigh(resp.low)suchthatthenumberofobserved
+correct predictionsisrelativelyhigherthanthenumberofincorrectones.
+This effectofprior p is absentfromtheno-interactionbenchmarkbecausetheDMalsoobserves
+the correctnessofthemachine’spredictionswhenthemachinerecommendsnottoact(i.e.,when
+SM
+t =− and Θt =A, or SM
+t =− and Θt =NA ).
+Note finallythatmagnitudesofthesechangesinbeliefsdonotdependonprior p but are
+determined bytheaccuracyparametersofthemachine.Threshold pΓ thuscorrespondstothe
+break-evenvalueofprior p suchthattheexpectedincreaseinbeliefcompensatesfortheexpected
+decrease whenthemachineisoftypeΓ.When p>pΓ, theexpectedincreasedominatestheexpected
+decrease andthebeliefconvergestoone.When p<pΓ, theoppositeistrue,andthebeliefconverges
+to zero.
+de V´ericourtandGurkan: betterorworse 15
+5. MainSet-up:AccountingfortheDM’sBeliefabouttheMachine
+In ourmainset-up,andincontrasttothepreviousbenchmarks,theDM’sbeliefaboutthemachine
+influences theDM’sdecisiontoact,andhenceherabilitytoverifythemachine’spredictions.As
+a result,learningisendogenouslydeterminedbytheDM’scurrentbeliefaboutthemachine.This
+fundamentallychangesthenatureofmislearning.
+More specifically,recallthatduetoInformativeness,theDMalwaysdecidesaccordingtoher
+signal whenitisconsistentwiththemachine’ssignalwith SH
+t = SM
+t . Whenthesesignalsdiffer
+with SH
+t ̸= SM
+t , theDMmayoverridethemachinewhenhercurrentbelief bt−1 that themachine
+is betterissufficientlylow.Hence,belief bt−1 influences posterior bt via thetwomechanismscap-
+tured byequation(6). Thefollowingresultdetermineswhensuchoverridingdecisionsoccur.(The
+result followsfromSubstitution(4)-(5) andthecontinuityoftheposteriorprobabilitiesin bt−1; see
+Appendix B.)
+Lemma 1. Unique thresholds b− ∈ (0, 1) and b+ ∈ (0, 1) exist suchthat
+P(Θt =A|SH
+t =+,SM
+t =−, bt−1)≥r ⇔ bt−1 ≤b− , (8)
+P(Θt =A|SH
+t =−,SM
+t =+, bt−1)≤r ⇔ bt−1 ≤b+ . (9)
+Lemma 1 states thatwhentheDM’sjudgmentcontradictsthemachine’sprescription,i.e., SH
+t ̸=
+SM
+t , theDMoverridesthemachineifandonlyifherbeliefinabettermachineissufficientlylow,
+i.e., belowathreshold.However,theDMcanoverridethemachineintwodifferentways,depending
+on whetherthemachineprescribestoactornot.Thisyieldstwodifferentthresholds b− and b+,
+whichcorrespondtoanoverridingdecisionforanegativeandpositivemachinesignal,respectively.
+These thresholdsactuallycorrespondtothevalueofbelief b that makestheDMindifferent
+betweenactingandnotactingwhen SH
+t = −,SM
+t = +and SH
+t = +,SM
+t = −, respectively.Note
+also thattherankingbetween b− and b+ dependsontheproblem’sparameters,andwedefine
+the minimumandmaximumofthesetwothresholdsas bH ≜ min(b−, b+) and bM ≜ max(b−, b+),
+respectively(where bH and bM can beequal).
+Thus,whenbelief bt−1 is sufficientlylargewith bt−1 > bM, theDMhassufficientconfidencein
+the machinetoalwaysfollowitsprescriptions;thiscorrespondstotheno-overridingbenchmark.
+However,whenthebeliefissufficientlylowwith bt−1 < bH, theDMalwaysoverridesthemachine
+and decidessolelybasedonherjudgment,whichcorrespondstotheno-interactionbenchmark.
+Overall,thesetwocasesareconsistentwithSubstitution,whichstipulatesthatthemachineis
+either betterorworsethantheDM.
+Interestingly,Lemma 1 further revealsthattheDMmaytreatthemachine’sprescriptionas
+complementing—insteadofsubstituting—herexpertise.ThisoccurswhentheDMissufficiently
+16 de V´ericourtandGurkan: betterorworse
+unsure aboutthemachine’stypewith bt−1 ∈ (bH, bM). Inthiscase,theDMandthemachinecomple-
+mentoneanotherintwopossibleways,dependingonwhetherthreshold b− is largerorsmallerthan
+threshold b+. If b+ <b−: theDMoverrulesthemachinewhenitssignalisnegativebutfollowsthe
+machine’sprescriptionwhenitispositive.Inotherwords,theDMassumesthatshemakesbetter
+positivebutworsenegativedecisionsthanthemachine.Inthissense,theDMandthemachine
+collaborateonthetask.Asaresult,theDMactsifandonlyifeithertheDMorthemachinefind
+evidence todoso(SH
+t =+or SM
+t =+).If b− <b+, however,theDMoverrulesapositivemachine’s
+signal butfollowsanegativemachine’ssignalandthusactsifandonlyiftheDMandthemachine
+agree thatanactionisrequired(SH
+t =+and SM
+t =+).
+Overall,Lemma 1 indicates thattheDM’sabilitytolearnthetruetypeoftaskdependson
+her currentbeliefaboutthemachine.Thismeans,inparticular,thattherandomjumpsofthe
+correspondinglog-likelihoodratioalsodependonthecurrentratio.Formally,wehave
+Lt =Lt−1 +RHM
+t (Lt−1)
+when theDMcanoverridethemachine.Incontrasttotheno-overridingbenchmark,therandom
+jumps RHM
+t are nolongeri.i.d.,astheirdistributionsnowdependonthemagnitudeof Lt−1. Thus,
+the signoftheexpectedjump,whichdeterminestheasymptoticbehaviorofbelief bt, ispath-
+dependent.Next,weexplorehowthisdependencyaffectstheabilityoftheDMtolearnthetrue
+machinetype.
+5.1. LearningWhentheMachineisBetter
+WefirststudytheDM’sabilitytoproperlylearnthemachine’stypewhenthemachineisinfact
+better.Ournextresultcharacterizesthesituationsinwhichmislearningoccursinthiscase.
+Theorem 3. When themachineisbetter,i.e. Γ=B, if p ≤pB, then bt oscillatesandisrecurrent;
+otherwise bt
+a.s. −−→1.
+ThustheDM’sabilitytolearnthemachine’stypecontinuestodependonwhetherherprior
+aboutthetaskissufficientlyhigh.Infact,thethresholdcharacterizingwhenproperlearningoccurs
+is theexactsameastheonewithoutoverriding(definedinTheorem 2). Specifically,theDMlearns
+that themachineisindeedbetter(bt
+a.s. −−→1) ifandonlyifprior p is sufficientlyhighwith p >pB.
+Figure 1b illustratesthiscaseandexhibitsasymptoticbehavior.
+The DM’sabilitytooverridethemachine,however,fundamentallychangesthenatureofmis-
+learning. Indeed,whenprior p is suchthat p ≤pB, theDMwronglylearnsthatthemachineisworse
+in theno-overridingbenchmark.Inthemainset-up,however,thebeliefoscillatesasillustratedin
+Figure 1a. Additionally,becausethebeliefisalsorecurrent,theDMconstantlyswitchesamong
+de V´ericourtandGurkan: betterorworse 17
+overrulingthemachine(bt < bH), collaboratingwithit(bt ∈ (bH, bM)) orlettingthemachinedecide
+(bt >bM), asstatedbythefollowingcorollary.
+Corollary1. When themachineisbetter,i.e., Γ = B and p ≤ pB, intervals (0, bH], (bH, bM) and
+[bM, 1) arerecurrentforbelief bt.
+Hence, whentheDMsufficientlybelievesthatthemachineisbetter,sheneveroverrulesitand
+weretrievethedynamicsoftheno-overridingbenchmark.Thatis,when bt >bM, learningisentirely
+drivenbywhetherornotamachine’sprescriptiontoactiscorrect.Additionally,becauseprior p is
+low,thefrequencyofthesecorrectpredictionsisalsolow,sothebeliefisdecreasinginexpectation.
+In contrast,whentheDMsufficientlybelievesthatthemachineisworsewith bt <bH, shealways
+overridesthemachine.Inthiscase,theDMsometimesobservesthemachine’saccuracyevenwhen
+it prescribesnottoact.ThisoccurswhentheDM’ssignalispositiveandoverrulesamachine’s
+negativesignal.Inthiscase,learningisdrivenbythetruemachinetype,andbecausethemachine
+is actuallybetter,thebeliefincreasesinexpectation.
+Overall,theresultholdsbecausetheDM’sbeliefinthemachine’stypenegativelyreinforces
+her samplingbias:Whenthebeliefbiasesthesampleofobservations,theresultingupdatedbelief
+tends todebiasthesampling—andviceversa.Asaresult,belief bt is pushedbackdownwardwhen
+it reacheshighvalues(bt >bM) andispushedupwardwhenittakeslowvalues(bt <bH). Hence,the
+DM neverfullylearnsthatthemachineisbetter,butduetooverriding,nevermislearnsthatitis
+worseeither.Inthissense,theDMalwaysremainsinperpetualuncertaintyaboutwhetherornot
+to disregardthemachine.
+Interestingly,thislong-rununcertaintyinducestheDMtosometimestreatthemachine’spre-
+scription asacomplementtoherjudgment.Thishappenswhenthebeliefreaches bt ∈ (bH, bM),
+whichisarecurrentevent.Inthiscase,theDMandthemachineco-producethedecisionper
+Lemma 1 (and theexplanationsthatfollow).BecausethemachineandDMareactuallysubsti-
+tutes, theemergenceofthiscomplementarityisdrivenonlybytheDM’sinabilitytolearnthetrue
+machinetype.
+5.2. LearningWhentheMachineisWorse
+PerTheorems 2 and 3, theDMproperlylearnsthatthemachineisgoodwhenprior p takeshigh
+values(i.e., p >pB), whethertheDMcanoverridethemachineornot.Inthiscase,overriding
+essentiallypreventstheDMfromwronglylearningthatthemachineisworse,whichcreatesa
+perpetualstateofuncertainty.Incontrast,whenthemachineisindeedworseandtheDMcan
+overruleit,theDMmaylearnitstruetypeforanyprior p. This,however,occursonlyrandomly
+when prior p takeslowvalues,asstatedbythefollowingresult.
+18 de V´ericourtandGurkan: betterorworse
+Figure 1TheDM’sbelief bt when themachineisbetter, Γ =B
+500 100015002000250030003500
+0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+1
+M
+H
+(a) p ≤pB
+500 100015002000250030003500
+0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+1
+M
+H
+(b) p>pB
+Note. αH = βH = 0.95, αB = βB = 0.99, αW = βW = 0.85, pB = 0.15 and r = 0.07, (a) p = 0.05, bH = 0.57, bM = 0.81, (b)
+p = 0.2, bH = 0.01, bM = 0.96.
+Theorem 4. When themachineisworse,i.e., Γ=W, if p ≤pW, then bt
+a.s. −−→0; otherwise, bt
+a.s. −−→X
+where X is aBernoullirandomvariable.
+Theorem 4 indicates thattheDM’sabilitytolearnhingesagainonprior p. Asintheno-overriding
+benchmark,theDMcanproperlylearnthatthemachineisworse(b a.s. −−→0) ifprior p takeslow
+values(p <pW, wherethreshold pW is, again,thesameasthatintheno-overridingbenchmark).
+Figure 2a illustratesthispoint,anddepictsasamplepathof bt.
+When thepriorishigh(p >pW), however,thebeliefconvergestoaBernoullirandomvariable.
+That is,thesamplepathsofbelief bt convergetozerowithacertainprobabilityandtoonewith
+the complementprobability.Inparticular,thebeliefneveroscillatesnorconvergestoaninterior
+pointinthelimit.Thus,theDM’sabilitytoproperlylearnthemachine’stypeisrandominthis
+case. Inparticular,theDMmaysometimeswronglylearnthatthemachineisbetter,whileitis
+actually worse.Figure 2b illustrates thispointanddepictsexamplesofthetwopossiblesample
+paths for bt, one(dashedline)convergingtooneandtheother(solidline)tozero.
+Similar tothebettermachinecase,learningisdrivenbyprior p as intheno-overridingbenchmark
+when thebeliefishigh(bt >bM), andbythetruetypeofthemachinewhenthebeliefislow(bt <bH).
+In thelattercase,thebeliefdecreasesinexpectationsincethemachineisworse.
+Thus,forlowprior p <pW, thebeliefmovesdownwardinexpectationwhenittakessufficiently
+high orlowvaluesandhenceconvergestozerointhelongrun.TheDMthenproperlylearnsthat
+the machineisworse.
+Forhighprior p >pW, however,thebeliefincreasesinexpectationwhenthebeliefisalready
+high anddecreaseswhenitisalreadylow.Inthelong-run,thebeliefisthuspushedclosetoeither
+de V´ericourtandGurkan: betterorworse 19
+Figure 2TheDM’sbelief bt when themachineisworse, Γ =W
+100 2003004005006007008009001000
+0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+1
+M
+H
+(a) p ≤pW
+100 2003004005006007008009001000
+0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+1
+H
+M
+(b) p>pW
+Note. αH = βH = 0.95, αB = βB = 0.99, αW = βW = 0.9, pW = 0.72 and r = 0.8, (a) p = 0.71, bH = 0.23, bM = 0.76, (b)
+p = 0.75, bH = 0.38, bM = 0.68.
+one orzero.Thisisbecause,incontrasttothecasewherethemachineisbetter,theDM’sbelief
+positivelyreinforcesthesamplingbias:Whenthebeliefbiases(resp.,doesnotbias)thesample,
+the resultingupdatedbelieftendstoperpetuatethebias(resp.,remainunbiased).Whetherthe
+beliefreacheshighorlowvaluesisthendeterminedbyrealizationsofthedifferentsignalsandthe
+task typesandisthusrandom.Notethatwhenthebelieftakesintermediaryvalues(bt ∈ (bH, bM))
+it caneitherdecreaseorincreaseinexpectationdependingontheproblemparameters.However,
+this regionistransientsincethebeliefispushedawayfromtheregionwhenthebeliefismore
+extreme (bt /∈ (bH, bM)).
+6. Implications
+6.1. LearningandMislearning
+Takentogether,theseresultsprovidetheoreticallimitsonourabilitytolearnwhetheramachine
+makesbetterdecisionsthananexpert.Interestingly,thisinabilitytolearnsometimesinducesthe
+DM totreatthemachine’sprescriptionasacomplementtoherownjudgment,eventhoughthe
+twoareactuallysubstitutes.Forinstance,theDMmaybelievethatherpredictionshavebetter
+sensitivitybutworsespecificitythanthoseofthemachine,whileinfact,themachineisbetterin
+terms ofbothaccuracymetrics.Inthissense,theDM’suncertaintyaboutthemachineprovidesa
+novelrationaleforwhyexpertsandmachinesmaycollaborateinpractice.
+Our resultsfurtheridentifytheuncertaintysurroundingthedecisiontaskasthekeyfactorfor
+mislearning. Infact,theDMfailstolearnwhensheismostcertainaprioriaboutwhetheran
+action isrequiredforatask(i.e.,whenprior p takesmoreextremevalueswith p ≤ pB or p >pW).
+20 de V´ericourtandGurkan: betterorworse
+Conversely,theDMalwaysproperlylearnsthemachine’stypewhensheismostuncertainabout
+whether ornottoact(i.e.,prior p takesmoderatevalues),asstatedbythenextcorollaryof
+Theorems 3 and 4.
+Corollary2. The DMalwayscorrectlylearnsthetypeofthemachineifandonlyif p ∈ (pB, pW].
+6.2. LearningwithAnticipation
+In ourset-up,asintheliterature,theDMupdatesherbeliefusingthepasthistoryoftheobserved
+accuracy ofthemachine’spredictions.Nonetheless,ourresultscharacterizetheasymptoticbehavior
+of thislearningprocessand,assuch,provideguidelinesforDMswhoanticipatethefuturebehavior
+of theirownbelief.Inparticular,thenatureofalearningfailureisindicativeofthemachine’stype
+in ourresults.TheDMmaythusleveragethisinformationtodeterminewhetherthemachineis
+better.
+Indeed, theDM’sbeliefmayoscillateonlywhenthemachineisbetter(seeFigure 1a), and
+alwaysconvergeswhenitisworse(seeFigure 2). Thus,thelongertheDMremainsuncertain(in
+the senseofTheorem 3), themorelikelythemachineisactuallybetter.Similarly,theDM’sbelief
+can convergetozeroonlyifthemachineisworse.Indeed,thebeliefeitheroscillatesorconverges
+to onewhenthemachineisbetter.Hence,thelongertheDMbelievesthatthemachineisworse,
+the morelikelysheiscorrectinherassessment.
+Assessing iftheDMiscorrectwhensheincreasinglybelievesthatthemachineisbetterappears
+to bemorechallenging.Indeed,theDM’sbeliefcanconvergetoonewhetherthemachineisbetter
+(see Figure 1b) orworse(seeFigure 2b). Tocircumventthisissue,oneapproachconsistsinrelying
+on morethanonedecisionmaker.Toseehow,considerseveralidenticaldecisionmakerswho
+independentlyhandleaseriesoftasksthatarerandomlydrawnfromthesamesampleanduse
+the samemachine.Ifthismachineisbetter,allDMsshouldhavethesamelimitingbehavior:they
+either allremainuncertainoralllearnthatthemachineisindeedbetter(perTheorem 3). However,
+if themachineisworse,theconvergencetoeitherzerooroneisrandom(perTheorem 4). Thus,if
+a singleDMintheteambelievesovertimethatthemachineisworse,thenthemachineisindeed
+likelytobeworse—eveniftherestoftheteambelievesittobebetter.Incontrast,ifthereis
+consensus intheteamthatthemachineisbetter,thenthelargertheteamis,themorelikelyitis
+that themachineisbetter.
+In short,long-termuncertaintyoraunanimousbeliefamonglargeteamsthatthemachineis
+betterisindicativeofabettermachine.Incontrast,persistentlyoverrulingthemachineisindicative
+of aworseone.
+de V´ericourtandGurkan: betterorworse 21
+6.3. AdoptionorRejection
+Our studyalsoshedslightsonthedecisiontofullyadoptorrejectthemachine.Indeed,after
+observing andattimesoverridingthemachine’sprescriptions,theDM’sbeliefmayreachextreme
+levels.Inthesecases,theDMdecideseithertoletthemachinemakeallthedecisions(asin
+Section 4.2), ortoabandonthemachinealtogether,dependingonwhetherthebeliefissufficiently
+high orlow,respectively.Onceamachineisabandoned,however,theDMcannotlearnaboutit
+anymore.
+If theDMdecidestofullyadoptthemachine—butcontinuestoobserveitsperformance—our
+results indicatethattheDMwillbecomeincreasinglyconfidentaboutheradoptiondecisionover
+time whenprior p aboutthetaskishigh(p>pB for abettermachine,and p>pW, foraworseone
+perTheorems 3-4). Thisoccursevenwhenthemachineisactuallyworseandshouldbeabandoned.
+In contrast,whentheprioraboutthetaskislow(p <pB or p <pW, dependingonthetrue
+machinetype),theDMincreasinglydoubtsheradoptiondecisionovertime.Thisisbecausethe
+DM’s beliefinabettermachinedecreasesinexpectationovertimeandalwaysapproaches0inthe
+limit inthiscase(perTheorems 3-4). Thishappensevenwhenthemachineisactuallybetterand
+should beadopted.
+Recall, finally,thatwhenthemachineisbetterandtheprioraboutthetaskislow,theDM’s
+beliefinthemainset-uposcillatesandisrecurrentin(0,1)(perTheorem 3 and Corollary 1).
+Therefore, theDM’sbeliefeventuallyreachesanylowlevelwithprobabilityone.Inotherwords,
+the DMalwaysendsupabandoningthemachineinthelongrun,eventhoughthemachineis
+actually better.
+7. MistrustBiasesagainsttheMachine
+A keyfeatureofthemislearningbehaviorinTheorems 3-4 is thattheydonotstemforman
+inherentmistrustagainstthemachine.Instead,theystemfromfourfundamentals(verification
+bias, exploration-freedecisions,informativenessandsubstitution),whichcharacterizetheset-up
+in whichtheDMworkswiththemachine.Nonetheless,theDMmayalsobesubjecttomistrust
+biases againstthemachineinsituationswherethesefundamentalsareatplay.Inthissection,we
+explore towhichextentbiasessuchastheseinteractwithourfourfundamentalstoaffecttheDM’s
+learning behavior.
+In ourmainset-up,mistrustingthemachineaffectstheDM’sabilitytolearninatleasttwo
+ways.First,theDMmaydownplaythemachine’sprescriptionwhendecidingtoact,whichalters
+the DM’sabilitytoobservethecorrectnessofthemachine’spredictions.Second,andinlinewith
+the algorithmaversionreportedby Dietvorstetal. (2015), theDM’sbeliefinthemachinemay
+disproportionatelydropuponobservingthefailureofamachine’sprediction.Inthefollowing,we
+inspectthesedifferentbiasesinturn.
+22 de V´ericourtandGurkan: betterorworse
+7.1. MistrustingtheMachineWhenDeciding
+The DM’smistrustinthemachinemayaffectthewaysheweightsthemachine’sprescription
+when decidingtoact.Thisisconsistentwiththedecision-makingliterature,whichfindsthat
+individuals tendtodiscountinformationcomingfromexternalsourcesandoverweighttheirown
+opinions (seeforinstance, Soll andMannes 2011). Toaccountforthispossibility,wefollow Stone
+(1961), whoproposesanon-Bayesianapproachtorepresenttheaggregationofdifferentopinions.
+This approachiscommonlyusedtomodelmistrustbias( ¨ Ozer andZheng 2018), inparticularwhen
+a humanmakesdecisionsbasedontheinputofadata-drivenalgorithm(Ahsen etal. 2019, Boyaci
+et al. 2020). Specifically,theDM’supdatedbeliefthatanactionisrequiredgiventheDM’sand
+machine’ssignalsisalinearcombinationbetweentheupdatedbeliefofthehumanandthatofthe
+machine.Moreformally,theDM’sposteriorbeliefaboutthetaskisdefinedas
+˜Pλ(sH, sM, bt−1)≜λP(Θt =A|SH =sH)+(1−λ)P(Θt =A|SM =sM, bt−1) (10)
+where λ ∈ (0, 1) representstheDM’smistrustbiasagainstthemachine’ssignal.Thehigherthe
+valueof λ is, themoretheDMmistruststhemachine.Belief ˜Pλ(SH,SM, bt−1) correspondsthen
+to theposteriorprobability P(Θ = A|SH,SM, bt−1) derivedfromBayes’ruleinthemainset-up.In
+particular, theDMdecidestoactifandonlyif ˜Pλ(sH, sM, bt−1)≥r.
+In thisset-up,theDMalwaysoverrulesabettermachine(neveroverrulesaworsemachine)if
+the biasistoohigh(resp.,toolow).Intheseextremesituations,theDMandthemachinenolonger
+substitute oneanother.Wethusrestrictouranalysistomoderatevaluesofmistrustparameter λ,
+as formalizedbythefollowinglemma,where ˜PB
+λ(sH, sM)≜ ˜Pλ(sH, sM, 1) and ˜PWλ
+(sH, sM)≜ ˜Pλ(sH, sM, 0)
+representtheDM’sbeliefsaboutthetask’stypewhenthemachine’stypeisknown.
+Lemma 2. Two thresholds λmin and λmax exist suchthatif λ ∈ (λmin,λmax), then
+˜PB
+λ(SH
+t =+,SM
+t =−)<r and ˜PB
+λ(SH
+t =−,SM
+t =+)≥r , (11)
+˜PW
+λ (SH
+t =+,SM
+t =−)≥r and ˜PW
+λ (SH
+t =−,SM
+t =+)<r. (12)
+In thefollowing,wefocuson λ ∈ (λmin,λmax) toensurethatSubstitutionpersistsinthepresence
+of mistrustbias.Thenexttheoremshowsthatundertheseconditions,thestructureofourmain
+results continuetohold.
+Theorem 5. Assume λ ∈ (λmin,λmax).
+• When Γ=B, if p ≤pB, then bt oscillatesandisrecurrent;otherwise, bt
+a.s. −−→1.
+• When Γ = W, if p ≤ pW, then bt
+a.s. −−→0; otherwise, bt
+a.s. −−→X where X is aBernoullirandom
+variable.
+de V´ericourtandGurkan: betterorworse 23
+Thus,theDM’slearningbehaviorcharacterizedinTheorems 3-4 doesnotchangeoverallifthe
+DM isbiasedagainstthemachine’sprescriptionwhenmakingadecision.NotealsothatCorollary 1
+continuestoholdinthiscasebutwiththresholds b− and b+ dependingon λ (see Lemma 5 in the
+appendix).
+7.2. MistrustingtheMachineWhenUpdatingBelief
+The DM’smistrustagainstthemachinecanalsoaffectthewaytheDMupdatesherbeliefaboutthe
+machine. Dietvorstetal. (2015), forinstance,experimentallyshowthatindividualsaremorelikely
+to ignorealgorithm-basedpredictionsafterobservingthesealgorithmserr.Moregenerally,the
+observationofnegativeoutcomes,suchasapredictionfailure,morestronglyimpacttheformation
+of anindividualimpressionthandopositiveones—aphenomenonreferredtoasnegativitybiasin
+the literature(Baumeister etal. 2001).
+Toaccountforthisbias,wefollowtheliterature(seeforinstance Coutts 2019, M¨obiusetal. 2022)
+and allowupdatedbelief bt to dropsignificantlyuponobservinganincorrectmachineprediction.
+Specifically,theDMupdatesherbelieffollowingBayes’rulewhenthemachineiscorrectbut
+magnifies thedecreaseinbeliefwhenthemachineiswrong.Moreformally,wehave
+bt =
+
+
+bt−1 if P(Θt =A|SH
+t =sH, SM
+t =sM, bt−1)<r 
+1+
+¯b
+t−1
+bt−1
+
+PW(SM
+t =sM |Θt =θ)
+PB(SM
+t =sM |Θt =θ)
+ϕ(sM, θ)
+
+
+−1
+if P(Θt =A|SH
+t =sH, SM
+t =sM, bt−1)≥r ,
+where function ϕ(sM, θ)=μ>1 ifthemachineisincorrect(i.e.,for sM =+and θ =NA or sM =− and
+θ = A) and ϕ(sM, θ) =1otherwise.Becauseratio PW(SM
+t |Θt)/PB(SM
+t |Θt) > 1 whenthemachineis
+incorrect, thehigherthevalueofmistrustparameter μ is, thelowerbelief bt becomes.Inparticular,
+the mainset-upcorrespondsto μ=1,whichcoincideswithBayes’rule.
+The nextresultcharacterizestheasymptoticbehavioroftheDM’sbeliefinthepresenceofthis
+negativitybias.
+Theorem 6 (Learning withNegativityBias). Unique thresholds μB, μW, μH exist suchthat
+• when themachineisbetter(Γ=B),
+—if μ ≥μB and μ>μH, then bt
+a.s. −−→0.
+—if μB >μ>μH, then bt
+a.s. −−→X where X is aBernoullirandomvariable.
+—if μH ≥μ ≥μB, then bt is recurrentandoscillates.
+—if μB >μ and μH ≥μ, then bt
+a.s. −−→1.
+• when themachineisworse(Γ=W),
+—if μ ≥μW, then bt
+a.s. −−→0.
+—if μW >μ, then bt
+a.s. −−→X where X is aBernoullirandomvariable.
+24 de V´ericourtandGurkan: betterorworse
+Further,wehave
+μB ≜
+pαB log
+
+αB
+αW
+
+¯p ¯ βB log
+
+¯βW
+¯βB
+, μW ≜
+pαW log
+
+αB
+αW
+
+¯p ¯ βW log
+
+¯βW
+¯βB
+ and μH ≜
+pαHαB log
+
+αB
+αW
+
++ ¯p ¯ βHβB log
+
+βB
+βW
+
+pαH ¯αB log
+
+¯αW
+¯αB
+
++ ¯p ¯ βH ¯ βB log
+
+¯βW
+¯βB
+ >1 .
+Note thatthresholds μB and μW actually playthesameroleas pB and pW in Theorems 3 and 4,
+respectively.Indeed,thresholds pB
+μ and pWμ
+exist suchthat μ >μΓ ⇔ p <pΓμ
+, forΓ= {B,W}. In
+particular, thestructureoftheresultswhenthemachineisworse(seeTheorem 4) doesnotchange
+in thepresenceofnegativitybias.Inthiscase,mistrustparameter μ affects thelearningonly
+through thevalueofthreshold μW and, hence, pWμ
+.
+When themachineisbetter,however,thepresenceofmistrustchangesthestructureofthe
+results. Inparticular,undermoderatemistrustsuchthat μB > μ>μH, theDMlearnsthatthe
+machineisbetteronlywithsomeprobability(secondpointinTheorem 4). Thisisincontrasttothe
+main set-upwithoutmistrust,inwhichtheDMalwayslearnsthatthemachineisbetterif p>pB.
+In fact,theDM’sbeliefcanconvergetoaBernoullirandomvariableinourmainset-uponlywhen
+the machineisworse.Ifthemistrustinthemachineistoostrongwith μ>max(μH,μB) (firstpoint
+of thetheorem),however,theDMalwayswronglylearnsthatthemachineisworse.Otherwise,the
+bias doesnotalterthelearningbehavior.Infact,Theorem 6 reduces toTheorems 3-4 when μ=1.
+In thiscase,wehave μH > μ = 1andthebeliefeitherconvergestooneoroscillatesdependingon
+whether μB ≤μ=1ornot,whichisequivalentto pB ≥p.
+Overall,mistrustintheformofanegativitybiasinteractswithourfundamentalsinameaningful
+wayonlywhenthelevelofmistrustismoderateandthemachineisactuallybetter.Inthiscase,
+whether theDMlearnsthetruenatureofthemachinebecomesrandom—whiletheDMalways
+properlylearnsthatthemachineisbetterwhensheisnotbiasedagainstthemachine.
+8. Complementarity
+Thusfar,wehavefocusedonsettingsinwhichthemachineandtheDMaresubstitutes.Nonethe-
+less, ourframeworkalsoappliestothecaseofcomplementarity,whichcantakedifferentforms.
+In thissection,weexplorethelearningbehaviorofaDMwhouncovershowamachinemay
+complementherownjudgment.
+In ourset-up,onlytwopossiblewaysactuallyexistbywhichthemachineandtheDMcomple-
+mentoneanother.Indeed,amachinethatcomplementstheDMissuperiorinonlyoneofthetwo
+dimensions ofajudgment—positiveornegativesignals—andinferiorintheother.Thus,thefirst
+form ofcomplementaritycorrespondstoaDMwhoalwaysoverridesthemachinewhenherjudg-
+mentindicatesthatanactionisrequiredbutalwaysfollowsthemachine’sprescriptionifshefinds
+de V´ericourtandGurkan: betterorworse 25
+that sheshouldnotact.Theconverseholdsforthesecondform:theDMoverridesthemachine
+when herjudgmentindicatesnottoact,butalwaysfollowsthemachineotherwise.
+Wedenotethesetwomachinetypesas C+ and C−, respectively,andtheirsensitivityandspecificity
+are αΓ and βΓ for Γ ∈ {C+,C−}. Inthissection,westudytheDM’slearningbehaviorinthesame
+settings asourbasemodel,exceptforthesubstitution(4)-(5), whichwereplacebythefollowing
+complementarityconditions.
+Complementarity:
+PC+(Θ=A|SH =+,SM =−)<r and PC+(Θ=A|SH =−,SM =+)<r (13)
+PC−(Θ=A|SH =+,SM =−)≥r and PC−(Θ=A|SH =−,SM =+)≥r (14)
+where PC+{·} and PC−{·} denote theprobabilitymeasuresinducedbythetwotypesofthemachine.
+The DMdoesnotknowthemachine’stypeapriori.However,sheformsabeliefovertimeabout
+whichtypeofcomplementaritysheisfacing.Withaslightabuseofnotation,wereferto bt as the
+DM’s priorbeliefthatΓ= C+. ThenextresultthencharacterizestheDM’sabilitytolearnhow
+the machinecomplementsherjudgment.
+Theorem 7. We have,
+• when Γ=C+, then bt
+a.s. −−→1,
+• when Γ = C−, auniquethreshold pC exists suchthat bt
+a.s. −−→ 1 if p ≤ pC; otherwise bt
+a.s. −−→ X
+where X is aBernoullirandomvariable.(Threshold pC is definedin (95) in Appendix D.)
+Thus,theDMalwaysproperlylearnsthemachine’stypewhentheactualformofcomplementarity
+is C+. Incontrast,theDMcanmislearnhowthemachinecomplementsherjudgmentwhenthe
+true typeis C− and theprioraboutthetaskishigh(i.e., p >pC). Inthiscase,learningisrandom
+and theDMwronglylearnswithpositiveprobabilitythatthemachineisoftype C+.
+This resultisakintoTheorem 4 when themachineandDMaresubstitutes.IncontrasttoThe-
+orem 3, however,theDM’sbeliefneveroscillatesandalwaysconvergestoeitherzeroorone.Thus,
+in thelimit,theDMisalwayscertainoftheformofcomplementaritythatthemachineprovides.
+In particular,theDMneverbehavesasifthemachineandDMweresubstitutes.Again,thisis
+in contrasttoourmainset-up,inwhichtheDM’sdecisionssometimesexhibitcomplementarity,
+while infact,theDMandthemachinearesubstitutes(seeCorollary 1).
+Note finallythatconditions(13)-(14) correspondtoacomplementaritybetweenthemachine’s
+and theDM’ssignals.Otherformsofcomplementarity,however,exist.Inparticular,theDMmay
+seek touncoverforwhichdecisiontasksthemachineisbetterandforwhichonestheDMis.Inthe
+contextofbiopsies,forinstance,thiscorrespondstounderstandingforwhatkindsofpatientsthe
+26 de V´ericourtandGurkan: betterorworse
+machinedoesbetterandforwhatkindsofpatientsitdoesworse.Apossibleapproachtostudythis
+case istoconsiderourmainset-upbutwithmorethanonetypeofdecisiontask.Denotethistype
+as T, withthreshold rT and prior pT for T ∈ {T1,T2, ... }. Thesedifferenttypesmaycorrespondto
+differentkindsofpatients,forinstance.TheDMthenformsdifferentbeliefs bTt
+overtimesothat
+the findingsofSection 5 independentlyapplytoeachtask’stype T ∈ {T1,T2, ... }. Withmultiple
+task types,thesefindingscharacterizewhentheDMwronglylearnsthedecisiontasksforwhich
+the machine’spredictionsaresuperior,andtheonesforwhichherownjudgmentisbetter.
+9. PartialRelaxationoftheVerificationBias
+In thissection,weexploretherobustnessofourresultswhentheverificationbiasispartially
+relaxed, whichislegitimatewhenthebiasstemsfromtheDM’slimitedattention.Inthiscontext,
+the DMalsolearnsfromunverifiedcasesandupdatesherbeliefbasedonthemachine’s(andher
+own)signalwhenshedoesnotact.Becauseofsalienceeffectsandinattentionalblindness,however,
+the DMassignsrelativelylessweighttothisunverifiedinformationcomparedtoinformationbased
+on averifiedcase,forwhichthetruestateisrevealed.
+Formally,weconsiderinattentionalblindnessparameter ε ∈ [0, 1], suchthattheDM’sbelief bt−1
+is updatedto bt, asfollows
+bt =
+
+
+
+1+
+¯b
+t−1
+bt−1
+
+PW(SM
+t =sM,SH
+t =sH)
+PB(SM
+t =sM,SH
+t =sH)
+ε −1
+if P(Θt =A|SH
+t =sH, SM
+t =sM, bt−1)<r
+
+1+
+¯b
+t−1
+bt−1
+PW(SM
+t =sM |Θt =θ)
+PB(SM
+t =sM |Θt =θ)
+−1
+if P(Θt =A|SH
+t =sH, SM
+t =sM, bt−1)≥r.
+(15)
+Here, ε representshowlesssalientunverifiedinformationiscomparedtoverifiedinformation.7
+The higherthevalueof ε is, themoresensitivetheDMistotheinformativenessofthemachine’s
+signal foranunverifiedcasecomparedtoaverifiedone.Theverificationbiasisfullyrelaxedand
+properlearningoccurswhen ε=1perProposition 1 in Appendix E.8 By contrast,ourmainset-up
+correspondsto ε=0.Thenexttheoremshowsthatourresultscontinuetoholdwhen ε is positive
+but sufficientlylow.
+Theorem 8. Unique thresholds εB and εW exist suchthat
+• when themachineisbetter (Γ = B), if ε ≤ εB and p <pB, then bt oscillatesandisrecurrent;
+otherwise, bt
+a.s. −−→1.
+• when themachineisworse (Γ=W), if ε<εW and p>pW, then bt
+a.s. −−→X where X is aBernoulli
+randomvariable;otherwise, bt
+a.s. −−→0.
+7 Toseethis,consideraset-upwithtwodifferentabsoluteweightsfortheverifiedandunverifiedcases,say ωv and
+ωu, respectively.Thisset-upisequivalenttotheoneinSection 9 bytaking ε = ωu/ωv.
+8 This propositionisconsistentwiththefrequentistconsistencyofBayesianupdating(see,e.g., Diaconis andFreedman
+1986), whichimpliesperfectlearningwhentheverificationbiasisfullyrelaxedwith ε = 1.
+de V´ericourtandGurkan: betterorworse 27
+Thresholds εB and εW are,respectively,definedin (98) and (99) in Appendix E, and pB and pW are
+in Theorem 2.
+Theorem 8 correspondstoTheorems 3-4 with theadditionalconditionthat ε is lessthan εΓ for
+Γ ∈ {B,W}, respectively.Inparticular,whentheunverifiedcasesaresufficientlylesssalientthan
+the verifiedoneswith ε<min(εB, εW), ourmainresultsalwayshold.
+10. Conclusion
+This paperproposesaframeworkinwhichamachineperformsrepeateddecisiontasksunderthe
+supervisionofaDM.Inthisset-up,wefullycharacterizetheevolutionoftheDM’sbeliefabout
+the machineandoverrulingdecisionsovertime.Wefindthatmislearningcantaketworadically
+differentforms:aconstantchangeofmind(oscillationoftheDM’sbeliefperTheorem 3) anda
+chanceofbeingpersuadedthatthemachinehasthewrongaccuracylevels(convergenceofthe
+belieftoaBernoullivariableperTheorem 4). ThiscontrastswiththeconvergenceoftheDM’s
+belieftoaninteriorpointin(0, 1), whichisoftenfoundinthedynamiclearningliterature(seee.g.,
+confounding beliefsin Harrison etal. 2012). Thisanalysisalsoprovidesanovelexplanationforthe
+jointproductionofdecisionsbymachinesandexpertsandsuggestsseveralguidelinesforadopting
+or abandoningamachine.
+The differentformsofmislearningweuncoverinthispaperstemfromtheinteractionbetween
+the DM’sbeliefinthemachineandherdecisiontoact,whichinturndetermineshersampling
+of correctandincorrectmachinepredictions.Thebeliefandresultingsamplingbiasinteractina
+negativefeed-backloopwhenthemachineisbetter,whilethefeed-backloopispositivewhenthe
+machineisworse.
+These learningfailuresdonotarisefromanintrinsicmistrustbiasagainstmachine-basedpre-
+dictions, suchasalgorithmicaversion.Rather,theystemfromtheproblemoflearningabouta
+machinewhileactuallyusingitspredictionstomakehigh-stakedecisions.Wecapturethekeyfea-
+tures ofthisproblemwithfourfundamentals:informativeness,substitution,verificationbiasand
+exploration-free decisions.
+Of thesefour,thelasttwoconditionsarecrucialforourfindings.Indeed,theDMalwaysprop-
+erly learnsthetruenatureofthemachinewhentheverificationbiasissufficientlyrelaxed(per
+Theorem 8). Similarly,ourno-interactionbenchmarkcorrespondstoapartialrelaxationofthe
+exploration-free condition,whichalsoinducesproperlearning(seeTheorem 1). Incontrast,we
+find thattheDMsometimesrandomlyfailstolearnthemachine’saccuracywhenitspredictions
+complementtheDM’sjudgment(seeTheorem 7). Wefurtherexpectmislearningtooccureven
+when someofthesignalsarenotinformative,althoughtheproblemcanbecomedegenerateinthis
+case (whennoneofthesignalsareinformative,forinstance).
+28 de V´ericourtandGurkan: betterorworse
+Wealsorestrictouranalysistotwopossiblemachinetypes,mostlyforsimplicitybutourframe-
+workcanbeextendedtoaccountformore,possiblycontinuoustypes.Ourresultsshouldnotchange
+overallaslongasthepreviousfundamentalshold.Indeed,theDM’sbeliefthatthemachineout-
+performsherexpertiseiswhatfundamentallymatterswhendecidingtooverridethemachine.This,
+in essence,dividesthedifferentpossiblemachinetypesintotwodistinctpartitionsdependingon
+whether ornotthetypeisbetterthantheDM.Inthissense,weretrieveasetupwithtwo—albeit
+more convoluted—machinetypes.
+Eventhoughweassumethemaway,aDMmaynonethelessbesubjecttomistrustbiasesagainst
+the machineinourset-up.Ourresultsindicatethatthesebiasescaninteractwithourresultsina
+significantway.Inparticular,thepresenceofmistrustbiasakintoalgorithmaversionsometimes
+randomizes theDM’sabilitytoproperlylearnthetruenatureofthemachine.Theseresultsalso
+providenovelhypothesesthatfutureexperimentalresearchcantest.
+Wefocusonmistrustbiasesinthispaper,butourframeworkcanpotentiallyaccommodateother
+typesofbiasessuchasoverconfidenceandlossaversion(Benjamin 2019). Further,ourframework
+can potentiallyaccountforsituationsinwhichtheDMdoesnotperfectlyknowherownaccuracy,
+or hasamisspecifiedrepresentationofthemachine(Fudenbergetal. 2017).Alternatively,the
+machinemayprovidepartialexplanationsforthemachine’sprescription,whichmayhelptheDM
+to learnthetruemachineaccuracy(see,e.g., Puranam andTsetlin 2021, forawaytomodel
+explainability).
+Note finallythatourframeworkmayalsobeappliedtosituationswhereanexpertsupervises
+another expertinsteadofamachine.Doingso,however,requiresassumingthatexpertslearnthe
+levelofexpertisesolelybyobservingtheexpostaccuracyofsomeone’sjudgments.Whilethis
+precise settingmayexist,expertssuchasradiologiststypicallyprovidearationaleorcausalexpla-
+nation tojustifytheirprescriptions.Theseexplanationsarealsoindicativeofsomeone’sknowledge
+and expertise.Inotherwords,ahumanexpertcanmoredirectly,andapriori,assessthequalityof
+someone’s judgmentinawaythatisdifficultwithanMLalgorithm(see,e.g., Cukier etal. 2021
+for moreonthedifferencebetweenmachine-basedpredictionsandhumancognition).Inthissense,
+our frameworkisbettersuitedforandoffersafruitfulapproachtoexploringtheissueoflearning
+whether humanexpertiseshouldoverrulemachine-basedprescriptions.
