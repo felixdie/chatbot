@@ -121,8 +121,6 @@ def preprocess_data(
     data = loader.load()
     logger.info("Data loaded successfully")
 
-    ##################################### End of Tested Code ####################################################
-
     # Initialise text splitter
     if task_1:
         text_splitter = RecursiveCharacterTextSplitter(
@@ -276,7 +274,7 @@ def initialise_RAG(
         )
 
     # Retrieve k chunks from vectorstore as context for answer
-    retrieved_docs = retriever.invoke(query)
+    # retrieved_docs = retriever.invoke(query)
     # print(f"Chunk 1: {retrieved_docs[0].page_content}\n")
     # print(f"Chunk 2: {retrieved_docs[1].page_content}\n")
     # print(f"Chunk 3: {retrieved_docs[2].page_content}\n")
@@ -377,9 +375,10 @@ def get_answer(query: str, query_chain: RunnablePassthrough) -> str:
         }
     )
 
-    return response["answer"]
+    # # Return context
+    # counter = 1
+    # for chunk in response["context"]:
+    #     print(f"Chunk {counter}: {chunk}\n")
+    #     counter += 1
 
-    # Return context
-    # for chunk in response_1["context"]:
-    #     print(document)
-    #     print()
+    return response["answer"]
