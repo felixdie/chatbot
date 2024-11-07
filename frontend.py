@@ -34,19 +34,6 @@ for session_state, initial_value in session_states.items():
 # Create frontend
 st.title("🔗 GPT Tool for HAI Literature Review")
 
-
-# col1, col2, col3, col4 = st.columns(4)
-# with col1:
-
-# Reset vectorstore and reload frontend
-# reset = st.button("Reset")
-# if reset:
-#     if st.session_state["vectorstore"] is not None:
-#         st.session_state["vectorstore"].delete_collection()
-#     st.session_state["vectorstore_initialised"] = False
-#     logger.info("SUCCESS: Vectorstore cleared")
-#     st.rerun()
-
 # Input form
 with st.form("my_form"):
     user_input = st.text_area(
@@ -82,7 +69,6 @@ with st.form("my_form"):
         query_transformer = initialise_RAG(
             vectorstore=st.session_state["vectorstore"],
             llm=llm,
-            query=user_input,
             task=task,
         )
         logger.info("SUCCESS: RAG initialised")
