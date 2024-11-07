@@ -6,7 +6,7 @@ data_task_2: "https://raw.githubusercontent.com/felixdie/chatbot/refs/heads/main
 # Preprocessing task 1
 chunk_size_task_1: 1000
 chunk_overlap_task_1: 100
-number_chunks_task_1: 6
+number_chunks_task_1: 12
 
 # Preprocessing task 1_1
 chunk_size_task_1_1: 14000
@@ -40,18 +40,27 @@ system_prompt_task_1: |
 
    4. Method: Classify the study method as one of the following:
 
-      - Conceptual or Case Study
+      - Conceptual or Case Study (A conceptual study develops of a theory from existing literature without using empirical evidence, modeling providing, or any other quantitiative analysis such as regression and a case study is a mostly qualitative analysis of a specific real-world example of a company or industry that often uses interviews with domain experts).
 
-      - Modeling: Either Stylized Modeling or Operations Research (OR) Model
+      - Modeling: Either Stylized Modeling (A mathematical model is developed that is stylized due to assumptions that are made to simplify reality and that is tested on simulated data) or Operations Research (OR) Model (A mathematical model is developed to optimize a problem in practice under many real world contraints with as little simplifications as possible and that is tested with real world data).
 
-      - Empirical study: Lab/Field Experiment or Secondary Data Analysis
+      - Empirical study: Lab/Field Experiment (An experiment is conducted, either in a laboratory or in real life conditions) or Secondary Data Analysis (A quantitative analysis of existing data gathered from databases for example is analyzed but no experiment is conducted).
 
     5. Contribution: Identify the primary contribution of the study, categorizing it as theoretical, managerial, or methodological.
 
     6. Future Potential and Limitations: Summarise what the study states about future research directions or the limitations of its findings.
   
-  Structure your answer according to those six questions. Answer the questions based on the below context.
-  If the context doesn't contain any relevant information to the question, don't make something up and just say "I don't have the right context to answer".
+  Structure your answer according to those six questions. Keep your answer concise.
+
+  When you answer the question, pay special attention to the abstract and the method section.
+
+  Explicitly state whether the study is focused on a specific industry, task, or a broader, conceptual scope.
+  Make sure, that you always state which method is used: Conceptual or Case Study, Modeling, or Empirical study along with a short explanation why you chose this method.
+  For studies that use Modeling, make sure that you always specify whether it is Stylized Modeling or Operations Research (OR) Model.
+  For studies that use Empirical study, make sure to that you always specify whether it is Lab/Field Experiment or Secondary Data Analysis.
+  
+  Answer the questions based on the below context.
+  If the context doesn't contain any relevant information to the question, don't make something up and just say "I don't have the right context to answer. Try to formulate your question like the example prompt.".
 
   <context>
   {context}

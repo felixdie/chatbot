@@ -159,14 +159,18 @@ def preprocess_data(
         # Status logging for vectorstore
         if len(all_chunks) > vectorstore._collection.count():
             logger.info(
-                "ERROR: Vectorstore storage exceeded. Not all chunks uploaded to vectorstore"
+                f"ERROR: Vectorstore storage exceeded. {len(all_chunks)-vectorstore._collection.count()} chunks not uploaded to vectorstore"
             )
 
         elif len(all_chunks) == vectorstore._collection.count():
-            logger.info("SUCCESS: All chunks uploaded to vectorstore")
+            logger.info(
+                f"SUCCESS: All extracted chunks uploaded to vectorstore ({vectorstore._collection.count()})"
+            )
 
         elif len(all_chunks) < vectorstore._collection.count():
-            logger.info("ERROR: Old chunks in vectorstore, clear by clicking Reset")
+            logger.info(
+                f"ERROR: {vectorstore._collection.count()-len(all_chunks)} old chunks in vectorstore, clear by clicking Reset"
+            )
 
         return vectorstore
 
@@ -373,10 +377,10 @@ def get_answer(query: str, query_chain: RunnablePassthrough) -> str:
         }
     )
 
-    # # Return context
-    # counter = 1
-    # for chunk in response["context"]:
-    #     print(f"Chunk {counter}: {chunk}\n")
-    #     counter += 1
+    # Return context
+    counter = 1
+    for chunk in response["context"]:
+        print(f"Chunk {counter}: {chunk}\n")
+        counter += 1
 
     return response["answer"]

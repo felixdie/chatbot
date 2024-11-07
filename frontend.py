@@ -42,11 +42,14 @@ with col3:
     task_2 = st.checkbox("Task 2")
 
 with col4:
+
+    # Reset vectorstore and reload frontend
     reset = st.button("Reset")
     if reset:
         if st.session_state["vectorstore"] is not None:
             st.session_state["vectorstore"].delete_collection()
         st.session_state["vectorstore_initialised"] = False
+        logger.info("Vectorstore cleared")
         st.rerun()
 
 # Input form
@@ -97,6 +100,7 @@ with st.form("my_form"):
             task_1_1=task_1_1,
             task_2=task_2,
         )
+
         retrival_chain = create_retrival_chain(
             llm=llm,
             query_transformer=query_transformer,

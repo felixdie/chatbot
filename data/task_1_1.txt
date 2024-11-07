@@ -1,14 +1,44 @@
+Luo, X., Qin, M. S., Fang, Z., & Qu, Z. (2021). Artificial intelligence coaches for sales agents:
+Caveats and solutions. Journal of Marketing, 85(2), 14-32.
+
+- Context: The study is focused on a specific task, namely the use of AI coaches for training sales agents.
+- Research Question and Findings: The main research questions include which types of sales agents benefit most from AI coaches compared to human coaches, the underlying mechanisms of learning from AI feedback, and how a combination of AI and human coaching can enhance sales performance. The key findings indicate that the impact of AI coaches is heterogeneous, with middle-ranked agents benefiting the most, while bottom- and top-ranked agents show limited gains. Additionally, the study highlights the importance of addressing the limitations of AI coaches to improve training effectiveness.
+- Theme of Research:
+    - Human vs. AI: The study compares the advantages of AI coaches over human coaches, noting that while AI can provide consistent and scalable training, it lacks the interpersonal skills that human managers possess, which can affect learning and performance.
+    - Human + AI Collaboration: The research discusses a collaborative approach where AI coaches complement human managers. It suggests that firms should deploy targeted AI coaches for different types of agents and combine AI with human coaching to address the distinct training needs of sales agents.
+- Method: The study employs an Empirical study method, specifically using Lab/Field Experiment to gather causal evidence on the effects of AI coaches in real-world contexts.
+- Contribution: The primary contribution of the study is theoretical, as it uncovers the nuanced value of AI in sales force management and extends existing literature on AI's impact on workforce dynamics.
+- Future Potential and Limitations: The study acknowledges limitations in its empirical evidence, which is based on specific tasks within the fintech industry. It suggests future research should explore the generalizability of findings across different settings and product types, as well as the effectiveness of AI coaches in various training formats.
+
+---
+Wang, W., Gao, G., & Agarwal, R. (2023). Friend or foe? teaming between artificial
+intelligence and workers with variation in experience. Management Science.
+
+- Context: The study focuses on the broader conceptual scope of human-AI collaboration, specifically examining how variations in worker experience affect the dynamics of teaming between artificial intelligence and human workers.
+- Research Question and Findings: The main research question is how worker experience moderates the effects of human-AI teaming on productivity. The key findings indicate that AI boosts productivity for all workers, but the benefits are more pronounced for those with greater task-based experience compared to those with greater time-based experience. Additionally, senior workers, despite their experience, do not benefit as much from AI due to lower trust stemming from their broader job responsibilities and sensitivity to AI's imperfections.
+- Theme of Research:
+    - Human vs. AI: The study highlights that while AI can enhance productivity, its effectiveness varies based on the worker's experience. Senior workers, despite their experience, face challenges due to lower trust in AI, which can hinder the realization of benefits.
+    - Human + AI Collaboration: The collaboration discussed involves a dynamic where AI assists human workers, but the effectiveness of this collaboration is influenced by the worker's experience level. Senior workers exhibit a higher degree of sensitivity to AI's imperfections, leading to trust issues that affect collaboration outcomes.
+- Method: The study employs an Empirical study method, utilizing both qualitative analysis and a laboratory experiment to derive its findings.
+- Contribution: The primary contribution of the study is theoretical, as it provides new empirical insights into the collaborative dynamics between AI and knowledge workers, particularly focusing on the role of worker experience.
+- Future Potential and Limitations: The study suggests that future research could further explore the factors influencing human-AI collaboration, particularly the psychological aspects of trust. It also notes limitations in understanding the broader implications of these dynamics across different industries and types of tasks.
+
+
+---
+
+
 Wang, L., Huang, N., Hong, Y., Liu, L., Guo, X., & Chen, G. (2023). Voice‐based AI in call
 center customer service: A natural field experiment. Production and Operations
 Management, 32(4), 1002-1018.
-- Context: The study is focused on a specific industry, namely the telecommunication industry, particularly examining the implementation of voice-based AI systems in call center customer service.
-- Research Question and Findings: The main research question is: How does the introduction of voice-based AI systems impact call length, customer demand for human service, and customer complaints in call center customer services? The key findings indicate that the implementation of the AI system temporarily increases the duration of machine service and customers’ demand for human service, but it persistently reduces customer complaints.
+
+- Context: The study is focused on a specific industry, particularly the telecommunication sector, and examines the implementation of voice-based AI systems in call center customer service.
+- Research Question and Findings: The main research question is: How does the introduction of voice-based AI systems impact call length, customer demand for human service, and customer complaints in call center customer services? The key findings indicate that the implementation of the AI system temporarily increases the duration of machine service and customers' demand for human service, while it persistently reduces customer complaints.
 - Theme of Research:
-    - Human vs. AI: The study highlights that while the AI system increases the demand for human service temporarily, it also leads to a reduction in customer complaints, suggesting a nuanced interaction between human agents and AI.
-    - Human + AI Collaboration: The collaboration discussed involves the AI system replacing the traditional IVR system, with customers interacting with the AI before potentially being routed to human agents if needed.
-- Method: The study method is classified as a Natural Field Experiment.
-- Contribution: The primary contribution of the study is theoretical, as it provides empirical evidence on the effects of voice-based AI systems in customer service settings, contributing to the understanding of AI's role in customer interactions.
-- Future Potential and Limitations: The study suggests future research directions to explore the implications of voice-based AI systems among different user populations or in other service settings. It also notes limitations regarding the generalizability of findings due to potential cultural variations and differences in technology adoption across countries.
+    - Human vs. AI: The study highlights that the introduction of AI leads to an increased demand for human service, suggesting that while AI can handle certain tasks, customers still prefer human interaction in some scenarios.
+    - Human + AI Collaboration: The collaboration is implicit in the findings, where the AI system serves as an initial point of contact, but customers still seek human assistance, indicating a complementary relationship between AI and human agents.
+- Method: The study employs an Empirical study method, specifically a Natural Field Experiment (NFE).
+- Contribution: The primary contribution of the study is theoretical, as it adds to the literature on customer behavior in service operations and the effects of AI in customer service contexts, particularly by addressing customer heterogeneity in responses to AI implementation.
+- Future Potential and Limitations: The study suggests future research directions could explore the long-term effects of AI on customer service dynamics and the varying impacts on different customer segments. Limitations include the focus on a single company and context, which may affect the generalizability of the findings.
 
 
 ---
@@ -16,14 +46,15 @@ Management, 32(4), 1002-1018.
 
 Lu, T., & Zhang, Y. (2024). 1+ 1> 2? information, humans, and machines. Information
 Systems Research.
-- Context: The study focuses on the microloan industry and examines human-machine collaboration in decision-making tasks.
-- Research Question and Findings: The main research question investigates how information complexity and machine explanations affect human-machine collaboration in decision-making. The key findings indicate that both larger information volumes and structured machine explanations are necessary for optimal performance in human-machine collaboration, suggesting that neither can be dispensed with for effective decision-making.
+
+- Context: The study is focused on a specific industry, namely the microloan industry, while also addressing broader concepts of human-machine collaboration in decision-making.
+- Research Question and Findings: The main research question investigates how information complexity and machine explanations affect human-machine collaboration in decision-making tasks. The key findings indicate that both larger information volumes and structured machine explanations are necessary for optimal performance in human-machine collaboration, as neither can be dispensed with for effective decision-making.
 - Theme of Research:
-    - Human vs. AI: The study highlights that while machines can outperform humans in decision-making due to their computational power, humans can contribute unique insights and private information that machines cannot access. The performance of human-machine collaboration is contingent on the complexity of the task and the information provided.
-    - Human + AI Collaboration: The collaboration discussed involves humans making initial independent decisions followed by final decisions informed by machine explanations. The study emphasizes the importance of both rich information and structured machine explanations to enhance decision-making performance.
-- Method: The study employs an empirical method, specifically a two-stage field experiment, to quantify the performance outcomes of human-machine collaboration under different conditions.
-- Contribution: The primary contribution of the study is methodological, as it provides a framework for understanding the conditions under which human-machine collaboration can exceed the performance of either humans or machines alone.
-- Future Potential and Limitations: The study suggests future research directions could explore the impact of task complexity on human-machine collaboration further. Limitations include potential resistance from humans to adopt machine recommendations, which may hinder the effectiveness of collaboration.
+    - Human vs. AI: The study highlights that while machines tend to outperform experienced humans in decision-making due to time constraints and advanced techniques, humans can complement machines with their general intelligence and private information. However, humans may resist using machines, which can hinder collaboration efficiency.
+    - Human + AI Collaboration: The collaboration discussed involves a two-stage decision-making process where human evaluators first make independent decisions and then refine those decisions based on machine explanations. The roles of humans and machines are interdependent, with humans needing to engage deeply with the information provided by machines.
+- Method: The study employs an empirical study method, specifically a two-stage field experiment.
+- Contribution: The primary contribution of the study is theoretical, as it provides insights into the conditions necessary for effective human-machine collaboration and decision-making processes.
+- Future Potential and Limitations: The study suggests future research directions could explore the impact of task complexity on human-machine collaboration further. Limitations include the potential for human resistance to machine recommendations, which may affect the overall efficiency of collaboration.
 
 
 ---
@@ -31,14 +62,15 @@ Systems Research.
 
 Ibrahim, Rouba, et al. “Eliciting human judgment for prediction algorithms.” Management
 Science, https://doi.org/10.1287/mnsc.2020.3856.
-- Context: The study focuses on the integration of human judgment with forecasting algorithms, which suggests a broader, conceptual scope rather than being confined to a specific industry or task.
-- Research Question and Findings: The main research question revolves around how the design of a forecasting system's elicitation impacts performance when considering human random error. The key findings indicate that the method of eliciting human forecasts can significantly affect predictive performance, particularly when human random error is taken into account.
+
+- Context: The study is focused on a broader, conceptual scope regarding the integration of human judgment with prediction algorithms, particularly in the context of forecasting.
+- Research Question and Findings: The main research question is whether, when using human judgment indirectly in an algorithm, it is better to elicit something other than point forecasts. The key findings suggest that eliciting a "private information adjustment" (PIA) leads to more accurate predictions than traditional direct forecasts (DF), especially when considering human random error.
 - Theme of Research:
-    - Human vs. AI: The study highlights the comparative advantages of human judgment in certain contexts, particularly due to their domain knowledge, which can sometimes lead to better forecasting than purely statistical models.
-    - Human + AI Collaboration: The research discusses the integration of human judgment with algorithmic forecasts, examining different approaches such as making judgmental adjustments to algorithm outputs or combining separate forecasts from humans and algorithms.
-- Method: The study can be classified as a Conceptual or Case Study, as it discusses theoretical implications and contributions to the understanding of human judgment in forecasting systems.
-- Contribution: The primary contribution of the study is theoretical, as it advances the understanding of how human random error affects forecasting performance and the implications for system design in operations management.
-- Future Potential and Limitations: The study suggests future research directions in exploring various elicitation methods and their impacts on forecasting accuracy. However, it also acknowledges limitations related to the variability of human judgment and the contexts in which these findings may apply.
+    - Human vs. AI: The study highlights that while human forecasts may be less accurate than algorithmic predictions, they can still enhance algorithm performance when used as inputs. The comparative advantage of humans lies in their access to private information that algorithms may not utilize.
+    - Human + AI Collaboration: The collaboration discussed involves using human judgment (specifically PIA) as an input to improve algorithmic forecasts. The sequence of actions involves eliciting human input to adjust algorithm outputs based on private information.
+- Method: The study employs Modeling, specifically Stylized Modeling, to theoretically prove the benefits of eliciting PIA over DF.
+- Contribution: The primary contribution of the study is theoretical, as it provides insights into how the design of forecasting systems can be improved by integrating human judgment, particularly in the context of random error.
+- Future Potential and Limitations: The study suggests future research directions could explore further applications of PIA in various forecasting contexts. Limitations include the need for more empirical validation of the proposed methods and the potential variability in human judgment across different scenarios.
 
 
 ---
@@ -47,14 +79,331 @@ Science, https://doi.org/10.1287/mnsc.2020.3856.
 Yalcin, G., Lim, S., Puntoni, S., & van Osselaer, S. M. J. (2022). Thumbs Up or Down:
 Consumer Reactions to Decisions by Algorithms Versus Humans. Journal of Marketing
 Research, 59(4), 696-717. https://doi.org/10.1177/00222437211070016
-- Context: The study focuses on consumer reactions to decisions made by algorithms versus those made by humans, particularly in consumer-facing tasks.
-- Research Question and Findings: The main research question investigates how consumers react differently to favorable and unfavorable decisions made by algorithms compared to humans. The key findings reveal that consumers react less positively to favorable decisions made by algorithms than by humans, while this difference is mitigated for unfavorable decisions. The reaction is influenced by attribution processes, where consumers find it easier to internalize favorable outcomes from humans but externalize unfavorable outcomes regardless of the decision maker.
+
+- Context: The study focuses on a broader, conceptual scope regarding consumer reactions to decisions made by algorithms versus humans, particularly in contexts where these decisions are perceived as reflective of the consumer's worth.
+- Research Question and Findings: The main research question investigates how consumers react differently to favorable and unfavorable decisions made by algorithms compared to those made by humans. The key findings reveal that consumers react less positively to favorable decisions made by algorithms than by humans, while the difference is mitigated for unfavorable decisions. This is attributed to the ease of internalizing favorable outcomes from humans versus algorithms and the externalization of unfavorable outcomes regardless of the decision maker.
 - Theme of Research:
-    - Human vs. AI: The study highlights that consumers perceive algorithms as less favorable decision makers when the outcome is positive, indicating a comparative disadvantage for algorithms in this context.
-    - Human + AI Collaboration: The research discusses the potential for anthropomorphizing algorithms to improve consumer reactions, suggesting that making algorithms appear more human-like can enhance positive attitudes towards algorithmic decisions.
-- Method: The study employs an empirical approach, utilizing multiple lab experiments to gather data on consumer reactions.
-- Contribution: The primary contribution of the study is theoretical, as it provides insights into consumer psychology regarding algorithmic versus human decision-making and the implications for marketing practices.
-- Future Potential and Limitations: The study suggests future research directions in exploring the psychological processes behind consumer reactions to algorithmic decisions and the effectiveness of anthropomorphizing algorithms. Limitations include the need for further investigation into the long-term effects of algorithmic decision-making on consumer trust and the potential ethical implications of transparency in algorithm use.
+    - Human vs. AI: The study highlights that consumers perceive algorithms as less favorable decision-makers for positive outcomes compared to humans, indicating a comparative disadvantage for algorithms in this context.
+    - Human + AI Collaboration: The study discusses the potential for anthropomorphizing algorithms to improve consumer attitudes, suggesting a collaborative approach where algorithms are designed to appear more human-like to enhance acceptance.
+- Method: The study employs an Empirical study method, specifically through Lab/Field Experiments across ten studies.
+- Contribution: The primary contribution of the study is managerial, as it provides insights for companies on how to manage consumer perceptions and reactions when using algorithms for decision-making processes.
+- Future Potential and Limitations: The study suggests future research directions could explore further psychological processes involved in consumer reactions to algorithmic decisions. Limitations include the focus on specific contexts of decision-making and the need for broader investigations into different consumer demographics and settings.
+
+
+---
+
+
+Fügener, A., Grahl, J., Gupta, A., & Ketter, W. (2022). Cognitive Challenges in
+Human–Artificial Intelligence Collaboration: Investigating the Path Toward Productive
+Delegation. Information Systems Research, 33(2), 678-696.
+https://doi.org/10.1287/isre.2021.1079
+
+- Context: The study focuses on a broader, conceptual scope regarding human-AI collaboration and delegation in decision-making tasks.
+- Research Question and Findings: The main research questions are: (1) Can delegation between humans and AI outperform humans or AI working alone, and who can delegate better? (2) What factors limit human delegation performance, and how can these limitations be overcome? The key findings indicate that while AI improves when delegating to humans, humans do not perform well when delegating to AI due to a lack of metaknowledge.
+- Theme of Research:
+    - Human vs. AI: The study highlights that AI can delegate tasks effectively, leading to improved performance, while humans struggle with delegation to AI, resulting in suboptimal outcomes.
+    - Human + AI Collaboration: The collaboration involves AI delegating tasks to humans, which enhances AI performance, whereas humans fail to delegate effectively to AI, indicating a need for better understanding and strategies in human-AI interactions.
+- Method: The study employs an Empirical study method, specifically Lab/Field Experiment, to investigate the delegation dynamics between humans and AI.
+- Contribution: The primary contribution of the study is theoretical, as it provides insights into the cognitive challenges of delegation in human-AI collaboration and identifies the importance of metaknowledge for effective collaboration.
+- Future Potential and Limitations: The study suggests future research should focus on improving human delegation skills and understanding human-AI dialogue and decision authority. Limitations include the need for more generalizable results and the challenge of designing effective feedback systems to enhance metaknowledge in delegation tasks.
+
+
+---
+
+
+Bauer, K., von Zahn, M., & Hinz, O. (2023). Expl(AI)ned: The Impact of Explainable Artificial
+Intelligence on Users’ Information Processing. Information Systems Research, 34(4),
+1582-1602. https://doi.org/10.1287/isre.2023.1199
+
+- Context: The study focuses on a broader, conceptual scope regarding the impact of explainable artificial intelligence (XAI) on users' information processing and mental models.
+- Research Question and Findings: The main research question investigates how feature-based explanations provided by AI systems affect users' information processing. The key findings indicate that these explanations can reshape users' understanding of information and adjust their mental models, influencing how they weigh available information in decision-making contexts.
+- Theme of Research:
+    - Human vs. AI: The study does not explicitly compare the comparative advantages between humans and AI; rather, it emphasizes how AI explanations can enhance human understanding and decision-making.
+    - Human + AI Collaboration: The collaboration discussed involves humans using AI predictions with or without explanations. The study highlights how explanations can lead to better situational awareness and understanding of the AI's reasoning process, thereby improving human decision-making.
+- Method: The study employs an Empirical study method, specifically a Lab/Field Experiment, as it involves two empirical studies where participants engage in decision-making tasks with and without explained predictions.
+- Contribution: The primary contribution of the study is theoretical, as it provides insights into how explainable AI can influence cognitive processes and mental models, thereby enhancing our understanding of human-AI interaction.
+- Future Potential and Limitations: The study suggests future research could explore further implications of XAI on learning and decision-making processes. Limitations include the need for more diverse contexts and user groups to generalize findings beyond the specific tasks and populations studied.
+
+
+---
+
+
+Gnewuch, U., Morana, S., Hinz, O., Kellner, R., & Maedche, A. (2023). More Than a Bot?
+The Impact of Disclosing Human Involvement on Customer Interactions with Hybrid Service
+Agents. Information Systems Research. https://doi.org/10.1287/isre.2022.0152
+
+- Context: The study focuses on a broader, conceptual scope regarding customer interactions with hybrid service agents, which combine AI and human employees.
+- Research Question and Findings: The main research question investigates whether and how disclosing human involvement in hybrid service agents affects customer interactions. The key findings indicate that such disclosure leads customers to adopt a more human-oriented communication style, driven by impression management concerns.
+- Theme of Research:
+    - Human vs. AI: The study highlights that customers behave differently when they know there are humans involved, suggesting that the presence of human employees can enhance customer communication styles compared to interactions with AI alone.
+    - Human + AI Collaboration: The collaboration discussed involves human employees working behind the scenes with AI-based chatbots. The sequence of actions includes the chatbot handling initial interactions, with humans stepping in when necessary, influenced by the disclosure of human involvement.
+- Method: The study employs an Empirical study method, specifically a Lab/Field Experiment, as it includes randomized field experiments and controlled online experiments to gather data.
+- Contribution: The primary contribution of the study is managerial, providing insights into the implications of disclosing human involvement for customer interactions and employee workloads, as well as informing policy considerations regarding transparency in hybrid service agents.
+- Future Potential and Limitations: The study suggests future research directions to explore customer perceptions of service encounters with hybrid agents and the potential for algorithm aversion. Limitations include the need for more empirical investigation into customer evaluations of these interactions and the regulatory framework surrounding disclosure practices.
+
+
+---
+
+
+Cui, R., Li, M., & Zhang, S. (2022). AI and procurement. Manufacturing & Service
+Operations Management, 24(2), 691-706.
+
+- Context: The study is focused on a specific task within the broader context of procurement in B2B businesses.
+- Research Question and Findings: The main research question investigates how buyers' AI strategies affect suppliers' wholesale pricing decisions. The key findings indicate that automation alone can backfire without smart controls, and that AI delivers the most value when both automation and smartness are utilized together.
+- Theme of Research:
+    - Human vs. AI: The study highlights that human buyers may not follow AI recommendations strictly due to their susceptibility to judgment and heuristics, which can lead to decision deviations. In contrast, chatbot buyers, when equipped with AI recommendations, can secure lower wholesale prices.
+    - Human + AI Collaboration: The collaboration discussed involves procurement managers using AI tools (chatbots) to automate price inquiries while also signaling the use of AI recommendations to suppliers, thereby influencing pricing strategies.
+- Method: The study employs an Empirical study method, specifically a Field Experiment conducted in collaboration with a trading company on an online platform.
+- Contribution: The primary contribution of the study is managerial, providing insights on how to implement AI strategies effectively in procurement processes.
+- Future Potential and Limitations: The study suggests future research directions in understanding and quantifying AI's impact in procurement. It notes limitations in its findings, particularly regarding the necessity of smart controls before implementing high levels of automation.
+
+
+---
+
+
+Han, E., Yin, D., & Zhang, H. (2023). Bots with feelings: Should AI agents express positive
+emotion in customer service?. Information Systems Research, 34(3), 1296-1311.
+
+Context: The study is focused on a specific task, which is the expression of positive emotion by AI agents (chatbots) in customer service interactions.
+
+Research Question and Findings: The main research question is: how, when, and why does an AI agent’s expression of positive emotion influence customers’ service evaluations? The key findings suggest that positive emotion expressed by AI agents is less effective in enhancing service evaluations compared to human agents, primarily due to heightened expectation-disconfirmation. The effectiveness of AI-expressed positive emotion varies based on customers' relationship norm orientation.
+
+Theme of Research:
+
+Human vs. AI: The study highlights that the positive effect of expressing positive emotion on service evaluations is greater for human agents than for AI agents. It suggests that customers have different expectations regarding emotional expressions from humans versus AI.
+Human + AI Collaboration: The study discusses the role of AI agents in customer service and suggests that AI agents should express positive emotion contextually, depending on the type of relationship customers expect (communal vs. exchange).
+Method: The study uses an Empirical study method, specifically Lab Experiment, as it involves conducting experiments with participants interacting with customer service agents in hypothetical scenarios.
+
+Contribution: The primary contribution of the study is theoretical, as it provides insights into the unique impacts of AI-expressed emotion in service encounters, contributing to the literature on human-AI interaction and customer service.
+
+Future Potential and Limitations: The study suggests future research should explore the conditions under which AI-expressed emotions can be beneficial. It also notes limitations in the generalizability of findings due to the nascent stage of research on AI-expressed emotions and the potential for mixed results in different contexts.
+
+
+---
+
+
+Luo, X., Tong, S., Fang, Z., & Qu, Z. (2019). Frontiers: Machines vs. humans: The impact of
+artificial intelligence chatbot disclosure on customer purchases. Marketing Science, 38(6),
+937-947.
+
+Context: The study focuses on the specific task of customer interactions involving artificial intelligence chatbots and their impact on customer purchases.
+
+Research Question and Findings: The main research question investigates how the disclosure of an AI chatbot's identity affects customer purchasing behavior. The key findings indicate that when customers are informed they are interacting with a chatbot, their purchasing intentions may differ compared to interactions with human agents, highlighting the importance of transparency in AI interactions.
+
+Theme of Research:
+
+Human vs. AI: The study compares the effectiveness of AI chatbots versus human agents in influencing customer purchases, suggesting that the disclosure of the chatbot's identity can impact customer trust and purchasing decisions.
+Human + AI Collaboration: The research does not explicitly discuss collaboration between humans and AI but focuses on the interaction dynamics between customers and AI chatbots.
+Method: The study employs an Empirical study method, specifically a Lab/Field Experiment, to analyze the effects of chatbot disclosure on customer behavior.
+
+Contribution: The primary contribution of the study is managerial, providing insights for businesses on how to effectively implement AI chatbots in customer service to optimize purchasing outcomes.
+
+Future Potential and Limitations: The study suggests future research directions could explore the long-term effects of AI chatbot interactions on customer loyalty and satisfaction. Limitations include the potential variability in customer responses based on different contexts or industries not covered in the study.
+
+
+---
+
+
+Boyacı, Tamer, et al. (2024). “Human and machine: The impact of machine input on decision
+making under cognitive limitations.” Management Science,
+https://doi.org/10.1287/mnsc.2023.4744.
+
+Context: The study focuses on the broader, conceptual scope of human-machine collaboration in decision-making processes under cognitive limitations.
+
+Research Question and Findings: The main research question investigates how machine-based predictions affect human decision-making processes and outcomes. The key findings indicate that while machine input generally improves decision accuracy, it can also increase certain types of decision errors and cognitive effort, particularly when the human decision-maker has weak prior beliefs.
+
+Theme of Research:
+
+Human vs. AI: The study highlights that machines can enhance decision-making accuracy due to their computational power, but this can lead to increased cognitive effort and specific error types (e.g., false positives) when humans are under cognitive constraints.
+Human + AI Collaboration: The collaboration involves humans integrating machine predictions into their decision-making process, leveraging their cognitive flexibility while being constrained by cognitive capacity. The sequence of actions includes the machine providing accurate information at no cognitive cost, which the human then assesses.
+Method: The study employs a Modeling method, specifically a Stylized Modeling approach, utilizing the rational inattention framework to analyze human decision-making under uncertainty.
+
+Contribution: The primary contribution of the study is theoretical, as it develops an analytical model to characterize the impact of machine input on human decision-making, providing insights into when such collaborations are beneficial or counterproductive.
+
+Future Potential and Limitations: The study suggests future research directions to better understand the conditions under which human-machine collaborations yield superior performance. It also notes limitations regarding the applicability of its findings to decision tasks that involve causal relationships, indicating that the framework may be less suited for such contexts.
+
+
+---
+
+
+De Véricourt, Francis, and Huseyin Gurkan (2023). “Is your machine better than you? you
+may never know.” Management Science.
+
+Context: The study is focused on a broader, conceptual scope regarding decision-making processes involving human decision-makers (DMs) and machines, particularly in high-stakes situations.
+
+Research Question and Findings: The main research question investigates the conditions under which human decision-makers can accurately learn whether a machine is superior to their own expertise. The key findings suggest that uncertainty about the machine's true performance can lead to mislearning behaviors, where DMs may either overrule or collaborate with the machine based on their beliefs about its accuracy. The study indicates that if a DM increasingly believes the machine is worse, they are likely correct, whereas if they believe it is better, consensus among multiple DMs is necessary for accurate assessment.
+
+Theme of Research:
+
+Human vs. AI: The study highlights that DMs may struggle to learn the machine's true performance, leading to situations where they may incorrectly believe the machine is better or worse. The findings suggest that persistent over-ruling of the machine indicates it is likely worse, while consensus among a larger team can validate the machine's superiority.
+Human + AI Collaboration: The collaboration discussed involves DMs oscillating between over-ruling the machine, collaborating with it, or allowing it to make decisions. The DMs' beliefs about the machine's performance influence their actions, leading to a complex interplay of trust and decision-making.
+Method: The study employs a Modeling method, specifically an Operations Research (OR) Model, to capture the complexity of the decision-making process and the learning behaviors of DMs in relation to machine performance.
+
+Contribution: The primary contribution of the study is theoretical, as it provides insights into the dynamics of human-machine interaction and decision-making, particularly in high-stakes environments, and offers a framework for understanding mislearning and collaboration.
+
+Future Potential and Limitations: The study suggests future research could explore further the conditions under which DMs can learn effectively about machine performance and the implications of team dynamics on decision-making. Limitations include the potential for varying contexts and the assumption that DMs have a consistent approach to learning, which may not hold in all real-world scenarios.
+
+
+---
+
+
+Grand-Clément, J., & Pauphilet, J. (2024). The best decisions are not the best advice:
+Making adherence-aware recommendations. Management Science.
+
+Context: The study is focused on a broader, conceptual scope related to decision-making processes that involve human operators and algorithmic recommendations, particularly in high-stakes situations.
+
+Research Question and Findings: The main research question is whether algorithmic recommendations should be adjusted considering that human decision-makers may only partially adhere to these recommendations. The key findings indicate that accounting for partial adherence in the optimization of recommendations can significantly improve decision-making outcomes and prevent performance deterioration.
+
+Theme of Research:
+
+Human vs. AI: The study highlights that human decision-makers often override algorithmic recommendations, leading to suboptimal outcomes. It emphasizes that the performance of the decision-making system can be severely impacted when partial adherence is not considered.
+Human + AI Collaboration: The collaboration discussed involves human decision-makers receiving recommendations from algorithms but having the discretion to override them. The study proposes a framework that adjusts algorithmic recommendations based on expected adherence levels to enhance overall system performance.
+Method: The study employs a Modeling method, specifically an Operations Research (OR) Model, utilizing Markov decision processes (MDPs) to develop an adherence-aware optimization framework.
+
+Contribution: The primary contribution of the study is theoretical, as it develops a new model of partial adherence that informs algorithm design and decision recommendations, enhancing understanding of human behavior in decision-making contexts.
+
+Future Potential and Limitations: The study suggests future research directions could involve further exploration of adherence patterns across different contexts and refining the adherence-aware framework. Limitations include the need for empirical validation of the proposed model and its applicability across various industries and decision-making scenarios.
+
+
+---
+
+
+Liu, Y., Lou, B., Zhao, X., & Li, X. (2024). Unintended consequences of advances in
+matching technologies: Information revelation and strategic participation on gig-economy
+platforms. Management Science, 70(3), 1729-1754.
+
+Context: The study is focused on the gig economy, specifically examining gig-economy platforms and the implications of advances in matching technologies.
+
+Research Question and Findings: The main research question investigates the unintended consequences of improved matching technologies on gig-economy platforms, particularly how these technologies affect worker participation behavior and platform revenue. The key findings reveal that while better matching can enhance worker performance and platform revenue, it can also lead to unintended negative effects, such as workers strategically altering their participation based on revealed labor demand information, which may ultimately decrease platform revenue.
+
+Theme of Research:
+
+Human vs. AI: The study highlights the comparative advantages of improved matching technologies (AI) in enhancing job assignments but also points out the potential drawbacks, such as workers' strategic responses that can negatively impact platform revenue.
+Human + AI Collaboration: The collaboration discussed involves the interaction between human gig workers and AI-driven matching technologies. The sequence of actions includes the technology assigning jobs to workers, which then influences the workers' decisions about their continued participation based on the information revealed through these assignments.
+Method: The study employs a Modeling method, specifically a Stylized Modeling approach, using a game-theoretic model to analyze the interactions between workers and matching technologies.
+
+Contribution: The primary contribution of the study is theoretical, as it provides a comprehensive model that systematically examines the impact of matching technologies on gig-economy platforms, revealing both intended benefits and unintended consequences.
+
+Future Potential and Limitations: The study suggests future research directions that could explore further implications of matching technologies in various contexts and the development of strategies to mitigate the unintended negative effects identified. Limitations include the focus on specific scenarios and assumptions within the model, which may not capture all real-world complexities of gig-economy platforms.
+
+
+---
+
+
+Capponi, Agostino, et al (2022). “Personalized robo-advising: Enhancing investment through
+client interaction.” Management Science. 2485–2512,
+https://doi.org/10.1287/mnsc.2021.4014.
+
+Context: The study is focused on the specific task of personalized robo-advising in the financial services industry, particularly how robo-advisors can enhance investment strategies through client interaction.
+
+Research Question and Findings: The main research question addresses how robo-advisors can provide personalized financial advice that adapts to a client's risk profile. The key findings indicate that the optimal investment strategy involves both myopic and intertemporal hedging, and that the robo-advisor's performance improves when it counters clients' tendencies to reduce market exposure during economic downturns.
+
+Theme of Research:
+
+Human vs. AI: The study highlights that robo-advisors may be less suitable for clients who are algorithmically averse, suggesting that human advisors may outperform robo-advisors in scenarios where trust and human interaction are critical.
+Human + AI Collaboration: The collaboration discussed involves the robo-advisor adapting its investment strategy based on real-time market data and the client's idiosyncratic risk preferences, indicating a dynamic interaction where both the AI and the client play active roles.
+Method: The study employs a Modeling method, specifically an Operations Research (OR) Model. This is because it develops a mathematical framework to optimize investment strategies under real-world constraints, incorporating client interactions and market conditions.
+
+Contribution: The primary contribution of the study is theoretical, as it provides a novel framework for understanding how robo-advisors can enhance personalized investment strategies through client interaction, contributing to the literature on automated financial advising.
+
+Future Potential and Limitations: The study suggests future research directions could explore the long-term effects of client-robot interactions on investment outcomes and the potential for further customization of robo-advising services. Limitations include the assumption that client risk profiles can be adequately captured through the proposed framework, which may not account for all behavioral biases or external factors influencing client decisions.
+
+
+---
+
+
+Wang, Q., Huang, Y., Jasin, S., & Singh, P. V. (2023). Algorithmic transparency with strategic
+users. Management Science, 69(4), 2297-2317.
+
+Context: The study focuses on a broader, conceptual scope regarding algorithmic transparency in decision-making processes, particularly in the context of machine learning algorithms.
+
+Research Question and Findings: The main research question investigates whether firms should make their algorithms transparent to users, considering the potential for manipulation by strategic users. The key findings indicate that firms can benefit from algorithmic transparency, as it may enhance predictive power and overall market desirability, even though users may not always be better off under such transparency.
+
+Theme of Research:
+
+Human vs. AI: The study does not explicitly compare the comparative advantages of humans and AI but discusses the interaction between firms (decision-makers) and strategic users (agents) in the context of algorithmic transparency.
+Human + AI Collaboration: The collaboration discussed involves firms (human decision-makers) using algorithms (AI) to make decisions while considering the strategic behavior of users who may manipulate their actions based on the transparency of the algorithm.
+Method: The study employs a Modeling method, specifically a Stylized Modeling approach, as it develops an analytical model to compare firm and user surplus with and without algorithmic transparency under various conditions.
+
+Contribution: The primary contribution of the study is theoretical, as it provides a new analytical model that systematically compares the implications of algorithmic transparency versus opacity in the presence of strategic agents.
+
+Future Potential and Limitations: The study suggests future research could explore algorithmic transparency in the context of privacy concerns and its impact on competition among firms. Limitations include the potential for users to be worse off under transparency, which indicates a need for further investigation into the conditions affecting user welfare.
+
+
+---
+
+
+Li M, Li T (2022) AI automation and retailer regret in supply chains. Production and
+Operations Management 31(1):83–97.
+
+Context: The study is focused on a specific industry, particularly the supply chain sector involving retailers and suppliers.
+
+Research Question and Findings: The main research question investigates how AI automation affects the ordering decisions and expected profits of retailers in a decentralized supply chain characterized by regret bias. The key findings indicate that while AI automation can enhance expected profits in a centralized context, it may lead to detrimental outcomes in decentralized settings, particularly when regret bias is high or low, potentially resulting in a lose-lose situation for both retailers and suppliers.
+
+Theme of Research:
+
+Human vs. AI: The study highlights that AI automation can replace human decision-making, specifically addressing the regret bias that affects retailers' ordering decisions. It suggests that in certain conditions, the presence of regret bias can actually benefit the supply chain, contrary to the assumption that removing human involvement always leads to better outcomes.
+Human + AI Collaboration: The collaboration discussed involves the interaction between human managers (retailers) and AI systems in the decision-making process. The study emphasizes that the roles of human and AI should be carefully considered based on the level of regret bias present.
+Method: The study employs a Modeling method, specifically an Operations Research (OR) Model. This classification is due to the analytical exploration of the effects of AI automation on ordering decisions and profits under real-world constraints, rather than relying on simplified assumptions or qualitative data.
+
+Contribution: The primary contribution of the study is theoretical, as it provides insights into the interplay between AI automation, regret bias, and supply chain performance, expanding the understanding of decision-making dynamics in decentralized supply chains.
+
+Future Potential and Limitations: The study suggests that future research could explore additional factors influencing the adoption of AI in supply chains, such as labor cost reduction and ethical considerations. Limitations include the focus on regret bias without accounting for other potential biases or complexities in real-world decision-making processes.
+
+
+---
+
+
+Senoner, J., Netland, T., & Feuerriegel, S. (2022). Using explainable artificial intelligence to
+improve process quality: evidence from semiconductor manufacturing. Management
+Science, 68(8), 5704-5723.
+
+Context: The study is focused on a specific industry, namely semiconductor manufacturing, particularly in the context of improving process quality.
+
+Research Question and Findings: The main research question is how to improve process quality in semiconductor manufacturing using explainable artificial intelligence (AI). The key findings indicate that the application of a decision model based on explainable AI led to a significant reduction in yield loss by 21.7% in a field experiment, demonstrating the operational value of explainable AI in identifying critical drivers of process quality.
+
+Theme of Research:
+
+Human vs. AI: The study does not explicitly compare the advantages of humans versus AI; rather, it emphasizes the effectiveness of explainable AI in improving process quality over traditional methods.
+Human + AI Collaboration: The collaboration involves using explainable AI to prioritize processes for quality improvement and selecting suitable improvement actions, with the decision model being validated through a field experiment in a real-world manufacturing setting.
+Method: The study employs an Empirical study method, specifically a Field Experiment. This classification is based on the implementation of the decision model in a real-world setting at Hitachi ABB to validate its effectiveness in improving process quality.
+
+Contribution: The primary contribution of the study is managerial, as it provides a data-driven decision model that helps manufacturers prioritize processes for quality improvement and demonstrates the effectiveness of explainable AI in operational settings.
+
+Future Potential and Limitations: The study suggests promising opportunities for the application of explainable AI in management science. However, it also acknowledges limitations, such as the reliance on correlations rather than causation in the decision model, which could lead to misleading interpretations if not carefully managed. The importance of involving domain experts in the development of improvement actions is also highlighted.
+
+
+---
+
+
+Context: The study is focused on a specific industry, particularly the retail context of Alibaba and its product display problem.
+
+Research Question and Findings: The main research questions are: (1) Can a choice model's parameters be efficiently and accurately estimated from historical data? (2) Is it possible to develop efficient algorithms for assortment optimization given a fully specified customer choice model? The key findings indicate that while machine learning models can accurately predict customer purchasing patterns, they may not always lead to profitable operational decisions due to their inability to capture key operational trade-offs.
+
+Theme of Research:
+
+Human vs. AI: The study compares customer choice models with machine learning approaches in predicting customer behavior and optimizing product displays. It highlights scenarios where machine learning excels in prediction but may falter in operational profitability.
+Human + AI Collaboration: The collaboration discussed involves using machine learning algorithms to estimate purchase probabilities, which are then used in an optimization problem to select product displays. The roles of human decision-makers in interpreting these results and making final operational decisions are implied.
+Method: The study employs an Empirical study method, specifically a Field Experiment. This is indicated by the testing of both approaches on real customers in Alibaba's online marketplaces over a week.
+
+Contribution: The primary contribution of the study is managerial. It provides insights into the practical implications of using different modeling approaches for product display optimization in a retail setting, guiding decision-makers on the effectiveness of machine learning versus traditional choice models.
+
+Future Potential and Limitations: The study suggests future research directions could explore further integration of machine learning with operational decision-making frameworks. Limitations include the potential for machine learning models to overlook critical operational trade-offs, which could affect the profitability of the product displays.
+
+
+---
+
+
+
+
+
+---
+
+
+
+
+
+
 
 
 
