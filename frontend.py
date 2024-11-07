@@ -1,5 +1,5 @@
 from backend import (
-    initialise_llm,
+    # initialise_llm,
     preprocess_data,
     initialise_RAG,
     create_retrival_chain,
