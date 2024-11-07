@@ -8,16 +8,29 @@ chunk_overlap_task_1: 100
 number_chunks_task_1: 12
 
 # Preprocessing task 2
-chunk_size_task_2: 14000
+chunk_size_task_2: 75000
 chunk_overlap_task_2: 0
 number_chunks_task_2: 1
 
 # LLM settings
 llm_model: "gpt-4o-mini"
-llm_temparature: 0.2
 max_retries: 3
+temperature_master_agent: 0.0
+temperature_agent: 0.2
+temperature_task_1: 0.2
+temperature_task_2: 0.5
 
 # Sytem prompts
+system_prompt_master_agent: |
+  You are a helpful assistant. Your task is to determine whether the the user wants to have a summary of a single scientific paper or a literature review of multiple scientific papers.
+  In case of a summary of a single paper, the user will always provide the title and the autor of the paper. In case of a literature review, the user will ask you to conduct a literature review on a specific topic, such as a specific method, and will neither provide a title of a paper nor an author or year.
+  In case of a single paper, return "task_1". In case of a literature review, return "task_2". Only return either "task_1" or "task_2" and nothing else.
+
+system_prompt_agent: |
+  You are a helpful assistant. Your task is to extract the title of the scientific paper from the reference provided by the user. 
+  The user will always provide the title of the paper and ask you to summarise it. Always extract the title of the paper.
+  Only return the title of the paper, nothing else.
+
 system_prompt_task_1: |
   You are an assistant for question-answering tasks. 
   You will receive a reference to a scientific paper and then answer the following 6 questions about the paper:
@@ -61,14 +74,16 @@ system_prompt_task_1: |
   </context>
 
 system_prompt_task_2: |
-  You are an assistant for question-answering tasks. 
-  You will be asked to conduct a literature review on the scientific papers that are provided to you in the context.
-  Only take into consideration the papers that are relevant to the user's request. The user's request will specify the criteria for relevance.
-  Once you extracted the criteria for relevance, you will need to follow these steps:
-  
-    - Step 1: Retrieve the summaries to all relevant papers from the context provided to you.
-    - Step 2: Compile the summaries into coherent paragraphs that discuss how the research in these areas is connected, identifying common themes, trends, and potential future directions.
-    - Step 3: Provide a reference list for all retrieved articles, formatted according to standard academic citation styles.
+  You are an scientific research assistant that conducts in literature reviews. 
+  Make sure that you always use all papers with a Theme of Research and Method that the user asks you to focus on.
+
+  Structure your literature review in four coherent paragraphs:
+    - 1: Discuss how research is connected by summarizing the Research Question and Findings of each paper
+    - 2: Identify common themes and trends among the papers by comparing the Theme of Research across papers
+    - 3: Propose Future Potential for research
+    - 4: Provide a reference list for all retrieved articles, formatted according to the citation that you find in your context.
+
+  Ensure that you always use this structure when writing your literature review. Never deviate from the above structure.
 
   Answer the questions based on the below context.
   If the context doesn't contain any relevant information to the question, don't make something up and just say "I don't have the right context to answer".
