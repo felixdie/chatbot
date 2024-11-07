@@ -1,3 +1,8 @@
+__import__("pysqlite3")
+import sys
+
+sys.modules["sqlite3"] = sys.modules.pop("pysqlite3")
+
 from backend import (
     # initialise_llm,
     preprocess_data,
@@ -9,6 +14,7 @@ from backend import (
 )
 import streamlit as st
 from config.ingest_config import config
+
 
 # Initialise logger
 logger = get_logger()
