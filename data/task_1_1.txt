@@ -394,7 +394,66 @@ Future Potential and Limitations: The study suggests future research directions 
 ---
 
 
+Mele, Cristina, et al. “How artificial intelligence enhances human learning abilities:
+Opportunities in the fight against COVID-19.” Service Science, vol. 14, no. 2, June 2022, pp.
+77–89, https://doi.org/10.1287/serv.2021.0289
 
+Context: The study is focused on a specific context, namely the healthcare industry and the role of AI in enhancing human learning abilities during the COVID-19 pandemic.
+
+Research Question and Findings: The main research question investigates how AI can enhance human learning abilities, particularly in the context of COVID-19. The key findings suggest that AI can support human learning by automating data extraction and analysis, thereby allowing humans to focus on understanding and applying information more effectively.
+
+Theme of Research:
+
+Human vs. AI: The study highlights that while AI can automate repetitive tasks and analyze large datasets quickly, it is the collaboration between AI and human actors that leads to a deeper understanding of complex information, particularly in healthcare.
+Human + AI Collaboration: The collaboration discussed involves AI performing data extraction and analysis, which aids human actors in remembering and understanding critical information related to COVID-19, thus enhancing their learning capabilities.
+Method: The study is classified as a Conceptual study. It develops hypotheses and frameworks based on existing literature without testing them with empirical data or modeling.
+
+Contribution: The primary contribution of the study is theoretical, as it provides an integrative framework for understanding how AI enhances human learning abilities, particularly in the context of service research and healthcare during the pandemic.
+
+Future Potential and Limitations: The study suggests that future research should explore further applications of AI in enhancing human learning across various contexts. However, it also acknowledges limitations in understanding the full scope of AI's impact on human learning and the need for more empirical studies to validate the proposed framework.
+
+
+---
+
+
+Waardenburg, L., Huysman, M., & Sergeeva, A. V. (2022). In the land of the blind, the
+one-eyed man is king: Knowledge brokerage in the age of learning algorithms. Organization
+science, 33(1), 59-82.
+
+Context: The study focuses on a specific task related to knowledge brokerage in the context of learning algorithms, particularly within the Dutch police department's implementation of predictive policing.
+
+Research Question and Findings: The main research question is: How do knowledge brokers translate algorithmic predictions when they cannot understand how these are generated? The key findings indicate that knowledge brokers, specifically intelligence officers, performed various translation practices (messenger, interpreter, curator) and became increasingly influential in their roles, often substituting algorithmic predictions with their own judgments due to the opaque nature of the algorithms.
+
+Theme of Research:
+
+Human vs. AI: The study highlights the challenges faced by human brokers in interpreting and translating opaque algorithmic outputs, suggesting that in situations where AI predictions are not understandable, human judgment may take precedence.
+Human + AI Collaboration: The collaboration involves knowledge brokers acting as intermediaries between the machine learning community and the user community, translating algorithmic outputs into actionable insights for police management.
+Method: The study employs an Empirical study method, specifically a Field Experiment, as it is based on a 31-month ethnographic study of the implementation of a learning algorithm in a real-world setting (the Dutch police).
+
+Contribution: The primary contribution of the study is theoretical, as it provides new insights into the nature of knowledge brokerage in the age of learning algorithms, highlighting the evolving roles of brokers and the implications of opaque algorithmic processes.
+
+Future Potential and Limitations: The study suggests future research should explore algorithmic brokerage in different organizational contexts, particularly those with less hierarchical structures. It acknowledges limitations in focusing on a relatively simple learning algorithm and calls for further investigation into more complex algorithmic systems and their organizational impacts.
+
+
+---
+
+
+Felin, T., & Holweg, M. (2024). Theory Is All You Need: AI, Human Cognition, and Causal
+Reasoning. Strategy Science.
+
+Context: The study focuses on a broader, conceptual scope, examining the differences between human cognition and AI, particularly in the context of causal reasoning and decision-making.
+
+Research Question and Findings: The main research question addresses how human causal reasoning differs from AI's data-driven approaches. The key findings suggest that human cognition, characterized by theory-based causal reasoning, allows for forward-looking experimentation and the generation of new knowledge, which AI systems, primarily reliant on past data and prediction, cannot replicate.
+
+Theme of Research:
+
+Human vs. AI: The study highlights that human cognition excels in theory-based causal reasoning, enabling intervention and experimentation, while AI is limited to backward-looking data processing and lacks the ability to generate genuine novelty.
+Human + AI Collaboration: The paper does not explicitly discuss collaboration between humans and AI but emphasizes the distinct roles of human cognition in generating new knowledge versus AI's predictive capabilities.
+Method: The study is classified as a Conceptual study. It develops hypotheses and arguments based on existing literature without testing them with empirical data or modeling.
+
+Contribution: The primary contribution of the study is theoretical, as it provides insights into the fundamental differences between human and AI cognition, particularly in causal reasoning and decision-making processes.
+
+Future Potential and Limitations: The study suggests future research should explore the implications of theory-based causal reasoning in various domains and emphasizes the limitations of AI in replicating human cognitive processes. It argues against the notion that AI can replace human decision-making, highlighting the need for further understanding of human cognitive capabilities.
 
 
 ---

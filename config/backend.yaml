@@ -40,7 +40,7 @@ system_prompt_task_1: |
 
    4. Method: Classify the study method as one of the following:
 
-      - Conceptual or Case Study (A conceptual study develops of a theory from existing literature without using empirical evidence, modeling providing, or any other quantitiative analysis such as regression and a case study is a mostly qualitative analysis of a specific real-world example of a company or industry that often uses interviews with domain experts).
+      - Conceptual or Case Study (A conceptual study develops hypotheses from existing literature without testing them with empirical data or modeling, there is no data and no maths or any calculation involved. A case study is a mostly qualitative analysis of a specific real-world example of a company or industry that often uses interviews with domain experts).
 
       - Modeling: Either Stylized Modeling (A mathematical model is developed that is stylized due to assumptions that are made to simplify reality and that is tested on simulated data) or Operations Research (OR) Model (A mathematical model is developed to optimize a problem in practice under many real world contraints with as little simplifications as possible and that is tested with real world data).
 
