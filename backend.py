@@ -73,7 +73,6 @@ def initialise_llm() -> RunnablePassthrough:
 
 def preprocess_data(
     task_1: bool,
-    task_1_1: bool,
     task_2: bool,
     user_input: str,
     llm: RunnablePassthrough,
@@ -83,7 +82,6 @@ def preprocess_data(
 
     Parameters:
         task_1 (bool): Whether the user ticked task 1.
-        task_1_1 (bool): Whether the user ticked task 1.1.
         task_2 (bool): Whether the user ticked task 2.
     Returns:
         vectorstore (Chroma): The vector store containing the document chunks.
@@ -109,9 +107,6 @@ def preprocess_data(
             )
             st.stop()
 
-    elif task_1_1:
-        loader = WebBaseLoader(config["backend"]["data_task_1_1"])
-
     elif task_2:
         loader = WebBaseLoader(config["backend"]["data_task_2"])
 
@@ -124,13 +119,6 @@ def preprocess_data(
         text_splitter = RecursiveCharacterTextSplitter(
             chunk_size=config["backend"]["chunk_size_task_1"],
             chunk_overlap=config["backend"]["chunk_overlap_task_1"],
-            add_start_index=True,
-        )
-
-    elif task_1_1:
-        text_splitter = RecursiveCharacterTextSplitter(
-            chunk_size=config["backend"]["chunk_size_task_1_1"],
-            chunk_overlap=config["backend"]["chunk_overlap_task_1_1"],
             add_start_index=True,
         )
 
@@ -242,7 +230,6 @@ def initialise_RAG(
     vectorstore: Chroma,
     llm: ChatOpenAI,
     task_1: bool,
-    task_1_1: bool,
     task_2: bool,
 ) -> RunnablePassthrough:
     """
@@ -264,11 +251,7 @@ def initialise_RAG(
             search_type="similarity",
             search_kwargs={"k": config["backend"]["number_chunks_task_1"]},
         )
-    elif task_1_1:
-        retriever = vectorstore.as_retriever(
-            search_type="similarity",
-            search_kwargs={"k": config["backend"]["number_chunks_task_1_1"]},
-        )
+
     elif task_2:
         retriever = vectorstore.as_retriever(
             search_type="similarity",
@@ -313,7 +296,6 @@ def create_retrival_chain(
     llm: ChatOpenAI,
     query_transformer: RunnablePassthrough,
     task_1: bool,
-    task_1_1: bool,
     task_2: bool,
 ) -> RunnablePassthrough:
     """
@@ -329,8 +311,7 @@ def create_retrival_chain(
     # Set system prompt and context for answers
     if task_1:
         SYSTEM_TEMPLATE = config["backend"]["system_prompt_task_1"]
-    elif task_1_1:
-        SYSTEM_TEMPLATE = config["backend"]["system_prompt_task_1_1"]
+
     elif task_2:
         SYSTEM_TEMPLATE = config["backend"]["system_prompt_task_2"]
 

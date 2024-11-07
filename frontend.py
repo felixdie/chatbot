@@ -27,16 +27,13 @@ for session_state, initial_value in session_states.items():
 llm = initialise_llm()
 
 # Create frontend
-st.title("🔗 Pre Screening App")
+st.title("🔗 GPT Tool for HAI Literature Review")
 
 # Reset and task checkboxes
 col1, col2, col3, col4 = st.columns(4)
 
 with col1:
     task_1 = st.checkbox("Task 1", value=True)
-
-with col2:
-    task_1_1 = st.checkbox("Task 1.1")
 
 with col3:
     task_2 = st.checkbox("Task 2")
@@ -60,12 +57,6 @@ with st.form("my_form"):
             placeholder="Yalcin, G., Lim, S., Puntoni, S., & van Osselaer, S. M. J. (2022). Thumbs Up or Down: Consumer Reactions to Decisions by Algorithms Versus Humans",
         )
 
-    elif task_1_1:
-        user_input = st.text_area(
-            "Enter references to count their methods:",
-            placeholder="Voice‐based AI in call center customer service: A natural field experiment.\nEliciting human judgment for prediction algorithms.\n...",
-        )
-
     elif task_2:
         user_input = st.text_area(
             "Enter your question:",
@@ -85,7 +76,6 @@ with st.form("my_form"):
         if st.session_state["vectorstore_initialised"] == False:
             st.session_state["vectorstore"] = preprocess_data(
                 task_1=task_1,
-                task_1_1=task_1_1,
                 task_2=task_2,
                 user_input=user_input,
                 llm=llm,
@@ -97,7 +87,6 @@ with st.form("my_form"):
             llm=llm,
             query=user_input,
             task_1=task_1,
-            task_1_1=task_1_1,
             task_2=task_2,
         )
 
@@ -105,7 +94,6 @@ with st.form("my_form"):
             llm=llm,
             query_transformer=query_transformer,
             task_1=task_1,
-            task_1_1=task_1_1,
             task_2=task_2,
         )
 
