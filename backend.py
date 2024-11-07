@@ -54,6 +54,7 @@ def initialise_llm(task: str) -> RunnablePassthrough:
 
     Parameters:
         task (str): Has two possible values: "task_1" or "task_2".
+
     Returns:
         llm (ChatOpenAI): The configured LLM model.
     """
@@ -95,6 +96,7 @@ def preprocess_data(
     Parameters:
         task (str): Has two possible values: "task_1" or "task_2".
         user_input (str): The user's input.
+
     Returns:
         vectorstore (Chroma): The vector store containing the document chunks.
     """
@@ -297,7 +299,6 @@ class Master_Agent:
 
 
 def initialise_RAG(
-    query: str,
     vectorstore: Chroma,
     llm: ChatOpenAI,
     task: str,
@@ -306,14 +307,13 @@ def initialise_RAG(
     Initialise the RAG model based on the provided papers.
 
     Parameters:
-        query (str): The user's question.
         vectorstore (Chroma): The vector store containing the document chunks.
         llm (ChatOpenAI): The LLM model.
+        task (str): Has two possible values: "task_1" or "task_2".
 
     Returns:
         query_transforming_retriever_chain (RunnablePassthrough): The chain that transforms
             the user's query and retrieves the answer.
-
     """
     # Initialise retriever with k chunks from vectorstore
     if task == "task_1":
@@ -327,15 +327,6 @@ def initialise_RAG(
             search_type="similarity",
             search_kwargs={"k": config["backend"]["number_chunks_task_2"]},
         )
-
-    # Retrieve k chunks from vectorstore as context for answer
-    # retrieved_docs = retriever.invoke(query)
-    # print(f"Chunk 1: {retrieved_docs[0].page_content}\n")
-    # print(f"Chunk 2: {retrieved_docs[1].page_content}\n")
-    # print(f"Chunk 3: {retrieved_docs[2].page_content}\n")
-    # print(f"Chunk 4: {retrieved_docs[3].page_content}\n")
-    # print(f"Chunk 5: {retrieved_docs[4].page_content}\n")
-    # print(f"Chunk 6: {retrieved_docs[5].page_content}\n")
 
     # Consider chat history when retrieving chunks
     query_transform_prompt = ChatPromptTemplate.from_messages(
@@ -428,9 +419,9 @@ def get_answer(query: str, query_chain: RunnablePassthrough) -> str:
     )
 
     # Return context
-    counter = 1
-    for chunk in response["context"]:
-        print(f"Chunk {counter}: {chunk}\n")
-        counter += 1
+    # counter = 1
+    # for chunk in response["context"]:
+    #     print(f"Chunk {counter}: {chunk}\n")
+    #     counter += 1
 
-    return response["answer"]
+    # return response["answer"]
