@@ -4,7 +4,7 @@ import sys
 sys.modules["sqlite3"] = sys.modules.pop("pysqlite3")
 
 from backend import (
-    # initialise_llm,
+    initialise_llm,
     preprocess_data,
     initialise_RAG,
     create_retrival_chain,
