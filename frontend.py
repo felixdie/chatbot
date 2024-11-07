@@ -13,6 +13,7 @@ from backend import (
     Master_Agent,
 )
 import streamlit as st
+import chromadb
 from config.ingest_config import config
 
 
@@ -98,4 +99,5 @@ with st.form("my_form"):
         if st.session_state["vectorstore"] is not None:
             st.session_state["vectorstore"].delete_collection()
             st.session_state["vectorstore_initialised"] = False
+            chromadb.api.client.SharedSystemClient.clear_system_cache()
             logger.info("SUCCESS: Vectorstore cleared")

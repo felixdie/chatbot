@@ -15,9 +15,7 @@ from langchain_core.runnables import RunnableBranch
 import streamlit as st
 import logging
 import re
-import chromadb.api.client
 
-chromadb.api.client.SharedSystemClient.clear_system_cache()
 
 ##################################### Logger ####################################################
 
