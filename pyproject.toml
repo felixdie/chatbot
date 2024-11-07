@@ -19,6 +19,7 @@ streamlit = "^1.39.0"
 pyyaml = "^6.0.2"
 logging = "^0.4.9.6"
 chromadb = "^0.5.18"
+pysqlite3-binary = ^"0.5.4"
 
 
 [build-system]
