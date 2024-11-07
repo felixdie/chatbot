@@ -47,12 +47,12 @@ logger = get_logger()
 ##################################### Modules ####################################################
 
 
-def initialise_llm() -> RunnablePassthrough:
+def initialise_llm(task: str) -> RunnablePassthrough:
     """
     Initialise the LLM model with the necessary configurations.
 
     Parameters:
-        None
+        task (str): Has two possible values: "task_1" or "task_2".
     Returns:
         llm (ChatOpenAI): The configured LLM model.
     """
@@ -60,41 +60,50 @@ def initialise_llm() -> RunnablePassthrough:
     dotenv.load_dotenv(dotenv_path="api_key/.env")
     api_key = os.getenv("OPENAI_API_KEY")
 
-    # Configure model
-    llm = ChatOpenAI(
-        model=config["backend"]["llm_model"],
-        temperature=config["backend"]["llm_temparature"],
-        api_key=api_key,
-        max_retries=config["backend"]["max_retries"],
-    )
+    # Configure model for task 1
+    if task == "task_1":
+
+        llm = ChatOpenAI(
+            model=config["backend"]["llm_model"],
+            temperature=config["backend"]["temperature_task_1"],
+            api_key=api_key,
+            max_retries=config["backend"]["max_retries"],
+        )
+        logger.info("SUCCESS: LLM model initialised for task_1")
+
+    elif task == "task_2":
+
+        llm = ChatOpenAI(
+            model=config["backend"]["llm_model"],
+            temperature=config["backend"]["temperature_task_2"],
+            api_key=api_key,
+            max_retries=config["backend"]["max_retries"],
+        )
+        logger.info("SUCCESS: LLM model initialised for task_2")
 
     return llm
 
 
 def preprocess_data(
-    task_1: bool,
-    task_1_1: bool,
-    task_2: bool,
+    task: str,
     user_input: str,
-    llm: RunnablePassthrough,
 ) -> Chroma:
     """
     Initialise the RAG model with the necessary configurations.
 
     Parameters:
-        task_1 (bool): Whether the user ticked task 1.
-        task_1_1 (bool): Whether the user ticked task 1.1.
-        task_2 (bool): Whether the user ticked task 2.
+        task (str): Has two possible values: "task_1" or "task_2".
+        user_input (str): The user's input.
     Returns:
         vectorstore (Chroma): The vector store containing the document chunks.
     """
-    # Initialise Preprocessing Agent
-    agent = Preprocessing_Agent()
+    # Initialise Agent
+    agent = Agent()
 
-    if task_1:
+    if task == "task_1":
 
-        # Let Preprocessing Agent construct link to data
-        filepath = agent.get_filepath(user_input=user_input, llm=llm)
+        # Let Agent construct link to data
+        filepath = agent.get_filepath(user_input=user_input)
         logger.info(f"SUCCESS: Link constructed {filepath}")
 
         # Initialise document loader to pull text from web
@@ -109,32 +118,23 @@ def preprocess_data(
             )
             st.stop()
 
-    elif task_1_1:
-        loader = WebBaseLoader(config["backend"]["data_task_1_1"])
+    elif task == "task_2":
 
-    elif task_2:
         loader = WebBaseLoader(config["backend"]["data_task_2"])
 
     # Load data
     data = loader.load()
-    logger.info("Data loaded successfully")
+    logger.info("SUCCESS: Data loaded")
 
     # Initialise text splitter
-    if task_1:
+    if task == "task_1":
         text_splitter = RecursiveCharacterTextSplitter(
             chunk_size=config["backend"]["chunk_size_task_1"],
             chunk_overlap=config["backend"]["chunk_overlap_task_1"],
             add_start_index=True,
         )
 
-    elif task_1_1:
-        text_splitter = RecursiveCharacterTextSplitter(
-            chunk_size=config["backend"]["chunk_size_task_1_1"],
-            chunk_overlap=config["backend"]["chunk_overlap_task_1_1"],
-            add_start_index=True,
-        )
-
-    elif task_2:
+    elif task == "task_2":
         text_splitter = RecursiveCharacterTextSplitter(
             chunk_size=config["backend"]["chunk_size_task_2"],
             chunk_overlap=config["backend"]["chunk_overlap_task_2"],
@@ -175,7 +175,7 @@ def preprocess_data(
         return vectorstore
 
 
-class Preprocessing_Agent:
+class Agent:
     """
     A class representing an Agent that preprocesses data for the RAG model.
 
@@ -186,7 +186,7 @@ class Preprocessing_Agent:
     def __init__(self):
         pass
 
-    def get_filepath(self, user_input: str, llm: RunnablePassthrough) -> str:
+    def get_filepath(self, user_input: str) -> str:
         """
         Constructs a link to the paper based on the name that the user provides.
 
@@ -198,10 +198,20 @@ class Preprocessing_Agent:
             filepath (str): The link to the paper.
 
         """
-        # Initialise preprocessing Agent for task 1
-        prompt = """
-        You are a helpful assistant. Your task is to extract the title of the scientific paper from the reference provided by the user. Only return the title of the paper.
-        """
+        # Load API key
+        dotenv.load_dotenv(dotenv_path="api_key/.env")
+        api_key = os.getenv("OPENAI_API_KEY")
+
+        # Initialise master agent
+        agent = ChatOpenAI(
+            model=config["backend"]["llm_model"],
+            temperature=config["backend"]["temperature_agent"],
+            api_key=api_key,
+            max_retries=config["backend"]["max_retries"],
+        )
+
+        # Initialise Agent for task 1
+        prompt = config["backend"]["system_prompt_agent"]
 
         question = user_input
 
@@ -217,7 +227,7 @@ class Preprocessing_Agent:
         ]
 
         # LLM returns title from user input
-        response = llm.invoke(messages)
+        response = agent.invoke(messages)
         paper_title = response.content
         logger.info(f"SUCCESS: Paper title extracted {paper_title}")
 
@@ -237,13 +247,59 @@ class Preprocessing_Agent:
         return filepath
 
 
+class Master_Agent:
+    """
+    A class representing a Master Agent that distributes tasks to Agents.
+
+    Methods:
+        choose_task: The task to distribute to Agents based on the user's input.
+    """
+
+    def __init__(self):
+        pass
+
+    def choose_task(self, user_input: str) -> str:
+        """ """
+        # Load API key
+        dotenv.load_dotenv(dotenv_path="api_key/.env")
+        api_key = os.getenv("OPENAI_API_KEY")
+
+        # Initialise master agent
+        master_agent = ChatOpenAI(
+            model=config["backend"]["llm_model"],
+            temperature=config["backend"]["temperature_master_agent"],
+            api_key=api_key,
+            max_retries=config["backend"]["max_retries"],
+        )
+        prompt = config["backend"]["system_prompt_master_agent"]
+        logger.info("SUCCESS: Master agent initialised")
+
+        question = user_input
+
+        messages = [
+            {"role": "system", "content": prompt},
+            {"role": "user", "content": question},
+        ]
+
+        # Pass user input to LLM
+        messages = [
+            SystemMessage(content=prompt),
+            HumanMessage(content=question),
+        ]
+
+        # Master Agent returns task from user input
+        response = master_agent.invoke(messages)
+        task = response.content
+        logger.info(f"SUCCESS: Determined {task}")
+
+        return task
+
+
 def initialise_RAG(
     query: str,
     vectorstore: Chroma,
     llm: ChatOpenAI,
-    task_1: bool,
-    task_1_1: bool,
-    task_2: bool,
+    task: str,
 ) -> RunnablePassthrough:
     """
     Initialise the RAG model based on the provided papers.
@@ -259,17 +315,13 @@ def initialise_RAG(
 
     """
     # Initialise retriever with k chunks from vectorstore
-    if task_1:
+    if task == "task_1":
         retriever = vectorstore.as_retriever(
             search_type="similarity",
             search_kwargs={"k": config["backend"]["number_chunks_task_1"]},
         )
-    elif task_1_1:
-        retriever = vectorstore.as_retriever(
-            search_type="similarity",
-            search_kwargs={"k": config["backend"]["number_chunks_task_1_1"]},
-        )
-    elif task_2:
+
+    elif task == "task_2":
         retriever = vectorstore.as_retriever(
             search_type="similarity",
             search_kwargs={"k": config["backend"]["number_chunks_task_2"]},
@@ -312,9 +364,7 @@ def initialise_RAG(
 def create_retrival_chain(
     llm: ChatOpenAI,
     query_transformer: RunnablePassthrough,
-    task_1: bool,
-    task_1_1: bool,
-    task_2: bool,
+    task: str,
 ) -> RunnablePassthrough:
     """
     Create the chain that retrieves the answer to the user's question.
@@ -327,11 +377,10 @@ def create_retrival_chain(
             the answer to the user's question
     """
     # Set system prompt and context for answers
-    if task_1:
+    if task == "task_1":
         SYSTEM_TEMPLATE = config["backend"]["system_prompt_task_1"]
-    elif task_1_1:
-        SYSTEM_TEMPLATE = config["backend"]["system_prompt_task_1_1"]
-    elif task_2:
+
+    elif task == "task_2":
         SYSTEM_TEMPLATE = config["backend"]["system_prompt_task_2"]
 
     # Consider context when answering questions
