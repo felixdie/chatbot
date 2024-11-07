@@ -376,6 +376,9 @@ Future Potential and Limitations: The study suggests promising opportunities for
 ---
 
 
+Feldman J, Zhang DJ, Liu X, Zhang N (2022) Customer choice models vs. machine learning:
+Finding optimal product displays on Alibaba. Operations Research 70(1):309–328.
+
 Context: The study is focused on a specific industry, particularly the retail context of Alibaba and its product display problem.
 
 Research Question and Findings: The main research questions are: (1) Can a choice model's parameters be efficiently and accurately estimated from historical data? (2) Is it possible to develop efficient algorithms for assortment optimization given a fully specified customer choice model? The key findings indicate that while machine learning models can accurately predict customer purchasing patterns, they may not always lead to profitable operational decisions due to their inability to capture key operational trade-offs.
@@ -389,6 +392,47 @@ Method: The study employs an Empirical study method, specifically a Field Experi
 Contribution: The primary contribution of the study is managerial. It provides insights into the practical implications of using different modeling approaches for product display optimization in a retail setting, guiding decision-makers on the effectiveness of machine learning versus traditional choice models.
 
 Future Potential and Limitations: The study suggests future research directions could explore further integration of machine learning with operational decision-making frameworks. Limitations include the potential for machine learning models to overlook critical operational trade-offs, which could affect the profitability of the product displays.
+
+
+---
+
+
+Krakowski, S., Luger, J., & Raisch, S. (2023). Artificial intelligence and the changing
+sources of competitive advantage. Strategic Management Journal, 44(6), 1425-1452.
+
+Context: The study focuses on a broader, conceptual scope regarding the impact of artificial intelligence (AI) on competitive advantage, rather than being limited to a specific industry or task.
+
+Research Question and Findings: The main research question is how AI adoption affects the sources of competitive advantage. The key findings indicate that AI can both substitute and complement human cognitive capabilities, leading to new resource dynamics that change competitive advantages. It emphasizes the continued importance of human capabilities in conjunction with AI.
+
+Theme of Research:
+
+Human vs. AI: The study highlights that while AI can substitute certain cognitive tasks traditionally performed by humans, it also creates opportunities for humans to augment their capabilities through collaboration with AI. The findings suggest that humans still play a crucial role in maintaining competitive advantage.
+Human + AI Collaboration: The research discusses the collaboration between humans and AI, particularly in contexts like chess, where humans can enhance their performance by integrating their unique cognitive abilities with AI capabilities, leading to complementary advantages.
+Method: The study employs a Conceptual or Case Study method. It develops hypotheses based on existing literature and explores the dynamics of AI's impact on competitive advantage through a controlled setting (chess competitions) without conducting empirical experiments.
+
+Contribution: The primary contribution of the study is theoretical, as it provides new insights into the resource-based view (RBV) by integrating the concepts of substitution and complementation in the context of AI, challenging existing theoretical assumptions about competitive advantage.
+
+Future Potential and Limitations: The study suggests future research should explore the generalizability of its findings beyond chess to other business contexts, acknowledging that substitution may not be as comprehensive in all domains. It also highlights limitations related to the empirical evidence being drawn from a single domain (chess), which may not fully represent the complexities of other industries.
+
+
+---
+
+Raisch, S., & Fomina, K. (2023). Combining human and artificial intelligence: Hybrid
+problem-solving in organizations. Academy of Management Review, (ja), amr-2021.
+
+Context: The study focuses on a broader, conceptual scope regarding the integration of human and artificial intelligence in organizational problem-solving processes.
+
+Research Question and Findings: The main research question investigates how the collaboration between human intelligence and AI affects problem-solving outcomes in organizations. The key findings suggest that different hybrid problem-solving processes (autonomous search, sequential search, and interactive search) yield varying outcomes, broadening the range of organizational search results compared to traditional behavioral search models.
+
+Theme of Research:
+
+Human vs. AI: The study highlights that while AI can generate more distant solutions through autonomous search, human involvement is crucial for selecting and refining these solutions, indicating that the effectiveness of AI depends on how it is integrated with human capabilities.
+Human + AI Collaboration: The collaboration discussed involves distinct roles for humans and AI, where humans guide the search process and select from AI-generated solutions, emphasizing the importance of their complementary skills.
+Method: The study is classified as a Conceptual study because it develops hypotheses and a theoretical model based on existing literature without empirical testing or data collection.
+
+Contribution: The primary contribution of the study is theoretical, as it enriches the behavioral theory of the firm by introducing a technology-conscious perspective on hybrid problem-solving and expanding the understanding of AI's role in organizational contexts.
+
+Future Potential and Limitations: The study suggests future research should explore the specific mechanisms of human-AI interaction in problem-solving and acknowledges limitations in understanding the full implications of AI's opacity on learning and decision-making processes in organizations.
 
 
 ---
@@ -459,10 +503,109 @@ Future Potential and Limitations: The study suggests future research should expl
 ---
 
 
+Amaya, J., & Holweg, M. (2024). Using algorithms to improve knowledge work. Journal of
+Operations Management, 1–32. https://doi.org/10.1002/joom.1296
+
+Context: The study is focused on a specific industry, particularly the knowledge work within a multinational energy firm undergoing digital transformation.
+
+Research Question and Findings: The main research question is how organizations can adopt algorithmic solutions to create and sustain improvements in knowledge-intensive tasks. The key findings indicate that skilled tasks can benefit from algorithmic solutions, challenging the notion that only routine tasks are amenable to automation. The study identifies two pathways for transformation: automating specific tasks and re-engineering entire processes, each having different effects on knowledge work improvement.
+
+Theme of Research:
+
+Human vs. AI: The study suggests that while algorithms can enhance productivity in knowledge work, the effectiveness of these algorithms depends on the context and the transformation of work processes rather than solely on the skill requirements of tasks.
+Human + AI Collaboration: The collaboration discussed involves humans and algorithms working together, where humans may still play a crucial role in tasks that require nuanced understanding and decision-making, particularly in the re-engineering of processes.
+Method: The study employs a Case Study method, as it involves a detailed qualitative analysis of a specific real-world example (the multinational energy firm) over a two-year period, utilizing participant observations and internal performance reports.
+
+Contribution: The primary contribution of the study is theoretical, as it challenges existing perceptions about the relationship between task skill requirements and the potential for algorithmic improvement in knowledge work, proposing a new process model for algorithm adoption.
+
+Future Potential and Limitations: The study notes that future research should address the generalizability of its findings due to the case-based nature of the research. It also highlights the need for a deeper understanding of how organizations can effectively create collaborations between humans and algorithms, especially as technology advances and more contexts are deemed automatable.
 
 
+---
 
 
+Rong, G., Mendez, A., Assi, E. B., Zhao, B., & Sawan, M. (2020). Artificial intelligence in
+healthcare: review and prediction case studies. Engineering, 6(3), 291-301.
+
+
+Context: The study is focused on the healthcare industry, specifically examining the role of artificial intelligence in improving healthcare outcomes.
+
+Research Question and Findings: The main research question is how artificial intelligence can be effectively utilized in healthcare settings. The key findings indicate that AI has the potential to enhance various aspects of healthcare, including diagnostics, treatment planning, and patient management, through case studies that demonstrate successful applications of AI technologies.
+
+Theme of Research:
+
+Human vs. AI: The study discusses the comparative advantages of AI in processing large datasets and identifying patterns that may not be easily discernible by humans, particularly in diagnostic tasks. However, it also acknowledges the importance of human expertise in interpreting AI outputs and making clinical decisions.
+Human + AI Collaboration: The collaboration discussed involves AI systems assisting healthcare professionals by providing data-driven insights, which can enhance decision-making processes. The roles of humans and AI are complementary, with AI handling data analysis and humans focusing on patient care and ethical considerations.
+Method: The study is classified as a Secondary Data Analysis, as it reviews existing literature and case studies on the application of AI in healthcare without conducting new empirical research.
+
+Contribution: The primary contribution of the study is theoretical, as it synthesizes existing knowledge on AI applications in healthcare and provides predictions about future trends and developments in the field.
+
+Future Potential and Limitations: The study suggests future research directions that include exploring the integration of AI in various healthcare settings and addressing ethical concerns related to AI use. Limitations include the variability in AI implementation across different healthcare systems and the need for further empirical studies to validate the findings.
+
+
+---
+
+
+Cukurova, M., Kent, C., & Luckin, R. (2019). Artificial intelligence and multimodal data in the
+service of human decision‐making: A case study in debate tutoring. British Journal of
+Educational Technology, 50(6), 3032-3046.
+
+Context: The study is focused on a specific task within the broader field of education, specifically examining the role of AI in supporting human decision-making processes in the context of debate tutoring.
+
+Research Question and Findings: The main research question is about the potential role of AI in augmenting human intelligence to support decision-making in education. The key findings indicate that multimodal classification models can enhance the transparency of expert tutors' intuitive decision-making processes, leading to more accurate evaluations of trainee tutors.
+
+Theme of Research:
+
+Human vs. AI: The study highlights that AI can support rather than replace human decision-making, suggesting that AI's role is to augment human intelligence rather than automate tasks completely.
+Human + AI Collaboration: The collaboration discussed involves AI providing predictive and transparent models that assist expert tutors in evaluating trainee applicants, making their decision-making processes more explicit and traceable.
+Method: The study uses a Case Study method, as it involves a qualitative analysis of a specific real-world example (debate tutoring) to explore how AI can support human decision-making without testing hypotheses with empirical data or modeling.
+
+Contribution: The primary contribution of the study is theoretical, as it provides insights into how AI can augment human decision-making in educational contexts, particularly through the use of multimodal data and classification models.
+
+Future Potential and Limitations: The study suggests future research directions could explore further applications of AI in education to support complex decision-making processes. Limitations include the need for more empirical evidence to generalize findings beyond the specific context of debate tutoring.
+
+
+---
+
+
+Alshater, M. (2022). Exploring the role of artificial intelligence in enhancing academic
+performance: A case study of ChatGPT. Available at SSRN 4312358.
+
+Context: The study is focused on a specific task, which is enhancing academic performance through the use of artificial intelligence, specifically ChatGPT, in the context of academic research.
+
+Research Question and Findings: The main research question is whether ChatGPT can affect the future of academic research. The key findings indicate that ChatGPT has the potential to significantly enhance academic research by improving efficiency, accuracy, and the ability to analyze large volumes of data, although there are limitations and ethical considerations to be addressed.
+
+Theme of Research:
+
+Human vs. AI: The study discusses the comparative advantages of AI, particularly ChatGPT, in automating tasks and improving efficiency and accuracy in research, suggesting that while AI can assist significantly, it should not replace human analysis and interpretation.
+Human + AI Collaboration: The collaboration discussed involves researchers using ChatGPT to assist in data analysis, scenario generation, and communication of findings, highlighting a complementary relationship where AI enhances human capabilities.
+Method: The study employs a Case Study method, as it analyzes the specific application of ChatGPT in enhancing academic research without testing hypotheses or conducting experiments.
+
+Contribution: The primary contribution of the study is theoretical, as it provides insights into the role of AI and NLP in academic research, particularly focusing on the capabilities and limitations of ChatGPT.
+
+Future Potential and Limitations: The study suggests that future research should explore the evolving role of AI in academic research while carefully considering limitations such as generalizability, data quality, and ethical implications. It emphasizes the need for researchers to use AI tools in conjunction with human expertise to maximize their potential benefits.
+
+
+---
+
+
+Cao, Z., Li, M., & Pavlou, P. A. (2024). AI in Business Research. Available at SSRN
+4897619.
+
+
+Context: The study is focused on a broader, conceptual scope, specifically synthesizing existing literature on AI in the business field.
+
+Research Question and Findings: The main research question revolves around understanding the impact and applications of AI in business research. The key findings include the identification of five principal research questions and a comprehensive review of AI applications, human perceptions of AI, and AI behavior in business contexts.
+
+Theme of Research:
+
+Human vs. AI: The study discusses various scenarios where AI outperforms humans, particularly in tasks such as content marketing and decision-making processes, highlighting the comparative advantages of AI in specific contexts.
+Human + AI Collaboration: The research emphasizes the collaborative roles of humans and AI, illustrating how their integration can lead to enhanced decision-making and performance outcomes, such as in B2B retail settings where automated pricing models combined with human insights yield higher profits.
+Method: The study is classified as a Conceptual study because it develops hypotheses and synthesizes literature without testing them with empirical data or modeling.
+
+Contribution: The primary contribution of the study is theoretical, as it provides a framework for understanding AI-related research in business, delineating a roadmap for future inquiries in this area.
+
+Future Potential and Limitations: The study suggests future research directions that could explore AI applications exhibiting human-like behavior and acknowledges limitations, such as the exclusion of significant AI research from fields like Economics and Psychology, and the constraints of the review period.
 
 
 
