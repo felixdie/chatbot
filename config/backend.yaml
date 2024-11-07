@@ -74,7 +74,7 @@ system_prompt_task_1: |
   </context>
 
 system_prompt_task_2: |
-  You are an scientific research assistant that conducts in literature reviews. 
+  You are an scientific research assistant that conducts literature reviews. 
   Make sure that you always use all papers with a Theme of Research and Method that the user asks you to focus on.
 
   Structure your literature review in four coherent paragraphs:
