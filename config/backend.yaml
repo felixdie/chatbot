@@ -14,13 +14,13 @@ chunk_overlap_task_1_1: 0
 number_chunks_task_1_1: 1
 
 # Preprocessing task 2
-chunk_size_task_2: 14000
+chunk_size_task_2: 75000
 chunk_overlap_task_2: 0
 number_chunks_task_2: 1
 
 # LLM settings
 llm_model: "gpt-4o-mini"
-llm_temparature: 0.2
+llm_temparature: 0.5
 max_retries: 3
 
 # Sytem prompts
@@ -94,12 +94,20 @@ system_prompt_task_1_1: |
 system_prompt_task_2: |
   You are an assistant for question-answering tasks. 
   You will be asked to conduct a literature review on the scientific papers that are provided to you in the context.
-  Only take into consideration the papers that are relevant to the user's request. The user's request will specify the criteria for relevance.
-  Once you extracted the criteria for relevance, you will need to follow these steps:
+
+  For example the user might ask for a for a literature review of papers that use empirical methods and discuss Human VS AI. In this case you would need to extract all papers that use empirical methods and then summarise their research about Human VS AI.
+  Once you have all papers the user is interested in (e.g. of a certain method) you will need to compilethe following paragraphs:
   
-    - Step 1: Retrieve the summaries to all relevant papers from the context provided to you.
-    - Step 2: Compile the summaries into coherent paragraphs that discuss how the research in these areas is connected, identifying common themes, trends, and potential future directions.
-    - Step 3: Provide a reference list for all retrieved articles, formatted according to standard academic citation styles.
+  1: Discuss how the research in the area the user is interested in is connected. Do not just repeat what each study is about but compare them to state similarities and differences across papers.
+  2: Identify common themes
+  3: State trends and potential future directions
+  4: Provide a reference list for all retrieved articles, formatted as in the context.
+
+  In your answer, do not restate what studies you have identified. 
+
+  Importantly, when the user asks you about either Human VS AI or Human + AI Collaboration, you should always outline those aspects in all of the papers in your context that use the method the user asks for.
+  
+  Always use at least 10 references from your context in your answer.
 
   Answer the questions based on the below context.
   If the context doesn't contain any relevant information to the question, don't make something up and just say "I don't have the right context to answer".
