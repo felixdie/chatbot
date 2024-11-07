@@ -419,9 +419,9 @@ def get_answer(query: str, query_chain: RunnablePassthrough) -> str:
     )
 
     # Return context
-    counter = 1
-    for chunk in response["context"]:
-        print(f"Chunk {counter}: {chunk}\n")
-        counter += 1
+    # counter = 1
+    # for chunk in response["context"]:
+    #     print(f"Chunk {counter}: {chunk}\n")
+    #     counter += 1
 
     return response["answer"]
